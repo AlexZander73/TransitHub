@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How CoastPulse Transit works with static-first architecture and data fallback modes." />
+    <title>CoastPulse Transit | How It Works</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1 data-brand-name>CoastPulse Transit</h1>
+            <p>Static-first architecture</p>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="./index.html">Map</a>
+          <a href="./routes.html">Routes</a>
+          <a href="./how-it-works.html" class="active">How it works</a>
+          <a href="./about.html">About</a>
+        </nav>
+
+        <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+      </header>
+
+      <article class="static-page">
+        <section>
+          <h2>How CoastPulse Transit Works</h2>
+          <p>
+            The site is a static web app. Core route, stop, and map data live in JSON files committed to the repository and served directly via GitHub Pages.
+          </p>
+        </section>
+
+        <section>
+          <h3>Data Modes</h3>
+          <ol>
+            <li><strong>Live mode (optional):</strong> if configured and fresh live JSON exists, departures/alerts are shown from live files.</li>
+            <li><strong>Sample snapshot mode:</strong> if no live file is available, sample snapshot departures are used.</li>
+            <li><strong>Scheduled fallback:</strong> if needed, departures are generated from route frequency profiles.</li>
+          </ol>
+          <p>The UI always surfaces fallback status so users can see when live data is unavailable.</p>
+        </section>
+
+        <section>
+          <h3>Direct Travel Estimates</h3>
+          <p>
+            Only direct route/line estimates are supported. If origin and destination are not directly connected on a supported route pattern,
+            the app clearly states that transfer journey estimates are not available yet.
+          </p>
+        </section>
+
+        <section>
+          <h3>Expansion Path</h3>
+          <p>
+            The data model is region-ready. Brisbane and other SEQ areas can be introduced by adding region-tagged datasets and map layers,
+            without replacing frontend architecture.
+          </p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

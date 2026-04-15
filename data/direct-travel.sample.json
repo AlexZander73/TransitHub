@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "source": "sample",
+    "generatedAt": "2026-04-16T09:00:00+10:00",
+    "version": "0.1.0",
+    "notes": "Direct edge estimates. Frontend may also derive estimates from route segment timings."
+  },
+  "edges": [
+    { "origin": "HEL", "destination": "GCUH", "routeId": "GL", "minutes": 12, "bidirectional": true },
+    { "origin": "HEL", "destination": "SOUTH", "routeId": "GL", "minutes": 17, "bidirectional": true },
+    { "origin": "HEL", "destination": "CAVILL", "routeId": "GL", "minutes": 31, "bidirectional": true },
+    { "origin": "HEL", "destination": "BBS", "routeId": "GL", "minutes": 47, "bidirectional": true },
+    { "origin": "SOUTH", "destination": "BBS", "routeId": "GL", "minutes": 30, "bidirectional": true },
+    { "origin": "CAVILL", "destination": "BBS", "routeId": "GL", "minutes": 16, "bidirectional": true },
+    { "origin": "HARBOUR", "destination": "BBS", "routeId": "700", "minutes": 34, "bidirectional": true },
+    { "origin": "SOUTH", "destination": "BURLEIGH", "routeId": "700", "minutes": 37, "bidirectional": true },
+    { "origin": "BBS", "destination": "TUGUN", "routeId": "700", "minutes": 25, "bidirectional": true },
+    { "origin": "HEL", "destination": "BBS", "routeId": "777", "minutes": 40, "bidirectional": true },
+    { "origin": "HEL", "destination": "TUGUN", "routeId": "777", "minutes": 69, "bidirectional": true },
+    { "origin": "BBS", "destination": "TUGUN", "routeId": "777", "minutes": 29, "bidirectional": true },
+    { "origin": "ROBINA", "destination": "BBS", "routeId": "760", "minutes": 29, "bidirectional": true },
+    { "origin": "ROBINA", "destination": "GCUH", "routeId": "760", "minutes": 48, "bidirectional": true },
+    { "origin": "ROBINA", "destination": "HEL", "routeId": "760", "minutes": 63, "bidirectional": true },
+    { "origin": "COOMERA", "destination": "HEL", "routeId": "750", "minutes": 16, "bidirectional": true },
+    { "origin": "COOMERA", "destination": "CAVILL", "routeId": "750", "minutes": 52, "bidirectional": true }
+  ]
+}

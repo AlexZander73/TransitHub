@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "dataset": "gold-coast-core",
+    "generatedAt": "2026-04-16T09:00:00+10:00",
+    "version": "0.1.0"
+  },
+  "routes": [
+    {
+      "id": "GL",
+      "region": "gold-coast",
+      "lineId": "glink",
+      "shortName": "G",
+      "longName": "G:link Tram",
+      "mode": "tram",
+      "operator": "Translink network (sample)",
+      "color": "#00b39f",
+      "textColor": "#01211b",
+      "stopSequence": ["HEL", "PARK", "GRIF", "GCUH", "SOUTH", "SOUTHS", "NERANG", "CAVILL", "SPN", "CYP", "NORTH", "FLOR", "BBN", "BBS"],
+      "segmentMinutes": [4, 4, 4, 5, 3, 3, 4, 3, 3, 3, 3, 4, 4],
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Broadbeach South",
+          "originStopId": "HEL",
+          "destinationStopId": "BBS",
+          "service": {
+            "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+            "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Helensvale",
+          "originStopId": "BBS",
+          "destinationStopId": "HEL",
+          "service": {
+            "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+            "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+          }
+        }
+      ],
+      "notes": "Primary corridor for MVP"
+    },
+    {
+      "id": "700",
+      "region": "gold-coast",
+      "lineId": "bus700",
+      "shortName": "700",
+      "longName": "Coastal Connector",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#ff7a18",
+      "textColor": "#1f1201",
+      "stopSequence": ["HARBOUR", "SOUTH", "CAVILL", "BBN", "BBS", "BURLEIGH", "TUGUN"],
+      "segmentMinutes": [9, 8, 11, 6, 12, 13],
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Tugun Village",
+          "originStopId": "HARBOUR",
+          "destinationStopId": "TUGUN",
+          "service": {
+            "weekday": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
+            "weekend": { "first": "05:40", "last": "23:10", "frequencyMins": 20 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Harbour Town",
+          "originStopId": "TUGUN",
+          "destinationStopId": "HARBOUR",
+          "service": {
+            "weekday": { "first": "05:00", "last": "22:55", "frequencyMins": 15 },
+            "weekend": { "first": "05:30", "last": "22:55", "frequencyMins": 20 }
+          }
+        }
+      ],
+      "notes": "Key bus spine connecting tram and southern beaches"
+    },
+    {
+      "id": "777",
+      "region": "gold-coast",
+      "lineId": "bus777",
+      "shortName": "777",
+      "longName": "Gold Coast Highway Limited",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#1477ff",
+      "textColor": "#f3f7ff",
+      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN"],
+      "segmentMinutes": [10, 12, 18, 15, 14],
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Tugun Village",
+          "originStopId": "HEL",
+          "destinationStopId": "TUGUN",
+          "service": {
+            "weekday": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
+            "weekend": { "first": "06:10", "last": "22:45", "frequencyMins": 30 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Helensvale Interchange",
+          "originStopId": "TUGUN",
+          "destinationStopId": "HEL",
+          "service": {
+            "weekday": { "first": "05:20", "last": "22:30", "frequencyMins": 20 },
+            "weekend": { "first": "05:50", "last": "22:30", "frequencyMins": 30 }
+          }
+        }
+      ],
+      "notes": "Express-style connector for major nodes"
+    },
+    {
+      "id": "760",
+      "region": "gold-coast",
+      "lineId": "bus760",
+      "shortName": "760",
+      "longName": "Robina to Helensvale Link",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#6a4cff",
+      "textColor": "#f7f5ff",
+      "stopSequence": ["ROBINA", "VLKS", "BURLEIGH", "PFI", "BBS", "GCUH", "GRIF", "HEL"],
+      "segmentMinutes": [6, 10, 9, 4, 19, 4, 11],
+      "directions": [
+        {
+          "id": "northbound",
+          "headsign": "Helensvale Interchange",
+          "originStopId": "ROBINA",
+          "destinationStopId": "HEL",
+          "service": {
+            "weekday": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
+            "weekend": { "first": "06:00", "last": "22:30", "frequencyMins": 30 }
+          }
+        },
+        {
+          "id": "southbound",
+          "headsign": "Robina Station",
+          "originStopId": "HEL",
+          "destinationStopId": "ROBINA",
+          "service": {
+            "weekday": { "first": "05:15", "last": "22:20", "frequencyMins": 20 },
+            "weekend": { "first": "05:50", "last": "22:20", "frequencyMins": 30 }
+          }
+        }
+      ],
+      "notes": "Cross-corridor bus connection between heavy rail and tram"
+    },
+    {
+      "id": "750",
+      "region": "gold-coast",
+      "lineId": "bus750",
+      "shortName": "750",
+      "longName": "Northern Connector",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#2f9d58",
+      "textColor": "#ecfff2",
+      "stopSequence": ["COOMERA", "HEL", "HARBOUR", "SOUTH", "CAVILL"],
+      "segmentMinutes": [16, 14, 10, 12],
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Cavill Avenue",
+          "originStopId": "COOMERA",
+          "destinationStopId": "CAVILL",
+          "service": {
+            "weekday": { "first": "05:25", "last": "21:55", "frequencyMins": 30 },
+            "weekend": { "first": "06:00", "last": "21:55", "frequencyMins": 40 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Coomera Station",
+          "originStopId": "CAVILL",
+          "destinationStopId": "COOMERA",
+          "service": {
+            "weekday": { "first": "05:10", "last": "21:40", "frequencyMins": 30 },
+            "weekend": { "first": "05:45", "last": "21:40", "frequencyMins": 40 }
+          }
+        }
+      ],
+      "notes": "Included to demonstrate northward expansion handling"
+    }
+  ]
+}

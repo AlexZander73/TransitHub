@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "CoastPulse Transit",
+    "tagline": "Unofficial Gold Coast transit view",
+    "region": "Gold Coast",
+    "defaultTheme": "light",
+    "timezone": "Australia/Brisbane"
+  },
+  "regions": {
+    "active": ["gold-coast"],
+    "planned": ["brisbane", "logan", "sunshine-coast"]
+  },
+  "dataPaths": {
+    "stops": "data/stops.json",
+    "routes": "data/routes.json",
+    "lines": "data/lines.json",
+    "departuresSample": "data/departures.sample.json",
+    "alertsSample": "data/alerts.sample.json",
+    "directTravel": "data/direct-travel.sample.json"
+  },
+  "liveData": {
+    "enabled": true,
+    "departuresPath": "data/departures.live.json",
+    "alertsPath": "data/alerts.live.json",
+    "maxAgeMinutes": 20
+  },
+  "fallback": {
+    "departureLookaheadMinutes": 90,
+    "defaultDepartureLimit": 6
+  },
+  "map": {
+    "viewBox": "0 0 1024 1600",
+    "minZoom": 0.8,
+    "maxZoom": 2.4,
+    "defaultZoom": 1,
+    "showGrid": false
+  },
+  "disclaimer": {
+    "short": "Unofficial project. Not affiliated with Translink.",
+    "long": "Service times can be delayed, incomplete, or approximate. Always verify critical travel decisions using official channels."
+  }
+}

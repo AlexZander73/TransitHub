@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CoastPulse Transit is an unofficial map-first Gold Coast public transit viewer with stop details, route overlays, direct travel estimates, and static fallbacks."
+    />
+    <title>CoastPulse Transit | Gold Coast Map</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1 data-brand-name>CoastPulse Transit</h1>
+            <p>Gold Coast map-first transit view</p>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="./index.html" class="active">Map</a>
+          <a href="./routes.html">Routes</a>
+          <a href="./how-it-works.html">How it works</a>
+          <a href="./about.html">About</a>
+        </nav>
+
+        <p id="top-disclaimer" class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+      </header>
+
+      <main class="main-layout">
+        <section class="map-column" aria-label="Map view">
+          <div class="search-shell">
+            <div class="search-row">
+              <label for="stop-search" class="sr-only">Search stops and routes</label>
+              <input id="stop-search" type="search" placeholder="Search stops, interchanges, route numbers" autocomplete="off" />
+              <button id="search-clear" type="button" aria-label="Clear search">Clear</button>
+            </div>
+            <div id="search-results" class="search-results-shell" role="listbox" aria-label="Search results"></div>
+          </div>
+
+          <div class="filter-row" aria-label="Mode filters">
+            <button type="button" data-filter-mode="tram" aria-pressed="true">Tram</button>
+            <button type="button" data-filter-mode="bus" aria-pressed="true">Bus</button>
+            <button type="button" data-filter-mode="interchange" aria-pressed="true">Interchange</button>
+          </div>
+
+          <section class="map-card" aria-label="Transit map">
+            <div class="map-toolbar">
+              <p>Stylized network map. Drag to pan. Scroll to zoom.</p>
+              <div class="map-controls" aria-label="Map controls">
+                <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+                <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+                <button id="zoom-reset" type="button" aria-label="Reset zoom">Reset</button>
+              </div>
+            </div>
+
+            <div class="map-viewport">
+              <svg id="network-map" viewBox="0 0 1024 1600" role="img" aria-label="Gold Coast transit network map">
+                <g id="map-camera">
+                  <g id="backdrop-layer" aria-hidden="true">
+                    <rect class="map-backdrop-water" x="0" y="0" width="1024" height="1600" />
+                    <path
+                      class="map-backdrop-land"
+                      d="M 0 20 C 180 10, 280 90, 360 160 C 470 260, 520 410, 610 560 C 710 730, 760 980, 870 1210 C 930 1330, 1024 1430, 1024 1600 L 0 1600 Z"
+                    />
+                    <path
+                      class="map-backdrop-band"
+                      d="M 280 0 C 420 190, 470 360, 620 580 C 710 710, 760 830, 830 1010 C 910 1210, 960 1390, 1024 1500 L 1024 0 Z"
+                    />
+                  </g>
+                  <g id="line-layer"></g>
+                  <g id="stop-layer"></g>
+                  <g id="label-layer"></g>
+                </g>
+              </svg>
+            </div>
+          </section>
+
+          <div id="fallback-banner" class="fallback-banner" aria-live="polite"></div>
+        </section>
+
+        <aside class="panel-column" aria-label="Route and stop details">
+          <section class="legend-card" aria-label="Route legend">
+            <div class="legend-header">
+              <h2>Route legend</h2>
+              <button id="clear-route-selection" type="button">Clear route</button>
+            </div>
+            <div id="route-legend"></div>
+          </section>
+
+          <section class="panel-card">
+            <div id="stop-panel" class="panel-scroll" aria-live="polite"></div>
+          </section>
+
+          <p class="footer-note">
+            Times and alerts may be delayed or approximate. Always verify critical travel decisions with official channels.
+          </p>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>

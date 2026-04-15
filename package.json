@@ -1,0 +1,18 @@
+{
+  "name": "coastpulse-transit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unofficial static-first Gold Coast transit MVP for GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 4173",
+    "validate:data": "node ./scripts/validate-data.mjs",
+    "build:gtfs": "node ./scripts/transform-gtfs.mjs --input ./raw/gtfs --output ./data",
+    "fetch:live": "node ./scripts/fetch-live-sources.mjs --out-raw-dir ./raw/live",
+    "merge:live": "node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data",
+    "refresh:live": "npm run fetch:live && npm run merge:live && npm run validate:data"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

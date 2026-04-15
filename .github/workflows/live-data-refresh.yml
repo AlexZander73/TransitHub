@@ -1,0 +1,74 @@
+name: Live Data Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check live source configuration
+        id: cfg
+        env:
+          LIVE_DEPARTURES_SOURCE: ${{ secrets.LIVE_DEPARTURES_SOURCE }}
+          LIVE_ALERTS_SOURCE: ${{ secrets.LIVE_ALERTS_SOURCE }}
+        run: |
+          if [ -z "$LIVE_DEPARTURES_SOURCE" ] && [ -z "$LIVE_ALERTS_SOURCE" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "No live sources configured. Skipping refresh."
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch raw live payloads
+        if: steps.cfg.outputs.enabled == 'true'
+        env:
+          LIVE_DEPARTURES_SOURCE: ${{ secrets.LIVE_DEPARTURES_SOURCE }}
+          LIVE_ALERTS_SOURCE: ${{ secrets.LIVE_ALERTS_SOURCE }}
+          LIVE_HEADER_1: ${{ secrets.LIVE_HEADER_1 }}
+          LIVE_HEADER_2: ${{ secrets.LIVE_HEADER_2 }}
+          LIVE_HEADER_3: ${{ secrets.LIVE_HEADER_3 }}
+          LIVE_HEADER_4: ${{ secrets.LIVE_HEADER_4 }}
+        run: |
+          node ./scripts/fetch-live-sources.mjs --out-raw-dir ./raw/live
+
+      - name: Normalize live payloads
+        if: steps.cfg.outputs.enabled == 'true'
+        run: |
+          node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data
+
+      - name: Validate data model
+        if: steps.cfg.outputs.enabled == 'true'
+        run: |
+          node ./scripts/validate-data.mjs
+
+      - name: Commit updated live data
+        if: steps.cfg.outputs.enabled == 'true'
+        run: |
+          if git diff --quiet -- data/departures.live.json data/alerts.live.json; then
+            echo "No live data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/departures.live.json data/alerts.live.json
+          git commit -m "chore(data): refresh live departures and alerts"
+          git push

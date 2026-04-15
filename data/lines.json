@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "dataset": "gold-coast-core",
+    "generatedAt": "2026-04-16T09:00:00+10:00",
+    "version": "0.1.0"
+  },
+  "lines": [
+    {
+      "id": "glink",
+      "region": "gold-coast",
+      "name": "G:link Tram Spine",
+      "mode": "tram",
+      "color": "#00b39f",
+      "textColor": "#01211b",
+      "routeIds": ["GL"],
+      "path": [
+        { "x": 190, "y": 120 },
+        { "x": 210, "y": 215 },
+        { "x": 250, "y": 300 },
+        { "x": 285, "y": 390 },
+        { "x": 340, "y": 500 },
+        { "x": 392, "y": 585 },
+        { "x": 430, "y": 675 },
+        { "x": 505, "y": 770 },
+        { "x": 548, "y": 850 },
+        { "x": 566, "y": 920 },
+        { "x": 592, "y": 995 },
+        { "x": 622, "y": 1070 },
+        { "x": 670, "y": 1160 },
+        { "x": 738, "y": 1260 }
+      ]
+    },
+    {
+      "id": "bus700",
+      "region": "gold-coast",
+      "name": "Route 700 Coastal Connector",
+      "mode": "bus",
+      "color": "#ff7a18",
+      "textColor": "#1f1201",
+      "routeIds": ["700"],
+      "path": [
+        { "x": 170, "y": 470 },
+        { "x": 340, "y": 500 },
+        { "x": 505, "y": 770 },
+        { "x": 670, "y": 1160 },
+        { "x": 738, "y": 1260 },
+        { "x": 835, "y": 1395 },
+        { "x": 910, "y": 1500 }
+      ]
+    },
+    {
+      "id": "bus777",
+      "region": "gold-coast",
+      "name": "Route 777 Highway Limited",
+      "mode": "bus",
+      "color": "#1477ff",
+      "textColor": "#f3f7ff",
+      "routeIds": ["777"],
+      "path": [
+        { "x": 190, "y": 120 },
+        { "x": 285, "y": 390 },
+        { "x": 340, "y": 500 },
+        { "x": 738, "y": 1260 },
+        { "x": 835, "y": 1395 },
+        { "x": 910, "y": 1500 }
+      ]
+    },
+    {
+      "id": "bus760",
+      "region": "gold-coast",
+      "name": "Route 760 Cross Connector",
+      "mode": "bus",
+      "color": "#6a4cff",
+      "textColor": "#f7f5ff",
+      "routeIds": ["760"],
+      "path": [
+        { "x": 520, "y": 1365 },
+        { "x": 610, "y": 1445 },
+        { "x": 835, "y": 1395 },
+        { "x": 684, "y": 1290 },
+        { "x": 738, "y": 1260 },
+        { "x": 285, "y": 390 },
+        { "x": 250, "y": 300 },
+        { "x": 190, "y": 120 }
+      ]
+    },
+    {
+      "id": "bus750",
+      "region": "gold-coast",
+      "name": "Route 750 Northern Connector",
+      "mode": "bus",
+      "color": "#2f9d58",
+      "textColor": "#ecfff2",
+      "routeIds": ["750"],
+      "path": [
+        { "x": 140, "y": 40 },
+        { "x": 190, "y": 120 },
+        { "x": 170, "y": 470 },
+        { "x": 340, "y": 500 },
+        { "x": 505, "y": 770 }
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "gold-coast",
+      "label": "Gold Coast",
+      "default": true
+    },
+    {
+      "id": "brisbane",
+      "label": "Brisbane",
+      "default": false,
+      "status": "planned"
+    }
+  ]
+}

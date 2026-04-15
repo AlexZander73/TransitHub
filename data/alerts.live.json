@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-15T23:51:57.048Z",
+    "source": "merge-live-feeds.mjs",
+    "sourcePath": "./data/alerts.sample.json"
+  },
+  "alerts": [
+    {
+      "id": "ALERT-GL-LOW-SPEED-001",
+      "level": "minor",
+      "title": "Tram speed restriction near Surfers Paradise North",
+      "description": "Southbound and northbound trams may run up to 4 minutes late between Cavill Avenue and Cypress Avenue.",
+      "routes": [
+        "GL"
+      ],
+      "stops": [
+        "CAVILL",
+        "SPN",
+        "CYP"
+      ],
+      "effectiveFrom": "2026-04-15T06:00:00+10:00",
+      "effectiveTo": "2026-12-31T23:59:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-700-STOP-CHANGE-002",
+      "level": "info",
+      "title": "Route 700 temporary stop relocation near Burleigh",
+      "description": "Use temporary bay signage near Burleigh Heads Centre while streetscape upgrades are underway.",
+      "routes": [
+        "700"
+      ],
+      "stops": [
+        "BURLEIGH"
+      ],
+      "effectiveFrom": "2026-04-01T00:00:00+10:00",
+      "effectiveTo": "2026-09-01T23:59:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-PLANNED-NORTH-003",
+      "level": "info",
+      "title": "Coomera connector timetable refresh",
+      "description": "Sample notice: route 750 evening frequency review is planned. Check official sources for confirmed timetable updates.",
+      "routes": [
+        "750"
+      ],
+      "stops": [
+        "COOMERA",
+        "HEL"
+      ],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "status": "active"
+    }
+  ]
+}
