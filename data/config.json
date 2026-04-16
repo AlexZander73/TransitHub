@@ -19,7 +19,7 @@
     "directTravel": "data/direct-travel.sample.json"
   },
   "liveData": {
-    "enabled": false,
+    "enabled": true,
     "departuresPath": "data/departures.live.json",
     "alertsPath": "data/alerts.live.json",
     "maxAgeMinutes": 20
