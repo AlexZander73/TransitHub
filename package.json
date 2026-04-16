@@ -10,7 +10,13 @@
     "build:gtfs": "node ./scripts/transform-gtfs.mjs --input ./raw/gtfs --output ./data",
     "fetch:live": "node ./scripts/fetch-live-sources.mjs --out-raw-dir ./raw/live",
     "merge:live": "node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data",
-    "refresh:live": "npm run fetch:live && npm run merge:live && npm run validate:data"
+    "refresh:live": "npm run fetch:live && npm run merge:live && npm run validate:data",
+    "fetch:gtfsrt": "node ./scripts/fetch-gtfsrt-sources.mjs --out-raw-dir ./raw/live",
+    "build:live:gtfsrt": "node ./scripts/build-live-from-gtfsrt.mjs --trip-updates ./raw/live/trip-updates.pb --service-alerts ./raw/live/service-alerts.pb --out ./data",
+    "refresh:live:gtfsrt": "npm run fetch:gtfsrt && npm run build:live:gtfsrt && npm run validate:data"
+  },
+  "dependencies": {
+    "gtfs-realtime-bindings": "^1.1.1"
   },
   "engines": {
     "node": ">=18"

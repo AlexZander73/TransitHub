@@ -27,18 +27,38 @@ jobs:
       - name: Check live source configuration
         id: cfg
         env:
+          LIVE_SOURCE_MODE: ${{ secrets.LIVE_SOURCE_MODE }}
           LIVE_DEPARTURES_SOURCE: ${{ secrets.LIVE_DEPARTURES_SOURCE }}
           LIVE_ALERTS_SOURCE: ${{ secrets.LIVE_ALERTS_SOURCE }}
+          GTFSRT_TRIP_UPDATES_SOURCE: ${{ secrets.GTFSRT_TRIP_UPDATES_SOURCE }}
+          GTFSRT_SERVICE_ALERTS_SOURCE: ${{ secrets.GTFSRT_SERVICE_ALERTS_SOURCE }}
         run: |
-          if [ -z "$LIVE_DEPARTURES_SOURCE" ] && [ -z "$LIVE_ALERTS_SOURCE" ]; then
-            echo "enabled=false" >> "$GITHUB_OUTPUT"
-            echo "No live sources configured. Skipping refresh."
+          mode="${LIVE_SOURCE_MODE:-json}"
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+
+          if [ "$mode" = "gtfsrt" ]; then
+            if [ -z "$GTFSRT_TRIP_UPDATES_SOURCE" ] && [ -z "$GTFSRT_SERVICE_ALERTS_SOURCE" ]; then
+              echo "enabled=false" >> "$GITHUB_OUTPUT"
+              echo "No GTFS-RT sources configured. Skipping refresh."
+            else
+              echo "enabled=true" >> "$GITHUB_OUTPUT"
+            fi
           else
-            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            if [ -z "$LIVE_DEPARTURES_SOURCE" ] && [ -z "$LIVE_ALERTS_SOURCE" ]; then
+              echo "enabled=false" >> "$GITHUB_OUTPUT"
+              echo "No JSON live sources configured. Skipping refresh."
+            else
+              echo "enabled=true" >> "$GITHUB_OUTPUT"
+            fi
           fi
 
-      - name: Fetch raw live payloads
-        if: steps.cfg.outputs.enabled == 'true'
+      - name: Install dependencies (GTFS-RT mode)
+        if: steps.cfg.outputs.enabled == 'true' && steps.cfg.outputs.mode == 'gtfsrt'
+        run: |
+          npm install --no-audit --no-fund
+
+      - name: Fetch raw JSON live payloads
+        if: steps.cfg.outputs.enabled == 'true' && steps.cfg.outputs.mode == 'json'
         env:
           LIVE_DEPARTURES_SOURCE: ${{ secrets.LIVE_DEPARTURES_SOURCE }}
           LIVE_ALERTS_SOURCE: ${{ secrets.LIVE_ALERTS_SOURCE }}
@@ -49,10 +69,69 @@ jobs:
         run: |
           node ./scripts/fetch-live-sources.mjs --out-raw-dir ./raw/live
 
-      - name: Normalize live payloads
-        if: steps.cfg.outputs.enabled == 'true'
+      - name: Normalize JSON live payloads
+        if: steps.cfg.outputs.enabled == 'true' && steps.cfg.outputs.mode == 'json'
         run: |
           node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data
+
+      - name: Fetch GTFS-RT payloads
+        if: steps.cfg.outputs.enabled == 'true' && steps.cfg.outputs.mode == 'gtfsrt'
+        env:
+          GTFSRT_TRIP_UPDATES_SOURCE: ${{ secrets.GTFSRT_TRIP_UPDATES_SOURCE }}
+          GTFSRT_SERVICE_ALERTS_SOURCE: ${{ secrets.GTFSRT_SERVICE_ALERTS_SOURCE }}
+          GTFSRT_TRIP_UPDATES_FORMAT: ${{ secrets.GTFSRT_TRIP_UPDATES_FORMAT }}
+          GTFSRT_SERVICE_ALERTS_FORMAT: ${{ secrets.GTFSRT_SERVICE_ALERTS_FORMAT }}
+          GTFS_STATIC_STOPS_SOURCE: ${{ secrets.GTFS_STATIC_STOPS_SOURCE }}
+          GTFS_STATIC_ROUTES_SOURCE: ${{ secrets.GTFS_STATIC_ROUTES_SOURCE }}
+          GTFS_STATIC_TRIPS_SOURCE: ${{ secrets.GTFS_STATIC_TRIPS_SOURCE }}
+          GTFS_ID_MAP_SOURCE: ${{ secrets.GTFS_ID_MAP_SOURCE }}
+          LIVE_HEADER_1: ${{ secrets.LIVE_HEADER_1 }}
+          LIVE_HEADER_2: ${{ secrets.LIVE_HEADER_2 }}
+          LIVE_HEADER_3: ${{ secrets.LIVE_HEADER_3 }}
+          LIVE_HEADER_4: ${{ secrets.LIVE_HEADER_4 }}
+        run: |
+          node ./scripts/fetch-gtfsrt-sources.mjs --out-raw-dir ./raw/live
+
+      - name: Normalize GTFS-RT payloads
+        if: steps.cfg.outputs.enabled == 'true' && steps.cfg.outputs.mode == 'gtfsrt'
+        env:
+          GTFSRT_TRIP_UPDATES_FORMAT: ${{ secrets.GTFSRT_TRIP_UPDATES_FORMAT }}
+          GTFSRT_SERVICE_ALERTS_FORMAT: ${{ secrets.GTFSRT_SERVICE_ALERTS_FORMAT }}
+        run: |
+          trip_file="./raw/live/trip-updates.pb"
+          alert_file="./raw/live/service-alerts.pb"
+
+          if [ "${GTFSRT_TRIP_UPDATES_FORMAT}" = "json" ]; then
+            trip_file="./raw/live/trip-updates.json"
+          fi
+
+          if [ "${GTFSRT_SERVICE_ALERTS_FORMAT}" = "json" ]; then
+            alert_file="./raw/live/service-alerts.json"
+          fi
+
+          args=(
+            --trip-updates "$trip_file"
+            --service-alerts "$alert_file"
+            --out ./data
+          )
+
+          if [ -f ./raw/live/gtfs-id-map.json ]; then
+            args+=(--mapping ./raw/live/gtfs-id-map.json)
+          elif [ -f ./data/gtfs-id-map.json ]; then
+            args+=(--mapping ./data/gtfs-id-map.json)
+          fi
+
+          if [ -f ./raw/live/gtfs/stops.txt ]; then
+            args+=(--gtfs-stops ./raw/live/gtfs/stops.txt)
+          fi
+          if [ -f ./raw/live/gtfs/routes.txt ]; then
+            args+=(--gtfs-routes ./raw/live/gtfs/routes.txt)
+          fi
+          if [ -f ./raw/live/gtfs/trips.txt ]; then
+            args+=(--gtfs-trips ./raw/live/gtfs/trips.txt)
+          fi
+
+          node ./scripts/build-live-from-gtfsrt.mjs "${args[@]}"
 
       - name: Validate data model
         if: steps.cfg.outputs.enabled == 'true'

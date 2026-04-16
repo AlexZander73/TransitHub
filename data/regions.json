@@ -1,9 +1,9 @@
 {
   "meta": {
     "dataset": "seq-regions",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0",
-    "notes": "Gold Coast is production-facing sample. Brisbane is scaffolded with representative nodes and routes."
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0",
+    "notes": "Gold Coast and Brisbane are active sample regions. Logan is expanded preview coverage for surrounding SEQ growth corridors."
   },
   "regions": [
     {
@@ -31,36 +31,66 @@
       "id": "brisbane",
       "label": "Brisbane",
       "shortLabel": "BNE",
-      "status": "preview",
+      "status": "active",
       "default": false,
-      "description": "Preview scaffold for Brisbane core stations, busway, and metro-ready corridors.",
+      "description": "Expanded Brisbane sample with CBD busway spine, west campus corridor, and north/south connectors.",
       "mapViewport": {
         "viewBox": "0 0 1200 1700",
         "focus": {
-          "x": 330,
-          "y": 360,
-          "zoom": 1.05
+          "x": 350,
+          "y": 320,
+          "zoom": 1.1
         }
       },
       "externalMap": {
         "standard": "https://www.google.com/maps/place/Brisbane+QLD",
         "satellite": "https://www.google.com/maps/@-27.4705,153.026,11z/data=!3m1!1e3"
       },
-      "highlights": ["Busway interchanges", "CBD spine", "Future metro overlays"]
+      "highlights": ["CBD bus spine", "South East Busway", "University-west corridor"]
     },
     {
       "id": "logan",
       "label": "Logan",
       "shortLabel": "LGN",
+      "status": "preview",
+      "default": false,
+      "description": "Expanded preview region linking Springwood, Hyperdome, Browns Plains, and Beenleigh nodes.",
+      "mapViewport": {
+        "viewBox": "0 0 1200 1700",
+        "focus": {
+          "x": 900,
+          "y": 450,
+          "zoom": 1.08
+        }
+      },
+      "externalMap": {
+        "standard": "https://www.google.com/maps/place/Logan+City+QLD",
+        "satellite": "https://www.google.com/maps/@-27.6545,153.1333,11z/data=!3m1!1e3"
+      },
+      "highlights": ["Hyperdome hub", "Beenleigh rail link", "Browns Plains corridor"]
+    },
+    {
+      "id": "sunshine-coast",
+      "label": "Sunshine Coast",
+      "shortLabel": "SC",
       "status": "planned",
       "default": false,
       "description": "Planned extension region.",
       "highlights": []
     },
     {
-      "id": "sunshine-coast",
-      "label": "Sunshine Coast",
-      "shortLabel": "SC",
+      "id": "ipswich",
+      "label": "Ipswich",
+      "shortLabel": "IPS",
+      "status": "planned",
+      "default": false,
+      "description": "Planned extension region.",
+      "highlights": []
+    },
+    {
+      "id": "redlands",
+      "label": "Redlands",
+      "shortLabel": "RDL",
       "status": "planned",
       "default": false,
       "description": "Planned extension region.",

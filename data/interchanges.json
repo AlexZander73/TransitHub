@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "seq-interchanges",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0"
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0"
   },
   "interchanges": [
     {
@@ -10,141 +10,361 @@
       "region": "gold-coast",
       "name": "Helensvale Interchange",
       "type": "major",
-      "stopIds": ["HEL"],
-      "modes": ["tram", "train", "bus"],
+      "stopIds": [
+        "HEL"
+      ],
+      "modes": [
+        "tram",
+        "train",
+        "bus"
+      ],
       "notes": "Primary rail-tram-bus transfer location for northern Gold Coast.",
-      "connectedInterchanges": ["gc-health-edu", "gc-southport-core", "gc-rail-north"]
+      "connectedInterchanges": [
+        "gc-health-edu",
+        "gc-southport-core",
+        "gc-rail-north"
+      ]
     },
     {
       "id": "gc-health-edu",
       "region": "gold-coast",
       "name": "GCUH / Griffith",
       "type": "major",
-      "stopIds": ["GRIF", "GCUH"],
-      "modes": ["tram", "bus"],
+      "stopIds": [
+        "GRIF",
+        "GCUH"
+      ],
+      "modes": [
+        "tram",
+        "bus"
+      ],
       "notes": "High-frequency transfer cluster serving health and education precincts.",
-      "connectedInterchanges": ["gc-helensvale", "gc-southport-core"]
+      "connectedInterchanges": [
+        "gc-helensvale",
+        "gc-southport-core"
+      ]
     },
     {
       "id": "gc-southport-core",
       "region": "gold-coast",
       "name": "Southport Core",
       "type": "major",
-      "stopIds": ["SOUTH"],
-      "modes": ["tram", "bus"],
+      "stopIds": [
+        "SOUTH"
+      ],
+      "modes": [
+        "tram",
+        "bus"
+      ],
       "notes": "Key CBD transfer point linking coastal and inland services.",
-      "connectedInterchanges": ["gc-health-edu", "gc-harbour", "gc-surfers"]
+      "connectedInterchanges": [
+        "gc-health-edu",
+        "gc-harbour",
+        "gc-surfers"
+      ]
     },
     {
       "id": "gc-harbour",
       "region": "gold-coast",
       "name": "Harbour Town Interchange",
       "type": "medium",
-      "stopIds": ["HARBOUR"],
-      "modes": ["bus"],
+      "stopIds": [
+        "HARBOUR"
+      ],
+      "modes": [
+        "bus"
+      ],
       "notes": "Northern coastal bus transfer location.",
-      "connectedInterchanges": ["gc-southport-core", "gc-helensvale"]
+      "connectedInterchanges": [
+        "gc-southport-core",
+        "gc-helensvale"
+      ]
     },
     {
       "id": "gc-surfers",
       "region": "gold-coast",
       "name": "Surfers Core",
       "type": "medium",
-      "stopIds": ["CAVILL"],
-      "modes": ["tram", "bus"],
+      "stopIds": [
+        "CAVILL"
+      ],
+      "modes": [
+        "tram",
+        "bus"
+      ],
       "notes": "Tourism-heavy stop with late-evening demand.",
-      "connectedInterchanges": ["gc-southport-core", "gc-broadbeach"]
+      "connectedInterchanges": [
+        "gc-southport-core",
+        "gc-broadbeach"
+      ]
     },
     {
       "id": "gc-broadbeach",
       "region": "gold-coast",
       "name": "Broadbeach Transfer Hub",
       "type": "major",
-      "stopIds": ["BBS", "PFI", "BBN"],
-      "modes": ["tram", "bus"],
+      "stopIds": [
+        "BBS",
+        "PFI",
+        "BBN"
+      ],
+      "modes": [
+        "tram",
+        "bus"
+      ],
       "notes": "Largest southbound tram and bus interchange in the sample network.",
-      "connectedInterchanges": ["gc-surfers", "gc-burleigh", "gc-rail-south"]
+      "connectedInterchanges": [
+        "gc-surfers",
+        "gc-burleigh",
+        "gc-rail-south"
+      ]
     },
     {
       "id": "gc-burleigh",
       "region": "gold-coast",
       "name": "Burleigh Transfer",
       "type": "medium",
-      "stopIds": ["BURLEIGH"],
-      "modes": ["bus"],
+      "stopIds": [
+        "BURLEIGH"
+      ],
+      "modes": [
+        "bus"
+      ],
       "notes": "Bus transfer location for southern beaches.",
-      "connectedInterchanges": ["gc-broadbeach", "gc-rail-south"]
+      "connectedInterchanges": [
+        "gc-broadbeach",
+        "gc-rail-south"
+      ]
     },
     {
       "id": "gc-rail-north",
       "region": "gold-coast",
       "name": "Coomera Rail",
       "type": "medium",
-      "stopIds": ["COOMERA"],
-      "modes": ["train", "bus"],
+      "stopIds": [
+        "COOMERA"
+      ],
+      "modes": [
+        "train",
+        "bus"
+      ],
       "notes": "Northern rail expansion node.",
-      "connectedInterchanges": ["gc-helensvale"]
+      "connectedInterchanges": [
+        "gc-helensvale"
+      ]
     },
     {
       "id": "gc-rail-south",
       "region": "gold-coast",
       "name": "Southern Rail Pair",
       "type": "major",
-      "stopIds": ["ROBINA", "VLKS"],
-      "modes": ["train", "bus"],
+      "stopIds": [
+        "ROBINA",
+        "VLKS"
+      ],
+      "modes": [
+        "train",
+        "bus"
+      ],
       "notes": "Southern heavy rail access with corridor buses.",
-      "connectedInterchanges": ["gc-broadbeach", "gc-burleigh"]
+      "connectedInterchanges": [
+        "gc-broadbeach",
+        "gc-burleigh"
+      ]
     },
-
     {
       "id": "bne-cbd-core",
       "region": "brisbane",
       "name": "CBD Core",
       "type": "major",
-      "stopIds": ["ROMA", "KING"],
-      "modes": ["train", "bus"],
-      "notes": "Brisbane CBD transfer spine scaffold.",
-      "connectedInterchanges": ["bne-southbank", "bne-north-core"]
+      "stopIds": [
+        "ROMA",
+        "KING",
+        "QSTN"
+      ],
+      "modes": [
+        "train",
+        "bus"
+      ],
+      "notes": "Primary CBD transfer cluster linking busway and rail-adjacent services.",
+      "connectedInterchanges": [
+        "bne-southbank",
+        "bne-north-core",
+        "bne-west",
+        "bne-south-east"
+      ]
     },
     {
       "id": "bne-southbank",
       "region": "brisbane",
       "name": "South Bank Busway",
       "type": "major",
-      "stopIds": ["CULT"],
-      "modes": ["bus"],
-      "notes": "South Bank busway transfer location.",
-      "connectedInterchanges": ["bne-cbd-core", "bne-south-east", "bne-west"]
+      "stopIds": [
+        "CULT"
+      ],
+      "modes": [
+        "bus"
+      ],
+      "notes": "South Bank gateway interchange for busway corridors.",
+      "connectedInterchanges": [
+        "bne-cbd-core",
+        "bne-south-east",
+        "bne-west"
+      ]
     },
     {
       "id": "bne-north-core",
       "region": "brisbane",
       "name": "North Core",
       "type": "major",
-      "stopIds": ["RBWH", "CHMS", "EAGL"],
-      "modes": ["bus", "train"],
-      "notes": "Northside transfer cluster for busway and rail.",
-      "connectedInterchanges": ["bne-cbd-core"]
+      "stopIds": [
+        "RBWH",
+        "FVLY",
+        "CHMS",
+        "EAGL",
+        "NWMR"
+      ],
+      "modes": [
+        "bus",
+        "train"
+      ],
+      "notes": "North-side rail and busway-support transfer cluster.",
+      "connectedInterchanges": [
+        "bne-cbd-core"
+      ]
     },
     {
       "id": "bne-south-east",
       "region": "brisbane",
       "name": "South East Busway",
       "type": "major",
-      "stopIds": ["WOOL", "GARD"],
-      "modes": ["bus"],
-      "notes": "South east growth corridor scaffold.",
-      "connectedInterchanges": ["bne-southbank"]
+      "stopIds": [
+        "WOOL",
+        "BURA",
+        "BOGG",
+        "PAHS",
+        "EMPS",
+        "GARD"
+      ],
+      "modes": [
+        "bus",
+        "train"
+      ],
+      "notes": "South-east high-frequency corridor and hospital precinct links.",
+      "connectedInterchanges": [
+        "bne-cbd-core",
+        "bne-southbank",
+        "bne-east"
+      ]
     },
     {
       "id": "bne-west",
       "region": "brisbane",
       "name": "Western University Node",
+      "type": "major",
+      "stopIds": [
+        "UQLA",
+        "TOOW",
+        "INDR"
+      ],
+      "modes": [
+        "bus",
+        "train"
+      ],
+      "notes": "University and western corridor interchange cluster.",
+      "connectedInterchanges": [
+        "bne-cbd-core",
+        "bne-southbank"
+      ]
+    },
+    {
+      "id": "bne-east",
+      "region": "brisbane",
+      "name": "Carindale East Node",
       "type": "medium",
-      "stopIds": ["UQLA"],
-      "modes": ["bus"],
-      "notes": "University-facing node for route 66.",
-      "connectedInterchanges": ["bne-southbank"]
+      "stopIds": [
+        "CARI"
+      ],
+      "modes": [
+        "bus"
+      ],
+      "notes": "Eastern interchange node connected to cross-city route 222.",
+      "connectedInterchanges": [
+        "bne-south-east"
+      ]
+    },
+    {
+      "id": "lgn-north",
+      "region": "logan",
+      "name": "Springwood North Cluster",
+      "type": "major",
+      "stopIds": [
+        "SPRW",
+        "SHLR"
+      ],
+      "modes": [
+        "bus"
+      ],
+      "notes": "North Logan corridor entry node.",
+      "connectedInterchanges": [
+        "lgn-hyperdome",
+        "lgn-west"
+      ]
+    },
+    {
+      "id": "lgn-hyperdome",
+      "region": "logan",
+      "name": "Hyperdome Core",
+      "type": "major",
+      "stopIds": [
+        "HYPR",
+        "LGHM"
+      ],
+      "modes": [
+        "bus"
+      ],
+      "notes": "Primary Logan transfer center for all sample Logan routes.",
+      "connectedInterchanges": [
+        "lgn-north",
+        "lgn-south-rail",
+        "lgn-west"
+      ]
+    },
+    {
+      "id": "lgn-south-rail",
+      "region": "logan",
+      "name": "South Rail Pair",
+      "type": "major",
+      "stopIds": [
+        "BNLG",
+        "MEAD"
+      ],
+      "modes": [
+        "train",
+        "bus"
+      ],
+      "notes": "Rail-linked southern Logan interchange pair.",
+      "connectedInterchanges": [
+        "lgn-hyperdome"
+      ]
+    },
+    {
+      "id": "lgn-west",
+      "region": "logan",
+      "name": "Browns Plains West Node",
+      "type": "medium",
+      "stopIds": [
+        "BRPL",
+        "MARS"
+      ],
+      "modes": [
+        "bus"
+      ],
+      "notes": "West Logan corridor node for route 571.",
+      "connectedInterchanges": [
+        "lgn-north",
+        "lgn-hyperdome"
+      ]
     }
   ]
 }

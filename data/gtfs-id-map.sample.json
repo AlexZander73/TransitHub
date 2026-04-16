@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "notes": "Optional explicit mapping from provider GTFS/GTFS-RT IDs to CoastPulse local IDs. Copy to data/gtfs-id-map.json for use by build-live-from-gtfsrt.mjs."
+  },
+  "routes": {
+    "GLINK": "GL",
+    "700": "700",
+    "777": "777",
+    "760": "760",
+    "750": "750",
+    "66": "66",
+    "111": "111",
+    "330": "330",
+    "169": "169",
+    "222": "222",
+    "333": "333",
+    "444": "444",
+    "555": "555",
+    "560": "560",
+    "571": "571"
+  },
+  "stops": {
+    "HEL": "HEL",
+    "BBS": "BBS",
+    "ROMA": "ROMA",
+    "CULT": "CULT",
+    "QSTN": "QSTN",
+    "EMPS": "EMPS",
+    "HYPR": "HYPR",
+    "SPRW": "SPRW"
+  },
+  "tripHeadsigns": {
+    "sample-trip-id": "Sample destination override"
+  }
+}

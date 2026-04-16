@@ -3,7 +3,7 @@
 ## Near-term
 
 - Expand Gold Coast stop coverage with denser bus stop groups
-- Add richer Brisbane preview routes and stop groups
+- Expand Logan preview coverage and introduce Ipswich starter corridors
 - Add per-route first/last service summary rows
 - Add favorite-alert matching (alerts impacting saved stops/routes)
 
@@ -18,7 +18,7 @@
 
 - GTFS import automation pipeline with schema validation gates
 - Optional lightweight proxy for cleaner live feed normalization
-- Wider SEQ rollout: Logan, Sunshine Coast, Ipswich
+- Wider SEQ rollout: Sunshine Coast, Ipswich, Redlands
 - Progressive enhancement toward transfer planner (only when reliable and honest)
 
 ## Intentionally out of scope (for now)

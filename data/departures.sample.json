@@ -1,72 +1,537 @@
 {
   "meta": {
     "source": "sample-snapshot",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "generatedAt": "2026-04-17T09:00:00+10:00",
     "staleAfterMinutes": 8,
-    "notes": "Representative sample departures. Used when live feed data is unavailable."
+    "notes": "Representative sample departures across Gold Coast, Brisbane, and Logan regions. Used when live feed data is unavailable."
   },
   "stops": {
     "HEL": [
-      { "tripId": "GL-SB-1", "routeId": "GL", "headsign": "Broadbeach South", "inMinutes": 2, "platform": "Tram A", "status": "on_time" },
-      { "tripId": "760-SB-2", "routeId": "760", "headsign": "Robina Station", "inMinutes": 7, "platform": "Bay 3", "status": "on_time" },
-      { "tripId": "777-SB-3", "routeId": "777", "headsign": "Varsity Lakes Station", "inMinutes": 11, "platform": "Bay 5", "status": "minor_delay", "delayMinutes": 3 },
-      { "tripId": "750-SB-4", "routeId": "750", "headsign": "Cavill Avenue", "inMinutes": 16, "platform": "Bay 6", "status": "on_time" }
+      {
+        "tripId": "GL-SB-1",
+        "routeId": "GL",
+        "headsign": "Broadbeach South",
+        "inMinutes": 2,
+        "platform": "Tram A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "760-SB-2",
+        "routeId": "760",
+        "headsign": "Robina Station",
+        "inMinutes": 7,
+        "platform": "Bay 3",
+        "status": "on_time"
+      },
+      {
+        "tripId": "777-SB-3",
+        "routeId": "777",
+        "headsign": "Varsity Lakes Station",
+        "inMinutes": 11,
+        "platform": "Bay 5",
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "750-SB-4",
+        "routeId": "750",
+        "headsign": "Cavill Avenue",
+        "inMinutes": 16,
+        "platform": "Bay 6",
+        "status": "on_time"
+      }
     ],
     "SOUTH": [
-      { "tripId": "GL-SB-7", "routeId": "GL", "headsign": "Broadbeach South", "inMinutes": 3, "platform": "Tram A", "status": "on_time" },
-      { "tripId": "700-SB-8", "routeId": "700", "headsign": "Tugun Village", "inMinutes": 5, "platform": "Bay 2", "status": "on_time" },
-      { "tripId": "777-SB-9", "routeId": "777", "headsign": "Varsity Lakes Station", "inMinutes": 13, "platform": "Bay 4", "status": "on_time" },
-      { "tripId": "GL-NB-10", "routeId": "GL", "headsign": "Helensvale", "inMinutes": 4, "platform": "Tram B", "status": "on_time" }
+      {
+        "tripId": "GL-SB-7",
+        "routeId": "GL",
+        "headsign": "Broadbeach South",
+        "inMinutes": 3,
+        "platform": "Tram A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "700-SB-8",
+        "routeId": "700",
+        "headsign": "Tugun Village",
+        "inMinutes": 5,
+        "platform": "Bay 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "777-SB-9",
+        "routeId": "777",
+        "headsign": "Varsity Lakes Station",
+        "inMinutes": 13,
+        "platform": "Bay 4",
+        "status": "on_time"
+      },
+      {
+        "tripId": "GL-NB-10",
+        "routeId": "GL",
+        "headsign": "Helensvale",
+        "inMinutes": 4,
+        "platform": "Tram B",
+        "status": "on_time"
+      }
     ],
     "CAVILL": [
-      { "tripId": "GL-SB-11", "routeId": "GL", "headsign": "Broadbeach South", "inMinutes": 2, "platform": "Tram A", "status": "on_time" },
-      { "tripId": "700-SB-12", "routeId": "700", "headsign": "Tugun Village", "inMinutes": 9, "platform": "Bay 1", "status": "on_time" },
-      { "tripId": "750-NB-13", "routeId": "750", "headsign": "Coomera Station", "inMinutes": 15, "platform": "Bay 6", "status": "on_time" }
+      {
+        "tripId": "GL-SB-11",
+        "routeId": "GL",
+        "headsign": "Broadbeach South",
+        "inMinutes": 2,
+        "platform": "Tram A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "700-SB-12",
+        "routeId": "700",
+        "headsign": "Tugun Village",
+        "inMinutes": 9,
+        "platform": "Bay 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "750-NB-13",
+        "routeId": "750",
+        "headsign": "Coomera Station",
+        "inMinutes": 15,
+        "platform": "Bay 6",
+        "status": "on_time"
+      }
     ],
     "BBS": [
-      { "tripId": "GL-NB-14", "routeId": "GL", "headsign": "Helensvale", "inMinutes": 1, "platform": "Tram B", "status": "on_time" },
-      { "tripId": "GL-SB-15", "routeId": "GL", "headsign": "Broadbeach South", "inMinutes": 8, "platform": "Tram A", "status": "on_time" },
-      { "tripId": "700-SB-16", "routeId": "700", "headsign": "Tugun Village", "inMinutes": 6, "platform": "Bay 2", "status": "on_time" },
-      { "tripId": "760-NB-17", "routeId": "760", "headsign": "Helensvale Interchange", "inMinutes": 12, "platform": "Bay 5", "status": "minor_delay", "delayMinutes": 4 },
-      { "tripId": "777-SB-18", "routeId": "777", "headsign": "Varsity Lakes Station", "inMinutes": 18, "platform": "Bay 7", "status": "on_time" }
+      {
+        "tripId": "GL-NB-14",
+        "routeId": "GL",
+        "headsign": "Helensvale",
+        "inMinutes": 1,
+        "platform": "Tram B",
+        "status": "on_time"
+      },
+      {
+        "tripId": "GL-SB-15",
+        "routeId": "GL",
+        "headsign": "Broadbeach South",
+        "inMinutes": 8,
+        "platform": "Tram A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "700-SB-16",
+        "routeId": "700",
+        "headsign": "Tugun Village",
+        "inMinutes": 6,
+        "platform": "Bay 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "760-NB-17",
+        "routeId": "760",
+        "headsign": "Helensvale Interchange",
+        "inMinutes": 12,
+        "platform": "Bay 5",
+        "status": "minor_delay",
+        "delayMinutes": 4
+      },
+      {
+        "tripId": "777-SB-18",
+        "routeId": "777",
+        "headsign": "Varsity Lakes Station",
+        "inMinutes": 18,
+        "platform": "Bay 7",
+        "status": "on_time"
+      }
     ],
     "PFI": [
-      { "tripId": "760-NB-20", "routeId": "760", "headsign": "Helensvale Interchange", "inMinutes": 4, "platform": "Bay 4", "status": "on_time" },
-      { "tripId": "760-SB-21", "routeId": "760", "headsign": "Robina Station", "inMinutes": 16, "platform": "Bay 4", "status": "on_time" },
-      { "tripId": "700-SB-22", "routeId": "700", "headsign": "Tugun Village", "inMinutes": 11, "platform": "Bay 1", "status": "on_time" }
+      {
+        "tripId": "760-NB-20",
+        "routeId": "760",
+        "headsign": "Helensvale Interchange",
+        "inMinutes": 4,
+        "platform": "Bay 4",
+        "status": "on_time"
+      },
+      {
+        "tripId": "760-SB-21",
+        "routeId": "760",
+        "headsign": "Robina Station",
+        "inMinutes": 16,
+        "platform": "Bay 4",
+        "status": "on_time"
+      },
+      {
+        "tripId": "700-SB-22",
+        "routeId": "700",
+        "headsign": "Tugun Village",
+        "inMinutes": 11,
+        "platform": "Bay 1",
+        "status": "on_time"
+      }
     ],
     "BURLEIGH": [
-      { "tripId": "700-SB-23", "routeId": "700", "headsign": "Tugun Village", "inMinutes": 4, "platform": "Bay 2", "status": "on_time" },
-      { "tripId": "777-NB-24", "routeId": "777", "headsign": "Helensvale Interchange", "inMinutes": 9, "platform": "Bay 5", "status": "on_time" },
-      { "tripId": "760-SB-25", "routeId": "760", "headsign": "Robina Station", "inMinutes": 7, "platform": "Bay 3", "status": "on_time" }
+      {
+        "tripId": "700-SB-23",
+        "routeId": "700",
+        "headsign": "Tugun Village",
+        "inMinutes": 4,
+        "platform": "Bay 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "777-NB-24",
+        "routeId": "777",
+        "headsign": "Helensvale Interchange",
+        "inMinutes": 9,
+        "platform": "Bay 5",
+        "status": "on_time"
+      },
+      {
+        "tripId": "760-SB-25",
+        "routeId": "760",
+        "headsign": "Robina Station",
+        "inMinutes": 7,
+        "platform": "Bay 3",
+        "status": "on_time"
+      }
     ],
     "ROBINA": [
-      { "tripId": "760-NB-26", "routeId": "760", "headsign": "Helensvale Interchange", "inMinutes": 3, "platform": "Bay 1", "status": "on_time" },
-      { "tripId": "760-NB-27", "routeId": "760", "headsign": "Helensvale Interchange", "inMinutes": 23, "platform": "Bay 1", "status": "on_time" }
+      {
+        "tripId": "760-NB-26",
+        "routeId": "760",
+        "headsign": "Helensvale Interchange",
+        "inMinutes": 3,
+        "platform": "Bay 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "760-NB-27",
+        "routeId": "760",
+        "headsign": "Helensvale Interchange",
+        "inMinutes": 23,
+        "platform": "Bay 1",
+        "status": "on_time"
+      }
     ],
-
     "ROMA": [
-      { "tripId": "66-IN-1", "routeId": "66", "headsign": "RBWH Station", "inMinutes": 3, "platform": "Platform C", "status": "on_time" },
-      { "tripId": "111-SB-2", "routeId": "111", "headsign": "Garden City", "inMinutes": 6, "platform": "Platform 1", "status": "on_time" },
-      { "tripId": "330-SB-3", "routeId": "330", "headsign": "Woolloongabba", "inMinutes": 11, "platform": "Platform 2", "status": "on_time" }
+      {
+        "tripId": "66-IN-1",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "inMinutes": 3,
+        "platform": "Platform C",
+        "status": "on_time"
+      },
+      {
+        "tripId": "111-SB-2",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "inMinutes": 6,
+        "platform": "Platform 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "330-SB-3",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "inMinutes": 11,
+        "platform": "Platform 2",
+        "status": "on_time"
+      }
     ],
     "KING": [
-      { "tripId": "66-IN-4", "routeId": "66", "headsign": "RBWH Station", "inMinutes": 2, "platform": "Stop 1", "status": "on_time" },
-      { "tripId": "111-SB-5", "routeId": "111", "headsign": "Garden City", "inMinutes": 5, "platform": "Stop 2", "status": "on_time" },
-      { "tripId": "111-NB-6", "routeId": "111", "headsign": "Roma Street", "inMinutes": 9, "platform": "Stop 4", "status": "on_time" }
+      {
+        "tripId": "66-IN-4",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "inMinutes": 2,
+        "platform": "Stop 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "111-SB-5",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "inMinutes": 5,
+        "platform": "Stop 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "111-NB-6",
+        "routeId": "111",
+        "headsign": "Roma Street",
+        "inMinutes": 9,
+        "platform": "Stop 4",
+        "status": "on_time"
+      }
     ],
     "CULT": [
-      { "tripId": "66-IN-7", "routeId": "66", "headsign": "RBWH Station", "inMinutes": 4, "platform": "Platform A", "status": "on_time" },
-      { "tripId": "111-SB-8", "routeId": "111", "headsign": "Garden City", "inMinutes": 6, "platform": "Platform D", "status": "on_time" },
-      { "tripId": "66-OUT-9", "routeId": "66", "headsign": "UQ Lakes", "inMinutes": 8, "platform": "Platform B", "status": "on_time" }
+      {
+        "tripId": "66-IN-7",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "inMinutes": 4,
+        "platform": "Platform A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "111-SB-8",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "inMinutes": 6,
+        "platform": "Platform D",
+        "status": "on_time"
+      },
+      {
+        "tripId": "66-OUT-9",
+        "routeId": "66",
+        "headsign": "UQ Lakes",
+        "inMinutes": 8,
+        "platform": "Platform B",
+        "status": "on_time"
+      }
     ],
     "WOOL": [
-      { "tripId": "111-SB-10", "routeId": "111", "headsign": "Garden City", "inMinutes": 3, "platform": "Platform 3", "status": "on_time" },
-      { "tripId": "330-NB-11", "routeId": "330", "headsign": "Eagle Junction", "inMinutes": 7, "platform": "Platform 5", "status": "minor_delay", "delayMinutes": 2 }
+      {
+        "tripId": "111-SB-10",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "inMinutes": 3,
+        "platform": "Platform 3",
+        "status": "on_time"
+      },
+      {
+        "tripId": "330-NB-11",
+        "routeId": "330",
+        "headsign": "Eagle Junction",
+        "inMinutes": 7,
+        "platform": "Platform 5",
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
     ],
     "RBWH": [
-      { "tripId": "66-OUT-12", "routeId": "66", "headsign": "UQ Lakes", "inMinutes": 4, "platform": "Platform E", "status": "on_time" },
-      { "tripId": "330-SB-13", "routeId": "330", "headsign": "Woolloongabba", "inMinutes": 9, "platform": "Platform B", "status": "on_time" }
+      {
+        "tripId": "66-OUT-12",
+        "routeId": "66",
+        "headsign": "UQ Lakes",
+        "inMinutes": 4,
+        "platform": "Platform E",
+        "status": "on_time"
+      },
+      {
+        "tripId": "330-SB-13",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "inMinutes": 9,
+        "platform": "Platform B",
+        "status": "on_time"
+      }
+    ],
+    "QSTN": [
+      {
+        "tripId": "66-IN-20",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "inMinutes": 2,
+        "platform": "Platform 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "111-SB-21",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "inMinutes": 4,
+        "platform": "Platform 3",
+        "status": "on_time"
+      },
+      {
+        "tripId": "333-SB-22",
+        "routeId": "333",
+        "headsign": "Boggo Road Station",
+        "inMinutes": 7,
+        "platform": "Platform 5",
+        "status": "on_time"
+      },
+      {
+        "tripId": "444-IN-23",
+        "routeId": "444",
+        "headsign": "Roma Street",
+        "inMinutes": 10,
+        "platform": "Platform 2",
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "CHMS": [
+      {
+        "tripId": "330-SB-24",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "inMinutes": 3,
+        "platform": "Stand A",
+        "status": "on_time"
+      },
+      {
+        "tripId": "333-SB-25",
+        "routeId": "333",
+        "headsign": "Boggo Road Station",
+        "inMinutes": 5,
+        "platform": "Stand C",
+        "status": "on_time"
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "111-NB-26",
+        "routeId": "111",
+        "headsign": "Roma Street",
+        "inMinutes": 6,
+        "platform": "Bay 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "169-NB-27",
+        "routeId": "169",
+        "headsign": "UQ Lakes",
+        "inMinutes": 8,
+        "platform": "Bay 4",
+        "status": "on_time"
+      }
+    ],
+    "TOOW": [
+      {
+        "tripId": "66-IN-28",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "inMinutes": 4,
+        "platform": "Stop B",
+        "status": "on_time"
+      },
+      {
+        "tripId": "444-IN-29",
+        "routeId": "444",
+        "headsign": "Roma Street",
+        "inMinutes": 9,
+        "platform": "Stop D",
+        "status": "on_time"
+      },
+      {
+        "tripId": "222-WB-30",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "inMinutes": 12,
+        "platform": "Stop C",
+        "status": "on_time"
+      }
+    ],
+    "CARI": [
+      {
+        "tripId": "222-WB-31",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "inMinutes": 5,
+        "platform": "Stand 6",
+        "status": "on_time"
+      },
+      {
+        "tripId": "222-WB-32",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "inMinutes": 20,
+        "platform": "Stand 6",
+        "status": "on_time"
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "555-SB-40",
+        "routeId": "555",
+        "headsign": "Beenleigh Station",
+        "inMinutes": 3,
+        "platform": "Bay 1",
+        "status": "on_time"
+      },
+      {
+        "tripId": "560-SB-41",
+        "routeId": "560",
+        "headsign": "Meadowbrook Station",
+        "inMinutes": 9,
+        "platform": "Bay 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "571-SB-42",
+        "routeId": "571",
+        "headsign": "Browns Plains Station",
+        "inMinutes": 15,
+        "platform": "Bay 5",
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "HYPR": [
+      {
+        "tripId": "555-SB-43",
+        "routeId": "555",
+        "headsign": "Beenleigh Station",
+        "inMinutes": 4,
+        "platform": "Bay 3",
+        "status": "on_time"
+      },
+      {
+        "tripId": "560-NB-44",
+        "routeId": "560",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 6,
+        "platform": "Bay 7",
+        "status": "on_time"
+      },
+      {
+        "tripId": "571-NB-45",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 11,
+        "platform": "Bay 4",
+        "status": "on_time"
+      }
+    ],
+    "BNLG": [
+      {
+        "tripId": "555-NB-46",
+        "routeId": "555",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 5,
+        "platform": "Station Bay 2",
+        "status": "on_time"
+      },
+      {
+        "tripId": "555-NB-47",
+        "routeId": "555",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 24,
+        "platform": "Station Bay 2",
+        "status": "on_time"
+      }
+    ],
+    "BRPL": [
+      {
+        "tripId": "571-NB-48",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 7,
+        "platform": "Stand 9",
+        "status": "on_time"
+      },
+      {
+        "tripId": "571-NB-49",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "inMinutes": 27,
+        "platform": "Stand 9",
+        "status": "on_time"
+      }
     ]
   }
 }

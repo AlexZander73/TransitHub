@@ -1,9 +1,9 @@
 {
   "meta": {
     "dataset": "seq-core-stops",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0",
-    "notes": "Representative sample data for an unofficial static-first transit viewer. Gold Coast is detailed; Brisbane is scaffolded for expansion."
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0",
+    "notes": "Representative multi-region sample for Gold Coast, Brisbane, and Logan. Structured for static-first expansion across SEQ."
   },
   "stops": [
     {
@@ -12,15 +12,32 @@
       "name": "Helensvale Interchange",
       "code": "HEL",
       "type": "interchange",
-      "modes": ["tram", "train", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.9191,
       "lon": 153.3327,
-      "map": { "x": 210, "y": 130 },
-      "routes": ["GL", "777", "760", "750"],
+      "map": {
+        "x": 210,
+        "y": 130
+      },
+      "routes": [
+        "GL",
+        "777",
+        "760",
+        "750"
+      ],
       "importance": "major",
       "suburb": "Helensvale",
       "interchangeId": "gc-helensvale",
-      "nearbyStopIds": ["PARK", "GRIF", "COOMERA"]
+      "nearbyStopIds": [
+        "PARK",
+        "GRIF",
+        "COOMERA"
+      ]
     },
     {
       "id": "PARK",
@@ -28,14 +45,24 @@
       "name": "Parkwood",
       "code": "PRK",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -27.9323,
       "lon": 153.3634,
-      "map": { "x": 235, "y": 225 },
-      "routes": ["GL"],
+      "map": {
+        "x": 235,
+        "y": 225
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Parkwood",
-      "nearbyStopIds": ["HEL", "GRIF"]
+      "nearbyStopIds": [
+        "HEL",
+        "GRIF"
+      ]
     },
     {
       "id": "GRIF",
@@ -43,15 +70,29 @@
       "name": "Griffith University",
       "code": "GFU",
       "type": "interchange",
-      "modes": ["tram", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.9621,
       "lon": 153.3767,
-      "map": { "x": 275, "y": 315 },
-      "routes": ["GL", "760", "777"],
+      "map": {
+        "x": 275,
+        "y": 315
+      },
+      "routes": [
+        "GL",
+        "760",
+        "777"
+      ],
       "importance": "major",
       "suburb": "Southport",
       "interchangeId": "gc-health-edu",
-      "nearbyStopIds": ["PARK", "GCUH"]
+      "nearbyStopIds": [
+        "PARK",
+        "GCUH"
+      ]
     },
     {
       "id": "GCUH",
@@ -59,15 +100,30 @@
       "name": "Gold Coast University Hospital",
       "code": "GCH",
       "type": "interchange",
-      "modes": ["tram", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.9683,
       "lon": 153.3837,
-      "map": { "x": 312, "y": 410 },
-      "routes": ["GL", "760", "777"],
+      "map": {
+        "x": 312,
+        "y": 410
+      },
+      "routes": [
+        "GL",
+        "760",
+        "777"
+      ],
       "importance": "major",
       "suburb": "Southport",
       "interchangeId": "gc-health-edu",
-      "nearbyStopIds": ["GRIF", "SOUTH", "HARBOUR"]
+      "nearbyStopIds": [
+        "GRIF",
+        "SOUTH",
+        "HARBOUR"
+      ]
     },
     {
       "id": "SOUTH",
@@ -75,15 +131,32 @@
       "name": "Southport",
       "code": "STH",
       "type": "interchange",
-      "modes": ["tram", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.9744,
       "lon": 153.4111,
-      "map": { "x": 370, "y": 525 },
-      "routes": ["GL", "700", "777", "750"],
+      "map": {
+        "x": 370,
+        "y": 525
+      },
+      "routes": [
+        "GL",
+        "700",
+        "777",
+        "750"
+      ],
       "importance": "major",
       "suburb": "Southport",
       "interchangeId": "gc-southport-core",
-      "nearbyStopIds": ["GCUH", "SOUTHS", "HARBOUR", "CAVILL"]
+      "nearbyStopIds": [
+        "GCUH",
+        "SOUTHS",
+        "HARBOUR",
+        "CAVILL"
+      ]
     },
     {
       "id": "SOUTHS",
@@ -91,14 +164,24 @@
       "name": "Southport South",
       "code": "SPS",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -27.9854,
       "lon": 153.4124,
-      "map": { "x": 420, "y": 615 },
-      "routes": ["GL"],
+      "map": {
+        "x": 420,
+        "y": 615
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Southport",
-      "nearbyStopIds": ["SOUTH", "NERANG"]
+      "nearbyStopIds": [
+        "SOUTH",
+        "NERANG"
+      ]
     },
     {
       "id": "NERANG",
@@ -106,14 +189,24 @@
       "name": "Nerang Street",
       "code": "NRS",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -27.9961,
       "lon": 153.4182,
-      "map": { "x": 460, "y": 700 },
-      "routes": ["GL"],
+      "map": {
+        "x": 460,
+        "y": 700
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Southport",
-      "nearbyStopIds": ["SOUTHS", "CAVILL"]
+      "nearbyStopIds": [
+        "SOUTHS",
+        "CAVILL"
+      ]
     },
     {
       "id": "CAVILL",
@@ -121,15 +214,30 @@
       "name": "Cavill Avenue",
       "code": "CAV",
       "type": "interchange",
-      "modes": ["tram", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0022,
       "lon": 153.4308,
-      "map": { "x": 535, "y": 790 },
-      "routes": ["GL", "700", "750"],
+      "map": {
+        "x": 535,
+        "y": 790
+      },
+      "routes": [
+        "GL",
+        "700",
+        "750"
+      ],
       "importance": "major",
       "suburb": "Surfers Paradise",
       "interchangeId": "gc-surfers",
-      "nearbyStopIds": ["NERANG", "SPN", "SOUTH"]
+      "nearbyStopIds": [
+        "NERANG",
+        "SPN",
+        "SOUTH"
+      ]
     },
     {
       "id": "SPN",
@@ -137,14 +245,24 @@
       "name": "Surfers Paradise North",
       "code": "SPN",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -28.0078,
       "lon": 153.4324,
-      "map": { "x": 575, "y": 870 },
-      "routes": ["GL"],
+      "map": {
+        "x": 575,
+        "y": 870
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Surfers Paradise",
-      "nearbyStopIds": ["CAVILL", "CYP"]
+      "nearbyStopIds": [
+        "CAVILL",
+        "CYP"
+      ]
     },
     {
       "id": "CYP",
@@ -152,14 +270,24 @@
       "name": "Cypress Avenue",
       "code": "CYP",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -28.0124,
       "lon": 153.4314,
-      "map": { "x": 595, "y": 940 },
-      "routes": ["GL"],
+      "map": {
+        "x": 595,
+        "y": 940
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Surfers Paradise",
-      "nearbyStopIds": ["SPN", "NORTH"]
+      "nearbyStopIds": [
+        "SPN",
+        "NORTH"
+      ]
     },
     {
       "id": "NORTH",
@@ -167,14 +295,24 @@
       "name": "Northcliffe",
       "code": "NTH",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -28.0192,
       "lon": 153.4327,
-      "map": { "x": 620, "y": 1010 },
-      "routes": ["GL"],
+      "map": {
+        "x": 620,
+        "y": 1010
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Surfers Paradise",
-      "nearbyStopIds": ["CYP", "FLOR"]
+      "nearbyStopIds": [
+        "CYP",
+        "FLOR"
+      ]
     },
     {
       "id": "FLOR",
@@ -182,14 +320,24 @@
       "name": "Florida Gardens",
       "code": "FLG",
       "type": "tram-stop",
-      "modes": ["tram"],
+      "modes": [
+        "tram"
+      ],
       "lat": -28.0268,
       "lon": 153.4336,
-      "map": { "x": 650, "y": 1085 },
-      "routes": ["GL"],
+      "map": {
+        "x": 650,
+        "y": 1085
+      },
+      "routes": [
+        "GL"
+      ],
       "importance": "local",
       "suburb": "Broadbeach",
-      "nearbyStopIds": ["NORTH", "BBN"]
+      "nearbyStopIds": [
+        "NORTH",
+        "BBN"
+      ]
     },
     {
       "id": "BBN",
@@ -197,14 +345,27 @@
       "name": "Broadbeach North",
       "code": "BBN",
       "type": "interchange",
-      "modes": ["tram", "bus"],
+      "modes": [
+        "tram",
+        "bus"
+      ],
       "lat": -28.0328,
       "lon": 153.4301,
-      "map": { "x": 700, "y": 1175 },
-      "routes": ["GL", "700"],
+      "map": {
+        "x": 700,
+        "y": 1175
+      },
+      "routes": [
+        "GL",
+        "700"
+      ],
       "importance": "major",
       "suburb": "Broadbeach",
-      "nearbyStopIds": ["FLOR", "BBS", "PFI"]
+      "nearbyStopIds": [
+        "FLOR",
+        "BBS",
+        "PFI"
+      ]
     },
     {
       "id": "BBS",
@@ -212,15 +373,31 @@
       "name": "Broadbeach South Interchange",
       "code": "BBS",
       "type": "interchange",
-      "modes": ["tram", "bus", "interchange"],
+      "modes": [
+        "tram",
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0348,
       "lon": 153.4202,
-      "map": { "x": 770, "y": 1275 },
-      "routes": ["GL", "700", "777", "760"],
+      "map": {
+        "x": 770,
+        "y": 1275
+      },
+      "routes": [
+        "GL",
+        "700",
+        "777",
+        "760"
+      ],
       "importance": "major",
       "suburb": "Broadbeach",
       "interchangeId": "gc-broadbeach",
-      "nearbyStopIds": ["BBN", "PFI", "BURLEIGH"]
+      "nearbyStopIds": [
+        "BBN",
+        "PFI",
+        "BURLEIGH"
+      ]
     },
     {
       "id": "PFI",
@@ -228,15 +405,29 @@
       "name": "Pacific Fair Interchange",
       "code": "PFI",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0344,
       "lon": 153.4034,
-      "map": { "x": 715, "y": 1305 },
-      "routes": ["700", "777", "760"],
+      "map": {
+        "x": 715,
+        "y": 1305
+      },
+      "routes": [
+        "700",
+        "777",
+        "760"
+      ],
       "importance": "major",
       "suburb": "Broadbeach Waters",
       "interchangeId": "gc-broadbeach",
-      "nearbyStopIds": ["BBS", "BBN", "ROBINA"]
+      "nearbyStopIds": [
+        "BBS",
+        "BBN",
+        "ROBINA"
+      ]
     },
     {
       "id": "HARBOUR",
@@ -244,15 +435,27 @@
       "name": "Harbour Town Interchange",
       "code": "HTI",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -27.9572,
       "lon": 153.3618,
-      "map": { "x": 190, "y": 490 },
-      "routes": ["700", "750"],
+      "map": {
+        "x": 190,
+        "y": 490
+      },
+      "routes": [
+        "700",
+        "750"
+      ],
       "importance": "major",
       "suburb": "Biggera Waters",
       "interchangeId": "gc-harbour",
-      "nearbyStopIds": ["SOUTH", "GCUH"]
+      "nearbyStopIds": [
+        "SOUTH",
+        "GCUH"
+      ]
     },
     {
       "id": "BURLEIGH",
@@ -260,15 +463,29 @@
       "name": "Burleigh Heads Centre",
       "code": "BHC",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0956,
       "lon": 153.4549,
-      "map": { "x": 870, "y": 1410 },
-      "routes": ["700", "777", "760"],
+      "map": {
+        "x": 870,
+        "y": 1410
+      },
+      "routes": [
+        "700",
+        "777",
+        "760"
+      ],
       "importance": "major",
       "suburb": "Burleigh Heads",
       "interchangeId": "gc-burleigh",
-      "nearbyStopIds": ["BBS", "VLKS", "TUGUN"]
+      "nearbyStopIds": [
+        "BBS",
+        "VLKS",
+        "TUGUN"
+      ]
     },
     {
       "id": "TUGUN",
@@ -276,14 +493,24 @@
       "name": "Tugun Village",
       "code": "TGV",
       "type": "bus-stop",
-      "modes": ["bus"],
+      "modes": [
+        "bus"
+      ],
       "lat": -28.1493,
       "lon": 153.4885,
-      "map": { "x": 950, "y": 1525 },
-      "routes": ["700", "777"],
+      "map": {
+        "x": 950,
+        "y": 1525
+      },
+      "routes": [
+        "700",
+        "777"
+      ],
       "importance": "local",
       "suburb": "Tugun",
-      "nearbyStopIds": ["BURLEIGH"]
+      "nearbyStopIds": [
+        "BURLEIGH"
+      ]
     },
     {
       "id": "ROBINA",
@@ -291,15 +518,27 @@
       "name": "Robina Station",
       "code": "RBS",
       "type": "station",
-      "modes": ["train", "bus", "interchange"],
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0736,
       "lon": 153.3867,
-      "map": { "x": 550, "y": 1380 },
-      "routes": ["760"],
+      "map": {
+        "x": 550,
+        "y": 1380
+      },
+      "routes": [
+        "760"
+      ],
       "importance": "major",
       "suburb": "Robina",
       "interchangeId": "gc-rail-south",
-      "nearbyStopIds": ["VLKS", "PFI"]
+      "nearbyStopIds": [
+        "VLKS",
+        "PFI"
+      ]
     },
     {
       "id": "COOMERA",
@@ -307,15 +546,26 @@
       "name": "Coomera Station",
       "code": "COO",
       "type": "station",
-      "modes": ["train", "bus", "interchange"],
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.8535,
       "lon": 153.3131,
-      "map": { "x": 160, "y": 55 },
-      "routes": ["750"],
+      "map": {
+        "x": 160,
+        "y": 55
+      },
+      "routes": [
+        "750"
+      ],
       "importance": "major",
       "suburb": "Coomera",
       "interchangeId": "gc-rail-north",
-      "nearbyStopIds": ["HEL"],
+      "nearbyStopIds": [
+        "HEL"
+      ],
       "status": "future-expandable"
     },
     {
@@ -324,32 +574,61 @@
       "name": "Varsity Lakes Station",
       "code": "VLK",
       "type": "station",
-      "modes": ["train", "bus", "interchange"],
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -28.0789,
       "lon": 153.4134,
-      "map": { "x": 640, "y": 1465 },
-      "routes": ["760", "777"],
+      "map": {
+        "x": 640,
+        "y": 1465
+      },
+      "routes": [
+        "760",
+        "777"
+      ],
       "importance": "major",
       "suburb": "Varsity Lakes",
       "interchangeId": "gc-rail-south",
-      "nearbyStopIds": ["ROBINA", "BURLEIGH"]
+      "nearbyStopIds": [
+        "ROBINA",
+        "BURLEIGH"
+      ]
     },
-
     {
       "id": "ROMA",
       "region": "brisbane",
       "name": "Roma Street Station",
       "code": "RMS",
       "type": "station",
-      "modes": ["train", "bus", "interchange"],
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.4669,
       "lon": 153.018,
-      "map": { "x": 300, "y": 220 },
-      "routes": ["66", "111", "330"],
+      "map": {
+        "x": 300,
+        "y": 220
+      },
+      "routes": [
+        "66",
+        "111",
+        "330",
+        "444"
+      ],
       "importance": "major",
       "suburb": "Brisbane City",
       "interchangeId": "bne-cbd-core",
-      "nearbyStopIds": ["KING", "CULT", "RBWH"]
+      "nearbyStopIds": [
+        "KING",
+        "QSTN",
+        "RBWH",
+        "FVLY"
+      ]
     },
     {
       "id": "KING",
@@ -357,15 +636,63 @@
       "name": "King George Square",
       "code": "KGS",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -27.4682,
       "lon": 153.0242,
-      "map": { "x": 340, "y": 260 },
-      "routes": ["66", "111"],
+      "map": {
+        "x": 340,
+        "y": 260
+      },
+      "routes": [
+        "66",
+        "111",
+        "444"
+      ],
       "importance": "major",
       "suburb": "Brisbane City",
       "interchangeId": "bne-cbd-core",
-      "nearbyStopIds": ["ROMA", "CULT"]
+      "nearbyStopIds": [
+        "ROMA",
+        "QSTN",
+        "CULT"
+      ]
+    },
+    {
+      "id": "QSTN",
+      "region": "brisbane",
+      "name": "Queen Street Bus Station",
+      "code": "QBS",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.4702,
+      "lon": 153.0267,
+      "map": {
+        "x": 360,
+        "y": 248
+      },
+      "routes": [
+        "66",
+        "111",
+        "222",
+        "330",
+        "333",
+        "444"
+      ],
+      "importance": "major",
+      "suburb": "Brisbane City",
+      "interchangeId": "bne-cbd-core",
+      "nearbyStopIds": [
+        "KING",
+        "ROMA",
+        "CULT",
+        "FVLY"
+      ]
     },
     {
       "id": "CULT",
@@ -373,15 +700,34 @@
       "name": "Cultural Centre",
       "code": "CUL",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -27.4748,
       "lon": 153.0175,
-      "map": { "x": 305, "y": 305 },
-      "routes": ["66", "111"],
+      "map": {
+        "x": 305,
+        "y": 305
+      },
+      "routes": [
+        "66",
+        "111",
+        "169",
+        "222",
+        "333",
+        "444"
+      ],
       "importance": "major",
       "suburb": "South Brisbane",
       "interchangeId": "bne-southbank",
-      "nearbyStopIds": ["ROMA", "KING", "WOOL", "UQLA"]
+      "nearbyStopIds": [
+        "QSTN",
+        "KING",
+        "WOOL",
+        "TOOW",
+        "UQLA"
+      ]
     },
     {
       "id": "RBWH",
@@ -389,15 +735,60 @@
       "name": "RBWH Station",
       "code": "RBW",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -27.4464,
       "lon": 153.0292,
-      "map": { "x": 420, "y": 190 },
-      "routes": ["66", "330"],
+      "map": {
+        "x": 420,
+        "y": 190
+      },
+      "routes": [
+        "66",
+        "330",
+        "333"
+      ],
       "importance": "major",
       "suburb": "Herston",
       "interchangeId": "bne-north-core",
-      "nearbyStopIds": ["ROMA", "CHMS", "EAGL"]
+      "nearbyStopIds": [
+        "ROMA",
+        "FVLY",
+        "CHMS",
+        "NWMR"
+      ]
+    },
+    {
+      "id": "FVLY",
+      "region": "brisbane",
+      "name": "Fortitude Valley Station",
+      "code": "FVS",
+      "type": "station",
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.458,
+      "lon": 153.0346,
+      "map": {
+        "x": 410,
+        "y": 165
+      },
+      "routes": [
+        "330",
+        "333"
+      ],
+      "importance": "major",
+      "suburb": "Fortitude Valley",
+      "interchangeId": "bne-north-core",
+      "nearbyStopIds": [
+        "RBWH",
+        "QSTN",
+        "NWMR"
+      ]
     },
     {
       "id": "CHMS",
@@ -405,63 +796,28 @@
       "name": "Chermside Interchange",
       "code": "CHM",
       "type": "interchange",
-      "modes": ["bus", "interchange"],
+      "modes": [
+        "bus",
+        "interchange"
+      ],
       "lat": -27.3848,
       "lon": 153.0303,
-      "map": { "x": 370, "y": 120 },
-      "routes": ["330"],
+      "map": {
+        "x": 370,
+        "y": 120
+      },
+      "routes": [
+        "330",
+        "333"
+      ],
       "importance": "major",
       "suburb": "Chermside",
       "interchangeId": "bne-north-core",
-      "nearbyStopIds": ["RBWH", "EAGL"]
-    },
-    {
-      "id": "WOOL",
-      "region": "brisbane",
-      "name": "Woolloongabba Busway",
-      "code": "WGB",
-      "type": "interchange",
-      "modes": ["bus", "interchange"],
-      "lat": -27.4928,
-      "lon": 153.0364,
-      "map": { "x": 375, "y": 385 },
-      "routes": ["111", "330"],
-      "importance": "major",
-      "suburb": "Woolloongabba",
-      "interchangeId": "bne-south-east",
-      "nearbyStopIds": ["CULT", "GARD"]
-    },
-    {
-      "id": "GARD",
-      "region": "brisbane",
-      "name": "Garden City Interchange",
-      "code": "GCT",
-      "type": "interchange",
-      "modes": ["bus", "interchange"],
-      "lat": -27.5608,
-      "lon": 153.0819,
-      "map": { "x": 430, "y": 480 },
-      "routes": ["111"],
-      "importance": "major",
-      "suburb": "Upper Mount Gravatt",
-      "interchangeId": "bne-south-east",
-      "nearbyStopIds": ["WOOL"]
-    },
-    {
-      "id": "UQLA",
-      "region": "brisbane",
-      "name": "UQ Lakes",
-      "code": "UQL",
-      "type": "interchange",
-      "modes": ["bus", "interchange"],
-      "lat": -27.497,
-      "lon": 153.0126,
-      "map": { "x": 250, "y": 340 },
-      "routes": ["66"],
-      "importance": "major",
-      "suburb": "St Lucia",
-      "interchangeId": "bne-west",
-      "nearbyStopIds": ["CULT"]
+      "nearbyStopIds": [
+        "RBWH",
+        "EAGL",
+        "NWMR"
+      ]
     },
     {
       "id": "EAGL",
@@ -469,15 +825,580 @@
       "name": "Eagle Junction Station",
       "code": "EGJ",
       "type": "station",
-      "modes": ["train", "bus", "interchange"],
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
       "lat": -27.445,
       "lon": 153.0672,
-      "map": { "x": 440, "y": 80 },
-      "routes": ["330"],
+      "map": {
+        "x": 440,
+        "y": 80
+      },
+      "routes": [
+        "330"
+      ],
       "importance": "major",
       "suburb": "Clayfield",
       "interchangeId": "bne-north-core",
-      "nearbyStopIds": ["RBWH", "CHMS"]
+      "nearbyStopIds": [
+        "CHMS",
+        "RBWH"
+      ]
+    },
+    {
+      "id": "NWMR",
+      "region": "brisbane",
+      "name": "Newmarket Station",
+      "code": "NWM",
+      "type": "station",
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.4362,
+      "lon": 153.0055,
+      "map": {
+        "x": 345,
+        "y": 170
+      },
+      "routes": [
+        "330"
+      ],
+      "importance": "major",
+      "suburb": "Newmarket",
+      "interchangeId": "bne-north-core",
+      "nearbyStopIds": [
+        "RBWH",
+        "FVLY",
+        "CHMS",
+        "ROMA"
+      ]
+    },
+    {
+      "id": "WOOL",
+      "region": "brisbane",
+      "name": "Woolloongabba Busway",
+      "code": "WGB",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.4928,
+      "lon": 153.0364,
+      "map": {
+        "x": 375,
+        "y": 385
+      },
+      "routes": [
+        "111",
+        "222",
+        "330"
+      ],
+      "importance": "major",
+      "suburb": "Woolloongabba",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "CULT",
+        "BURA",
+        "PAHS",
+        "BOGG"
+      ]
+    },
+    {
+      "id": "BURA",
+      "region": "brisbane",
+      "name": "Buranda Station",
+      "code": "BDA",
+      "type": "station",
+      "modes": [
+        "bus",
+        "train",
+        "interchange"
+      ],
+      "lat": -27.4979,
+      "lon": 153.0381,
+      "map": {
+        "x": 385,
+        "y": 420
+      },
+      "routes": [
+        "111",
+        "169"
+      ],
+      "importance": "major",
+      "suburb": "Buranda",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "WOOL",
+        "BOGG",
+        "PAHS"
+      ]
+    },
+    {
+      "id": "BOGG",
+      "region": "brisbane",
+      "name": "Boggo Road Station",
+      "code": "BGR",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "train",
+        "interchange"
+      ],
+      "lat": -27.4953,
+      "lon": 153.0314,
+      "map": {
+        "x": 350,
+        "y": 430
+      },
+      "routes": [
+        "169",
+        "333"
+      ],
+      "importance": "major",
+      "suburb": "Dutton Park",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "WOOL",
+        "BURA",
+        "PAHS",
+        "CULT"
+      ]
+    },
+    {
+      "id": "PAHS",
+      "region": "brisbane",
+      "name": "PA Hospital Station",
+      "code": "PAH",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.4973,
+      "lon": 153.0349,
+      "map": {
+        "x": 390,
+        "y": 455
+      },
+      "routes": [
+        "111",
+        "169"
+      ],
+      "importance": "major",
+      "suburb": "Woolloongabba",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "WOOL",
+        "BURA",
+        "EMPS",
+        "BOGG"
+      ]
+    },
+    {
+      "id": "EMPS",
+      "region": "brisbane",
+      "name": "Eight Mile Plains Station",
+      "code": "EMP",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.5826,
+      "lon": 153.1034,
+      "map": {
+        "x": 470,
+        "y": 560
+      },
+      "routes": [
+        "111",
+        "169"
+      ],
+      "importance": "major",
+      "suburb": "Eight Mile Plains",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "PAHS",
+        "GARD"
+      ]
+    },
+    {
+      "id": "GARD",
+      "region": "brisbane",
+      "name": "Garden City Interchange",
+      "code": "GCT",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.5608,
+      "lon": 153.0819,
+      "map": {
+        "x": 430,
+        "y": 500
+      },
+      "routes": [
+        "111",
+        "169"
+      ],
+      "importance": "major",
+      "suburb": "Upper Mount Gravatt",
+      "interchangeId": "bne-south-east",
+      "nearbyStopIds": [
+        "EMPS",
+        "PAHS"
+      ]
+    },
+    {
+      "id": "UQLA",
+      "region": "brisbane",
+      "name": "UQ Lakes",
+      "code": "UQL",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.497,
+      "lon": 153.0126,
+      "map": {
+        "x": 250,
+        "y": 340
+      },
+      "routes": [
+        "66",
+        "169",
+        "222"
+      ],
+      "importance": "major",
+      "suburb": "St Lucia",
+      "interchangeId": "bne-west",
+      "nearbyStopIds": [
+        "TOOW",
+        "CULT",
+        "INDR"
+      ]
+    },
+    {
+      "id": "TOOW",
+      "region": "brisbane",
+      "name": "Toowong Interchange",
+      "code": "TWN",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "train",
+        "interchange"
+      ],
+      "lat": -27.4854,
+      "lon": 152.992,
+      "map": {
+        "x": 220,
+        "y": 305
+      },
+      "routes": [
+        "66",
+        "222",
+        "444"
+      ],
+      "importance": "major",
+      "suburb": "Toowong",
+      "interchangeId": "bne-west",
+      "nearbyStopIds": [
+        "UQLA",
+        "INDR",
+        "CULT"
+      ]
+    },
+    {
+      "id": "INDR",
+      "region": "brisbane",
+      "name": "Indooroopilly Interchange",
+      "code": "IDP",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.5005,
+      "lon": 152.973,
+      "map": {
+        "x": 180,
+        "y": 335
+      },
+      "routes": [
+        "444"
+      ],
+      "importance": "major",
+      "suburb": "Indooroopilly",
+      "interchangeId": "bne-west",
+      "nearbyStopIds": [
+        "TOOW",
+        "UQLA"
+      ]
+    },
+    {
+      "id": "CARI",
+      "region": "brisbane",
+      "name": "Carindale Interchange",
+      "code": "CAR",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.4999,
+      "lon": 153.1016,
+      "map": {
+        "x": 505,
+        "y": 410
+      },
+      "routes": [
+        "222"
+      ],
+      "importance": "major",
+      "suburb": "Carindale",
+      "interchangeId": "bne-east",
+      "nearbyStopIds": [
+        "WOOL",
+        "PAHS"
+      ]
+    },
+    {
+      "id": "SPRW",
+      "region": "logan",
+      "name": "Springwood Bus Station",
+      "code": "SPR",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6183,
+      "lon": 153.1291,
+      "map": {
+        "x": 900,
+        "y": 320
+      },
+      "routes": [
+        "555",
+        "560",
+        "571"
+      ],
+      "importance": "major",
+      "suburb": "Springwood",
+      "interchangeId": "lgn-north",
+      "nearbyStopIds": [
+        "SHLR",
+        "HYPR"
+      ]
+    },
+    {
+      "id": "SHLR",
+      "region": "logan",
+      "name": "Shailer Park Interchange",
+      "code": "SHL",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6509,
+      "lon": 153.1811,
+      "map": {
+        "x": 960,
+        "y": 380
+      },
+      "routes": [
+        "555",
+        "560",
+        "571"
+      ],
+      "importance": "major",
+      "suburb": "Shailer Park",
+      "interchangeId": "lgn-north",
+      "nearbyStopIds": [
+        "SPRW",
+        "HYPR",
+        "LGHM"
+      ]
+    },
+    {
+      "id": "HYPR",
+      "region": "logan",
+      "name": "Logan Hyperdome Interchange",
+      "code": "HYP",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6638,
+      "lon": 153.1862,
+      "map": {
+        "x": 930,
+        "y": 430
+      },
+      "routes": [
+        "555",
+        "560",
+        "571"
+      ],
+      "importance": "major",
+      "suburb": "Loganholme",
+      "interchangeId": "lgn-hyperdome",
+      "nearbyStopIds": [
+        "SHLR",
+        "SPRW",
+        "LGHM",
+        "MARS"
+      ]
+    },
+    {
+      "id": "LGHM",
+      "region": "logan",
+      "name": "Loganholme Busway",
+      "code": "LHM",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6718,
+      "lon": 153.1774,
+      "map": {
+        "x": 900,
+        "y": 470
+      },
+      "routes": [
+        "555",
+        "560"
+      ],
+      "importance": "major",
+      "suburb": "Loganholme",
+      "interchangeId": "lgn-hyperdome",
+      "nearbyStopIds": [
+        "HYPR",
+        "BNLG",
+        "MEAD"
+      ]
+    },
+    {
+      "id": "BNLG",
+      "region": "logan",
+      "name": "Beenleigh Station",
+      "code": "BNL",
+      "type": "station",
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.7163,
+      "lon": 153.2013,
+      "map": {
+        "x": 955,
+        "y": 560
+      },
+      "routes": [
+        "555"
+      ],
+      "importance": "major",
+      "suburb": "Beenleigh",
+      "interchangeId": "lgn-south-rail",
+      "nearbyStopIds": [
+        "LGHM",
+        "MEAD"
+      ]
+    },
+    {
+      "id": "MEAD",
+      "region": "logan",
+      "name": "Meadowbrook Station",
+      "code": "MDB",
+      "type": "station",
+      "modes": [
+        "train",
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6796,
+      "lon": 153.1117,
+      "map": {
+        "x": 840,
+        "y": 520
+      },
+      "routes": [
+        "560"
+      ],
+      "importance": "major",
+      "suburb": "Meadowbrook",
+      "interchangeId": "lgn-south-rail",
+      "nearbyStopIds": [
+        "LGHM",
+        "BNLG",
+        "MARS"
+      ]
+    },
+    {
+      "id": "BRPL",
+      "region": "logan",
+      "name": "Browns Plains Station",
+      "code": "BRP",
+      "type": "interchange",
+      "modes": [
+        "bus",
+        "interchange"
+      ],
+      "lat": -27.6608,
+      "lon": 153.0418,
+      "map": {
+        "x": 770,
+        "y": 450
+      },
+      "routes": [
+        "571"
+      ],
+      "importance": "major",
+      "suburb": "Browns Plains",
+      "interchangeId": "lgn-west",
+      "nearbyStopIds": [
+        "MARS",
+        "HYPR"
+      ]
+    },
+    {
+      "id": "MARS",
+      "region": "logan",
+      "name": "Marsden Park and Ride",
+      "code": "MSD",
+      "type": "bus-stop",
+      "modes": [
+        "bus"
+      ],
+      "lat": -27.6742,
+      "lon": 153.1084,
+      "map": {
+        "x": 820,
+        "y": 440
+      },
+      "routes": [
+        "571"
+      ],
+      "importance": "local",
+      "suburb": "Marsden",
+      "interchangeId": "lgn-west",
+      "nearbyStopIds": [
+        "BRPL",
+        "HYPR",
+        "MEAD"
+      ]
     }
   ]
 }

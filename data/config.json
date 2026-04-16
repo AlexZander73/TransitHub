@@ -8,8 +8,8 @@
   },
   "regions": {
     "defaultRegion": "gold-coast",
-    "enabled": ["gold-coast", "brisbane"],
-    "planned": ["logan", "sunshine-coast", "ipswich"]
+    "enabled": ["gold-coast", "brisbane", "logan"],
+    "planned": ["sunshine-coast", "ipswich", "redlands"]
   },
   "ui": {
     "defaultMapMode": "stylized",
@@ -29,6 +29,7 @@
   },
   "liveData": {
     "enabled": true,
+    "mode": "snapshot-json",
     "departuresPath": "data/departures.live.json",
     "alertsPath": "data/alerts.live.json",
     "maxAgeMinutes": 20

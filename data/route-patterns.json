@@ -1,105 +1,729 @@
 {
   "meta": {
     "dataset": "seq-route-patterns",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0",
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0",
     "notes": "Patterns are simplified and intended for direct-trip eligibility and route detail UX."
   },
   "patterns": [
     {
-      "id": "GL-SB-ALL",
+      "id": "GL-SOUTHBOUND",
       "routeId": "GL",
       "region": "gold-coast",
       "directionId": "southbound",
-      "name": "Helensvale to Broadbeach South",
+      "name": "Helensvale Interchange to Broadbeach South Interchange",
       "headsign": "Broadbeach South",
-      "stopSequence": ["HEL", "PARK", "GRIF", "GCUH", "SOUTH", "SOUTHS", "NERANG", "CAVILL", "SPN", "CYP", "NORTH", "FLOR", "BBN", "BBS"],
-      "serviceWindow": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+      "stopSequence": [
+        "HEL",
+        "PARK",
+        "GRIF",
+        "GCUH",
+        "SOUTH",
+        "SOUTHS",
+        "NERANG",
+        "CAVILL",
+        "SPN",
+        "CYP",
+        "NORTH",
+        "FLOR",
+        "BBN",
+        "BBS"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:45",
+        "frequencyMins": 7
+      },
       "sampleTripMinutes": 47,
       "status": "active"
     },
     {
-      "id": "GL-NB-ALL",
+      "id": "GL-NORTHBOUND",
       "routeId": "GL",
       "region": "gold-coast",
       "directionId": "northbound",
-      "name": "Broadbeach South to Helensvale",
+      "name": "Broadbeach South Interchange to Helensvale Interchange",
       "headsign": "Helensvale",
-      "stopSequence": ["BBS", "BBN", "FLOR", "NORTH", "CYP", "SPN", "CAVILL", "NERANG", "SOUTHS", "SOUTH", "GCUH", "GRIF", "PARK", "HEL"],
-      "serviceWindow": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+      "stopSequence": [
+        "BBS",
+        "BBN",
+        "FLOR",
+        "NORTH",
+        "CYP",
+        "SPN",
+        "CAVILL",
+        "NERANG",
+        "SOUTHS",
+        "SOUTH",
+        "GCUH",
+        "GRIF",
+        "PARK",
+        "HEL"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:45",
+        "frequencyMins": 7
+      },
       "sampleTripMinutes": 47,
       "status": "active"
     },
     {
-      "id": "700-SB",
+      "id": "700-SOUTHBOUND",
       "routeId": "700",
       "region": "gold-coast",
       "directionId": "southbound",
-      "name": "Harbour Town to Tugun",
+      "name": "Harbour Town Interchange to Tugun Village",
       "headsign": "Tugun Village",
-      "stopSequence": ["HARBOUR", "SOUTH", "CAVILL", "BBN", "BBS", "BURLEIGH", "TUGUN"],
-      "serviceWindow": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
+      "stopSequence": [
+        "HARBOUR",
+        "SOUTH",
+        "CAVILL",
+        "BBN",
+        "BBS",
+        "BURLEIGH",
+        "TUGUN"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "23:10",
+        "frequencyMins": 15
+      },
       "sampleTripMinutes": 59,
       "status": "active"
     },
     {
-      "id": "777-SB",
+      "id": "700-NORTHBOUND",
+      "routeId": "700",
+      "region": "gold-coast",
+      "directionId": "northbound",
+      "name": "Tugun Village to Harbour Town Interchange",
+      "headsign": "Harbour Town",
+      "stopSequence": [
+        "TUGUN",
+        "BURLEIGH",
+        "BBS",
+        "BBN",
+        "CAVILL",
+        "SOUTH",
+        "HARBOUR"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "22:55",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 59,
+      "status": "active"
+    },
+    {
+      "id": "777-SOUTHBOUND",
       "routeId": "777",
       "region": "gold-coast",
       "directionId": "southbound",
-      "name": "Helensvale to Varsity Lakes",
+      "name": "Helensvale Interchange to Varsity Lakes Station",
       "headsign": "Varsity Lakes Station",
-      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN", "VLKS"],
-      "serviceWindow": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
+      "stopSequence": [
+        "HEL",
+        "GCUH",
+        "SOUTH",
+        "BBS",
+        "BURLEIGH",
+        "TUGUN",
+        "VLKS"
+      ],
+      "serviceWindow": {
+        "first": "05:45",
+        "last": "22:45",
+        "frequencyMins": 20
+      },
       "sampleTripMinutes": 80,
       "status": "active"
     },
     {
-      "id": "760-NB",
+      "id": "777-NORTHBOUND",
+      "routeId": "777",
+      "region": "gold-coast",
+      "directionId": "northbound",
+      "name": "Varsity Lakes Station to Helensvale Interchange",
+      "headsign": "Helensvale Interchange",
+      "stopSequence": [
+        "VLKS",
+        "TUGUN",
+        "BURLEIGH",
+        "BBS",
+        "SOUTH",
+        "GCUH",
+        "HEL"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "22:30",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 80,
+      "status": "active"
+    },
+    {
+      "id": "760-NORTHBOUND",
       "routeId": "760",
       "region": "gold-coast",
       "directionId": "northbound",
-      "name": "Robina to Helensvale",
+      "name": "Robina Station to Helensvale Interchange",
       "headsign": "Helensvale Interchange",
-      "stopSequence": ["ROBINA", "VLKS", "BURLEIGH", "PFI", "BBS", "GCUH", "GRIF", "HEL"],
-      "serviceWindow": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
+      "stopSequence": [
+        "ROBINA",
+        "VLKS",
+        "BURLEIGH",
+        "PFI",
+        "BBS",
+        "GCUH",
+        "GRIF",
+        "HEL"
+      ],
+      "serviceWindow": {
+        "first": "05:30",
+        "last": "22:30",
+        "frequencyMins": 20
+      },
       "sampleTripMinutes": 63,
       "status": "active"
     },
     {
-      "id": "66-IN",
+      "id": "760-SOUTHBOUND",
+      "routeId": "760",
+      "region": "gold-coast",
+      "directionId": "southbound",
+      "name": "Helensvale Interchange to Robina Station",
+      "headsign": "Robina Station",
+      "stopSequence": [
+        "HEL",
+        "GRIF",
+        "GCUH",
+        "BBS",
+        "PFI",
+        "BURLEIGH",
+        "VLKS",
+        "ROBINA"
+      ],
+      "serviceWindow": {
+        "first": "05:15",
+        "last": "22:20",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 63,
+      "status": "active"
+    },
+    {
+      "id": "750-SOUTHBOUND",
+      "routeId": "750",
+      "region": "gold-coast",
+      "directionId": "southbound",
+      "name": "Coomera Station to Cavill Avenue",
+      "headsign": "Cavill Avenue",
+      "stopSequence": [
+        "COOMERA",
+        "HEL",
+        "HARBOUR",
+        "SOUTH",
+        "CAVILL"
+      ],
+      "serviceWindow": {
+        "first": "05:25",
+        "last": "21:55",
+        "frequencyMins": 30
+      },
+      "sampleTripMinutes": 52,
+      "status": "active"
+    },
+    {
+      "id": "750-NORTHBOUND",
+      "routeId": "750",
+      "region": "gold-coast",
+      "directionId": "northbound",
+      "name": "Cavill Avenue to Coomera Station",
+      "headsign": "Coomera Station",
+      "stopSequence": [
+        "CAVILL",
+        "SOUTH",
+        "HARBOUR",
+        "HEL",
+        "COOMERA"
+      ],
+      "serviceWindow": {
+        "first": "05:10",
+        "last": "21:40",
+        "frequencyMins": 30
+      },
+      "sampleTripMinutes": 52,
+      "status": "active"
+    },
+    {
+      "id": "66-OUTBOUND",
+      "routeId": "66",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "UQ Lakes to RBWH Station",
+      "headsign": "RBWH Station",
+      "stopSequence": [
+        "UQLA",
+        "TOOW",
+        "CULT",
+        "QSTN",
+        "KING",
+        "ROMA",
+        "RBWH"
+      ],
+      "serviceWindow": {
+        "first": "05:30",
+        "last": "23:30",
+        "frequencyMins": 10
+      },
+      "sampleTripMinutes": 32,
+      "status": "active"
+    },
+    {
+      "id": "66-INBOUND",
       "routeId": "66",
       "region": "brisbane",
       "directionId": "inbound",
-      "name": "UQ Lakes to RBWH",
-      "headsign": "RBWH Station",
-      "stopSequence": ["UQLA", "CULT", "KING", "ROMA", "RBWH"],
-      "serviceWindow": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
-      "sampleTripMinutes": 23,
-      "status": "preview"
+      "name": "RBWH Station to UQ Lakes",
+      "headsign": "UQ Lakes",
+      "stopSequence": [
+        "RBWH",
+        "ROMA",
+        "KING",
+        "QSTN",
+        "CULT",
+        "TOOW",
+        "UQLA"
+      ],
+      "serviceWindow": {
+        "first": "05:30",
+        "last": "23:30",
+        "frequencyMins": 10
+      },
+      "sampleTripMinutes": 32,
+      "status": "active"
     },
     {
-      "id": "111-SB",
+      "id": "111-OUTBOUND",
       "routeId": "111",
       "region": "brisbane",
-      "directionId": "southbound",
-      "name": "Roma Street to Garden City",
+      "directionId": "outbound",
+      "name": "Roma Street Station to Garden City Interchange",
       "headsign": "Garden City",
-      "stopSequence": ["ROMA", "KING", "CULT", "WOOL", "GARD"],
-      "serviceWindow": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
-      "sampleTripMinutes": 37,
+      "stopSequence": [
+        "ROMA",
+        "KING",
+        "QSTN",
+        "CULT",
+        "WOOL",
+        "BURA",
+        "PAHS",
+        "EMPS",
+        "GARD"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:50",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 47,
+      "status": "active"
+    },
+    {
+      "id": "111-INBOUND",
+      "routeId": "111",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "Garden City Interchange to Roma Street Station",
+      "headsign": "Roma Street",
+      "stopSequence": [
+        "GARD",
+        "EMPS",
+        "PAHS",
+        "BURA",
+        "WOOL",
+        "CULT",
+        "QSTN",
+        "KING",
+        "ROMA"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:50",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 47,
+      "status": "active"
+    },
+    {
+      "id": "330-OUTBOUND",
+      "routeId": "330",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "Eagle Junction Station to Woolloongabba Busway",
+      "headsign": "Woolloongabba",
+      "stopSequence": [
+        "EAGL",
+        "CHMS",
+        "NWMR",
+        "RBWH",
+        "FVLY",
+        "QSTN",
+        "ROMA",
+        "WOOL"
+      ],
+      "serviceWindow": {
+        "first": "05:15",
+        "last": "23:15",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 51,
+      "status": "active"
+    },
+    {
+      "id": "330-INBOUND",
+      "routeId": "330",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "Woolloongabba Busway to Eagle Junction Station",
+      "headsign": "Eagle Junction",
+      "stopSequence": [
+        "WOOL",
+        "ROMA",
+        "QSTN",
+        "FVLY",
+        "RBWH",
+        "NWMR",
+        "CHMS",
+        "EAGL"
+      ],
+      "serviceWindow": {
+        "first": "05:15",
+        "last": "23:15",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 51,
+      "status": "active"
+    },
+    {
+      "id": "169-OUTBOUND",
+      "routeId": "169",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "UQ Lakes to Garden City Interchange",
+      "headsign": "Garden City",
+      "stopSequence": [
+        "UQLA",
+        "CULT",
+        "BOGG",
+        "BURA",
+        "PAHS",
+        "EMPS",
+        "GARD"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "23:10",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 39,
+      "status": "active"
+    },
+    {
+      "id": "169-INBOUND",
+      "routeId": "169",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "Garden City Interchange to UQ Lakes",
+      "headsign": "UQ Lakes",
+      "stopSequence": [
+        "GARD",
+        "EMPS",
+        "PAHS",
+        "BURA",
+        "BOGG",
+        "CULT",
+        "UQLA"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "23:10",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 39,
+      "status": "active"
+    },
+    {
+      "id": "222-OUTBOUND",
+      "routeId": "222",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "Carindale Interchange to UQ Lakes",
+      "headsign": "UQ Lakes",
+      "stopSequence": [
+        "CARI",
+        "WOOL",
+        "CULT",
+        "QSTN",
+        "TOOW",
+        "UQLA"
+      ],
+      "serviceWindow": {
+        "first": "05:10",
+        "last": "22:45",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 39,
+      "status": "active"
+    },
+    {
+      "id": "222-INBOUND",
+      "routeId": "222",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "UQ Lakes to Carindale Interchange",
+      "headsign": "Carindale",
+      "stopSequence": [
+        "UQLA",
+        "TOOW",
+        "QSTN",
+        "CULT",
+        "WOOL",
+        "CARI"
+      ],
+      "serviceWindow": {
+        "first": "05:10",
+        "last": "22:45",
+        "frequencyMins": 15
+      },
+      "sampleTripMinutes": 39,
+      "status": "active"
+    },
+    {
+      "id": "333-OUTBOUND",
+      "routeId": "333",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "Chermside Interchange to Boggo Road Station",
+      "headsign": "Boggo Road Station",
+      "stopSequence": [
+        "CHMS",
+        "RBWH",
+        "FVLY",
+        "QSTN",
+        "CULT",
+        "BOGG"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:20",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 35,
+      "status": "active"
+    },
+    {
+      "id": "333-INBOUND",
+      "routeId": "333",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "Boggo Road Station to Chermside Interchange",
+      "headsign": "Chermside Interchange",
+      "stopSequence": [
+        "BOGG",
+        "CULT",
+        "QSTN",
+        "FVLY",
+        "RBWH",
+        "CHMS"
+      ],
+      "serviceWindow": {
+        "first": "05:00",
+        "last": "23:20",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 35,
+      "status": "active"
+    },
+    {
+      "id": "444-OUTBOUND",
+      "routeId": "444",
+      "region": "brisbane",
+      "directionId": "outbound",
+      "name": "Indooroopilly Interchange to Roma Street Station",
+      "headsign": "Roma Street",
+      "stopSequence": [
+        "INDR",
+        "TOOW",
+        "CULT",
+        "QSTN",
+        "KING",
+        "ROMA"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "23:00",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 31,
+      "status": "active"
+    },
+    {
+      "id": "444-INBOUND",
+      "routeId": "444",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "Roma Street Station to Indooroopilly Interchange",
+      "headsign": "Indooroopilly",
+      "stopSequence": [
+        "ROMA",
+        "KING",
+        "QSTN",
+        "CULT",
+        "TOOW",
+        "INDR"
+      ],
+      "serviceWindow": {
+        "first": "05:20",
+        "last": "23:00",
+        "frequencyMins": 12
+      },
+      "sampleTripMinutes": 31,
+      "status": "active"
+    },
+    {
+      "id": "555-OUTBOUND",
+      "routeId": "555",
+      "region": "logan",
+      "directionId": "outbound",
+      "name": "Springwood Bus Station to Beenleigh Station",
+      "headsign": "Beenleigh Station",
+      "stopSequence": [
+        "SPRW",
+        "SHLR",
+        "HYPR",
+        "LGHM",
+        "BNLG"
+      ],
+      "serviceWindow": {
+        "first": "05:30",
+        "last": "22:40",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 35,
       "status": "preview"
     },
     {
-      "id": "330-SB",
-      "routeId": "330",
-      "region": "brisbane",
-      "directionId": "southbound",
-      "name": "Eagle Junction to Woolloongabba",
-      "headsign": "Woolloongabba",
-      "stopSequence": ["EAGL", "CHMS", "RBWH", "ROMA", "WOOL"],
-      "serviceWindow": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
-      "sampleTripMinutes": 38,
+      "id": "555-INBOUND",
+      "routeId": "555",
+      "region": "logan",
+      "directionId": "inbound",
+      "name": "Beenleigh Station to Springwood Bus Station",
+      "headsign": "Springwood Bus Station",
+      "stopSequence": [
+        "BNLG",
+        "LGHM",
+        "HYPR",
+        "SHLR",
+        "SPRW"
+      ],
+      "serviceWindow": {
+        "first": "05:30",
+        "last": "22:40",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 35,
+      "status": "preview"
+    },
+    {
+      "id": "560-OUTBOUND",
+      "routeId": "560",
+      "region": "logan",
+      "directionId": "outbound",
+      "name": "Meadowbrook Station to Springwood Bus Station",
+      "headsign": "Springwood Bus Station",
+      "stopSequence": [
+        "MEAD",
+        "LGHM",
+        "HYPR",
+        "SHLR",
+        "SPRW"
+      ],
+      "serviceWindow": {
+        "first": "05:45",
+        "last": "21:55",
+        "frequencyMins": 25
+      },
+      "sampleTripMinutes": 32,
+      "status": "preview"
+    },
+    {
+      "id": "560-INBOUND",
+      "routeId": "560",
+      "region": "logan",
+      "directionId": "inbound",
+      "name": "Springwood Bus Station to Meadowbrook Station",
+      "headsign": "Meadowbrook Station",
+      "stopSequence": [
+        "SPRW",
+        "SHLR",
+        "HYPR",
+        "LGHM",
+        "MEAD"
+      ],
+      "serviceWindow": {
+        "first": "05:45",
+        "last": "21:55",
+        "frequencyMins": 25
+      },
+      "sampleTripMinutes": 32,
+      "status": "preview"
+    },
+    {
+      "id": "571-OUTBOUND",
+      "routeId": "571",
+      "region": "logan",
+      "directionId": "outbound",
+      "name": "Browns Plains Station to Springwood Bus Station",
+      "headsign": "Springwood Bus Station",
+      "stopSequence": [
+        "BRPL",
+        "MARS",
+        "HYPR",
+        "SHLR",
+        "SPRW"
+      ],
+      "serviceWindow": {
+        "first": "05:40",
+        "last": "22:10",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 34,
+      "status": "preview"
+    },
+    {
+      "id": "571-INBOUND",
+      "routeId": "571",
+      "region": "logan",
+      "directionId": "inbound",
+      "name": "Springwood Bus Station to Browns Plains Station",
+      "headsign": "Browns Plains Station",
+      "stopSequence": [
+        "SPRW",
+        "SHLR",
+        "HYPR",
+        "MARS",
+        "BRPL"
+      ],
+      "serviceWindow": {
+        "first": "05:40",
+        "last": "22:10",
+        "frequencyMins": 20
+      },
+      "sampleTripMinutes": 34,
       "status": "preview"
     }
   ]

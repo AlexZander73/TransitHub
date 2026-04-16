@@ -1,8 +1,8 @@
 {
   "meta": {
     "dataset": "seq-core-routes",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0"
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0"
   },
   "routes": [
     {
@@ -16,11 +16,48 @@
       "operator": "Translink network (sample)",
       "color": "#00b39f",
       "textColor": "#01211b",
-      "stopSequence": ["HEL", "PARK", "GRIF", "GCUH", "SOUTH", "SOUTHS", "NERANG", "CAVILL", "SPN", "CYP", "NORTH", "FLOR", "BBN", "BBS"],
-      "segmentMinutes": [4, 4, 4, 5, 3, 3, 4, 3, 3, 3, 3, 4, 4],
+      "stopSequence": [
+        "HEL",
+        "PARK",
+        "GRIF",
+        "GCUH",
+        "SOUTH",
+        "SOUTHS",
+        "NERANG",
+        "CAVILL",
+        "SPN",
+        "CYP",
+        "NORTH",
+        "FLOR",
+        "BBN",
+        "BBS"
+      ],
+      "segmentMinutes": [
+        4,
+        4,
+        4,
+        5,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
-        "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+        "weekday": {
+          "first": "05:00",
+          "last": "23:45",
+          "frequencyMins": 7
+        },
+        "weekend": {
+          "first": "05:15",
+          "last": "23:55",
+          "frequencyMins": 10
+        }
       },
       "directions": [
         {
@@ -29,8 +66,16 @@
           "originStopId": "HEL",
           "destinationStopId": "BBS",
           "service": {
-            "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
-            "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+            "weekday": {
+              "first": "05:00",
+              "last": "23:45",
+              "frequencyMins": 7
+            },
+            "weekend": {
+              "first": "05:15",
+              "last": "23:55",
+              "frequencyMins": 10
+            }
           }
         },
         {
@@ -39,8 +84,16 @@
           "originStopId": "BBS",
           "destinationStopId": "HEL",
           "service": {
-            "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
-            "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+            "weekday": {
+              "first": "05:00",
+              "last": "23:45",
+              "frequencyMins": 7
+            },
+            "weekend": {
+              "first": "05:15",
+              "last": "23:55",
+              "frequencyMins": 10
+            }
           }
         }
       ],
@@ -58,11 +111,34 @@
       "operator": "Translink network (sample)",
       "color": "#ff7a18",
       "textColor": "#1f1201",
-      "stopSequence": ["HARBOUR", "SOUTH", "CAVILL", "BBN", "BBS", "BURLEIGH", "TUGUN"],
-      "segmentMinutes": [9, 8, 11, 6, 12, 13],
+      "stopSequence": [
+        "HARBOUR",
+        "SOUTH",
+        "CAVILL",
+        "BBN",
+        "BBS",
+        "BURLEIGH",
+        "TUGUN"
+      ],
+      "segmentMinutes": [
+        9,
+        8,
+        11,
+        6,
+        12,
+        13
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
-        "weekend": { "first": "05:40", "last": "23:10", "frequencyMins": 20 }
+        "weekday": {
+          "first": "05:20",
+          "last": "23:10",
+          "frequencyMins": 15
+        },
+        "weekend": {
+          "first": "05:40",
+          "last": "23:10",
+          "frequencyMins": 20
+        }
       },
       "directions": [
         {
@@ -71,8 +147,16 @@
           "originStopId": "HARBOUR",
           "destinationStopId": "TUGUN",
           "service": {
-            "weekday": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
-            "weekend": { "first": "05:40", "last": "23:10", "frequencyMins": 20 }
+            "weekday": {
+              "first": "05:20",
+              "last": "23:10",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:40",
+              "last": "23:10",
+              "frequencyMins": 20
+            }
           }
         },
         {
@@ -81,8 +165,16 @@
           "originStopId": "TUGUN",
           "destinationStopId": "HARBOUR",
           "service": {
-            "weekday": { "first": "05:00", "last": "22:55", "frequencyMins": 15 },
-            "weekend": { "first": "05:30", "last": "22:55", "frequencyMins": 20 }
+            "weekday": {
+              "first": "05:00",
+              "last": "22:55",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:30",
+              "last": "22:55",
+              "frequencyMins": 20
+            }
           }
         }
       ],
@@ -100,11 +192,34 @@
       "operator": "Translink network (sample)",
       "color": "#1477ff",
       "textColor": "#f3f7ff",
-      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN", "VLKS"],
-      "segmentMinutes": [10, 12, 18, 15, 14, 11],
+      "stopSequence": [
+        "HEL",
+        "GCUH",
+        "SOUTH",
+        "BBS",
+        "BURLEIGH",
+        "TUGUN",
+        "VLKS"
+      ],
+      "segmentMinutes": [
+        10,
+        12,
+        18,
+        15,
+        14,
+        11
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
-        "weekend": { "first": "06:10", "last": "22:45", "frequencyMins": 30 }
+        "weekday": {
+          "first": "05:45",
+          "last": "22:45",
+          "frequencyMins": 20
+        },
+        "weekend": {
+          "first": "06:10",
+          "last": "22:45",
+          "frequencyMins": 30
+        }
       },
       "directions": [
         {
@@ -113,8 +228,16 @@
           "originStopId": "HEL",
           "destinationStopId": "VLKS",
           "service": {
-            "weekday": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
-            "weekend": { "first": "06:10", "last": "22:45", "frequencyMins": 30 }
+            "weekday": {
+              "first": "05:45",
+              "last": "22:45",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:10",
+              "last": "22:45",
+              "frequencyMins": 30
+            }
           }
         },
         {
@@ -123,8 +246,16 @@
           "originStopId": "VLKS",
           "destinationStopId": "HEL",
           "service": {
-            "weekday": { "first": "05:20", "last": "22:30", "frequencyMins": 20 },
-            "weekend": { "first": "05:50", "last": "22:30", "frequencyMins": 30 }
+            "weekday": {
+              "first": "05:20",
+              "last": "22:30",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:30",
+              "frequencyMins": 30
+            }
           }
         }
       ],
@@ -142,11 +273,36 @@
       "operator": "Translink network (sample)",
       "color": "#4f5dff",
       "textColor": "#f7f8ff",
-      "stopSequence": ["ROBINA", "VLKS", "BURLEIGH", "PFI", "BBS", "GCUH", "GRIF", "HEL"],
-      "segmentMinutes": [6, 10, 9, 4, 19, 4, 11],
+      "stopSequence": [
+        "ROBINA",
+        "VLKS",
+        "BURLEIGH",
+        "PFI",
+        "BBS",
+        "GCUH",
+        "GRIF",
+        "HEL"
+      ],
+      "segmentMinutes": [
+        6,
+        10,
+        9,
+        4,
+        19,
+        4,
+        11
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
-        "weekend": { "first": "06:00", "last": "22:30", "frequencyMins": 30 }
+        "weekday": {
+          "first": "05:30",
+          "last": "22:30",
+          "frequencyMins": 20
+        },
+        "weekend": {
+          "first": "06:00",
+          "last": "22:30",
+          "frequencyMins": 30
+        }
       },
       "directions": [
         {
@@ -155,8 +311,16 @@
           "originStopId": "ROBINA",
           "destinationStopId": "HEL",
           "service": {
-            "weekday": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
-            "weekend": { "first": "06:00", "last": "22:30", "frequencyMins": 30 }
+            "weekday": {
+              "first": "05:30",
+              "last": "22:30",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "22:30",
+              "frequencyMins": 30
+            }
           }
         },
         {
@@ -165,8 +329,16 @@
           "originStopId": "HEL",
           "destinationStopId": "ROBINA",
           "service": {
-            "weekday": { "first": "05:15", "last": "22:20", "frequencyMins": 20 },
-            "weekend": { "first": "05:50", "last": "22:20", "frequencyMins": 30 }
+            "weekday": {
+              "first": "05:15",
+              "last": "22:20",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:20",
+              "frequencyMins": 30
+            }
           }
         }
       ],
@@ -184,11 +356,30 @@
       "operator": "Translink network (sample)",
       "color": "#2f9d58",
       "textColor": "#ecfff2",
-      "stopSequence": ["COOMERA", "HEL", "HARBOUR", "SOUTH", "CAVILL"],
-      "segmentMinutes": [16, 14, 10, 12],
+      "stopSequence": [
+        "COOMERA",
+        "HEL",
+        "HARBOUR",
+        "SOUTH",
+        "CAVILL"
+      ],
+      "segmentMinutes": [
+        16,
+        14,
+        10,
+        12
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:25", "last": "21:55", "frequencyMins": 30 },
-        "weekend": { "first": "06:00", "last": "21:55", "frequencyMins": 40 }
+        "weekday": {
+          "first": "05:25",
+          "last": "21:55",
+          "frequencyMins": 30
+        },
+        "weekend": {
+          "first": "06:00",
+          "last": "21:55",
+          "frequencyMins": 40
+        }
       },
       "directions": [
         {
@@ -197,8 +388,16 @@
           "originStopId": "COOMERA",
           "destinationStopId": "CAVILL",
           "service": {
-            "weekday": { "first": "05:25", "last": "21:55", "frequencyMins": 30 },
-            "weekend": { "first": "06:00", "last": "21:55", "frequencyMins": 40 }
+            "weekday": {
+              "first": "05:25",
+              "last": "21:55",
+              "frequencyMins": 30
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "21:55",
+              "frequencyMins": 40
+            }
           }
         },
         {
@@ -207,15 +406,22 @@
           "originStopId": "CAVILL",
           "destinationStopId": "COOMERA",
           "service": {
-            "weekday": { "first": "05:10", "last": "21:40", "frequencyMins": 30 },
-            "weekend": { "first": "05:45", "last": "21:40", "frequencyMins": 40 }
+            "weekday": {
+              "first": "05:10",
+              "last": "21:40",
+              "frequencyMins": 30
+            },
+            "weekend": {
+              "first": "05:45",
+              "last": "21:40",
+              "frequencyMins": 40
+            }
           }
         }
       ],
       "notes": "Included to demonstrate northward expansion handling",
       "status": "active"
     },
-
     {
       "id": "66",
       "region": "brisbane",
@@ -227,36 +433,75 @@
       "operator": "Translink network (sample)",
       "color": "#00a4d8",
       "textColor": "#f4fdff",
-      "stopSequence": ["UQLA", "CULT", "KING", "ROMA", "RBWH"],
-      "segmentMinutes": [8, 5, 4, 6],
+      "stopSequence": [
+        "UQLA",
+        "TOOW",
+        "CULT",
+        "QSTN",
+        "KING",
+        "ROMA",
+        "RBWH"
+      ],
+      "segmentMinutes": [
+        7,
+        8,
+        4,
+        3,
+        4,
+        6
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
-        "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+        "weekday": {
+          "first": "05:30",
+          "last": "23:30",
+          "frequencyMins": 10
+        },
+        "weekend": {
+          "first": "06:00",
+          "last": "23:00",
+          "frequencyMins": 15
+        }
       },
       "directions": [
         {
-          "id": "inbound",
+          "id": "outbound",
           "headsign": "RBWH Station",
           "originStopId": "UQLA",
           "destinationStopId": "RBWH",
           "service": {
-            "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
-            "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+            "weekday": {
+              "first": "05:30",
+              "last": "23:30",
+              "frequencyMins": 10
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "23:00",
+              "frequencyMins": 15
+            }
           }
         },
         {
-          "id": "outbound",
+          "id": "inbound",
           "headsign": "UQ Lakes",
           "originStopId": "RBWH",
           "destinationStopId": "UQLA",
           "service": {
-            "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
-            "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+            "weekday": {
+              "first": "05:30",
+              "last": "23:30",
+              "frequencyMins": 10
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "23:00",
+              "frequencyMins": 15
+            }
           }
         }
       ],
-      "notes": "Brisbane busway preview corridor",
-      "status": "preview"
+      "notes": "Brisbane core busway connector between UQ, CBD, and RBWH.",
+      "status": "active"
     },
     {
       "id": "111",
@@ -269,36 +514,79 @@
       "operator": "Translink network (sample)",
       "color": "#ff4d67",
       "textColor": "#fff7f8",
-      "stopSequence": ["ROMA", "KING", "CULT", "WOOL", "GARD"],
-      "segmentMinutes": [4, 6, 9, 18],
+      "stopSequence": [
+        "ROMA",
+        "KING",
+        "QSTN",
+        "CULT",
+        "WOOL",
+        "BURA",
+        "PAHS",
+        "EMPS",
+        "GARD"
+      ],
+      "segmentMinutes": [
+        4,
+        3,
+        5,
+        8,
+        5,
+        4,
+        11,
+        7
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
-        "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+        "weekday": {
+          "first": "05:00",
+          "last": "23:50",
+          "frequencyMins": 12
+        },
+        "weekend": {
+          "first": "05:30",
+          "last": "23:20",
+          "frequencyMins": 15
+        }
       },
       "directions": [
         {
-          "id": "southbound",
+          "id": "outbound",
           "headsign": "Garden City",
           "originStopId": "ROMA",
           "destinationStopId": "GARD",
           "service": {
-            "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
-            "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+            "weekday": {
+              "first": "05:00",
+              "last": "23:50",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:30",
+              "last": "23:20",
+              "frequencyMins": 15
+            }
           }
         },
         {
-          "id": "northbound",
+          "id": "inbound",
           "headsign": "Roma Street",
           "originStopId": "GARD",
           "destinationStopId": "ROMA",
           "service": {
-            "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
-            "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+            "weekday": {
+              "first": "05:00",
+              "last": "23:50",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:30",
+              "last": "23:20",
+              "frequencyMins": 15
+            }
           }
         }
       ],
-      "notes": "Brisbane south-east busway scaffold",
-      "status": "preview"
+      "notes": "High-frequency south-east busway spine service.",
+      "status": "active"
     },
     {
       "id": "330",
@@ -306,40 +594,630 @@
       "lineId": "bne330",
       "family": "bne-north-south",
       "shortName": "330",
-      "longName": "Chermside to Woolloongabba",
+      "longName": "Eagle Junction to Woolloongabba",
       "mode": "bus",
       "operator": "Translink network (sample)",
       "color": "#7f5bf5",
       "textColor": "#f5f1ff",
-      "stopSequence": ["EAGL", "CHMS", "RBWH", "ROMA", "WOOL"],
-      "segmentMinutes": [8, 9, 10, 11],
+      "stopSequence": [
+        "EAGL",
+        "CHMS",
+        "NWMR",
+        "RBWH",
+        "FVLY",
+        "QSTN",
+        "ROMA",
+        "WOOL"
+      ],
+      "segmentMinutes": [
+        8,
+        7,
+        8,
+        7,
+        6,
+        5,
+        10
+      ],
       "serviceSpan": {
-        "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
-        "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+        "weekday": {
+          "first": "05:15",
+          "last": "23:15",
+          "frequencyMins": 15
+        },
+        "weekend": {
+          "first": "05:50",
+          "last": "22:50",
+          "frequencyMins": 20
+        }
       },
       "directions": [
         {
-          "id": "southbound",
+          "id": "outbound",
           "headsign": "Woolloongabba",
           "originStopId": "EAGL",
           "destinationStopId": "WOOL",
           "service": {
-            "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
-            "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+            "weekday": {
+              "first": "05:15",
+              "last": "23:15",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:50",
+              "frequencyMins": 20
+            }
           }
         },
         {
-          "id": "northbound",
+          "id": "inbound",
           "headsign": "Eagle Junction",
           "originStopId": "WOOL",
           "destinationStopId": "EAGL",
           "service": {
-            "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
-            "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+            "weekday": {
+              "first": "05:15",
+              "last": "23:15",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:50",
+              "frequencyMins": 20
+            }
           }
         }
       ],
-      "notes": "Cross-city busway and north connector preview",
+      "notes": "North-south cross-city service linking rail and busway nodes.",
+      "status": "active"
+    },
+    {
+      "id": "169",
+      "region": "brisbane",
+      "lineId": "bne169",
+      "family": "bne-south-east",
+      "shortName": "169",
+      "longName": "UQ Lakes to Eight Mile Plains",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#1f9d72",
+      "textColor": "#effff8",
+      "stopSequence": [
+        "UQLA",
+        "CULT",
+        "BOGG",
+        "BURA",
+        "PAHS",
+        "EMPS",
+        "GARD"
+      ],
+      "segmentMinutes": [
+        8,
+        6,
+        4,
+        4,
+        10,
+        7
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:20",
+          "last": "23:10",
+          "frequencyMins": 15
+        },
+        "weekend": {
+          "first": "05:40",
+          "last": "22:50",
+          "frequencyMins": 20
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Garden City",
+          "originStopId": "UQLA",
+          "destinationStopId": "GARD",
+          "service": {
+            "weekday": {
+              "first": "05:20",
+              "last": "23:10",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:40",
+              "last": "22:50",
+              "frequencyMins": 20
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "UQ Lakes",
+          "originStopId": "GARD",
+          "destinationStopId": "UQLA",
+          "service": {
+            "weekday": {
+              "first": "05:20",
+              "last": "23:10",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:40",
+              "last": "22:50",
+              "frequencyMins": 20
+            }
+          }
+        }
+      ],
+      "notes": "University to south-east corridor service via Boggo Road and PA Hospital.",
+      "status": "active"
+    },
+    {
+      "id": "222",
+      "region": "brisbane",
+      "lineId": "bne222",
+      "family": "bne-cross-city",
+      "shortName": "222",
+      "longName": "Carindale to UQ Lakes",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#f0932b",
+      "textColor": "#2a1500",
+      "stopSequence": [
+        "CARI",
+        "WOOL",
+        "CULT",
+        "QSTN",
+        "TOOW",
+        "UQLA"
+      ],
+      "segmentMinutes": [
+        9,
+        7,
+        5,
+        11,
+        7
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:10",
+          "last": "22:45",
+          "frequencyMins": 15
+        },
+        "weekend": {
+          "first": "05:40",
+          "last": "22:20",
+          "frequencyMins": 20
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "UQ Lakes",
+          "originStopId": "CARI",
+          "destinationStopId": "UQLA",
+          "service": {
+            "weekday": {
+              "first": "05:10",
+              "last": "22:45",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:40",
+              "last": "22:20",
+              "frequencyMins": 20
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Carindale",
+          "originStopId": "UQLA",
+          "destinationStopId": "CARI",
+          "service": {
+            "weekday": {
+              "first": "05:10",
+              "last": "22:45",
+              "frequencyMins": 15
+            },
+            "weekend": {
+              "first": "05:40",
+              "last": "22:20",
+              "frequencyMins": 20
+            }
+          }
+        }
+      ],
+      "notes": "Eastern cross-city corridor connecting Carindale to west-campus nodes.",
+      "status": "active"
+    },
+    {
+      "id": "333",
+      "region": "brisbane",
+      "lineId": "bne333",
+      "family": "bne-north-south",
+      "shortName": "333",
+      "longName": "Chermside to Boggo Road",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#3c74ff",
+      "textColor": "#f3f6ff",
+      "stopSequence": [
+        "CHMS",
+        "RBWH",
+        "FVLY",
+        "QSTN",
+        "CULT",
+        "BOGG"
+      ],
+      "segmentMinutes": [
+        9,
+        7,
+        6,
+        6,
+        7
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:00",
+          "last": "23:20",
+          "frequencyMins": 12
+        },
+        "weekend": {
+          "first": "05:30",
+          "last": "23:00",
+          "frequencyMins": 15
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Boggo Road Station",
+          "originStopId": "CHMS",
+          "destinationStopId": "BOGG",
+          "service": {
+            "weekday": {
+              "first": "05:00",
+              "last": "23:20",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:30",
+              "last": "23:00",
+              "frequencyMins": 15
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Chermside Interchange",
+          "originStopId": "BOGG",
+          "destinationStopId": "CHMS",
+          "service": {
+            "weekday": {
+              "first": "05:00",
+              "last": "23:20",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:30",
+              "last": "23:00",
+              "frequencyMins": 15
+            }
+          }
+        }
+      ],
+      "notes": "Frequent connector between north busway and south-side interchange cluster.",
+      "status": "active"
+    },
+    {
+      "id": "444",
+      "region": "brisbane",
+      "lineId": "bne444",
+      "family": "bne-west-city",
+      "shortName": "444",
+      "longName": "Indooroopilly to Roma Street",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#0084ff",
+      "textColor": "#eff8ff",
+      "stopSequence": [
+        "INDR",
+        "TOOW",
+        "CULT",
+        "QSTN",
+        "KING",
+        "ROMA"
+      ],
+      "segmentMinutes": [
+        6,
+        12,
+        6,
+        3,
+        4
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:20",
+          "last": "23:00",
+          "frequencyMins": 12
+        },
+        "weekend": {
+          "first": "05:50",
+          "last": "22:30",
+          "frequencyMins": 15
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Roma Street",
+          "originStopId": "INDR",
+          "destinationStopId": "ROMA",
+          "service": {
+            "weekday": {
+              "first": "05:20",
+              "last": "23:00",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:30",
+              "frequencyMins": 15
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Indooroopilly",
+          "originStopId": "ROMA",
+          "destinationStopId": "INDR",
+          "service": {
+            "weekday": {
+              "first": "05:20",
+              "last": "23:00",
+              "frequencyMins": 12
+            },
+            "weekend": {
+              "first": "05:50",
+              "last": "22:30",
+              "frequencyMins": 15
+            }
+          }
+        }
+      ],
+      "notes": "Western suburban express-style connector into the CBD core.",
+      "status": "active"
+    },
+    {
+      "id": "555",
+      "region": "logan",
+      "lineId": "log555",
+      "family": "logan-core",
+      "shortName": "555",
+      "longName": "Springwood to Beenleigh",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#008b5e",
+      "textColor": "#ecfff6",
+      "stopSequence": [
+        "SPRW",
+        "SHLR",
+        "HYPR",
+        "LGHM",
+        "BNLG"
+      ],
+      "segmentMinutes": [
+        6,
+        9,
+        8,
+        12
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:30",
+          "last": "22:40",
+          "frequencyMins": 20
+        },
+        "weekend": {
+          "first": "06:00",
+          "last": "22:10",
+          "frequencyMins": 30
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Beenleigh Station",
+          "originStopId": "SPRW",
+          "destinationStopId": "BNLG",
+          "service": {
+            "weekday": {
+              "first": "05:30",
+              "last": "22:40",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "22:10",
+              "frequencyMins": 30
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Springwood Bus Station",
+          "originStopId": "BNLG",
+          "destinationStopId": "SPRW",
+          "service": {
+            "weekday": {
+              "first": "05:30",
+              "last": "22:40",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:00",
+              "last": "22:10",
+              "frequencyMins": 30
+            }
+          }
+        }
+      ],
+      "notes": "Logan north-south trunk linking Hyperdome to Beenleigh rail.",
+      "status": "preview"
+    },
+    {
+      "id": "560",
+      "region": "logan",
+      "lineId": "log560",
+      "family": "logan-core",
+      "shortName": "560",
+      "longName": "Meadowbrook to Springwood",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#f26b38",
+      "textColor": "#2d1005",
+      "stopSequence": [
+        "MEAD",
+        "LGHM",
+        "HYPR",
+        "SHLR",
+        "SPRW"
+      ],
+      "segmentMinutes": [
+        9,
+        8,
+        9,
+        6
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:45",
+          "last": "21:55",
+          "frequencyMins": 25
+        },
+        "weekend": {
+          "first": "06:20",
+          "last": "21:30",
+          "frequencyMins": 35
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Springwood Bus Station",
+          "originStopId": "MEAD",
+          "destinationStopId": "SPRW",
+          "service": {
+            "weekday": {
+              "first": "05:45",
+              "last": "21:55",
+              "frequencyMins": 25
+            },
+            "weekend": {
+              "first": "06:20",
+              "last": "21:30",
+              "frequencyMins": 35
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Meadowbrook Station",
+          "originStopId": "SPRW",
+          "destinationStopId": "MEAD",
+          "service": {
+            "weekday": {
+              "first": "05:45",
+              "last": "21:55",
+              "frequencyMins": 25
+            },
+            "weekend": {
+              "first": "06:20",
+              "last": "21:30",
+              "frequencyMins": 35
+            }
+          }
+        }
+      ],
+      "notes": "Cross-connector between Meadowbrook rail and Hyperdome / Springwood.",
+      "status": "preview"
+    },
+    {
+      "id": "571",
+      "region": "logan",
+      "lineId": "log571",
+      "family": "logan-west",
+      "shortName": "571",
+      "longName": "Browns Plains to Springwood",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#6f52d9",
+      "textColor": "#f6f2ff",
+      "stopSequence": [
+        "BRPL",
+        "MARS",
+        "HYPR",
+        "SHLR",
+        "SPRW"
+      ],
+      "segmentMinutes": [
+        10,
+        8,
+        9,
+        7
+      ],
+      "serviceSpan": {
+        "weekday": {
+          "first": "05:40",
+          "last": "22:10",
+          "frequencyMins": 20
+        },
+        "weekend": {
+          "first": "06:10",
+          "last": "21:40",
+          "frequencyMins": 30
+        }
+      },
+      "directions": [
+        {
+          "id": "outbound",
+          "headsign": "Springwood Bus Station",
+          "originStopId": "BRPL",
+          "destinationStopId": "SPRW",
+          "service": {
+            "weekday": {
+              "first": "05:40",
+              "last": "22:10",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:10",
+              "last": "21:40",
+              "frequencyMins": 30
+            }
+          }
+        },
+        {
+          "id": "inbound",
+          "headsign": "Browns Plains Station",
+          "originStopId": "SPRW",
+          "destinationStopId": "BRPL",
+          "service": {
+            "weekday": {
+              "first": "05:40",
+              "last": "22:10",
+              "frequencyMins": 20
+            },
+            "weekend": {
+              "first": "06:10",
+              "last": "21:40",
+              "frequencyMins": 30
+            }
+          }
+        }
+      ],
+      "notes": "West Logan corridor from Browns Plains to Hyperdome and Springwood.",
       "status": "preview"
     }
   ]

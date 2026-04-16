@@ -1,6 +1,6 @@
 # CoastPulse Transit Atlas
 
-CoastPulse Transit Atlas is an **unofficial**, static-first, map-centric transit information website focused on **Gold Coast first**, with active scaffolding for **Brisbane** and broader SEQ expansion.
+CoastPulse Transit Atlas is an **unofficial**, static-first, map-centric transit information website focused on **Gold Coast first**, with expanded multi-region sample coverage for **Brisbane** and **Logan** plus broader SEQ expansion scaffolding.
 
 It is designed to run directly on **GitHub Pages**.
 
@@ -15,7 +15,7 @@ Times, alerts, and direct travel estimates may be delayed, incomplete, unavailab
 ## Core map experience
 
 - Premium map-first homepage with stylized SVG network map
-- Region switcher (Gold Coast + Brisbane preview)
+- Region switcher (Gold Coast + Brisbane + Logan preview)
 - Map mode toggles (`stylized`, `corridor`, `connections`)
 - Clickable stops, stations, and interchange nodes
 - Route overlay highlighting and route legend interactions
@@ -69,6 +69,7 @@ No accounts or server-side profiles.
 - Plain HTML/CSS/JavaScript modules
 - Static JSON data in `/data`
 - Optional Node scripts for build-time transforms/validation/live-merge
+- Optional GTFS-RT decode pipeline for build-time live snapshots
 - No runtime backend
 
 ## Project structure
@@ -104,11 +105,14 @@ No accounts or server-side profiles.
     departures.sample.json
     alerts.sample.json
     direct-travel.sample.json
+    gtfs-id-map.sample.json       # optional GTFS-RT ID mapping template
     departures.live.json         # optional generated snapshot
     alerts.live.json             # optional generated snapshot
   scripts/
     fetch-live-sources.mjs
     merge-live-feeds.mjs
+    fetch-gtfsrt-sources.mjs
+    build-live-from-gtfsrt.mjs
     transform-gtfs.mjs
     validate-data.mjs
   docs/
@@ -202,6 +206,14 @@ npm run merge:live -- --departures ./raw/live/departures.json --alerts ./raw/liv
 npm run validate:data
 ```
 
+### GTFS-RT live pipeline (protobuf/json)
+
+```bash
+npm run fetch:gtfsrt -- --trip-updates-source https://example.com/gtfsrt/trip-updates --service-alerts-source https://example.com/gtfsrt/service-alerts
+npm run build:live:gtfsrt -- --trip-updates ./raw/live/trip-updates.pb --service-alerts ./raw/live/service-alerts.pb --mapping ./data/gtfs-id-map.json --out ./data
+npm run validate:data
+```
+
 Optional automation is included in `.github/workflows/live-data-refresh.yml`.
 
 ## What is mocked vs implemented
@@ -217,7 +229,7 @@ Implemented:
 Representative sample/mocked data:
 
 - many route timings, departures, and alerts are modeled samples
-- Brisbane coverage is scaffold-level preview
+- Brisbane and Logan datasets are expanded representative samples (not official production coverage)
 
 ## Deep links
 

@@ -1,8 +1,8 @@
 {
   "meta": {
     "source": "sample",
-    "generatedAt": "2026-04-16T21:00:00+10:00",
-    "version": "0.2.0"
+    "generatedAt": "2026-04-17T09:00:00+10:00",
+    "version": "0.3.0"
   },
   "alerts": [
     {
@@ -12,9 +12,17 @@
       "severity": 2,
       "title": "Tram speed restriction near Surfers Paradise North",
       "description": "Southbound and northbound trams may run up to 4 minutes late between Cavill Avenue and Cypress Avenue.",
-      "routes": ["GL"],
-      "stops": ["CAVILL", "SPN", "CYP"],
-      "interchanges": ["gc-surfers"],
+      "routes": [
+        "GL"
+      ],
+      "stops": [
+        "CAVILL",
+        "SPN",
+        "CYP"
+      ],
+      "interchanges": [
+        "gc-surfers"
+      ],
       "effectiveFrom": "2026-04-15T06:00:00+10:00",
       "effectiveTo": "2026-12-31T23:59:00+10:00",
       "status": "active",
@@ -27,9 +35,15 @@
       "severity": 1,
       "title": "Route 700 temporary stop relocation near Burleigh",
       "description": "Use temporary bay signage near Burleigh Heads Centre while streetscape upgrades are underway.",
-      "routes": ["700"],
-      "stops": ["BURLEIGH"],
-      "interchanges": ["gc-burleigh"],
+      "routes": [
+        "700"
+      ],
+      "stops": [
+        "BURLEIGH"
+      ],
+      "interchanges": [
+        "gc-burleigh"
+      ],
       "effectiveFrom": "2026-04-01T00:00:00+10:00",
       "effectiveTo": "2026-09-01T23:59:00+10:00",
       "status": "active",
@@ -42,9 +56,18 @@
       "severity": 2,
       "title": "Broadbeach South weather operations",
       "description": "Short weather-related holding events are possible at Broadbeach South interchange tonight.",
-      "routes": ["GL", "760", "777"],
-      "stops": ["BBS", "PFI"],
-      "interchanges": ["gc-broadbeach"],
+      "routes": [
+        "GL",
+        "760",
+        "777"
+      ],
+      "stops": [
+        "BBS",
+        "PFI"
+      ],
+      "interchanges": [
+        "gc-broadbeach"
+      ],
       "effectiveFrom": "2026-04-16T17:00:00+10:00",
       "effectiveTo": "2026-04-17T04:00:00+10:00",
       "status": "active",
@@ -56,12 +79,20 @@
       "level": "major",
       "severity": 3,
       "title": "Cultural Centre platform works",
-      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66 and 111.",
-      "routes": ["66", "111"],
-      "stops": ["CULT"],
-      "interchanges": ["bne-southbank"],
-      "effectiveFrom": "2026-04-16T18:00:00+10:00",
-      "effectiveTo": "2026-04-18T02:00:00+10:00",
+      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66, 111, and 444.",
+      "routes": [
+        "66",
+        "111",
+        "444"
+      ],
+      "stops": [
+        "CULT"
+      ],
+      "interchanges": [
+        "bne-southbank"
+      ],
+      "effectiveFrom": "2026-04-17T06:00:00+10:00",
+      "effectiveTo": "2026-04-19T02:00:00+10:00",
       "status": "active",
       "impact": "Platform access"
     },
@@ -71,14 +102,91 @@
       "level": "info",
       "severity": 1,
       "title": "Northside event traffic",
-      "description": "Minor evening delays expected for route 330 around RBWH and Chermside.",
-      "routes": ["330"],
-      "stops": ["RBWH", "CHMS"],
-      "interchanges": ["bne-north-core"],
-      "effectiveFrom": "2026-04-16T16:30:00+10:00",
-      "effectiveTo": "2026-04-16T22:30:00+10:00",
+      "description": "Minor evening delays expected for routes 330 and 333 around RBWH and Fortitude Valley.",
+      "routes": [
+        "330",
+        "333"
+      ],
+      "stops": [
+        "RBWH",
+        "FVLY",
+        "CHMS"
+      ],
+      "interchanges": [
+        "bne-north-core"
+      ],
+      "effectiveFrom": "2026-04-17T15:30:00+10:00",
+      "effectiveTo": "2026-04-17T22:30:00+10:00",
       "status": "active",
       "impact": "Traffic"
+    },
+    {
+      "id": "ALERT-BNE-EMPS-012",
+      "region": "brisbane",
+      "level": "minor",
+      "severity": 2,
+      "title": "Eight Mile Plains bay reassignment",
+      "description": "Routes 111 and 169 are operating from alternate bays after 20:00.",
+      "routes": [
+        "111",
+        "169"
+      ],
+      "stops": [
+        "EMPS",
+        "GARD"
+      ],
+      "interchanges": [
+        "bne-south-east"
+      ],
+      "effectiveFrom": "2026-04-17T20:00:00+10:00",
+      "effectiveTo": "2026-04-18T05:00:00+10:00",
+      "status": "active",
+      "impact": "Stop change"
+    },
+    {
+      "id": "ALERT-LGN-HYPERDOME-020",
+      "region": "logan",
+      "level": "minor",
+      "severity": 2,
+      "title": "Hyperdome interchange resurfacing",
+      "description": "Occasional stand changes at Logan Hyperdome. Check bay signage before boarding.",
+      "routes": [
+        "555",
+        "560",
+        "571"
+      ],
+      "stops": [
+        "HYPR",
+        "LGHM"
+      ],
+      "interchanges": [
+        "lgn-hyperdome"
+      ],
+      "effectiveFrom": "2026-04-17T04:00:00+10:00",
+      "effectiveTo": "2026-04-21T23:00:00+10:00",
+      "status": "active",
+      "impact": "Stop change"
+    },
+    {
+      "id": "ALERT-LGN-BNLG-021",
+      "region": "logan",
+      "level": "info",
+      "severity": 1,
+      "title": "Beenleigh station rail-bus interface notice",
+      "description": "Connection waits may vary by up to 5 minutes while evening rail works run.",
+      "routes": [
+        "555"
+      ],
+      "stops": [
+        "BNLG"
+      ],
+      "interchanges": [
+        "lgn-south-rail"
+      ],
+      "effectiveFrom": "2026-04-17T18:30:00+10:00",
+      "effectiveTo": "2026-04-18T02:00:00+10:00",
+      "status": "active",
+      "impact": "Connection wait"
     }
   ]
 }

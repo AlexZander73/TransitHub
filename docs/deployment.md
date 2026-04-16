@@ -17,9 +17,28 @@ Workflow: `.github/workflows/live-data-refresh.yml`
 
 Set these repository secrets when ready:
 
+- `LIVE_SOURCE_MODE`:
+`json` or `gtfsrt`
+
+JSON mode:
+
 - `LIVE_DEPARTURES_SOURCE`
 - `LIVE_ALERTS_SOURCE`
-- optional `LIVE_HEADER_1..LIVE_HEADER_4`
+
+GTFS-RT mode:
+
+- `GTFSRT_TRIP_UPDATES_SOURCE`
+- `GTFSRT_SERVICE_ALERTS_SOURCE`
+- optional `GTFSRT_TRIP_UPDATES_FORMAT` (`protobuf` or `json`)
+- optional `GTFSRT_SERVICE_ALERTS_FORMAT` (`protobuf` or `json`)
+- optional `GTFS_STATIC_STOPS_SOURCE`
+- optional `GTFS_STATIC_ROUTES_SOURCE`
+- optional `GTFS_STATIC_TRIPS_SOURCE`
+- optional `GTFS_ID_MAP_SOURCE`
+
+Shared optional headers:
+
+- `LIVE_HEADER_1..LIVE_HEADER_4`
 
 This workflow can fetch, normalize, validate, and commit refreshed live snapshot files.
 

@@ -14,6 +14,7 @@ Core runtime files:
 - `data/direct-travel.sample.json`
 - `data/departures.sample.json`
 - `data/alerts.sample.json`
+- `data/gtfs-id-map.sample.json` (optional template for GTFS-RT ID mapping)
 
 Optional generated live files:
 
@@ -36,6 +37,13 @@ Defines runtime paths and behavior:
 ## `regions.json`
 
 Region catalog for selector + expansion state.
+
+Current sample coverage:
+
+- `gold-coast` (`active`)
+- `brisbane` (`active`)
+- `logan` (`preview`)
+- additional planned regions for future expansion
 
 Example:
 
@@ -162,3 +170,13 @@ Alert notices with targeting and severity:
 ## Live files contract
 
 Live files follow the same functional shape as sample files and are treated as optional runtime sources.
+
+## `gtfs-id-map.sample.json`
+
+Template for explicit provider ID mapping during GTFS-RT ingestion.
+
+Main sections:
+
+- `routes`: provider route ID -> local route ID
+- `stops`: provider stop ID -> local stop ID
+- `tripHeadsigns`: optional trip headsign overrides by trip ID

@@ -50,7 +50,7 @@ Core characteristics:
 
 Primary state dimensions:
 
-- Region: selected region (`gold-coast` / `brisbane` preview)
+- Region: selected region (`gold-coast` / `brisbane` / `logan` preview)
 - Map mode: `stylized`, `corridor`, `connections`
 - Selection: stop, route, compare-stop
 - Trip estimate context: origin, destination, estimate result
@@ -67,6 +67,11 @@ Departures and alerts follow a fixed fallback chain:
 3. Schedule-derived departures (for departure boards)
 
 UI always displays source-aware status messaging rather than failing silently.
+
+Build-time live generation now supports two upstream modes:
+
+1. JSON snapshot merge (`fetch-live-sources` + `merge-live-feeds`)
+2. GTFS-RT decode/normalize (`fetch-gtfsrt-sources` + `build-live-from-gtfsrt`)
 
 ## Direct-estimate boundaries
 
@@ -90,6 +95,12 @@ The runtime bundle is region-aware:
 - region-tagged stops/routes/lines/interchanges/patterns
 
 `TransitDataService` builds region indexes (`stopsByRegion`, `routesByRegion`, `linesByRegion`) so region switching is a state change, not a frontend rewrite.
+
+Current data coverage:
+
+- Gold Coast (active, flagship)
+- Brisbane (active expanded sample)
+- Logan (preview expanded sample)
 
 ## GitHub Pages compatibility
 
