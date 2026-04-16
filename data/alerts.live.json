@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-04-15T23:51:57.048Z",
+    "generatedAt": "2026-04-16T09:35:34.070Z",
     "source": "merge-live-feeds.mjs",
-    "sourcePath": "./data/alerts.sample.json"
+    "sourcePath": "./raw/live/alerts.json"
   },
   "alerts": [
     {

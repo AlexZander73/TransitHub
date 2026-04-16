@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generatedAt": "2026-04-15T23:51:57.047Z",
+    "generatedAt": "2026-04-16T09:35:34.069Z",
     "source": "merge-live-feeds.mjs",
-    "sourcePath": "./data/departures.sample.json"
+    "sourcePath": "./raw/live/departures.json"
   },
   "stops": {
     "HEL": [
