@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-16T09:35:34.070Z",
+    "generatedAt": "2026-04-16T10:41:06.115Z",
     "source": "merge-live-feeds.mjs",
     "sourcePath": "./raw/live/alerts.json"
   },
@@ -38,19 +38,53 @@
       "status": "active"
     },
     {
-      "id": "ALERT-PLANNED-NORTH-003",
-      "level": "info",
-      "title": "Coomera connector timetable refresh",
-      "description": "Sample notice: route 750 evening frequency review is planned. Check official sources for confirmed timetable updates.",
+      "id": "ALERT-BBS-WEATHER-003",
+      "level": "minor",
+      "title": "Broadbeach South weather operations",
+      "description": "Short weather-related holding events are possible at Broadbeach South interchange tonight.",
       "routes": [
-        "750"
+        "GL",
+        "760",
+        "777"
       ],
       "stops": [
-        "COOMERA",
-        "HEL"
+        "BBS",
+        "PFI"
       ],
-      "effectiveFrom": null,
-      "effectiveTo": null,
+      "effectiveFrom": "2026-04-16T17:00:00+10:00",
+      "effectiveTo": "2026-04-17T04:00:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-BNE-CULT-WORKS-010",
+      "level": "major",
+      "title": "Cultural Centre platform works",
+      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66 and 111.",
+      "routes": [
+        "66",
+        "111"
+      ],
+      "stops": [
+        "CULT"
+      ],
+      "effectiveFrom": "2026-04-16T18:00:00+10:00",
+      "effectiveTo": "2026-04-18T02:00:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-BNE-NORTH-011",
+      "level": "info",
+      "title": "Northside event traffic",
+      "description": "Minor evening delays expected for route 330 around RBWH and Chermside.",
+      "routes": [
+        "330"
+      ],
+      "stops": [
+        "RBWH",
+        "CHMS"
+      ],
+      "effectiveFrom": "2026-04-16T16:30:00+10:00",
+      "effectiveTo": "2026-04-16T22:30:00+10:00",
       "status": "active"
     }
   ]

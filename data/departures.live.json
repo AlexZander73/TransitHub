@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-16T09:35:34.069Z",
+    "generatedAt": "2026-04-16T10:41:06.114Z",
     "source": "merge-live-feeds.mjs",
     "sourcePath": "./raw/live/departures.json"
   },
@@ -25,7 +25,7 @@
         "expectedTime": null,
         "scheduledTime": null,
         "epochSeconds": null,
-        "inMinutes": 6,
+        "inMinutes": 7,
         "platform": "Bay 3",
         "status": "on_time",
         "delayMinutes": 0
@@ -33,7 +33,7 @@
       {
         "tripId": "777-SB-3",
         "routeId": "777",
-        "headsign": "Tugun Village",
+        "headsign": "Varsity Lakes Station",
         "expectedTime": null,
         "scheduledTime": null,
         "epochSeconds": null,
@@ -43,14 +43,14 @@
         "delayMinutes": 3
       },
       {
-        "tripId": "GL-SB-4",
-        "routeId": "GL",
-        "headsign": "Broadbeach South",
+        "tripId": "750-SB-4",
+        "routeId": "750",
+        "headsign": "Cavill Avenue",
         "expectedTime": null,
         "scheduledTime": null,
         "epochSeconds": null,
-        "inMinutes": 12,
-        "platform": "Tram A",
+        "inMinutes": 16,
+        "platform": "Bay 6",
         "status": "on_time",
         "delayMinutes": 0
       }
@@ -83,7 +83,7 @@
       {
         "tripId": "777-SB-9",
         "routeId": "777",
-        "headsign": "Tugun Village",
+        "headsign": "Varsity Lakes Station",
         "expectedTime": null,
         "scheduledTime": null,
         "epochSeconds": null,
@@ -195,7 +195,7 @@
       {
         "tripId": "777-SB-18",
         "routeId": "777",
-        "headsign": "Tugun Village",
+        "headsign": "Varsity Lakes Station",
         "expectedTime": null,
         "scheduledTime": null,
         "epochSeconds": null,
@@ -303,6 +303,172 @@
         "epochSeconds": null,
         "inMinutes": 23,
         "platform": "Bay 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "ROMA": [
+      {
+        "tripId": "66-IN-1",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 3,
+        "platform": "Platform C",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "111-SB-2",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 6,
+        "platform": "Platform 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "330-SB-3",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 11,
+        "platform": "Platform 2",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "KING": [
+      {
+        "tripId": "66-IN-4",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 2,
+        "platform": "Stop 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "111-SB-5",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 5,
+        "platform": "Stop 2",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "111-NB-6",
+        "routeId": "111",
+        "headsign": "Roma Street",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 9,
+        "platform": "Stop 4",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "CULT": [
+      {
+        "tripId": "66-IN-7",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 4,
+        "platform": "Platform A",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "111-SB-8",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 6,
+        "platform": "Platform D",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "66-OUT-9",
+        "routeId": "66",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 8,
+        "platform": "Platform B",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "WOOL": [
+      {
+        "tripId": "111-SB-10",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 3,
+        "platform": "Platform 3",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "330-NB-11",
+        "routeId": "330",
+        "headsign": "Eagle Junction",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 7,
+        "platform": "Platform 5",
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "RBWH": [
+      {
+        "tripId": "66-OUT-12",
+        "routeId": "66",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 4,
+        "platform": "Platform E",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "330-SB-13",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 9,
+        "platform": "Platform B",
         "status": "on_time",
         "delayMinutes": 0
       }
