@@ -333,6 +333,7 @@ select:focus-visible {
   stroke-linejoin: round;
   opacity: 0.7;
   transition: opacity 140ms ease, stroke-width 140ms ease;
+  cursor: pointer;
 }
 
 .map-line.selected {
@@ -349,6 +350,12 @@ select:focus-visible {
   stroke: #ffffff;
   stroke-width: 2;
   transition: transform 100ms ease, fill 100ms ease;
+}
+
+.map-stop .stop-hit {
+  fill: transparent;
+  stroke: none;
+  cursor: pointer;
 }
 
 .map-stop .stop-ring {

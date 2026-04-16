@@ -44,6 +44,10 @@ function modePassesFilter(mode, filters) {
   return active.includes(mode);
 }
 
+function isInteractiveMapTarget(target) {
+  return Boolean(target?.closest?.(".map-stop, .map-line"));
+}
+
 export class MapView {
   constructor({ svg, cameraLayer, lineLayer, stopLayer, labelLayer, onStopSelect, onRouteSelect, mapConfig }) {
     this.svg = svg;
@@ -156,6 +160,14 @@ export class MapView {
       }
 
       const radius = stop.importance === "major" ? 8 : 6;
+      const hitTarget = createSvgElement("circle", {
+        cx: "0",
+        cy: "0",
+        r: `${Math.max(12, radius + 6)}`
+      });
+      hitTarget.classList.add("stop-hit");
+      group.append(hitTarget);
+
       const core = createSvgElement("circle", {
         cx: "0",
         cy: "0",
@@ -225,6 +237,9 @@ export class MapView {
       if (event.button !== 0) {
         return;
       }
+      if (isInteractiveMapTarget(event.target)) {
+        return;
+      }
       this.dragState = {
         active: true,
         pointerId: event.pointerId,
@@ -258,6 +273,9 @@ export class MapView {
     const endDrag = (event) => {
       if (event.pointerId !== this.dragState.pointerId) {
         return;
+      }
+      if (this.svg.hasPointerCapture(event.pointerId)) {
+        this.svg.releasePointerCapture(event.pointerId);
       }
       this.dragState.active = false;
       this.dragState.pointerId = null;
