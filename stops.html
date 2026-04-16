@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse stops and interchanges in CoastPulse Transit Atlas across supported regions." />
+    <title>CoastPulse Transit Atlas | Stops</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="./index.html">Map</a>
+          <a href="./stops.html" class="active">Stops</a>
+          <a href="./routes.html">Routes</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html">Data</a>
+          <a href="./about.html">About</a>
+        </nav>
+
+        <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+      </header>
+
+      <main class="routes-layout">
+        <section class="routes-list-card" aria-label="Stops list">
+          <div class="routes-card-header">
+            <h2>Stops and interchanges</h2>
+            <div class="routes-controls">
+              <label for="stops-region-select" class="sr-only">Select region</label>
+              <select id="stops-region-select"></select>
+              <label for="stops-search" class="sr-only">Search stops</label>
+              <input id="stops-search" type="search" placeholder="Search stop name or code" />
+              <button id="stops-clear" type="button">Clear</button>
+            </div>
+          </div>
+          <div id="stops-index-list"></div>
+        </section>
+
+        <section class="routes-detail-card" aria-label="Selected stop details">
+          <div class="routes-card-header">
+            <h2>Stop detail</h2>
+          </div>
+          <div id="stops-index-detail"></div>
+        </section>
+      </main>
+
+      <p class="footer-note">Stop details are representative and may differ from official platform-level operations.</p>
+    </div>
+
+    <script type="module" src="./assets/js/stopsPage.js"></script>
+  </body>
+</html>

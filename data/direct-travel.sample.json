@@ -1,27 +1,34 @@
 {
   "meta": {
     "source": "sample",
-    "generatedAt": "2026-04-16T09:00:00+10:00",
-    "version": "0.1.0",
-    "notes": "Direct edge estimates. Frontend may also derive estimates from route segment timings."
+    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "version": "0.2.0",
+    "notes": "Direct edges with confidence and distance proxy. Frontend may derive estimates from route segment timings when an explicit edge is not present."
   },
   "edges": [
-    { "origin": "HEL", "destination": "GCUH", "routeId": "GL", "minutes": 12, "bidirectional": true },
-    { "origin": "HEL", "destination": "SOUTH", "routeId": "GL", "minutes": 17, "bidirectional": true },
-    { "origin": "HEL", "destination": "CAVILL", "routeId": "GL", "minutes": 31, "bidirectional": true },
-    { "origin": "HEL", "destination": "BBS", "routeId": "GL", "minutes": 47, "bidirectional": true },
-    { "origin": "SOUTH", "destination": "BBS", "routeId": "GL", "minutes": 30, "bidirectional": true },
-    { "origin": "CAVILL", "destination": "BBS", "routeId": "GL", "minutes": 16, "bidirectional": true },
-    { "origin": "HARBOUR", "destination": "BBS", "routeId": "700", "minutes": 34, "bidirectional": true },
-    { "origin": "SOUTH", "destination": "BURLEIGH", "routeId": "700", "minutes": 37, "bidirectional": true },
-    { "origin": "BBS", "destination": "TUGUN", "routeId": "700", "minutes": 25, "bidirectional": true },
-    { "origin": "HEL", "destination": "BBS", "routeId": "777", "minutes": 40, "bidirectional": true },
-    { "origin": "HEL", "destination": "TUGUN", "routeId": "777", "minutes": 69, "bidirectional": true },
-    { "origin": "BBS", "destination": "TUGUN", "routeId": "777", "minutes": 29, "bidirectional": true },
-    { "origin": "ROBINA", "destination": "BBS", "routeId": "760", "minutes": 29, "bidirectional": true },
-    { "origin": "ROBINA", "destination": "GCUH", "routeId": "760", "minutes": 48, "bidirectional": true },
-    { "origin": "ROBINA", "destination": "HEL", "routeId": "760", "minutes": 63, "bidirectional": true },
-    { "origin": "COOMERA", "destination": "HEL", "routeId": "750", "minutes": 16, "bidirectional": true },
-    { "origin": "COOMERA", "destination": "CAVILL", "routeId": "750", "minutes": 52, "bidirectional": true }
+    { "origin": "HEL", "destination": "GCUH", "routeId": "GL", "region": "gold-coast", "minutes": 12, "distanceKm": 6.8, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+    { "origin": "HEL", "destination": "SOUTH", "routeId": "GL", "region": "gold-coast", "minutes": 17, "distanceKm": 9.6, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+    { "origin": "HEL", "destination": "CAVILL", "routeId": "GL", "region": "gold-coast", "minutes": 31, "distanceKm": 15.1, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+    { "origin": "HEL", "destination": "BBS", "routeId": "GL", "region": "gold-coast", "minutes": 47, "distanceKm": 21.0, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+    { "origin": "SOUTH", "destination": "BBS", "routeId": "GL", "region": "gold-coast", "minutes": 30, "distanceKm": 11.2, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+    { "origin": "CAVILL", "destination": "BBS", "routeId": "GL", "region": "gold-coast", "minutes": 16, "distanceKm": 6.2, "bidirectional": true, "confidence": "high", "estimateSource": "edge" },
+
+    { "origin": "HARBOUR", "destination": "BBS", "routeId": "700", "region": "gold-coast", "minutes": 34, "distanceKm": 16.5, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "SOUTH", "destination": "BURLEIGH", "routeId": "700", "region": "gold-coast", "minutes": 37, "distanceKm": 17.8, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "BBS", "destination": "TUGUN", "routeId": "700", "region": "gold-coast", "minutes": 25, "distanceKm": 12.4, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+
+    { "origin": "HEL", "destination": "BBS", "routeId": "777", "region": "gold-coast", "minutes": 40, "distanceKm": 20.7, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "HEL", "destination": "VLKS", "routeId": "777", "region": "gold-coast", "minutes": 80, "distanceKm": 33.5, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+
+    { "origin": "ROBINA", "destination": "BBS", "routeId": "760", "region": "gold-coast", "minutes": 29, "distanceKm": 13.6, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "ROBINA", "destination": "GCUH", "routeId": "760", "region": "gold-coast", "minutes": 48, "distanceKm": 21.4, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "ROBINA", "destination": "HEL", "routeId": "760", "region": "gold-coast", "minutes": 63, "distanceKm": 28.9, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+
+    { "origin": "COOMERA", "destination": "HEL", "routeId": "750", "region": "gold-coast", "minutes": 16, "distanceKm": 8.0, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "COOMERA", "destination": "CAVILL", "routeId": "750", "region": "gold-coast", "minutes": 52, "distanceKm": 25.0, "bidirectional": true, "confidence": "low", "estimateSource": "edge", "note": "Low confidence due to demand and traffic variability." },
+
+    { "origin": "UQLA", "destination": "RBWH", "routeId": "66", "region": "brisbane", "minutes": 23, "distanceKm": 9.8, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "ROMA", "destination": "GARD", "routeId": "111", "region": "brisbane", "minutes": 37, "distanceKm": 14.2, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" },
+    { "origin": "CHMS", "destination": "WOOL", "routeId": "330", "region": "brisbane", "minutes": 30, "distanceKm": 12.1, "bidirectional": true, "confidence": "medium", "estimateSource": "edge" }
   ]
 }

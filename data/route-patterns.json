@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "dataset": "seq-route-patterns",
+    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "version": "0.2.0",
+    "notes": "Patterns are simplified and intended for direct-trip eligibility and route detail UX."
+  },
+  "patterns": [
+    {
+      "id": "GL-SB-ALL",
+      "routeId": "GL",
+      "region": "gold-coast",
+      "directionId": "southbound",
+      "name": "Helensvale to Broadbeach South",
+      "headsign": "Broadbeach South",
+      "stopSequence": ["HEL", "PARK", "GRIF", "GCUH", "SOUTH", "SOUTHS", "NERANG", "CAVILL", "SPN", "CYP", "NORTH", "FLOR", "BBN", "BBS"],
+      "serviceWindow": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+      "sampleTripMinutes": 47,
+      "status": "active"
+    },
+    {
+      "id": "GL-NB-ALL",
+      "routeId": "GL",
+      "region": "gold-coast",
+      "directionId": "northbound",
+      "name": "Broadbeach South to Helensvale",
+      "headsign": "Helensvale",
+      "stopSequence": ["BBS", "BBN", "FLOR", "NORTH", "CYP", "SPN", "CAVILL", "NERANG", "SOUTHS", "SOUTH", "GCUH", "GRIF", "PARK", "HEL"],
+      "serviceWindow": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+      "sampleTripMinutes": 47,
+      "status": "active"
+    },
+    {
+      "id": "700-SB",
+      "routeId": "700",
+      "region": "gold-coast",
+      "directionId": "southbound",
+      "name": "Harbour Town to Tugun",
+      "headsign": "Tugun Village",
+      "stopSequence": ["HARBOUR", "SOUTH", "CAVILL", "BBN", "BBS", "BURLEIGH", "TUGUN"],
+      "serviceWindow": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
+      "sampleTripMinutes": 59,
+      "status": "active"
+    },
+    {
+      "id": "777-SB",
+      "routeId": "777",
+      "region": "gold-coast",
+      "directionId": "southbound",
+      "name": "Helensvale to Varsity Lakes",
+      "headsign": "Varsity Lakes Station",
+      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN", "VLKS"],
+      "serviceWindow": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
+      "sampleTripMinutes": 80,
+      "status": "active"
+    },
+    {
+      "id": "760-NB",
+      "routeId": "760",
+      "region": "gold-coast",
+      "directionId": "northbound",
+      "name": "Robina to Helensvale",
+      "headsign": "Helensvale Interchange",
+      "stopSequence": ["ROBINA", "VLKS", "BURLEIGH", "PFI", "BBS", "GCUH", "GRIF", "HEL"],
+      "serviceWindow": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
+      "sampleTripMinutes": 63,
+      "status": "active"
+    },
+    {
+      "id": "66-IN",
+      "routeId": "66",
+      "region": "brisbane",
+      "directionId": "inbound",
+      "name": "UQ Lakes to RBWH",
+      "headsign": "RBWH Station",
+      "stopSequence": ["UQLA", "CULT", "KING", "ROMA", "RBWH"],
+      "serviceWindow": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
+      "sampleTripMinutes": 23,
+      "status": "preview"
+    },
+    {
+      "id": "111-SB",
+      "routeId": "111",
+      "region": "brisbane",
+      "directionId": "southbound",
+      "name": "Roma Street to Garden City",
+      "headsign": "Garden City",
+      "stopSequence": ["ROMA", "KING", "CULT", "WOOL", "GARD"],
+      "serviceWindow": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
+      "sampleTripMinutes": 37,
+      "status": "preview"
+    },
+    {
+      "id": "330-SB",
+      "routeId": "330",
+      "region": "brisbane",
+      "directionId": "southbound",
+      "name": "Eagle Junction to Woolloongabba",
+      "headsign": "Woolloongabba",
+      "stopSequence": ["EAGL", "CHMS", "RBWH", "ROMA", "WOOL"],
+      "serviceWindow": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
+      "sampleTripMinutes": 38,
+      "status": "preview"
+    }
+  ]
+}

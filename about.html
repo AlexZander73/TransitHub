@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="About CoastPulse Transit and important unofficial project disclaimers." />
-    <title>CoastPulse Transit | About</title>
+    <meta name="description" content="About CoastPulse Transit Atlas and unofficial project disclaimers." />
+    <title>CoastPulse Transit Atlas | About</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -13,15 +13,17 @@
         <div class="brand-lockup">
           <div class="brand-mark" aria-hidden="true"></div>
           <div>
-            <h1 data-brand-name>CoastPulse Transit</h1>
-            <p>Unofficial transit viewer</p>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
           </div>
         </div>
 
         <nav class="top-nav" aria-label="Primary">
           <a href="./index.html">Map</a>
+          <a href="./stops.html">Stops</a>
           <a href="./routes.html">Routes</a>
-          <a href="./how-it-works.html">How it works</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html">Data</a>
           <a href="./about.html" class="active">About</a>
         </nav>
 
@@ -32,41 +34,49 @@
         <section>
           <h2>About This Project</h2>
           <p>
-            CoastPulse Transit is a personal, unofficial public transit information website focused first on Gold Coast tram and major bus interchange nodes.
-            It is built as a static-first GitHub Pages project so it can stay fast, low-cost, and easy to maintain.
+            CoastPulse Transit Atlas is a personal, unofficial transit information website focused first on the Gold Coast,
+            with visible expansion scaffolding for Brisbane and surrounding South East Queensland.
           </p>
           <p class="callout">
-            This website is not an official source. It is not operated, sponsored, or endorsed by Translink or the Queensland Government.
+            This website is not an official source and is not operated, sponsored, or endorsed by Translink or the Queensland Government.
           </p>
         </section>
 
         <section>
-          <h3>Data Reliability Notice</h3>
+          <h3>Product intent</h3>
           <ul>
-            <li>Times can be delayed, incomplete, unavailable, or approximate.</li>
-            <li>Live feeds may fail or be stale and fall back to static/scheduled estimates.</li>
-            <li>Static direct-travel times are representative and may not match real-world operations at all times.</li>
-            <li>Always verify critical travel decisions with official channels before departing.</li>
+            <li>Fast map-first stop and route exploration</li>
+            <li>Clear upcoming departures with source transparency (live, sample, schedule)</li>
+            <li>Honest direct-only travel estimation with no fake transfer routing</li>
+            <li>Calm, high-clarity local transit UX for everyday use</li>
           </ul>
         </section>
 
         <section>
-          <h3>Attribution Placeholders</h3>
-          <p>Replace these placeholders with exact licensing/attribution text before public launch:</p>
+          <h3>Reliability notice</h3>
           <ul>
-            <li>Translink/Queensland open data attribution statement and license terms.</li>
-            <li>GTFS or realtime feed source URL, date of retrieval, and usage conditions.</li>
-            <li>Any third-party base map, imagery, icon, or typography licenses.</li>
+            <li>Data can be delayed, incomplete, stale, or approximate.</li>
+            <li>Live snapshots can fail and automatically fall back to sample/scheduled estimates.</li>
+            <li>Direct estimates are representative and may not match real operations at all times.</li>
+            <li>Always verify critical travel decisions with official channels before travel.</li>
           </ul>
         </section>
 
         <section>
-          <h3>Scope Boundaries</h3>
+          <h3>Scope boundaries</h3>
           <ul>
-            <li>Map-first stop exploration and route overlays.</li>
-            <li>Simple direct line/route estimate only.</li>
-            <li>No transfer planner, fare engine, account system, or official disruption operations support.</li>
+            <li>No full transfer planner, walking-transfer engine, or fare calculator.</li>
+            <li>No account system, login, admin portal, or backend runtime requirement.</li>
+            <li>No claim of official operational authority.</li>
           </ul>
+        </section>
+
+        <section>
+          <h3>Local data and privacy</h3>
+          <p>
+            Saved stops, saved routes, and recent activity are stored in local browser storage only on your device.
+            This static deployment does not provide cloud profile syncing.
+          </p>
         </section>
       </article>
     </div>

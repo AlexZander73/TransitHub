@@ -1,99 +1,132 @@
-# CoastPulse Transit (MVP)
+# CoastPulse Transit Atlas
 
-CoastPulse Transit is an **unofficial**, map-first public transit website focused on the **Gold Coast** first, with architecture ready to expand into Brisbane and surrounding SEQ areas.
+CoastPulse Transit Atlas is an **unofficial**, static-first, map-centric transit information website focused on **Gold Coast first**, with active scaffolding for **Brisbane** and broader SEQ expansion.
 
-This repository ships a complete static MVP optimized for GitHub Pages:
-
-- Custom stylized transit map (SVG, top-down)
-- Clickable tram stops and major bus interchange nodes
-- Route overlays and route highlight states
-- Stop detail panel with departures, alerts, and map jump links
-- Direct-only travel time estimates between valid connected stops
-- Live-data adapter layer with clear static/scheduled fallback behavior
+It is designed to run directly on **GitHub Pages**.
 
 ## Important disclaimer
 
-This is a personal unofficial project. It is **not affiliated with Translink**.
+This is a personal unofficial project and is **not affiliated with Translink** or the Queensland Government.
 
-Times, alerts, and direct travel estimates may be delayed, incomplete, unavailable, or approximate. Always verify critical travel decisions via official sources.
+Times, alerts, and direct travel estimates may be delayed, incomplete, unavailable, or approximate. Always verify critical travel decisions via official channels.
 
-## Feature summary
+## What this build delivers
 
-- Gold Coast-first network coverage with realistic sample data
-  - G:link tram spine
-  - Helensvale and major interchange nodes
-  - Selected key bus connectors
-- Map interactions
-  - Select stop
-  - Select/highlight route
-  - Pan/zoom controls
-  - Mode filtering (tram/bus/interchange)
-- Stop detail UI
-  - Modes, code, routes at stop
-  - Next departures + countdowns
-  - Alert/disruption section
-  - Open in Google Maps / satellite links
-  - Copy coordinates / share stop link
-- Direct travel estimator (intentionally limited scope)
-  - Origin/destination selection
-  - Direct-route-only estimates
-  - Clear unsupported state when transfer journey is required
-- Search
-  - Stop name/code
-  - Route number/name
-- Resilience
-  - Optional live JSON
-  - Sample snapshot fallback
-  - Scheduled fallback generation
+## Core map experience
+
+- Premium map-first homepage with stylized SVG network map
+- Region switcher (Gold Coast + Brisbane preview)
+- Map mode toggles (`stylized`, `corridor`, `connections`)
+- Clickable stops, stations, and interchange nodes
+- Route overlay highlighting and route legend interactions
+- Pan/zoom with keyboard-friendly search shortcuts
+
+## Stop intelligence
+
+- Rich stop panel with stop type, modes, coordinates, and links
+- Upcoming departures with countdowns and source labels (`Live`, `Sample`, `Schedule`)
+- Stop-level and route-level alerts in context
+- Nearby linked stops + connected interchange notes
+- External map links (Google Maps, satellite, OpenStreetMap)
+- Share stop link + copy coordinates
+
+## Route intelligence
+
+- Route index page with region switch + search
+- Route detail with direction/service windows and stop sequence timing
+- Route variant/pattern visibility from `route-patterns.json`
+- Save route and share route link behaviors
+
+## Planner-lite (honest scope)
+
+- Direct-trip estimate only (same-route / supported direct edge)
+- Next departure + estimated arrival when available
+- Distance proxy + confidence label where modeled
+- Transparent unsupported messaging for transfer-capable pairs
+- No fake transfer pathfinding
+
+## Alerts and discovery
+
+- Dedicated alerts page (active + recent) with severity filter
+- Improved stop/route search with keyboard navigation and recent searches
+- Stops index page with detail panel and quick map jump links
+
+## Local-only personalization
+
+Stored in browser localStorage only:
+
+- pinned/favorite stops
+- saved routes
+- recent stops
+- recent routes
+- recent search history
+- recent direct-trip pairs
+
+No accounts or server-side profiles.
 
 ## Stack
 
 - Plain HTML/CSS/JavaScript modules
 - Static JSON data in `/data`
-- Optional Node build-time scripts in `/scripts`
+- Optional Node scripts for build-time transforms/validation/live-merge
 - No runtime backend
 
-## Folder structure
+## Project structure
 
 ```text
 /
   index.html
+  stops.html
   routes.html
+  alerts.html
+  data.html
   about.html
   how-it-works.html
   assets/
     css/styles.css
     js/
       app.js
+      stopsPage.js
       routesPage.js
+      alertsPage.js
       services/
       state/
       ui/
       utils/
   data/
     config.json
+    regions.json
     stops.json
     routes.json
     lines.json
+    interchanges.json
+    route-patterns.json
     departures.sample.json
     alerts.sample.json
     direct-travel.sample.json
+    departures.live.json         # optional generated snapshot
+    alerts.live.json             # optional generated snapshot
   scripts/
     fetch-live-sources.mjs
-    transform-gtfs.mjs
     merge-live-feeds.mjs
+    transform-gtfs.mjs
     validate-data.mjs
   docs/
     architecture.md
     data-model.md
     future-live-data.md
-  package.json
+    design-notes.md
+    deployment.md
+    roadmap.md
+    content-guidelines.md
+    accessibility-notes.md
+  .github/workflows/live-data-refresh.yml
   README.md
 ```
 
 ## Local development
 
-### Option 1: Python static server
+Serve static files:
 
 ```bash
 python3 -m http.server 4173
@@ -101,126 +134,125 @@ python3 -m http.server 4173
 
 Open: [http://localhost:4173](http://localhost:4173)
 
-### Option 2: npm script
-
-```bash
-npm run serve
-```
-
-### Validate data
+Validation and checks:
 
 ```bash
 npm run validate:data
+node --check assets/js/app.js
+node --check assets/js/routesPage.js
+node --check assets/js/stopsPage.js
+node --check assets/js/alertsPage.js
 ```
-
-### Refresh live artifacts locally
-
-```bash
-npm run fetch:live -- --departures-source https://example.com/departures --alerts-source https://example.com/alerts
-npm run merge:live
-npm run validate:data
-```
-
-Or, if `LIVE_DEPARTURES_SOURCE` / `LIVE_ALERTS_SOURCE` env vars are already set:
-
-```bash
-npm run refresh:live
-```
-
-An example environment template is provided in `.env.live.example`.
 
 ## GitHub Pages deployment
 
-This project is static-hosting friendly by default.
+Repository: `AlexZander73/TransitHub`
 
-1. Push to GitHub repository
-2. In repository settings, enable Pages
-3. Set source to deploy from branch (typically `main`) and root (`/`)
-4. Ensure `index.html` is at repository root (already true)
+1. Push changes to `main`
+2. GitHub repo Settings -> Pages
+3. Source: Deploy from branch
+4. Branch: `main`, Folder: `/ (root)`
 
-No Node runtime is required for hosted frontend.
+The deployed frontend needs no Node runtime.
 
-## How data works
+## Data model and runtime behavior
 
-Runtime data paths are configured in `data/config.json`.
+Runtime is configured by `data/config.json`.
 
-### Core data files
+Primary runtime files:
 
-- `stops.json`: stop/interchange metadata + map coordinates
-- `routes.json`: route definitions + stop sequence + service profiles
-- `lines.json`: map overlay polylines + route associations
-- `direct-travel.sample.json`: direct edge overrides for travel estimates
-- `departures.sample.json`: sample departure snapshots
-- `alerts.sample.json`: sample alert notices
+- `regions.json`
+- `stops.json`
+- `routes.json`
+- `lines.json`
+- `interchanges.json`
+- `route-patterns.json`
+- `direct-travel.sample.json`
+- `departures.sample.json`
+- `alerts.sample.json`
 
-Detailed contracts are documented in:
+Detailed contracts:
 
 - `docs/data-model.md`
 - `docs/architecture.md`
 
-## Live vs mocked behavior
+## Live vs sample vs schedule
 
-Current default setup is static-first with representative sample data:
+Departure/alert adapters follow this order:
 
-- `config.liveData.enabled` is `false`
-- Departures and alerts use sample/scheduled fallback logic
+1. live snapshot JSON (if enabled and fresh)
+2. sample snapshot JSON
+3. schedule-derived departures (departures only)
 
-When ready, you can enable live mode by generating:
+Status text in UI explicitly reports fallback state.
 
-- `data/departures.live.json`
-- `data/alerts.live.json`
+## Replacing sample data later
 
-Then set `config.liveData.enabled` to `true`.
-
-Integration details: `docs/future-live-data.md`
-
-## Replacing sample data with real feeds later
-
-1. Import GTFS static data with:
+### GTFS import
 
 ```bash
 npm run build:gtfs -- --input ./raw/gtfs --output ./data
 ```
 
-2. Normalize live feeds with:
+### Live snapshot pipeline
 
 ```bash
+npm run fetch:live -- --departures-source https://example.com/departures --alerts-source https://example.com/alerts
 npm run merge:live -- --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data
+npm run validate:data
 ```
 
-3. Optionally automate refresh using `.github/workflows/live-data-refresh.yml` and repository secrets:
-   - `LIVE_DEPARTURES_SOURCE`
-   - `LIVE_ALERTS_SOURCE`
-   - optional auth headers `LIVE_HEADER_1..LIVE_HEADER_4` (`Header-Name: value`)
-4. Enable live mode in `data/config.json`
-5. Run `npm run validate:data`
-6. Commit updated `/data` artifacts and deploy
+Optional automation is included in `.github/workflows/live-data-refresh.yml`.
 
-## What is intentionally out of scope in this MVP
+## What is mocked vs implemented
 
-- Full transfer journey planner
-- Walking transfer timing logic
-- Fare calculation
+Implemented:
+
+- multi-region static data model and region switching
+- map interactions and route/stop overlays
+- departures/alerts adapter chain and fallback UI
+- direct-only trip estimation with explicit boundaries
+- favorites/recents/deep-link state
+
+Representative sample/mocked data:
+
+- many route timings, departures, and alerts are modeled samples
+- Brisbane coverage is scaffold-level preview
+
+## Deep links
+
+URL state supports:
+
+- `region`
+- `stop`
+- `route`
+- `origin`
+- `destination`
+- `compareStop`
+- `mapMode`
+- mode filters (`tram`, `bus`, `interchange`)
+
+## Intentionally out of scope
+
+- Full transfer planner with arbitrary walking links
+- Fare engine
 - Accessibility routing engine
-- Account/login/admin features
+- Account/login/admin/CMS
 
-## Roadmap
-
-- Region switcher and Brisbane dataset onboarding
-- Better route direction handling and route variants
-- Optional favorites and pinned stops
-- Optional print-friendly stop/route sheets
-- Improved live feed freshness indicators
-
-## Attribution and compliance checklist (before public launch)
-
-- Add exact open-data attribution text and license references
-- Add live feed source and terms references
-- Verify third-party asset licensing
-- Keep disclaimer copy visible in UI and About page
-
-## Architecture docs
+## Docs index
 
 - [Architecture](./docs/architecture.md)
 - [Data model](./docs/data-model.md)
 - [Future live data](./docs/future-live-data.md)
+- [Design notes](./docs/design-notes.md)
+- [Deployment](./docs/deployment.md)
+- [Roadmap](./docs/roadmap.md)
+- [Content guidelines](./docs/content-guidelines.md)
+- [Accessibility notes](./docs/accessibility-notes.md)
+
+## Attribution checklist before public launch
+
+- Add exact open-data license attribution text
+- Add official source URLs and terms
+- Verify third-party asset licensing
+- Keep disclaimer and non-affiliation copy visible

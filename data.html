@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Data, sources, attribution, and limitations for CoastPulse Transit Atlas." />
+    <title>CoastPulse Transit Atlas | Data & Sources</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="./index.html">Map</a>
+          <a href="./stops.html">Stops</a>
+          <a href="./routes.html">Routes</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html" class="active">Data</a>
+          <a href="./about.html">About</a>
+        </nav>
+
+        <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+      </header>
+
+      <article class="static-page">
+        <section>
+          <h2>Data and source notes</h2>
+          <p>
+            CoastPulse Transit Atlas is a static-first unofficial transit information website. It uses representative sample data in this repository,
+            with optional live JSON snapshots when configured.
+          </p>
+        </section>
+
+        <section>
+          <h3>Current runtime data files</h3>
+          <ul>
+            <li><code>data/stops.json</code> and <code>data/interchanges.json</code> for stop/node modeling</li>
+            <li><code>data/routes.json</code>, <code>data/lines.json</code>, and <code>data/route-patterns.json</code> for route and map overlays</li>
+            <li><code>data/departures.sample.json</code> and optional <code>data/departures.live.json</code> for departures</li>
+            <li><code>data/alerts.sample.json</code> and optional <code>data/alerts.live.json</code> for alerts</li>
+            <li><code>data/direct-travel.sample.json</code> for direct-estimate support edges</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Important limitations</h3>
+          <ul>
+            <li>Not an official service and not affiliated with Translink or the Queensland Government.</li>
+            <li>Data may be delayed, incomplete, stale, or approximate.</li>
+            <li>Direct estimate logic supports only direct same-route journeys and does not provide full transfer planning.</li>
+            <li>Always verify critical travel decisions with official channels.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Attribution placeholders</h3>
+          <p>Before public launch, replace placeholders with exact licensing and attribution text:</p>
+          <ul>
+            <li>Queensland/Translink open data license and attribution statement</li>
+            <li>Realtime feed source URLs, refresh timing, and usage conditions</li>
+            <li>Any third-party mapping, iconography, or typography licenses</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Privacy note</h3>
+          <p>
+            Favorites, recent stops, recent routes, and recent direct-trip checks are stored locally in your browser only.
+            No account system or server-side profile storage is used in this static deployment.
+          </p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

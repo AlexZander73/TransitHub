@@ -1,19 +1,28 @@
 {
   "app": {
-    "name": "CoastPulse Transit",
-    "tagline": "Unofficial Gold Coast transit view",
-    "region": "Gold Coast",
-    "defaultTheme": "light",
-    "timezone": "Australia/Brisbane"
+    "name": "CoastPulse Transit Atlas",
+    "tagline": "Unofficial map-first transit intelligence for SEQ",
+    "primaryRegion": "gold-coast",
+    "timezone": "Australia/Brisbane",
+    "defaultTheme": "light"
   },
   "regions": {
-    "active": ["gold-coast"],
-    "planned": ["brisbane", "logan", "sunshine-coast"]
+    "defaultRegion": "gold-coast",
+    "enabled": ["gold-coast", "brisbane"],
+    "planned": ["logan", "sunshine-coast", "ipswich"]
+  },
+  "ui": {
+    "defaultMapMode": "stylized",
+    "mapModes": ["stylized", "corridor", "connections"],
+    "showPlannedRegions": true
   },
   "dataPaths": {
+    "regions": "data/regions.json",
     "stops": "data/stops.json",
     "routes": "data/routes.json",
     "lines": "data/lines.json",
+    "interchanges": "data/interchanges.json",
+    "routePatterns": "data/route-patterns.json",
     "departuresSample": "data/departures.sample.json",
     "alertsSample": "data/alerts.sample.json",
     "directTravel": "data/direct-travel.sample.json"
@@ -26,17 +35,28 @@
   },
   "fallback": {
     "departureLookaheadMinutes": 90,
-    "defaultDepartureLimit": 6
+    "defaultDepartureLimit": 8,
+    "noDataMessage": "No live or scheduled departures are currently available for this stop."
   },
   "map": {
-    "viewBox": "0 0 1024 1600",
-    "minZoom": 0.8,
-    "maxZoom": 2.4,
+    "viewBox": "0 0 1200 1700",
+    "minZoom": 0.75,
+    "maxZoom": 2.7,
     "defaultZoom": 1,
+    "defaultPanX": 0,
+    "defaultPanY": 0,
     "showGrid": false
   },
   "disclaimer": {
-    "short": "Unofficial project. Not affiliated with Translink.",
-    "long": "Service times can be delayed, incomplete, or approximate. Always verify critical travel decisions using official channels."
+    "short": "Unofficial project. Not affiliated with Translink or the Queensland Government.",
+    "long": "This is an unofficial, independent project. Data may be delayed, incomplete, or approximate. Always verify critical travel decisions via official channels before travel."
+  },
+  "privacy": {
+    "localStorageOnly": true,
+    "note": "Favorites, recents, and quick history are stored only in your browser on this device."
+  },
+  "attribution": {
+    "placeholder": true,
+    "notes": "Replace with exact open-data licensing attribution before public launch."
   }
 }

@@ -1,40 +1,84 @@
 {
   "meta": {
     "source": "sample",
-    "generatedAt": "2026-04-16T09:00:00+10:00",
-    "version": "0.1.0"
+    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "version": "0.2.0"
   },
   "alerts": [
     {
       "id": "ALERT-GL-LOW-SPEED-001",
+      "region": "gold-coast",
       "level": "minor",
+      "severity": 2,
       "title": "Tram speed restriction near Surfers Paradise North",
       "description": "Southbound and northbound trams may run up to 4 minutes late between Cavill Avenue and Cypress Avenue.",
       "routes": ["GL"],
       "stops": ["CAVILL", "SPN", "CYP"],
+      "interchanges": ["gc-surfers"],
       "effectiveFrom": "2026-04-15T06:00:00+10:00",
       "effectiveTo": "2026-12-31T23:59:00+10:00",
-      "status": "active"
+      "status": "active",
+      "impact": "Travel time"
     },
     {
       "id": "ALERT-700-STOP-CHANGE-002",
+      "region": "gold-coast",
       "level": "info",
+      "severity": 1,
       "title": "Route 700 temporary stop relocation near Burleigh",
       "description": "Use temporary bay signage near Burleigh Heads Centre while streetscape upgrades are underway.",
       "routes": ["700"],
       "stops": ["BURLEIGH"],
+      "interchanges": ["gc-burleigh"],
       "effectiveFrom": "2026-04-01T00:00:00+10:00",
       "effectiveTo": "2026-09-01T23:59:00+10:00",
-      "status": "active"
+      "status": "active",
+      "impact": "Stop change"
     },
     {
-      "id": "ALERT-PLANNED-NORTH-003",
+      "id": "ALERT-BBS-WEATHER-003",
+      "region": "gold-coast",
+      "level": "minor",
+      "severity": 2,
+      "title": "Broadbeach South weather operations",
+      "description": "Short weather-related holding events are possible at Broadbeach South interchange tonight.",
+      "routes": ["GL", "760", "777"],
+      "stops": ["BBS", "PFI"],
+      "interchanges": ["gc-broadbeach"],
+      "effectiveFrom": "2026-04-16T17:00:00+10:00",
+      "effectiveTo": "2026-04-17T04:00:00+10:00",
+      "status": "active",
+      "impact": "Headway"
+    },
+    {
+      "id": "ALERT-BNE-CULT-WORKS-010",
+      "region": "brisbane",
+      "level": "major",
+      "severity": 3,
+      "title": "Cultural Centre platform works",
+      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66 and 111.",
+      "routes": ["66", "111"],
+      "stops": ["CULT"],
+      "interchanges": ["bne-southbank"],
+      "effectiveFrom": "2026-04-16T18:00:00+10:00",
+      "effectiveTo": "2026-04-18T02:00:00+10:00",
+      "status": "active",
+      "impact": "Platform access"
+    },
+    {
+      "id": "ALERT-BNE-NORTH-011",
+      "region": "brisbane",
       "level": "info",
-      "title": "Coomera connector timetable refresh",
-      "description": "Sample notice: route 750 evening frequency review is planned. Check official sources for confirmed timetable updates.",
-      "routes": ["750"],
-      "stops": ["COOMERA", "HEL"],
-      "status": "active"
+      "severity": 1,
+      "title": "Northside event traffic",
+      "description": "Minor evening delays expected for route 330 around RBWH and Chermside.",
+      "routes": ["330"],
+      "stops": ["RBWH", "CHMS"],
+      "interchanges": ["bne-north-core"],
+      "effectiveFrom": "2026-04-16T16:30:00+10:00",
+      "effectiveTo": "2026-04-16T22:30:00+10:00",
+      "status": "active",
+      "impact": "Traffic"
     }
   ]
 }

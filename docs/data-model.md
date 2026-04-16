@@ -2,29 +2,59 @@
 
 ## Files
 
+Core runtime files:
+
 - `data/config.json`
+- `data/regions.json`
 - `data/stops.json`
 - `data/routes.json`
 - `data/lines.json`
+- `data/interchanges.json`
+- `data/route-patterns.json`
+- `data/direct-travel.sample.json`
 - `data/departures.sample.json`
 - `data/alerts.sample.json`
-- `data/direct-travel.sample.json`
-- `data/departures.live.json` (optional generated artifact)
-- `data/alerts.live.json` (optional generated artifact)
+
+Optional generated live files:
+
+- `data/departures.live.json`
+- `data/alerts.live.json`
 
 ## `config.json`
 
-Primary runtime config:
+Defines runtime paths and behavior:
 
-- `app`: branding, timezone, region label
-- `regions`: active/planned areas
-- `dataPaths`: static JSON file locations
-- `liveData`: live adapter settings (`enabled`, `paths`, `maxAgeMinutes`)
-- `fallback`: departure lookahead/limits
-- `map`: viewbox and zoom settings
-- `disclaimer`: short and long copy
+- `app`: name, tagline, timezone
+- `regions`: enabled/planned/default region
+- `ui`: default map mode and supported map modes
+- `dataPaths`: file locations for all runtime datasets
+- `liveData`: enable flags and live snapshot paths
+- `fallback`: departure limit/lookahead/no-data copy
+- `map`: viewBox + zoom config
+- `disclaimer` + `privacy`
+
+## `regions.json`
+
+Region catalog for selector + expansion state.
+
+Example:
+
+```json
+{
+  "id": "gold-coast",
+  "label": "Gold Coast",
+  "status": "active",
+  "default": true,
+  "description": "Flagship region",
+  "mapViewport": { "focus": { "x": 620, "y": 840, "zoom": 1 } }
+}
+```
 
 ## `stops.json`
+
+Stop/station/interchange nodes.
+
+Example:
 
 ```json
 {
@@ -32,82 +62,88 @@ Primary runtime config:
   "region": "gold-coast",
   "name": "Broadbeach South Interchange",
   "code": "BBS",
+  "type": "interchange",
   "modes": ["tram", "bus", "interchange"],
   "lat": -28.0348,
   "lon": 153.4202,
-  "map": { "x": 738, "y": 1260 },
+  "map": { "x": 770, "y": 1275 },
   "routes": ["GL", "700", "777", "760"],
-  "importance": "major"
+  "interchangeId": "gc-broadbeach",
+  "nearbyStopIds": ["BBN", "PFI", "BURLEIGH"]
 }
 ```
-
-Key notes:
-
-- `map` coordinates power the custom SVG map
-- `modes` drive filter chips and styling
-- `importance` controls label density and node emphasis
 
 ## `routes.json`
 
-```json
-{
-  "id": "GL",
-  "lineId": "glink",
-  "shortName": "G",
-  "longName": "G:link Tram",
-  "mode": "tram",
-  "color": "#00b39f",
-  "stopSequence": ["HEL", "PARK", "...", "BBS"],
-  "segmentMinutes": [4, 4, 4],
-  "directions": [
-    {
-      "id": "southbound",
-      "headsign": "Broadbeach South",
-      "originStopId": "HEL",
-      "destinationStopId": "BBS",
-      "service": {
-        "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
-        "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
-      }
-    }
-  ]
-}
-```
+Route definitions and service profiles.
 
-Key notes:
+Key fields:
 
-- `stopSequence` + `segmentMinutes` drive direct timing math
-- `directions` + `service` drive scheduled fallback generation
+- `region`, `lineId`, `family`
+- `shortName`, `longName`, `mode`, `color`
+- `stopSequence`, `segmentMinutes`
+- `serviceSpan`
+- `directions[]`
+- `status` (`active`, `preview`)
 
 ## `lines.json`
 
-Map overlay definitions:
+Map line overlays.
 
-- `id`, `mode`, `color`
-- `routeIds`: route associations for highlighting
-- `path`: polyline point array for SVG rendering
+Key fields:
 
-## `departures.sample.json`
+- `id`, `region`, `mode`, `color`
+- `routeIds`
+- `layer` (`primary`, `corridor`, `secondary`)
+- `path[]` points for SVG rendering
 
-Sample or snapshot departures by stop:
+## `interchanges.json`
+
+Grouped transfer nodes and relationships.
+
+Key fields:
+
+- `id`, `region`, `name`, `type`
+- `stopIds`
+- `connectedInterchanges`
+- `notes`
+
+## `route-patterns.json`
+
+Simplified variants for route detail + direct eligibility context.
+
+Key fields:
+
+- `id`, `routeId`, `region`, `directionId`
+- `name`, `headsign`
+- `stopSequence`
+- `serviceWindow`
+- `sampleTripMinutes`
+
+## `direct-travel.sample.json`
+
+Direct-estimate support edges.
+
+Example:
 
 ```json
 {
-  "stops": {
-    "HEL": [
-      {
-        "routeId": "GL",
-        "headsign": "Broadbeach South",
-        "inMinutes": 2,
-        "platform": "Tram A",
-        "status": "on_time"
-      }
-    ]
-  }
+  "origin": "HEL",
+  "destination": "BBS",
+  "routeId": "GL",
+  "region": "gold-coast",
+  "minutes": 47,
+  "distanceKm": 21.0,
+  "confidence": "high",
+  "bidirectional": true
 }
 ```
 
-Supported entry formats in adapter:
+If no edge exists, frontend can derive same-route estimates from `segmentMinutes`.
+
+## `departures.sample.json`
+
+Snapshot departures by stop key. Supported entry input forms in adapter:
 
 - `inMinutes`
 - `expectedTime` (ISO)
@@ -116,34 +152,13 @@ Supported entry formats in adapter:
 
 ## `alerts.sample.json`
 
-Array of notices with optional route/stop targeting and active windows:
+Alert notices with targeting and severity:
 
-- `id`, `level`, `title`, `description`
-- `routes`, `stops`
-- `effectiveFrom`, `effectiveTo`
-- `status`
+- `region`, `level`, `severity`
+- `routes`, `stops`, `interchanges`
+- `effectiveFrom`, `effectiveTo`, `status`
+- `impact`
 
-## `direct-travel.sample.json`
+## Live files contract
 
-Direct trip override/lookup edges:
-
-```json
-{
-  "origin": "HEL",
-  "destination": "BBS",
-  "routeId": "GL",
-  "minutes": 47,
-  "bidirectional": true
-}
-```
-
-If no edge exists, app attempts route-derived estimate from `stopSequence` + `segmentMinutes`.
-
-## Optional generated live files
-
-When live refresh is enabled, these are generated by scripts:
-
-- `data/departures.live.json`
-- `data/alerts.live.json`
-
-Contracts are documented in `docs/future-live-data.md`.
+Live files follow the same functional shape as sample files and are treated as optional runtime sources.

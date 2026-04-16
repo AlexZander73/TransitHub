@@ -2,72 +2,97 @@
 
 ## Summary
 
-CoastPulse Transit uses a static-first architecture designed for GitHub Pages:
+CoastPulse Transit Atlas is a static-first transit web application designed for GitHub Pages deployment with no runtime backend.
 
-- Static frontend (`HTML/CSS/JS` modules)
-- Static data JSON in `/data`
-- Optional build-time scripts in `/scripts`
-- Optional live JSON adapters with graceful fallback
+Core characteristics:
 
-No server runtime is required for the deployed site.
+- Static HTML/CSS/JS frontend
+- JSON datasets committed under `/data`
+- Optional build-time Node scripts for GTFS transforms and live snapshot normalization
+- Graceful fallback from live snapshots to sample snapshots to schedule-derived estimates
 
 ## Runtime layers
 
-1. **Presentation layer**
-   - `index.html`, `routes.html`, static content pages
-   - `assets/css/styles.css`
+1. Presentation layer
+- `index.html` (map-first experience)
+- `stops.html`, `routes.html`, `alerts.html`, `data.html`, `about.html`, `how-it-works.html`
+- `assets/css/styles.css`
 
-2. **App orchestration**
-   - `assets/js/app.js` (map page)
-   - `assets/js/routesPage.js` (route details page)
+2. App orchestration
+- `assets/js/app.js` (main map/state orchestration)
+- `assets/js/stopsPage.js`
+- `assets/js/routesPage.js`
+- `assets/js/alertsPage.js`
 
-3. **State and UI modules**
-   - `state/store.js`
-   - `ui/mapView.js`
-   - `ui/searchController.js`
-   - `ui/templates.js`
+3. UI modules
+- `assets/js/ui/mapView.js`
+- `assets/js/ui/searchController.js`
+- `assets/js/ui/templates.js`
 
-4. **Data/services layer**
-   - `services/transitDataService.js`
-   - `services/departuresService.js`
-   - `services/alertsService.js`
-   - `services/routePlannerLite.js`
+4. State and URL
+- `assets/js/state/store.js`
+- `assets/js/services/urlStateService.js`
 
-5. **Data assets**
-   - Stops, routes, lines, departures sample, alerts sample, direct-travel edges, config
+5. Data services
+- `assets/js/services/transitDataService.js`
+- `assets/js/services/stopsService.js`
+- `assets/js/services/routesService.js`
+- `assets/js/services/departuresService.js`
+- `assets/js/services/alertsService.js`
+- `assets/js/services/plannerLiteService.js`
+- `assets/js/services/storageService.js`
 
-6. **Optional automation**
-   - `scripts/fetch-live-sources.mjs`
-   - `scripts/merge-live-feeds.mjs`
-   - `.github/workflows/live-data-refresh.yml`
+6. Utility helpers
+- `assets/js/utils/network.js`
+- `assets/js/utils/time.js`
+
+## State model (map page)
+
+Primary state dimensions:
+
+- Region: selected region (`gold-coast` / `brisbane` preview)
+- Map mode: `stylized`, `corridor`, `connections`
+- Selection: stop, route, compare-stop
+- Trip estimate context: origin, destination, estimate result
+- Filters: tram, bus, interchange
+- Data surfaces: departures, alerts, network alert summaries
+- Local persistence: favorites and recents (via localStorage)
 
 ## Fallback strategy
 
-Departure and alert flow is intentionally resilient:
+Departures and alerts follow a fixed fallback chain:
 
-1. Try optional live JSON (`data/departures.live.json`, `data/alerts.live.json`) when enabled in `config.json`
-2. If unavailable/stale, use `departures.sample.json` / `alerts.sample.json`
-3. If departures are still missing, generate scheduled estimates from route frequency profiles
-4. Always show a user-visible status banner for source/fallback mode
+1. Live JSON snapshots (if enabled and fresh)
+2. Sample snapshot JSON
+3. Schedule-derived departures (for departure boards)
 
-## Direct travel estimate scope
+UI always displays source-aware status messaging rather than failing silently.
 
-`routePlannerLite` only supports direct trips where:
+## Direct-estimate boundaries
 
-- explicit edge exists in `direct-travel.sample.json`, or
-- origin/destination are both on the same route stop sequence
+`plannerLiteService` intentionally supports only:
 
-If neither condition is met, the UI returns a clear “direct estimate unavailable” state. No transfer pathfinding is attempted.
+- Explicit direct edges from `direct-travel.sample.json`
+- Same-route direct calculations from route stop sequence + segment timings
 
-## Region expansion path
+If direct support is unavailable, the UI returns:
 
-The model is region-tagged (`region` fields in stops/routes/lines).
+- `TRANSFER_CAPABLE` for interchange-linked stop pairs (informative, no fake routing)
+- `NO_DIRECT_ROUTE` otherwise
 
-To add Brisbane/SEQ later:
+No full transfer pathfinding or walking/fare logic is attempted.
 
-- Add new region datasets and map shapes
-- Extend `config.regions`
-- Introduce region switcher in UI
-- Keep existing service and state patterns intact
+## Multi-region model
 
-No rewrite is required if data contracts stay stable.
+The runtime bundle is region-aware:
+
+- `regions.json`
+- region-tagged stops/routes/lines/interchanges/patterns
+
+`TransitDataService` builds region indexes (`stopsByRegion`, `routesByRegion`, `linesByRegion`) so region switching is a state change, not a frontend rewrite.
+
+## GitHub Pages compatibility
+
+- All frontend assets are static and path-safe for repository root deployment
+- No client-side server APIs are required at runtime
+- Optional Node scripts and GitHub Actions are build-time only

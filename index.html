@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="CoastPulse Transit is an unofficial map-first Gold Coast public transit viewer with stop details, route overlays, direct travel estimates, and static fallbacks."
+      content="CoastPulse Transit Atlas is an unofficial map-first Gold Coast and SEQ transit viewer with stop intelligence, route overlays, direct trip estimates, and static-first fallback behavior."
     />
-    <title>CoastPulse Transit | Gold Coast Map</title>
+    <title>CoastPulse Transit Atlas | Map</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -16,19 +16,24 @@
         <div class="brand-lockup">
           <div class="brand-mark" aria-hidden="true"></div>
           <div>
-            <h1 data-brand-name>CoastPulse Transit</h1>
-            <p>Gold Coast map-first transit view</p>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
           </div>
         </div>
 
         <nav class="top-nav" aria-label="Primary">
           <a href="./index.html" class="active">Map</a>
+          <a href="./stops.html">Stops</a>
           <a href="./routes.html">Routes</a>
-          <a href="./how-it-works.html">How it works</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html">Data</a>
           <a href="./about.html">About</a>
         </nav>
 
-        <p id="top-disclaimer" class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+        <div class="header-status-stack">
+          <p id="top-disclaimer" class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+          <p id="alerts-pill" class="alerts-pill" aria-live="polite">No active alerts</p>
+        </div>
       </header>
 
       <main class="main-layout">
@@ -42,6 +47,21 @@
             <div id="search-results" class="search-results-shell" role="listbox" aria-label="Search results"></div>
           </div>
 
+          <div class="controls-grid" aria-label="Map controls and context">
+            <div class="control-group">
+              <label for="region-select" class="label">Region</label>
+              <select id="region-select" aria-label="Select region"></select>
+            </div>
+            <div class="control-group">
+              <span class="label">Map mode</span>
+              <div class="map-mode-row" role="group" aria-label="Map mode">
+                <button type="button" data-map-mode="stylized" aria-pressed="true">Stylized</button>
+                <button type="button" data-map-mode="corridor" aria-pressed="false">Corridor</button>
+                <button type="button" data-map-mode="connections" aria-pressed="false">Connections</button>
+              </div>
+            </div>
+          </div>
+
           <div class="filter-row" aria-label="Mode filters">
             <button type="button" data-filter-mode="tram" aria-pressed="true">Tram</button>
             <button type="button" data-filter-mode="bus" aria-pressed="true">Bus</button>
@@ -50,7 +70,7 @@
 
           <section class="map-card" aria-label="Transit map">
             <div class="map-toolbar">
-              <p>Stylized network map. Drag to pan. Scroll to zoom.</p>
+              <p>Stylized network map. Drag to pan. Scroll to zoom. Press <kbd>/</kbd> to focus search.</p>
               <div class="map-controls" aria-label="Map controls">
                 <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
                 <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
@@ -59,17 +79,17 @@
             </div>
 
             <div class="map-viewport">
-              <svg id="network-map" viewBox="0 0 1024 1600" role="img" aria-label="Gold Coast transit network map">
+              <svg id="network-map" viewBox="0 0 1200 1700" role="img" aria-label="SEQ transit network map">
                 <g id="map-camera">
                   <g id="backdrop-layer" aria-hidden="true">
-                    <rect class="map-backdrop-water" x="0" y="0" width="1024" height="1600" />
+                    <rect class="map-backdrop-water" x="0" y="0" width="1200" height="1700" />
                     <path
                       class="map-backdrop-land"
-                      d="M 0 20 C 180 10, 280 90, 360 160 C 470 260, 520 410, 610 560 C 710 730, 760 980, 870 1210 C 930 1330, 1024 1430, 1024 1600 L 0 1600 Z"
+                      d="M 0 40 C 180 20, 330 95, 430 185 C 560 298, 610 430, 700 590 C 820 790, 890 1060, 1020 1300 C 1085 1435, 1200 1535, 1200 1700 L 0 1700 Z"
                     />
                     <path
                       class="map-backdrop-band"
-                      d="M 280 0 C 420 190, 470 360, 620 580 C 710 710, 760 830, 830 1010 C 910 1210, 960 1390, 1024 1500 L 1024 0 Z"
+                      d="M 340 0 C 480 210, 560 360, 710 590 C 830 770, 920 970, 1000 1160 C 1088 1360, 1140 1520, 1200 1620 L 1200 0 Z"
                     />
                   </g>
                   <g id="line-layer"></g>
@@ -84,6 +104,10 @@
         </section>
 
         <aside class="panel-column" aria-label="Route and stop details">
+          <button id="sheet-toggle" class="sheet-toggle" type="button" aria-expanded="false">Toggle details</button>
+
+          <section id="network-status" class="status-grid" aria-label="Region status"></section>
+
           <section class="legend-card" aria-label="Route legend">
             <div class="legend-header">
               <h2>Route legend</h2>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Browse CoastPulse Transit route details for Gold Coast tram and major bus connectors." />
-    <title>CoastPulse Transit | Routes</title>
+    <meta name="description" content="Browse CoastPulse Transit Atlas routes for Gold Coast and Brisbane scaffold corridors." />
+    <title>CoastPulse Transit Atlas | Routes</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -13,15 +13,17 @@
         <div class="brand-lockup">
           <div class="brand-mark" aria-hidden="true"></div>
           <div>
-            <h1 data-brand-name>CoastPulse Transit</h1>
-            <p id="region-tag">Gold Coast</p>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
           </div>
         </div>
 
         <nav class="top-nav" aria-label="Primary">
           <a href="./index.html">Map</a>
+          <a href="./stops.html">Stops</a>
           <a href="./routes.html" class="active">Routes</a>
-          <a href="./how-it-works.html">How it works</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html">Data</a>
           <a href="./about.html">About</a>
         </nav>
 
@@ -32,6 +34,12 @@
         <section class="routes-list-card" aria-label="Routes list">
           <div class="routes-card-header">
             <h2>Routes</h2>
+            <div class="routes-controls">
+              <label for="routes-region-select" class="sr-only">Select region</label>
+              <select id="routes-region-select"></select>
+              <label for="route-search" class="sr-only">Search routes</label>
+              <input id="route-search" type="search" placeholder="Search route number or name" />
+            </div>
           </div>
           <div id="routes-list"></div>
         </section>
@@ -39,12 +47,16 @@
         <section class="routes-detail-card" aria-label="Selected route details">
           <div class="routes-card-header">
             <h2>Route detail</h2>
+            <div class="routes-actions">
+              <button id="route-favorite-toggle" type="button">Save route</button>
+              <button id="copy-route-link" type="button">Copy link</button>
+            </div>
           </div>
           <div id="route-detail"></div>
         </section>
       </main>
 
-      <p class="footer-note">Route timings are approximate sample estimates in this MVP build.</p>
+      <p class="footer-note">Route timings are representative estimates and can vary in real operation.</p>
     </div>
 
     <script type="module" src="./assets/js/routesPage.js"></script>

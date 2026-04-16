@@ -12,20 +12,23 @@ function createSvgElement(tag, attributes = {}) {
   return el;
 }
 
+function activeModes(filters = {}) {
+  return Object.entries(filters)
+    .filter(([, enabled]) => enabled)
+    .map(([mode]) => mode);
+}
+
 function stopPassesFilter(stop, filters) {
   if (!filters) {
     return true;
   }
 
-  const active = Object.entries(filters)
-    .filter(([, enabled]) => enabled)
-    .map(([key]) => key);
-
-  if (!active.length) {
+  const modes = activeModes(filters);
+  if (!modes.length) {
     return true;
   }
 
-  return active.some((mode) => stop.modes.includes(mode));
+  return modes.some((mode) => stop.modes?.includes(mode));
 }
 
 function modePassesFilter(mode, filters) {
@@ -33,23 +36,34 @@ function modePassesFilter(mode, filters) {
     return true;
   }
 
-  const active = Object.entries(filters)
-    .filter(([, enabled]) => enabled)
-    .map(([key]) => key);
-
-  if (!active.length) {
+  const modes = activeModes(filters);
+  if (!modes.length) {
     return true;
   }
 
-  return active.includes(mode);
+  return modes.includes(mode);
 }
 
 function isInteractiveMapTarget(target) {
   return Boolean(target?.closest?.(".map-stop, .map-line"));
 }
 
+function isMajorStop(stop) {
+  return stop.importance === "major" || stop.type === "interchange" || stop.type === "station";
+}
+
 export class MapView {
-  constructor({ svg, cameraLayer, lineLayer, stopLayer, labelLayer, onStopSelect, onRouteSelect, mapConfig }) {
+  constructor({
+    svg,
+    cameraLayer,
+    lineLayer,
+    stopLayer,
+    labelLayer,
+    onStopSelect,
+    onRouteSelect,
+    onBackgroundSelect,
+    mapConfig
+  }) {
     this.svg = svg;
     this.cameraLayer = cameraLayer;
     this.lineLayer = lineLayer;
@@ -57,19 +71,25 @@ export class MapView {
     this.labelLayer = labelLayer;
     this.onStopSelect = onStopSelect;
     this.onRouteSelect = onRouteSelect;
+    this.onBackgroundSelect = onBackgroundSelect;
 
     this.mapConfig = mapConfig || {};
     this.zoom = Number(this.mapConfig.defaultZoom || 1);
     this.minZoom = Number(this.mapConfig.minZoom || 0.8);
     this.maxZoom = Number(this.mapConfig.maxZoom || 2.4);
-    this.panX = 0;
-    this.panY = 0;
+    this.panX = Number(this.mapConfig.defaultPanX || 0);
+    this.panY = Number(this.mapConfig.defaultPanY || 0);
 
     this.lines = [];
     this.stops = [];
+    this.stopById = {};
+    this.selectedRegionId = null;
     this.selectedStopId = null;
+    this.compareStopId = null;
     this.selectedRouteId = null;
     this.filters = null;
+    this.mapMode = "stylized";
+    this.favoriteStopIds = new Set();
 
     this.dragState = {
       active: false,
@@ -90,26 +110,92 @@ export class MapView {
   setData({ lines, stops }) {
     this.lines = lines || [];
     this.stops = stops || [];
+    this.stopById = Object.fromEntries(this.stops.map((stop) => [stop.id, stop]));
     this.render();
   }
 
-  updateState({ selectedStopId, selectedRouteId, filters }) {
+  updateState({ selectedRegionId, selectedStopId, compareStopId, selectedRouteId, filters, mapMode, favoriteStopIds }) {
+    this.selectedRegionId = selectedRegionId || null;
     this.selectedStopId = selectedStopId || null;
+    this.compareStopId = compareStopId || null;
     this.selectedRouteId = selectedRouteId || null;
     this.filters = filters || null;
+    this.mapMode = mapMode || "stylized";
+    this.favoriteStopIds = new Set(favoriteStopIds || []);
     this.render();
+  }
+
+  getRegionLines() {
+    return this.selectedRegionId ? this.lines.filter((line) => line.region === this.selectedRegionId) : this.lines;
+  }
+
+  getRegionStops() {
+    return this.selectedRegionId ? this.stops.filter((stop) => stop.region === this.selectedRegionId) : this.stops;
+  }
+
+  shouldShowLabel(stop) {
+    if (stop.id === this.selectedStopId || stop.id === this.compareStopId) {
+      return true;
+    }
+
+    if (this.mapMode === "connections") {
+      return isMajorStop(stop) || this.favoriteStopIds.has(stop.id);
+    }
+
+    if (this.mapMode === "corridor") {
+      return isMajorStop(stop);
+    }
+
+    return isMajorStop(stop);
+  }
+
+  renderConnectionLinks() {
+    if (!this.selectedStopId || this.mapMode !== "connections") {
+      return;
+    }
+
+    const selected = this.stopById[this.selectedStopId];
+    if (!selected) {
+      return;
+    }
+
+    const nearby = (selected.nearbyStopIds || []).map((id) => this.stopById[id]).filter(Boolean);
+    nearby.forEach((stop) => {
+      const link = createSvgElement("line", {
+        x1: String(selected.map.x),
+        y1: String(selected.map.y),
+        x2: String(stop.map.x),
+        y2: String(stop.map.y)
+      });
+      link.classList.add("map-link-line");
+      this.labelLayer.append(link);
+    });
   }
 
   render() {
+    if (!this.lineLayer || !this.stopLayer || !this.labelLayer) {
+      return;
+    }
+
+    this.svg?.setAttribute("data-map-mode", this.mapMode);
+
     this.lineLayer.innerHTML = "";
     this.stopLayer.innerHTML = "";
     this.labelLayer.innerHTML = "";
 
-    this.lines.forEach((line) => {
+    const visibleLines = this.getRegionLines();
+    const visibleStops = this.getRegionStops();
+
+    visibleLines.forEach((line) => {
+      if (this.mapMode === "corridor" && line.layer === "secondary" && !this.selectedRouteId) {
+        return;
+      }
+
       const points = (line.path || []).map((point) => `${point.x},${point.y}`).join(" ");
       const isSelected = this.selectedRouteId ? line.routeIds?.includes(this.selectedRouteId) : false;
       const modeVisible = modePassesFilter(line.mode, this.filters);
-      const muted = this.selectedRouteId ? !isSelected : !modeVisible;
+      const mutedByRoute = this.selectedRouteId ? !isSelected : false;
+      const muted = mutedByRoute || !modeVisible;
 
       const polyline = createSvgElement("polyline", {
         points,
@@ -120,6 +206,11 @@ export class MapView {
 
       polyline.classList.add("map-line", `line-${line.id}`, `mode-${line.mode}`);
       polyline.style.stroke = line.color;
+
+      if (line.layer) {
+        polyline.dataset.layer = line.layer;
+      }
+
       if (isSelected) {
         polyline.classList.add("selected");
       }
@@ -138,7 +229,9 @@ export class MapView {
       this.lineLayer.append(polyline);
     });
 
-    this.stops.forEach((stop) => {
+    this.renderConnectionLinks();
+
+    visibleStops.forEach((stop) => {
       if (!stopPassesFilter(stop, this.filters)) {
         return;
       }
@@ -151,11 +244,21 @@ export class MapView {
       });
       group.classList.add("map-stop", `importance-${stop.importance || "local"}`);
 
-      if (this.selectedStopId === stop.id) {
+      const selected = this.selectedStopId === stop.id;
+      const compare = this.compareStopId === stop.id;
+      const favorite = this.favoriteStopIds.has(stop.id);
+      const relatedToRoute = this.selectedRouteId ? stop.routes?.includes(this.selectedRouteId) : true;
+
+      if (selected) {
         group.classList.add("selected");
       }
-
-      if (this.selectedRouteId && !stop.routes.includes(this.selectedRouteId)) {
+      if (compare) {
+        group.classList.add("compare");
+      }
+      if (favorite) {
+        group.classList.add("favorite");
+      }
+      if (!relatedToRoute) {
         group.classList.add("muted");
       }
 
@@ -163,7 +266,7 @@ export class MapView {
       const hitTarget = createSvgElement("circle", {
         cx: "0",
         cy: "0",
-        r: `${Math.max(12, radius + 6)}`
+        r: `${Math.max(14, radius + 8)}`
       });
       hitTarget.classList.add("stop-hit");
       group.append(hitTarget);
@@ -175,16 +278,16 @@ export class MapView {
       });
       core.classList.add("stop-core");
 
-      if (stop.modes.includes("tram")) {
+      if (stop.modes?.includes("tram")) {
         core.classList.add("has-tram");
       }
-      if (stop.modes.includes("interchange")) {
+      if (stop.type === "interchange" || stop.modes?.includes("interchange")) {
         core.classList.add("is-interchange");
       }
 
       group.append(core);
 
-      if (stop.importance === "major") {
+      if (isMajorStop(stop)) {
         const ring = createSvgElement("circle", {
           cx: "0",
           cy: "0",
@@ -192,6 +295,16 @@ export class MapView {
         });
         ring.classList.add("stop-ring");
         group.append(ring);
+      }
+
+      if (favorite) {
+        const fav = createSvgElement("circle", {
+          cx: "0",
+          cy: "0",
+          r: `${radius + 10}`
+        });
+        fav.classList.add("stop-favorite-ring");
+        group.append(fav);
       }
 
       const title = createSvgElement("title");
@@ -209,14 +322,17 @@ export class MapView {
 
       this.stopLayer.append(group);
 
-      if (stop.importance === "major" || stop.id === this.selectedStopId) {
+      if (this.shouldShowLabel(stop)) {
         const label = createSvgElement("text", {
           x: `${stop.map.x + 14}`,
           y: `${stop.map.y - 10}`
         });
         label.classList.add("map-label");
-        if (stop.id === this.selectedStopId) {
+        if (selected) {
           label.classList.add("selected");
+        }
+        if (compare) {
+          label.classList.add("compare");
         }
         label.textContent = stop.name;
         this.labelLayer.append(label);
@@ -281,6 +397,12 @@ export class MapView {
       this.dragState.pointerId = null;
     };
 
+    this.svg.addEventListener("click", (event) => {
+      if (!event.target.closest(".map-stop, .map-line")) {
+        this.onBackgroundSelect?.();
+      }
+    });
+
     this.svg.addEventListener("pointerup", endDrag);
     this.svg.addEventListener("pointercancel", endDrag);
   }
@@ -292,12 +414,12 @@ export class MapView {
 
   resetCamera() {
     this.zoom = Number(this.mapConfig.defaultZoom || 1);
-    this.panX = 0;
-    this.panY = 0;
+    this.panX = Number(this.mapConfig.defaultPanX || 0);
+    this.panY = Number(this.mapConfig.defaultPanY || 0);
     this.applyCamera();
   }
 
   applyCamera() {
-    this.cameraLayer.setAttribute("transform", `translate(${this.panX}, ${this.panY}) scale(${this.zoom})`);
+    this.cameraLayer?.setAttribute("transform", `translate(${this.panX}, ${this.panY}) scale(${this.zoom})`);
   }
 }

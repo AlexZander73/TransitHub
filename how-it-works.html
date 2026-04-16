@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="How CoastPulse Transit works with static-first architecture and data fallback modes." />
-    <title>CoastPulse Transit | How It Works</title>
+    <meta name="description" content="How CoastPulse Transit Atlas works with static-first architecture and fallback data modes." />
+    <title>CoastPulse Transit Atlas | How It Works</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -13,15 +13,17 @@
         <div class="brand-lockup">
           <div class="brand-mark" aria-hidden="true"></div>
           <div>
-            <h1 data-brand-name>CoastPulse Transit</h1>
-            <p>Static-first architecture</p>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
           </div>
         </div>
 
         <nav class="top-nav" aria-label="Primary">
           <a href="./index.html">Map</a>
+          <a href="./stops.html">Stops</a>
           <a href="./routes.html">Routes</a>
-          <a href="./how-it-works.html" class="active">How it works</a>
+          <a href="./alerts.html">Alerts</a>
+          <a href="./data.html">Data</a>
           <a href="./about.html">About</a>
         </nav>
 
@@ -30,35 +32,36 @@
 
       <article class="static-page">
         <section>
-          <h2>How CoastPulse Transit Works</h2>
+          <h2>How CoastPulse Transit Atlas Works</h2>
           <p>
-            The site is a static web app. Core route, stop, and map data live in JSON files committed to the repository and served directly via GitHub Pages.
+            The frontend is fully static and deploys directly to GitHub Pages. Core datasets are JSON files committed in the repository,
+            then loaded client-side by modular vanilla JavaScript services.
           </p>
         </section>
 
         <section>
-          <h3>Data Modes</h3>
+          <h3>Runtime data modes</h3>
           <ol>
-            <li><strong>Live mode (optional):</strong> if configured and fresh live JSON exists, departures/alerts are shown from live files.</li>
-            <li><strong>Sample snapshot mode:</strong> if no live file is available, sample snapshot departures are used.</li>
-            <li><strong>Scheduled fallback:</strong> if needed, departures are generated from route frequency profiles.</li>
+            <li><strong>Live mode (optional):</strong> if enabled and fresh, <code>departures.live.json</code> and <code>alerts.live.json</code> are used.</li>
+            <li><strong>Sample snapshot mode:</strong> if live data is missing or stale, sample JSON is used.</li>
+            <li><strong>Scheduled fallback:</strong> departures can be generated from route frequency profiles when snapshots are absent.</li>
           </ol>
-          <p>The UI always surfaces fallback status so users can see when live data is unavailable.</p>
+          <p>Source state is surfaced in the UI so fallback conditions are transparent.</p>
         </section>
 
         <section>
-          <h3>Direct Travel Estimates</h3>
+          <h3>Direct-estimate boundaries</h3>
           <p>
-            Only direct route/line estimates are supported. If origin and destination are not directly connected on a supported route pattern,
-            the app clearly states that transfer journey estimates are not available yet.
+            PlannerLite only supports direct same-route journeys (explicit edge or same route sequence). Transfer-capable locations are labeled,
+            but full transfer journey planning is intentionally out of scope in this static deployment.
           </p>
         </section>
 
         <section>
-          <h3>Expansion Path</h3>
+          <h3>Expansion architecture</h3>
           <p>
-            The data model is region-ready. Brisbane and other SEQ areas can be introduced by adding region-tagged datasets and map layers,
-            without replacing frontend architecture.
+            Region-aware datasets (<code>regions/stops/routes/lines/interchanges/patterns</code>) allow Brisbane and broader SEQ areas to be added without rewriting
+            core UI architecture.
           </p>
         </section>
       </article>

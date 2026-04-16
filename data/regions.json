@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "dataset": "seq-regions",
+    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "version": "0.2.0",
+    "notes": "Gold Coast is production-facing sample. Brisbane is scaffolded with representative nodes and routes."
+  },
+  "regions": [
+    {
+      "id": "gold-coast",
+      "label": "Gold Coast",
+      "shortLabel": "GC",
+      "status": "active",
+      "default": true,
+      "description": "Flagship region with G:link and major bus interchange coverage.",
+      "mapViewport": {
+        "viewBox": "0 0 1200 1700",
+        "focus": {
+          "x": 620,
+          "y": 840,
+          "zoom": 1
+        }
+      },
+      "externalMap": {
+        "standard": "https://www.google.com/maps/place/Gold+Coast+QLD",
+        "satellite": "https://www.google.com/maps/@-28.0167,153.4,10z/data=!3m1!1e3"
+      },
+      "highlights": ["G:link tram", "Helensvale interchange", "Broadbeach South hub"]
+    },
+    {
+      "id": "brisbane",
+      "label": "Brisbane",
+      "shortLabel": "BNE",
+      "status": "preview",
+      "default": false,
+      "description": "Preview scaffold for Brisbane core stations, busway, and metro-ready corridors.",
+      "mapViewport": {
+        "viewBox": "0 0 1200 1700",
+        "focus": {
+          "x": 330,
+          "y": 360,
+          "zoom": 1.05
+        }
+      },
+      "externalMap": {
+        "standard": "https://www.google.com/maps/place/Brisbane+QLD",
+        "satellite": "https://www.google.com/maps/@-27.4705,153.026,11z/data=!3m1!1e3"
+      },
+      "highlights": ["Busway interchanges", "CBD spine", "Future metro overlays"]
+    },
+    {
+      "id": "logan",
+      "label": "Logan",
+      "shortLabel": "LGN",
+      "status": "planned",
+      "default": false,
+      "description": "Planned extension region.",
+      "highlights": []
+    },
+    {
+      "id": "sunshine-coast",
+      "label": "Sunshine Coast",
+      "shortLabel": "SC",
+      "status": "planned",
+      "default": false,
+      "description": "Planned extension region.",
+      "highlights": []
+    }
+  ]
+}

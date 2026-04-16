@@ -7,7 +7,7 @@ function toDateOrNull(value) {
 }
 
 function isActiveAlert(alert, now) {
-  if (alert.status && alert.status.toLowerCase() === "inactive") {
+  if (alert.status && String(alert.status).toLowerCase() === "inactive") {
     return false;
   }
   const from = toDateOrNull(alert.effectiveFrom);
@@ -24,15 +24,30 @@ function isActiveAlert(alert, now) {
 function normalizeAlerts(payload) {
   return (payload?.alerts || []).map((alert) => ({
     id: alert.id,
-    level: (alert.level || "info").toLowerCase(),
+    region: alert.region || null,
+    level: String(alert.level || "info").toLowerCase(),
+    severity: Number(alert.severity || 1),
     title: alert.title || "Service notice",
     description: alert.description || "",
     routes: alert.routes || [],
     stops: alert.stops || [],
+    interchanges: alert.interchanges || [],
+    impact: alert.impact || null,
     effectiveFrom: alert.effectiveFrom || null,
     effectiveTo: alert.effectiveTo || null,
     status: alert.status || "active"
   }));
+}
+
+function sortAlerts(alerts = []) {
+  return alerts
+    .slice()
+    .sort((a, b) => {
+      if (a.severity !== b.severity) {
+        return b.severity - a.severity;
+      }
+      return String(a.title).localeCompare(String(b.title));
+    });
 }
 
 export class AlertsService {
@@ -49,12 +64,38 @@ export class AlertsService {
 
     const stopId = context.stopId || null;
     const routeIds = new Set(context.routeIds || []);
+    const regionId = context.regionId || null;
+    const interchangeIds = new Set(context.interchangeIds || []);
 
-    return active.filter((alert) => {
+    const filtered = active.filter((alert) => {
+      const matchesRegion = regionId ? !alert.region || alert.region === regionId : true;
       const matchesStop = stopId ? !alert.stops.length || alert.stops.includes(stopId) : true;
       const matchesRoute = routeIds.size ? !alert.routes.length || alert.routes.some((id) => routeIds.has(id)) : true;
-      return matchesStop && matchesRoute;
+      const matchesInterchange = interchangeIds.size
+        ? !alert.interchanges.length || alert.interchanges.some((id) => interchangeIds.has(id))
+        : true;
+      return matchesRegion && matchesStop && matchesRoute && matchesInterchange;
     });
+
+    return sortAlerts(filtered);
+  }
+
+  async getAllAlerts(options = {}) {
+    const bundle = await this.dataService.getBundle();
+    const source = await this.getBestAlertsSource(bundle.config);
+    const now = options.now || new Date();
+    const regionId = options.regionId || null;
+
+    const active = source.filter((alert) => isActiveAlert(alert, now));
+    const recent = source.filter((alert) => !isActiveAlert(alert, now));
+
+    const filterByRegion = (alerts) =>
+      regionId ? alerts.filter((alert) => !alert.region || alert.region === regionId) : alerts;
+
+    return {
+      active: sortAlerts(filterByRegion(active)),
+      recent: sortAlerts(filterByRegion(recent))
+    };
   }
 
   async getBestAlertsSource(config) {

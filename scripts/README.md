@@ -1,13 +1,13 @@
 # Scripts
 
-Build-time scripts for data transformation and validation.
+Build-time scripts for data transformation, live snapshot normalization, and validation.
 
 ## Files
 
 - `fetch-live-sources.mjs`: fetches raw departures/alerts JSON from URL or local source into `raw/live`.
-- `transform-gtfs.mjs`: imports GTFS static files and generates `stops.json`, `routes.json`, and `lines.json`.
-- `merge-live-feeds.mjs`: normalizes external live feed payloads into `departures.live.json` and `alerts.live.json`.
-- `validate-data.mjs`: checks required data files and cross-file references.
+- `transform-gtfs.mjs`: imports GTFS static files and generates region-ready core data files (`stops/routes/lines/regions/interchanges/route-patterns`).
+- `merge-live-feeds.mjs`: normalizes external live payloads into `departures.live.json` and `alerts.live.json`.
+- `validate-data.mjs`: validates required files and cross-file references.
 
 ## Typical usage
 
@@ -21,11 +21,9 @@ npm run refresh:live
 
 ## Notes
 
-- These scripts are optional for local build-time workflows only.
-- The deployed frontend remains static and does not require Node at runtime.
-- `fetch-live-sources.mjs` also supports environment variables:
+- Scripts are optional build-time workflows only.
+- Deployed frontend remains static and does not require Node.
+- `fetch-live-sources.mjs` supports env vars:
   - `LIVE_DEPARTURES_SOURCE`
   - `LIVE_ALERTS_SOURCE`
-  - `LIVE_HEADER_1..LIVE_HEADER_4` (format `Header-Name: value`)
-- See `.env.live.example` for a local template.
-- `refresh:live` is a convenience chain: fetch -> merge -> validate (expects `LIVE_DEPARTURES_SOURCE` and/or `LIVE_ALERTS_SOURCE` to be set).
+  - `LIVE_HEADER_1..LIVE_HEADER_4` (`Header-Name: value`)

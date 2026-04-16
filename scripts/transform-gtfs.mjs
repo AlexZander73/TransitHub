@@ -268,6 +268,7 @@ async function main() {
   const stopUsage = new Map();
   const routesOut = [];
   const linesOut = [];
+  const routePatternsOut = [];
 
   routesFiltered.forEach((routeRow) => {
     const picked = representativeTrips.get(routeRow.route_id);
@@ -328,6 +329,40 @@ async function main() {
       ],
       notes: "Generated from GTFS using transform-gtfs.mjs"
     });
+
+    const directionDefinitions = [
+      {
+        id: "forward",
+        originStopId: firstStopId,
+        destinationStopId: lastStopId,
+        headsign: picked.trip.trip_headsign || lastStopId
+      },
+      {
+        id: "reverse",
+        originStopId: lastStopId,
+        destinationStopId: firstStopId,
+        headsign: firstStopId
+      }
+    ];
+
+    directionDefinitions.forEach((direction) => {
+      routePatternsOut.push({
+        id: `${routeRow.route_id}-${direction.id}`.toUpperCase(),
+        routeId: routeRow.route_id,
+        region: "gold-coast",
+        directionId: direction.id,
+        name: `${shortName} ${direction.id}`,
+        headsign: direction.headsign,
+        stopSequence: direction.id === "forward" ? stopSequence : [...stopSequence].reverse(),
+        serviceWindow: {
+          first: "05:00",
+          last: "23:00",
+          frequencyMins: 15
+        },
+        sampleTripMinutes: segmentMinutes.reduce((sum, value) => sum + Number(value || 0), 0),
+        status: "active"
+      });
+    });
   });
 
   const stopsOut = stopsRaw.map((row) => {
@@ -369,6 +404,8 @@ async function main() {
 
   await fs.mkdir(outputDir, { recursive: true });
 
+  const nowIso = new Date().toISOString();
+
   await Promise.all([
     fs.writeFile(
       path.join(outputDir, "stops.json"),
@@ -376,7 +413,7 @@ async function main() {
         {
           meta: {
             dataset: "gtfs-import",
-            generatedAt: new Date().toISOString(),
+            generatedAt: nowIso,
             version: "0.1.0",
             notes: "Generated from GTFS by scripts/transform-gtfs.mjs"
           },
@@ -392,7 +429,7 @@ async function main() {
         {
           meta: {
             dataset: "gtfs-import",
-            generatedAt: new Date().toISOString(),
+            generatedAt: nowIso,
             version: "0.1.0"
           },
           routes: routesOut
@@ -407,17 +444,66 @@ async function main() {
         {
           meta: {
             dataset: "gtfs-import",
-            generatedAt: new Date().toISOString(),
+            generatedAt: nowIso,
             version: "0.1.0"
           },
-          lines: linesOut,
+          lines: linesOut
+        },
+        null,
+        2
+      )
+    ),
+    fs.writeFile(
+      path.join(outputDir, "regions.json"),
+      JSON.stringify(
+        {
+          meta: {
+            dataset: "gtfs-import",
+            generatedAt: nowIso,
+            version: "0.1.0"
+          },
           regions: [
             {
               id: "gold-coast",
               label: "Gold Coast",
-              default: true
+              shortLabel: "GC",
+              status: "active",
+              default: true,
+              description: "Generated from GTFS import"
             }
           ]
+        },
+        null,
+        2
+      )
+    ),
+    fs.writeFile(
+      path.join(outputDir, "interchanges.json"),
+      JSON.stringify(
+        {
+          meta: {
+            dataset: "gtfs-import",
+            generatedAt: nowIso,
+            version: "0.1.0",
+            notes: "Auto-generated placeholder; enrich manually for interchange semantics."
+          },
+          interchanges: []
+        },
+        null,
+        2
+      )
+    ),
+    fs.writeFile(
+      path.join(outputDir, "route-patterns.json"),
+      JSON.stringify(
+        {
+          meta: {
+            dataset: "gtfs-import",
+            generatedAt: nowIso,
+            version: "0.1.0",
+            notes: "Auto-generated simplified patterns from representative trips."
+          },
+          patterns: routePatternsOut
         },
         null,
         2

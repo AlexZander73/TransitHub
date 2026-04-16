@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Active and recent service notices for CoastPulse Transit Atlas regions." />
+    <title>CoastPulse Transit Atlas | Alerts</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div>
+            <h1 data-brand-name>CoastPulse Transit Atlas</h1>
+            <p data-brand-tagline>Unofficial map-first transit intelligence for SEQ</p>
+          </div>
+        </div>
+
+        <nav class="top-nav" aria-label="Primary">
+          <a href="./index.html">Map</a>
+          <a href="./stops.html">Stops</a>
+          <a href="./routes.html">Routes</a>
+          <a href="./alerts.html" class="active">Alerts</a>
+          <a href="./data.html">Data</a>
+          <a href="./about.html">About</a>
+        </nav>
+
+        <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
+      </header>
+
+      <article class="static-page alerts-page">
+        <section class="alerts-toolbar">
+          <div>
+            <h2>Service alerts and notices</h2>
+            <p>Visibility layer for current and recent disruptions across supported regions.</p>
+          </div>
+          <div class="routes-controls">
+            <label for="alerts-region-select" class="sr-only">Select region</label>
+            <select id="alerts-region-select"></select>
+            <label for="alerts-severity-filter" class="sr-only">Filter severity</label>
+            <select id="alerts-severity-filter">
+              <option value="all">All severities</option>
+              <option value="major">Major</option>
+              <option value="minor">Minor</option>
+              <option value="info">Info</option>
+            </select>
+          </div>
+        </section>
+
+        <section id="alerts-summary" class="alert-summary"></section>
+
+        <section>
+          <h3>Active alerts</h3>
+          <div id="alerts-active"></div>
+        </section>
+
+        <section>
+          <h3>Recent alerts</h3>
+          <div id="alerts-recent"></div>
+        </section>
+      </article>
+    </div>
+
+    <script type="module" src="./assets/js/alertsPage.js"></script>
+  </body>
+</html>

@@ -112,20 +112,18 @@ function buildScheduledForRouteStop(route, stopId, now, lookAheadMinutes) {
   return output;
 }
 
-function mergeAndSort(...chunks) {
-  return chunks.flat().sort((a, b) => a.departureTime - b.departureTime);
-}
-
 function dedupeDepartures(departures) {
   const seen = new Set();
-  return departures.filter((item) => {
-    const key = `${item.routeId}|${item.headsign}|${item.departureIso}`;
-    if (seen.has(key)) {
-      return false;
-    }
-    seen.add(key);
-    return true;
-  });
+  return departures
+    .sort((a, b) => a.departureTime - b.departureTime)
+    .filter((item) => {
+      const key = `${item.routeId}|${item.headsign}|${item.departureIso}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
 }
 
 export class DeparturesService {
@@ -137,14 +135,28 @@ export class DeparturesService {
     const bundle = await this.dataService.getBundle();
     const config = bundle.config || {};
     const now = options.now || new Date();
+    const stop = bundle.stopById?.[stopId];
+
+    if (!stop) {
+      return {
+        departures: [],
+        source: "none",
+        liveAvailable: false,
+        fallbackUsed: true,
+        message: "Stop not found"
+      };
+    }
+
+    const regionRoutes = stop.region ? bundle.routesByRegion?.[stop.region] || [] : bundle.routes || [];
+
     const limit = Number(options.limit || config?.fallback?.defaultDepartureLimit || 6);
     const lookAhead = Number(config?.fallback?.departureLookaheadMinutes || 90);
 
     const liveResult = await this.getLiveDepartures(stopId, now, config);
     const sampleResult = await this.getSampleDepartures(stopId, now, config);
-    const scheduledResult = bundle.routes.flatMap((route) => buildScheduledForRouteStop(route, stopId, now, lookAhead));
+    const scheduledResult = regionRoutes.flatMap((route) => buildScheduledForRouteStop(route, stopId, now, lookAhead));
 
-    const merged = dedupeDepartures(mergeAndSort(liveResult.departures, sampleResult.departures, scheduledResult)).slice(0, limit);
+    const merged = dedupeDepartures([...liveResult.departures, ...sampleResult.departures, ...scheduledResult]).slice(0, limit);
 
     let source = "none";
     if (liveResult.departures.length) {
@@ -160,7 +172,7 @@ export class DeparturesService {
       source,
       liveAvailable: liveResult.liveAvailable,
       fallbackUsed: source !== "live",
-      message: this.getStatusMessage(source, liveResult.liveAvailable)
+      message: this.getStatusMessage(source, liveResult.liveAvailable, config)
     };
   }
 
@@ -227,16 +239,16 @@ export class DeparturesService {
     );
   }
 
-  getStatusMessage(source, liveAvailable) {
+  getStatusMessage(source, liveAvailable, config = {}) {
     if (source === "live") {
       return "Live times active";
     }
     if (source === "sample") {
-      return liveAvailable ? "Live feed empty, using snapshot + schedule" : "Live times unavailable, using sample + schedule";
+      return liveAvailable ? "Live feed empty, using sample + schedule" : "Live times unavailable, using sample + schedule";
     }
     if (source === "scheduled") {
       return "Live times unavailable, showing scheduled estimates";
     }
-    return "No departure data currently available";
+    return config?.fallback?.noDataMessage || "No departure data currently available";
   }
 }

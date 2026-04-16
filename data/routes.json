@@ -1,14 +1,15 @@
 {
   "meta": {
-    "dataset": "gold-coast-core",
-    "generatedAt": "2026-04-16T09:00:00+10:00",
-    "version": "0.1.0"
+    "dataset": "seq-core-routes",
+    "generatedAt": "2026-04-16T21:00:00+10:00",
+    "version": "0.2.0"
   },
   "routes": [
     {
       "id": "GL",
       "region": "gold-coast",
       "lineId": "glink",
+      "family": "glink",
       "shortName": "G",
       "longName": "G:link Tram",
       "mode": "tram",
@@ -17,6 +18,10 @@
       "textColor": "#01211b",
       "stopSequence": ["HEL", "PARK", "GRIF", "GCUH", "SOUTH", "SOUTHS", "NERANG", "CAVILL", "SPN", "CYP", "NORTH", "FLOR", "BBN", "BBS"],
       "segmentMinutes": [4, 4, 4, 5, 3, 3, 4, 3, 3, 3, 3, 4, 4],
+      "serviceSpan": {
+        "weekday": { "first": "05:00", "last": "23:45", "frequencyMins": 7 },
+        "weekend": { "first": "05:15", "last": "23:55", "frequencyMins": 10 }
+      },
       "directions": [
         {
           "id": "southbound",
@@ -39,12 +44,14 @@
           }
         }
       ],
-      "notes": "Primary corridor for MVP"
+      "notes": "Primary coastal tram corridor",
+      "status": "active"
     },
     {
       "id": "700",
       "region": "gold-coast",
       "lineId": "bus700",
+      "family": "gc-bus-spine",
       "shortName": "700",
       "longName": "Coastal Connector",
       "mode": "bus",
@@ -53,6 +60,10 @@
       "textColor": "#1f1201",
       "stopSequence": ["HARBOUR", "SOUTH", "CAVILL", "BBN", "BBS", "BURLEIGH", "TUGUN"],
       "segmentMinutes": [9, 8, 11, 6, 12, 13],
+      "serviceSpan": {
+        "weekday": { "first": "05:20", "last": "23:10", "frequencyMins": 15 },
+        "weekend": { "first": "05:40", "last": "23:10", "frequencyMins": 20 }
+      },
       "directions": [
         {
           "id": "southbound",
@@ -75,26 +86,32 @@
           }
         }
       ],
-      "notes": "Key bus spine connecting tram and southern beaches"
+      "notes": "Key bus spine connecting tram and southern beaches",
+      "status": "active"
     },
     {
       "id": "777",
       "region": "gold-coast",
       "lineId": "bus777",
+      "family": "gc-bus-express",
       "shortName": "777",
       "longName": "Gold Coast Highway Limited",
       "mode": "bus",
       "operator": "Translink network (sample)",
       "color": "#1477ff",
       "textColor": "#f3f7ff",
-      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN"],
-      "segmentMinutes": [10, 12, 18, 15, 14],
+      "stopSequence": ["HEL", "GCUH", "SOUTH", "BBS", "BURLEIGH", "TUGUN", "VLKS"],
+      "segmentMinutes": [10, 12, 18, 15, 14, 11],
+      "serviceSpan": {
+        "weekday": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
+        "weekend": { "first": "06:10", "last": "22:45", "frequencyMins": 30 }
+      },
       "directions": [
         {
           "id": "southbound",
-          "headsign": "Tugun Village",
+          "headsign": "Varsity Lakes Station",
           "originStopId": "HEL",
-          "destinationStopId": "TUGUN",
+          "destinationStopId": "VLKS",
           "service": {
             "weekday": { "first": "05:45", "last": "22:45", "frequencyMins": 20 },
             "weekend": { "first": "06:10", "last": "22:45", "frequencyMins": 30 }
@@ -103,7 +120,7 @@
         {
           "id": "northbound",
           "headsign": "Helensvale Interchange",
-          "originStopId": "TUGUN",
+          "originStopId": "VLKS",
           "destinationStopId": "HEL",
           "service": {
             "weekday": { "first": "05:20", "last": "22:30", "frequencyMins": 20 },
@@ -111,20 +128,26 @@
           }
         }
       ],
-      "notes": "Express-style connector for major nodes"
+      "notes": "Express-style connector for major nodes",
+      "status": "active"
     },
     {
       "id": "760",
       "region": "gold-coast",
       "lineId": "bus760",
+      "family": "gc-bus-cross",
       "shortName": "760",
       "longName": "Robina to Helensvale Link",
       "mode": "bus",
       "operator": "Translink network (sample)",
-      "color": "#6a4cff",
-      "textColor": "#f7f5ff",
+      "color": "#4f5dff",
+      "textColor": "#f7f8ff",
       "stopSequence": ["ROBINA", "VLKS", "BURLEIGH", "PFI", "BBS", "GCUH", "GRIF", "HEL"],
       "segmentMinutes": [6, 10, 9, 4, 19, 4, 11],
+      "serviceSpan": {
+        "weekday": { "first": "05:30", "last": "22:30", "frequencyMins": 20 },
+        "weekend": { "first": "06:00", "last": "22:30", "frequencyMins": 30 }
+      },
       "directions": [
         {
           "id": "northbound",
@@ -147,12 +170,14 @@
           }
         }
       ],
-      "notes": "Cross-corridor bus connection between heavy rail and tram"
+      "notes": "Cross-corridor bus connection between heavy rail and tram",
+      "status": "active"
     },
     {
       "id": "750",
       "region": "gold-coast",
       "lineId": "bus750",
+      "family": "gc-bus-north",
       "shortName": "750",
       "longName": "Northern Connector",
       "mode": "bus",
@@ -161,6 +186,10 @@
       "textColor": "#ecfff2",
       "stopSequence": ["COOMERA", "HEL", "HARBOUR", "SOUTH", "CAVILL"],
       "segmentMinutes": [16, 14, 10, 12],
+      "serviceSpan": {
+        "weekday": { "first": "05:25", "last": "21:55", "frequencyMins": 30 },
+        "weekend": { "first": "06:00", "last": "21:55", "frequencyMins": 40 }
+      },
       "directions": [
         {
           "id": "southbound",
@@ -183,7 +212,135 @@
           }
         }
       ],
-      "notes": "Included to demonstrate northward expansion handling"
+      "notes": "Included to demonstrate northward expansion handling",
+      "status": "active"
+    },
+
+    {
+      "id": "66",
+      "region": "brisbane",
+      "lineId": "bne66",
+      "family": "bne-busway",
+      "shortName": "66",
+      "longName": "UQ Lakes to RBWH",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#00a4d8",
+      "textColor": "#f4fdff",
+      "stopSequence": ["UQLA", "CULT", "KING", "ROMA", "RBWH"],
+      "segmentMinutes": [8, 5, 4, 6],
+      "serviceSpan": {
+        "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
+        "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+      },
+      "directions": [
+        {
+          "id": "inbound",
+          "headsign": "RBWH Station",
+          "originStopId": "UQLA",
+          "destinationStopId": "RBWH",
+          "service": {
+            "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
+            "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+          }
+        },
+        {
+          "id": "outbound",
+          "headsign": "UQ Lakes",
+          "originStopId": "RBWH",
+          "destinationStopId": "UQLA",
+          "service": {
+            "weekday": { "first": "05:30", "last": "23:30", "frequencyMins": 10 },
+            "weekend": { "first": "06:00", "last": "23:00", "frequencyMins": 15 }
+          }
+        }
+      ],
+      "notes": "Brisbane busway preview corridor",
+      "status": "preview"
+    },
+    {
+      "id": "111",
+      "region": "brisbane",
+      "lineId": "bne111",
+      "family": "bne-south-east",
+      "shortName": "111",
+      "longName": "City to Garden City",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#ff4d67",
+      "textColor": "#fff7f8",
+      "stopSequence": ["ROMA", "KING", "CULT", "WOOL", "GARD"],
+      "segmentMinutes": [4, 6, 9, 18],
+      "serviceSpan": {
+        "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
+        "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+      },
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Garden City",
+          "originStopId": "ROMA",
+          "destinationStopId": "GARD",
+          "service": {
+            "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
+            "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Roma Street",
+          "originStopId": "GARD",
+          "destinationStopId": "ROMA",
+          "service": {
+            "weekday": { "first": "05:00", "last": "23:50", "frequencyMins": 12 },
+            "weekend": { "first": "05:30", "last": "23:20", "frequencyMins": 15 }
+          }
+        }
+      ],
+      "notes": "Brisbane south-east busway scaffold",
+      "status": "preview"
+    },
+    {
+      "id": "330",
+      "region": "brisbane",
+      "lineId": "bne330",
+      "family": "bne-north-south",
+      "shortName": "330",
+      "longName": "Chermside to Woolloongabba",
+      "mode": "bus",
+      "operator": "Translink network (sample)",
+      "color": "#7f5bf5",
+      "textColor": "#f5f1ff",
+      "stopSequence": ["EAGL", "CHMS", "RBWH", "ROMA", "WOOL"],
+      "segmentMinutes": [8, 9, 10, 11],
+      "serviceSpan": {
+        "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
+        "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+      },
+      "directions": [
+        {
+          "id": "southbound",
+          "headsign": "Woolloongabba",
+          "originStopId": "EAGL",
+          "destinationStopId": "WOOL",
+          "service": {
+            "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
+            "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+          }
+        },
+        {
+          "id": "northbound",
+          "headsign": "Eagle Junction",
+          "originStopId": "WOOL",
+          "destinationStopId": "EAGL",
+          "service": {
+            "weekday": { "first": "05:15", "last": "23:15", "frequencyMins": 15 },
+            "weekend": { "first": "05:50", "last": "22:50", "frequencyMins": 20 }
+          }
+        }
+      ],
+      "notes": "Cross-city busway and north connector preview",
+      "status": "preview"
     }
   ]
 }

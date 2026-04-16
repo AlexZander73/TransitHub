@@ -1,20 +1,41 @@
-const RECENT_STOPS_KEY = "coastpulse_recent_stops";
-const MAX_RECENT = 6;
+import { storageService } from "../services/storageService.js";
 
 export function addRecentStop(stopId) {
-  if (!stopId) {
-    return;
-  }
-  const existing = getRecentStops().filter((id) => id !== stopId);
-  existing.unshift(stopId);
-  localStorage.setItem(RECENT_STOPS_KEY, JSON.stringify(existing.slice(0, MAX_RECENT)));
+  storageService.addRecentStop(stopId);
 }
 
 export function getRecentStops() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(RECENT_STOPS_KEY) || "[]");
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return storageService.getRecentStops();
+}
+
+export function addRecentRoute(routeId) {
+  storageService.addRecentRoute(routeId);
+}
+
+export function getRecentRoutes() {
+  return storageService.getRecentRoutes();
+}
+
+export function addRecentSearch(query) {
+  storageService.addRecentSearch(query);
+}
+
+export function getRecentSearches() {
+  return storageService.getRecentSearches();
+}
+
+export function toggleFavoriteStop(stopId) {
+  return storageService.toggleFavoriteStop(stopId);
+}
+
+export function toggleFavoriteRoute(routeId) {
+  return storageService.toggleFavoriteRoute(routeId);
+}
+
+export function getFavoriteStops() {
+  return storageService.getFavoriteStops();
+}
+
+export function getFavoriteRoutes() {
+  return storageService.getFavoriteRoutes();
 }
