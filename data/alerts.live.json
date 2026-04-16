@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-16T21:58:57.466Z",
+    "generatedAt": "2026-04-16T22:51:51.276Z",
     "source": "merge-live-feeds.mjs",
     "sourcePath": "./raw/live/alerts.json"
   },
@@ -59,32 +59,85 @@
       "id": "ALERT-BNE-CULT-WORKS-010",
       "level": "major",
       "title": "Cultural Centre platform works",
-      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66 and 111.",
+      "description": "Platform D has intermittent closures. Follow on-site instructions for routes 66, 111, and 444.",
       "routes": [
         "66",
-        "111"
+        "111",
+        "444"
       ],
       "stops": [
         "CULT"
       ],
-      "effectiveFrom": "2026-04-16T18:00:00+10:00",
-      "effectiveTo": "2026-04-18T02:00:00+10:00",
+      "effectiveFrom": "2026-04-17T06:00:00+10:00",
+      "effectiveTo": "2026-04-19T02:00:00+10:00",
       "status": "active"
     },
     {
       "id": "ALERT-BNE-NORTH-011",
       "level": "info",
       "title": "Northside event traffic",
-      "description": "Minor evening delays expected for route 330 around RBWH and Chermside.",
+      "description": "Minor evening delays expected for routes 330 and 333 around RBWH and Fortitude Valley.",
       "routes": [
-        "330"
+        "330",
+        "333"
       ],
       "stops": [
         "RBWH",
+        "FVLY",
         "CHMS"
       ],
-      "effectiveFrom": "2026-04-16T16:30:00+10:00",
-      "effectiveTo": "2026-04-16T22:30:00+10:00",
+      "effectiveFrom": "2026-04-17T15:30:00+10:00",
+      "effectiveTo": "2026-04-17T22:30:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-BNE-EMPS-012",
+      "level": "minor",
+      "title": "Eight Mile Plains bay reassignment",
+      "description": "Routes 111 and 169 are operating from alternate bays after 20:00.",
+      "routes": [
+        "111",
+        "169"
+      ],
+      "stops": [
+        "EMPS",
+        "GARD"
+      ],
+      "effectiveFrom": "2026-04-17T20:00:00+10:00",
+      "effectiveTo": "2026-04-18T05:00:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-LGN-HYPERDOME-020",
+      "level": "minor",
+      "title": "Hyperdome interchange resurfacing",
+      "description": "Occasional stand changes at Logan Hyperdome. Check bay signage before boarding.",
+      "routes": [
+        "555",
+        "560",
+        "571"
+      ],
+      "stops": [
+        "HYPR",
+        "LGHM"
+      ],
+      "effectiveFrom": "2026-04-17T04:00:00+10:00",
+      "effectiveTo": "2026-04-21T23:00:00+10:00",
+      "status": "active"
+    },
+    {
+      "id": "ALERT-LGN-BNLG-021",
+      "level": "info",
+      "title": "Beenleigh station rail-bus interface notice",
+      "description": "Connection waits may vary by up to 5 minutes while evening rail works run.",
+      "routes": [
+        "555"
+      ],
+      "stops": [
+        "BNLG"
+      ],
+      "effectiveFrom": "2026-04-17T18:30:00+10:00",
+      "effectiveTo": "2026-04-18T02:00:00+10:00",
       "status": "active"
     }
   ]

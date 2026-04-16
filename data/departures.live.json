@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-16T21:58:57.465Z",
+    "generatedAt": "2026-04-16T22:51:51.275Z",
     "source": "merge-live-feeds.mjs",
     "sourcePath": "./raw/live/departures.json"
   },
@@ -469,6 +469,300 @@
         "epochSeconds": null,
         "inMinutes": 9,
         "platform": "Platform B",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "QSTN": [
+      {
+        "tripId": "66-IN-20",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 2,
+        "platform": "Platform 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "111-SB-21",
+        "routeId": "111",
+        "headsign": "Garden City",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 4,
+        "platform": "Platform 3",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "333-SB-22",
+        "routeId": "333",
+        "headsign": "Boggo Road Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 7,
+        "platform": "Platform 5",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "444-IN-23",
+        "routeId": "444",
+        "headsign": "Roma Street",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 10,
+        "platform": "Platform 2",
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "CHMS": [
+      {
+        "tripId": "330-SB-24",
+        "routeId": "330",
+        "headsign": "Woolloongabba",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 3,
+        "platform": "Stand A",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "333-SB-25",
+        "routeId": "333",
+        "headsign": "Boggo Road Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 5,
+        "platform": "Stand C",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "111-NB-26",
+        "routeId": "111",
+        "headsign": "Roma Street",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 6,
+        "platform": "Bay 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "169-NB-27",
+        "routeId": "169",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 8,
+        "platform": "Bay 4",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "TOOW": [
+      {
+        "tripId": "66-IN-28",
+        "routeId": "66",
+        "headsign": "RBWH Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 4,
+        "platform": "Stop B",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "444-IN-29",
+        "routeId": "444",
+        "headsign": "Roma Street",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 9,
+        "platform": "Stop D",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "222-WB-30",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 12,
+        "platform": "Stop C",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "CARI": [
+      {
+        "tripId": "222-WB-31",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 5,
+        "platform": "Stand 6",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "222-WB-32",
+        "routeId": "222",
+        "headsign": "UQ Lakes",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 20,
+        "platform": "Stand 6",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "555-SB-40",
+        "routeId": "555",
+        "headsign": "Beenleigh Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 3,
+        "platform": "Bay 1",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "560-SB-41",
+        "routeId": "560",
+        "headsign": "Meadowbrook Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 9,
+        "platform": "Bay 2",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "571-SB-42",
+        "routeId": "571",
+        "headsign": "Browns Plains Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 15,
+        "platform": "Bay 5",
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "HYPR": [
+      {
+        "tripId": "555-SB-43",
+        "routeId": "555",
+        "headsign": "Beenleigh Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 4,
+        "platform": "Bay 3",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "560-NB-44",
+        "routeId": "560",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 6,
+        "platform": "Bay 7",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "571-NB-45",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 11,
+        "platform": "Bay 4",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BNLG": [
+      {
+        "tripId": "555-NB-46",
+        "routeId": "555",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 5,
+        "platform": "Station Bay 2",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "555-NB-47",
+        "routeId": "555",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 24,
+        "platform": "Station Bay 2",
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BRPL": [
+      {
+        "tripId": "571-NB-48",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 7,
+        "platform": "Stand 9",
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "571-NB-49",
+        "routeId": "571",
+        "headsign": "Springwood Bus Station",
+        "expectedTime": null,
+        "scheduledTime": null,
+        "epochSeconds": null,
+        "inMinutes": 27,
+        "platform": "Stand 9",
         "status": "on_time",
         "delayMinutes": 0
       }
