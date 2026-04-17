@@ -52,18 +52,394 @@ function isMajorStop(stop) {
   return stop.importance === "major" || stop.type === "interchange" || stop.type === "station";
 }
 
-export class MapView {
-  constructor({
-    svg,
-    cameraLayer,
-    lineLayer,
-    stopLayer,
-    labelLayer,
-    onStopSelect,
-    onRouteSelect,
-    onBackgroundSelect,
-    mapConfig
-  }) {
+class LeafletMapRuntime {
+  constructor({ mapElement, svg, onStopSelect, onRouteSelect, onBackgroundSelect, mapConfig }) {
+    this.mapElement = mapElement;
+    this.svg = svg;
+    this.onStopSelect = onStopSelect;
+    this.onRouteSelect = onRouteSelect;
+    this.onBackgroundSelect = onBackgroundSelect;
+    this.mapConfig = mapConfig || {};
+
+    this.lines = [];
+    this.routes = [];
+    this.stops = [];
+    this.stopById = {};
+    this.lineByRouteId = {};
+
+    this.selectedRegionId = null;
+    this.selectedStopId = null;
+    this.compareStopId = null;
+    this.selectedRouteId = null;
+    this.filters = null;
+    this.mapMode = "stylized";
+    this.favoriteStopIds = new Set();
+
+    this.lastFittedRegionId = null;
+    this.lastSelectedStopId = null;
+
+    this.initializeMap();
+  }
+
+  initializeMap() {
+    const L = window.L;
+    if (!L || !this.mapElement) {
+      throw new Error("Leaflet was not loaded. Unable to initialize real map view.");
+    }
+
+    if (this.svg?.parentElement) {
+      this.svg.parentElement.classList.add("leaflet-active");
+    }
+
+    this.map = L.map(this.mapElement, {
+      zoomControl: false,
+      attributionControl: true,
+      preferCanvas: true,
+      minZoom: Number(this.mapConfig.leafletMinZoom || 8),
+      maxZoom: Number(this.mapConfig.leafletMaxZoom || 18)
+    });
+
+    this.map.createPane("connections");
+    this.map.createPane("routes");
+    this.map.createPane("stops");
+
+    this.map.getPane("connections").style.zIndex = "420";
+    this.map.getPane("routes").style.zIndex = "430";
+    this.map.getPane("stops").style.zIndex = "440";
+
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+    this.baseLayers = {
+      stylized: L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+        subdomains: "abcd",
+        maxZoom: 20,
+        attribution: `${attribution} &copy; CARTO`
+      }),
+      corridor: L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution
+      }),
+      connections: L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
+        subdomains: "abcd",
+        maxZoom: 20,
+        attribution: `${attribution} &copy; CARTO`
+      })
+    };
+
+    this.activeBaseKey = null;
+    this.activeBaseLayer = null;
+    this.setBaseLayer("stylized");
+
+    this.routeLayer = L.layerGroup().addTo(this.map);
+    this.connectionLayer = L.layerGroup().addTo(this.map);
+    this.stopLayer = L.layerGroup().addTo(this.map);
+
+    this.map.setView([-27.95, 153.4], 10);
+
+    this.map.on("click", () => {
+      this.onBackgroundSelect?.();
+    });
+  }
+
+  setBaseLayer(mode) {
+    const key = this.baseLayers[mode] ? mode : "stylized";
+    if (this.activeBaseKey === key) {
+      return;
+    }
+
+    if (this.activeBaseLayer) {
+      this.map.removeLayer(this.activeBaseLayer);
+    }
+
+    this.activeBaseLayer = this.baseLayers[key];
+    this.activeBaseLayer.addTo(this.map);
+    this.activeBaseKey = key;
+  }
+
+  setControls({ zoomInButton, zoomOutButton, resetButton }) {
+    zoomInButton?.addEventListener("click", () => {
+      this.map.zoomIn();
+    });
+
+    zoomOutButton?.addEventListener("click", () => {
+      this.map.zoomOut();
+    });
+
+    resetButton?.addEventListener("click", () => {
+      this.fitToRegion(true);
+    });
+  }
+
+  setData({ lines, stops, routes }) {
+    this.lines = lines || [];
+    this.stops = stops || [];
+    this.routes = routes || [];
+    this.stopById = Object.fromEntries(this.stops.map((stop) => [stop.id, stop]));
+
+    this.lineByRouteId = {};
+    this.lines.forEach((line) => {
+      (line.routeIds || []).forEach((routeId) => {
+        this.lineByRouteId[routeId] = line;
+      });
+    });
+
+    this.render();
+  }
+
+  updateState({ selectedRegionId, selectedStopId, compareStopId, selectedRouteId, filters, mapMode, favoriteStopIds }) {
+    const previousRegion = this.selectedRegionId;
+
+    this.selectedRegionId = selectedRegionId || null;
+    this.selectedStopId = selectedStopId || null;
+    this.compareStopId = compareStopId || null;
+    this.selectedRouteId = selectedRouteId || null;
+    this.filters = filters || null;
+    this.mapMode = mapMode || "stylized";
+    this.favoriteStopIds = new Set(favoriteStopIds || []);
+
+    if (previousRegion !== this.selectedRegionId) {
+      this.lastFittedRegionId = null;
+    }
+
+    this.render();
+  }
+
+  getRegionStops() {
+    return this.selectedRegionId ? this.stops.filter((stop) => stop.region === this.selectedRegionId) : this.stops;
+  }
+
+  getRegionRoutes() {
+    return this.selectedRegionId ? this.routes.filter((route) => route.region === this.selectedRegionId) : this.routes;
+  }
+
+  shouldShowLabel(stop) {
+    if (stop.id === this.selectedStopId || stop.id === this.compareStopId) {
+      return true;
+    }
+
+    if (this.mapMode === "connections") {
+      return isMajorStop(stop) || this.favoriteStopIds.has(stop.id);
+    }
+
+    if (this.mapMode === "corridor") {
+      return isMajorStop(stop);
+    }
+
+    return isMajorStop(stop);
+  }
+
+  fitToRegion(force = false) {
+    const regionId = this.selectedRegionId;
+    if (!regionId) {
+      return;
+    }
+
+    if (!force && this.lastFittedRegionId === regionId) {
+      return;
+    }
+
+    const points = this.getRegionStops()
+      .filter((stop) => Number.isFinite(stop.lat) && Number.isFinite(stop.lon))
+      .map((stop) => [stop.lat, stop.lon]);
+
+    if (!points.length) {
+      return;
+    }
+
+    const bounds = window.L.latLngBounds(points);
+    this.map.fitBounds(bounds.pad(0.18), {
+      animate: false,
+      maxZoom: 13
+    });
+
+    this.lastFittedRegionId = regionId;
+  }
+
+  panToSelectedStopIfNeeded() {
+    if (!this.selectedStopId || this.selectedStopId === this.lastSelectedStopId) {
+      return;
+    }
+
+    const stop = this.stopById[this.selectedStopId];
+    if (!stop) {
+      return;
+    }
+
+    const target = window.L.latLng(stop.lat, stop.lon);
+    const inBounds = this.map.getBounds().pad(-0.25).contains(target);
+
+    if (!inBounds) {
+      this.map.panTo(target, { animate: true, duration: 0.5 });
+    }
+
+    this.lastSelectedStopId = this.selectedStopId;
+  }
+
+  renderRoutes() {
+    const routes = this.getRegionRoutes();
+
+    routes.forEach((route) => {
+      const line = this.lineByRouteId[route.id] || null;
+
+      if (this.mapMode === "corridor" && line?.layer === "secondary" && !this.selectedRouteId) {
+        return;
+      }
+
+      const latLngs = (route.stopSequence || [])
+        .map((stopId) => this.stopById[stopId])
+        .filter(Boolean)
+        .map((stop) => [stop.lat, stop.lon]);
+
+      if (latLngs.length < 2) {
+        return;
+      }
+
+      const selected = this.selectedRouteId === route.id;
+      const modeVisible = modePassesFilter(route.mode, this.filters);
+      const mutedByRoute = this.selectedRouteId ? !selected : false;
+      const muted = mutedByRoute || !modeVisible;
+
+      const weight = selected ? 7 : line?.layer === "secondary" ? 4 : 5;
+      const opacity = muted ? 0.2 : selected ? 0.95 : line?.layer === "secondary" ? 0.62 : 0.78;
+
+      const polyline = window.L.polyline(latLngs, {
+        pane: "routes",
+        color: route.color || "#19639a",
+        weight,
+        opacity,
+        lineJoin: "round",
+        lineCap: "round",
+        dashArray: line?.layer === "secondary" ? "7 8" : null
+      });
+
+      polyline.on("click", (event) => {
+        window.L.DomEvent.stopPropagation(event);
+        this.onRouteSelect?.(route.id);
+      });
+
+      this.routeLayer.addLayer(polyline);
+    });
+  }
+
+  renderConnectionLinks() {
+    if (this.mapMode !== "connections" || !this.selectedStopId) {
+      return;
+    }
+
+    const selected = this.stopById[this.selectedStopId];
+    if (!selected) {
+      return;
+    }
+
+    (selected.nearbyStopIds || [])
+      .map((id) => this.stopById[id])
+      .filter(Boolean)
+      .forEach((stop) => {
+        const line = window.L.polyline(
+          [
+            [selected.lat, selected.lon],
+            [stop.lat, stop.lon]
+          ],
+          {
+            pane: "connections",
+            color: "#2c6fa0",
+            weight: 2,
+            opacity: 0.56,
+            dashArray: "5 8",
+            interactive: false
+          }
+        );
+
+        this.connectionLayer.addLayer(line);
+      });
+  }
+
+  renderStops() {
+    const stops = this.getRegionStops();
+
+    stops.forEach((stop) => {
+      if (!stopPassesFilter(stop, this.filters)) {
+        return;
+      }
+
+      const selected = this.selectedStopId === stop.id;
+      const compare = this.compareStopId === stop.id;
+      const favorite = this.favoriteStopIds.has(stop.id);
+      const relatedToRoute = this.selectedRouteId ? stop.routes?.includes(this.selectedRouteId) : true;
+
+      const muted = !relatedToRoute;
+      const baseRadius = isMajorStop(stop) ? 7 : 5;
+      const radius = selected ? baseRadius + 3 : compare ? baseRadius + 2 : baseRadius;
+
+      let fillColor = "#184663";
+      if (stop.modes?.includes("tram")) {
+        fillColor = "#0a8f81";
+      } else if (stop.modes?.includes("bus")) {
+        fillColor = "#1f6da0";
+      }
+
+      if (selected) {
+        fillColor = "#0d7fbf";
+      }
+
+      if (compare) {
+        fillColor = "#7f5bf5";
+      }
+
+      const marker = window.L.circleMarker([stop.lat, stop.lon], {
+        pane: "stops",
+        radius,
+        color: favorite ? "#f2b31a" : "#ffffff",
+        weight: favorite ? 2.4 : 1.8,
+        fillColor,
+        fillOpacity: muted ? 0.32 : 0.92,
+        opacity: muted ? 0.4 : 1,
+        keyboard: true
+      });
+
+      marker.on("click", (event) => {
+        window.L.DomEvent.stopPropagation(event);
+        this.onStopSelect?.(stop.id);
+      });
+
+      const permanent = this.shouldShowLabel(stop);
+      marker.bindTooltip(stop.name, {
+        permanent,
+        direction: "top",
+        offset: [0, -10],
+        className: `map-stop-tooltip${selected ? " selected" : ""}${compare ? " compare" : ""}`
+      });
+
+      if (selected) {
+        marker.openTooltip();
+      }
+
+      this.stopLayer.addLayer(marker);
+    });
+  }
+
+  render() {
+    if (!this.map) {
+      return;
+    }
+
+    this.setBaseLayer(this.mapMode);
+
+    this.routeLayer.clearLayers();
+    this.connectionLayer.clearLayers();
+    this.stopLayer.clearLayers();
+
+    this.renderRoutes();
+    this.renderConnectionLinks();
+    this.renderStops();
+
+    this.fitToRegion();
+    this.panToSelectedStopIfNeeded();
+  }
+}
+
+class SvgMapRuntime {
+  constructor({ svg, cameraLayer, lineLayer, stopLayer, labelLayer, onStopSelect, onRouteSelect, onBackgroundSelect, mapConfig }) {
     this.svg = svg;
     this.cameraLayer = cameraLayer;
     this.lineLayer = lineLayer;
@@ -421,5 +797,23 @@ export class MapView {
 
   applyCamera() {
     this.cameraLayer?.setAttribute("transform", `translate(${this.panX}, ${this.panY}) scale(${this.zoom})`);
+  }
+}
+
+export class MapView {
+  constructor(options) {
+    this.runtime = window.L && options?.mapElement ? new LeafletMapRuntime(options) : new SvgMapRuntime(options);
+  }
+
+  setControls(controls) {
+    this.runtime.setControls(controls);
+  }
+
+  setData(data) {
+    this.runtime.setData(data);
+  }
+
+  updateState(state) {
+    this.runtime.updateState(state);
   }
 }

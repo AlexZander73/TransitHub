@@ -8,9 +8,10 @@
       content="CoastPulse Transit Atlas is an unofficial map-first Gold Coast and SEQ transit viewer with stop intelligence, route overlays, direct trip estimates, and static-first fallback behavior."
     />
     <title>CoastPulse Transit Atlas | Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
-  <body>
+  <body class="map-page">
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
@@ -70,7 +71,7 @@
 
           <section class="map-card" aria-label="Transit map">
             <div class="map-toolbar">
-              <p>Stylized network map. Drag to pan. Scroll to zoom. Press <kbd>/</kbd> to focus search.</p>
+              <p>OpenStreetMap-based map with transit overlays. Drag to pan. Scroll to zoom. Press <kbd>/</kbd> to focus search.</p>
               <div class="map-controls" aria-label="Map controls">
                 <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
                 <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
@@ -79,7 +80,8 @@
             </div>
 
             <div class="map-viewport">
-              <svg id="network-map" viewBox="0 0 1200 1700" role="img" aria-label="SEQ transit network map">
+              <div id="leaflet-map" class="leaflet-map" role="img" aria-label="SEQ transit network map"></div>
+              <svg id="network-map" viewBox="0 0 1200 1700" role="img" aria-label="Fallback stylized transit map">
                 <g id="map-camera">
                   <g id="backdrop-layer" aria-hidden="true">
                     <rect class="map-backdrop-water" x="0" y="0" width="1200" height="1700" />
@@ -127,6 +129,7 @@
       </main>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script type="module" src="./assets/js/app.js"></script>
   </body>
 </html>

@@ -77,6 +77,7 @@ const elements = {
   routeLegend: document.querySelector("#route-legend"),
   stopPanel: document.querySelector("#stop-panel"),
   networkStatus: document.querySelector("#network-status"),
+  mapContainer: document.querySelector("#leaflet-map"),
   mapSvg: document.querySelector("#network-map"),
   mapCamera: document.querySelector("#map-camera"),
   mapLines: document.querySelector("#line-layer"),
@@ -227,6 +228,7 @@ function setupRegionSelector() {
 
 function setupMap(dataBundle) {
   mapView = new MapView({
+    mapElement: elements.mapContainer,
     svg: elements.mapSvg,
     cameraLayer: elements.mapCamera,
     lineLayer: elements.mapLines,
@@ -255,7 +257,8 @@ function setupMap(dataBundle) {
 
   mapView.setData({
     lines: dataBundle.lines,
-    stops: dataBundle.stops
+    stops: dataBundle.stops,
+    routes: dataBundle.routes
   });
 }
 
