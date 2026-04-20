@@ -5,3 +5,5 @@ raw/
 .env
 .env.local
 .env.live
+mobile/www/*
+!mobile/www/.gitkeep

@@ -368,7 +368,7 @@ class LeafletMapRuntime {
       const relatedToRoute = this.selectedRouteId ? stop.routes?.includes(this.selectedRouteId) : true;
 
       const muted = !relatedToRoute;
-      const baseRadius = isMajorStop(stop) ? 7 : 5;
+      const baseRadius = isMajorStop(stop) ? 9 : 7;
       const radius = selected ? baseRadius + 3 : compare ? baseRadius + 2 : baseRadius;
 
       let fillColor = "#184663";
@@ -390,7 +390,7 @@ class LeafletMapRuntime {
         pane: "stops",
         radius,
         color: favorite ? "#f2b31a" : "#ffffff",
-        weight: favorite ? 2.4 : 1.8,
+        weight: favorite ? 2.8 : 2.2,
         fillColor,
         fillOpacity: muted ? 0.32 : 0.92,
         opacity: muted ? 0.4 : 1,

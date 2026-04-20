@@ -65,3 +65,41 @@ Open `http://localhost:4173`.
 - No Node runtime is needed in production hosting.
 - Node scripts are build-time only.
 - If deploying under a subpath later, update link/base path strategy in docs and URL-state helpers.
+
+## Optional Capacitor deployment (native shell)
+
+Capacitor wraps the same static frontend for iOS/Android without adding a backend.
+
+### 1) Install project dependencies
+
+```bash
+npm install
+```
+
+### 2) Add native platforms (one-time)
+
+```bash
+npm run cap:add:ios
+npm run cap:add:android
+```
+
+### 3) Build/sync static assets into Capacitor webDir
+
+```bash
+npm run cap:sync
+```
+
+This runs `scripts/build-capacitor-web.mjs` and copies `index.html`, static pages, `assets/`, and `data/` into `mobile/www`.
+
+### 4) Open native projects
+
+```bash
+npm run cap:open:ios
+npm run cap:open:android
+```
+
+### 5) Important runtime notes
+
+- Mobile shell still depends on network for map tiles and optional live data snapshots.
+- The stylized map fallback still works if external map tiles are unavailable.
+- Keep disclaimer/non-affiliation content visible in app builds as well as the web build.

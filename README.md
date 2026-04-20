@@ -109,6 +109,7 @@ No accounts or server-side profiles.
     departures.live.json         # optional generated snapshot
     alerts.live.json             # optional generated snapshot
   scripts/
+    build-capacitor-web.mjs
     fetch-live-sources.mjs
     merge-live-feeds.mjs
     fetch-gtfsrt-sources.mjs
@@ -125,6 +126,9 @@ No accounts or server-side profiles.
     content-guidelines.md
     accessibility-notes.md
   .github/workflows/live-data-refresh.yml
+  capacitor.config.ts
+  mobile/
+    www/
   README.md
 ```
 
@@ -158,6 +162,42 @@ Repository: `AlexZander73/TransitHub`
 4. Branch: `main`, Folder: `/ (root)`
 
 The deployed frontend needs no Node runtime.
+
+## Optional Capacitor app shell (iOS/Android)
+
+The same static site can run inside a native shell using Capacitor while keeping GitHub Pages as the primary web deployment.
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Add each platform once:
+
+```bash
+npm run cap:add:ios
+npm run cap:add:android
+```
+
+3. Sync web assets into the mobile bundle after web changes:
+
+```bash
+npm run cap:sync
+```
+
+4. Open native projects:
+
+```bash
+npm run cap:open:ios
+npm run cap:open:android
+```
+
+Notes:
+
+- Capacitor web assets are generated into `mobile/www` by `scripts/build-capacitor-web.mjs`.
+- Map tiles and live snapshots still require network connectivity.
+- If Leaflet tiles/scripts are unavailable, the app still has a working stylized SVG fallback map.
 
 ## Data model and runtime behavior
 
@@ -258,6 +298,7 @@ URL state supports:
 - [Future live data](./docs/future-live-data.md)
 - [Design notes](./docs/design-notes.md)
 - [Deployment](./docs/deployment.md)
+- [Capacitor guide](./docs/capacitor.md)
 - [Roadmap](./docs/roadmap.md)
 - [Content guidelines](./docs/content-guidelines.md)
 - [Accessibility notes](./docs/accessibility-notes.md)

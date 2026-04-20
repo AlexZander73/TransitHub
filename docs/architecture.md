@@ -10,6 +10,7 @@ Core characteristics:
 - JSON datasets committed under `/data`
 - Optional build-time Node scripts for GTFS transforms and live snapshot normalization
 - Graceful fallback from live snapshots to sample snapshots to schedule-derived estimates
+- Optional Capacitor shell for iOS/Android (`capacitor.config.ts` + generated `mobile/www`)
 
 ## Runtime layers
 
@@ -107,3 +108,10 @@ Current data coverage:
 - All frontend assets are static and path-safe for repository root deployment
 - No client-side server APIs are required at runtime
 - Optional Node scripts and GitHub Actions are build-time only
+
+## Capacitor compatibility
+
+- Capacitor consumes the generated static bundle from `mobile/www`.
+- `scripts/build-capacitor-web.mjs` copies required pages and data assets with no frontend rewrite.
+- Safe-area handling and viewport units are applied via `assets/js/bootstrap.js` + CSS safe-area vars.
+- Leaflet/OpenStreetMap map tiles still require network; stylized SVG fallback remains available.

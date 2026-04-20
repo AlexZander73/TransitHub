@@ -8,6 +8,13 @@
     "serve": "python3 -m http.server 4173",
     "validate:data": "node ./scripts/validate-data.mjs",
     "build:gtfs": "node ./scripts/transform-gtfs.mjs --input ./raw/gtfs --output ./data",
+    "build:cap:web": "node ./scripts/build-capacitor-web.mjs",
+    "cap:copy": "npm run build:cap:web && npx cap copy",
+    "cap:sync": "npm run build:cap:web && npx cap sync",
+    "cap:add:ios": "npx cap add ios",
+    "cap:add:android": "npx cap add android",
+    "cap:open:ios": "npx cap open ios",
+    "cap:open:android": "npx cap open android",
     "fetch:live": "node ./scripts/fetch-live-sources.mjs --out-raw-dir ./raw/live",
     "merge:live": "node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data",
     "refresh:live": "npm run fetch:live && npm run merge:live && npm run validate:data",
@@ -16,7 +23,13 @@
     "refresh:live:gtfsrt": "npm run fetch:gtfsrt && npm run build:live:gtfsrt && npm run validate:data"
   },
   "dependencies": {
+    "@capacitor/core": "^7.0.0",
     "gtfs-realtime-bindings": "^1.1.1"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/ios": "^7.0.0"
   },
   "engines": {
     "node": ">=18"
