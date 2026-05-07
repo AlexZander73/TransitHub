@@ -8,6 +8,11 @@ const config: CapacitorConfig = {
   server: {
     androidScheme: "https",
     iosScheme: "https"
+  },
+  plugins: {
+    StatusBar: {
+      overlaysWebView: false
+    }
   }
 };
 
