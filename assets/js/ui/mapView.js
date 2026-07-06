@@ -95,6 +95,7 @@ class LeafletMapRuntime {
       zoomControl: false,
       attributionControl: true,
       preferCanvas: true,
+      zoomSnap: 0.25,
       minZoom: Number(this.mapConfig.leafletMinZoom || 8),
       maxZoom: Number(this.mapConfig.leafletMaxZoom || 18)
     });
@@ -110,7 +111,7 @@ class LeafletMapRuntime {
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
     this.baseLayers = {
-      stylized: L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      stylized: L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         subdomains: "abcd",
         maxZoom: 20,
         attribution: `${attribution} &copy; CARTO`
@@ -119,7 +120,7 @@ class LeafletMapRuntime {
         maxZoom: 19,
         attribution
       }),
-      connections: L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png", {
+      connections: L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png", {
         subdomains: "abcd",
         maxZoom: 20,
         attribution: `${attribution} &copy; CARTO`
@@ -135,9 +136,14 @@ class LeafletMapRuntime {
     this.stopLayer = L.layerGroup().addTo(this.map);
 
     this.map.setView([-27.95, 153.4], 10);
+    window.requestAnimationFrame(() => this.map.invalidateSize());
 
     this.map.on("click", () => {
       this.onBackgroundSelect?.();
+    });
+
+    this.map.on("zoomend", () => {
+      this.render();
     });
   }
 
@@ -217,8 +223,16 @@ class LeafletMapRuntime {
       return true;
     }
 
+    if (this.favoriteStopIds.has(stop.id)) {
+      return true;
+    }
+
+    if (this.map && this.map.getZoom() < 12.15) {
+      return false;
+    }
+
     if (this.mapMode === "connections") {
-      return isMajorStop(stop) || this.favoriteStopIds.has(stop.id);
+      return isMajorStop(stop);
     }
 
     if (this.mapMode === "corridor") {
@@ -247,12 +261,14 @@ class LeafletMapRuntime {
     }
 
     const bounds = window.L.latLngBounds(points);
-    this.map.fitBounds(bounds.pad(0.18), {
-      animate: false,
-      maxZoom: 13
-    });
-
+    const smallViewport = window.innerWidth < 860;
     this.lastFittedRegionId = regionId;
+    this.map.fitBounds(bounds.pad(0.12), {
+      animate: false,
+      maxZoom: smallViewport ? 12.5 : 13.5,
+      paddingTopLeft: smallViewport ? [18, 190] : [96, 132],
+      paddingBottomRight: smallViewport ? [18, 170] : [430, 132]
+    });
   }
 
   panToSelectedStopIfNeeded() {
@@ -265,12 +281,14 @@ class LeafletMapRuntime {
       return;
     }
 
+    const smallViewport = window.innerWidth < 860;
     const target = window.L.latLng(stop.lat, stop.lon);
-    const inBounds = this.map.getBounds().pad(-0.25).contains(target);
-
-    if (!inBounds) {
-      this.map.panTo(target, { animate: true, duration: 0.5 });
-    }
+    this.map.panInside(target, {
+      animate: true,
+      duration: 0.45,
+      paddingTopLeft: smallViewport ? [18, 190] : [96, 132],
+      paddingBottomRight: smallViewport ? [18, 190] : [430, 160]
+    });
 
     this.lastSelectedStopId = this.selectedStopId;
   }
@@ -299,8 +317,8 @@ class LeafletMapRuntime {
       const mutedByRoute = this.selectedRouteId ? !selected : false;
       const muted = mutedByRoute || !modeVisible;
 
-      const weight = selected ? 7 : line?.layer === "secondary" ? 4 : 5;
-      const opacity = muted ? 0.2 : selected ? 0.95 : line?.layer === "secondary" ? 0.62 : 0.78;
+      const weight = selected ? 9 : line?.layer === "secondary" ? 5 : 7;
+      const opacity = muted ? 0.18 : selected ? 0.98 : line?.layer === "secondary" ? 0.68 : 0.86;
 
       const polyline = window.L.polyline(latLngs, {
         pane: "routes",
@@ -309,7 +327,8 @@ class LeafletMapRuntime {
         opacity,
         lineJoin: "round",
         lineCap: "round",
-        dashArray: line?.layer === "secondary" ? "7 8" : null
+        dashArray: line?.layer === "secondary" ? "7 8" : null,
+        smoothFactor: 1.2
       });
 
       polyline.on("click", (event) => {
@@ -373,13 +392,13 @@ class LeafletMapRuntime {
 
       let fillColor = "#184663";
       if (stop.modes?.includes("tram")) {
-        fillColor = "#0a8f81";
+        fillColor = "#02a895";
       } else if (stop.modes?.includes("bus")) {
-        fillColor = "#1f6da0";
+        fillColor = "#f0782d";
       }
 
       if (selected) {
-        fillColor = "#0d7fbf";
+        fillColor = "#137fda";
       }
 
       if (compare) {

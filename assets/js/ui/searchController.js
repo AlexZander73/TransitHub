@@ -52,8 +52,10 @@ export class SearchController {
     };
     this.results = [];
     this.activeIndex = -1;
+    this.isOpen = false;
 
     this.attachEvents();
+    this.updateClearButton();
   }
 
   setData({ stops, routes }) {
@@ -72,16 +74,30 @@ export class SearchController {
 
   attachEvents() {
     this.input?.addEventListener("input", () => {
+      this.isOpen = true;
+      this.updateClearButton();
       this.renderResults(this.input.value.trim().toLowerCase());
     });
 
     this.input?.addEventListener("focus", () => {
+      this.isOpen = true;
       this.resultList.hidden = false;
       this.renderResults(this.input.value.trim().toLowerCase());
     });
 
+    this.input?.addEventListener("blur", () => {
+      window.setTimeout(() => {
+        if (document.activeElement === this.input || this.input.value.trim()) {
+          return;
+        }
+        this.isOpen = false;
+        this.resultList.hidden = true;
+      }, 80);
+    });
+
     this.input?.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
+        this.isOpen = false;
         this.resultList.hidden = true;
         this.activeIndex = -1;
         return;
@@ -113,12 +129,14 @@ export class SearchController {
 
     this.clearButton?.addEventListener("click", () => {
       this.input.value = "";
+      this.updateClearButton();
       this.renderResults("");
       this.input.focus();
     });
 
     document.addEventListener("click", (event) => {
       if (!event.target.closest(".search-shell")) {
+        this.isOpen = false;
         this.resultList.hidden = true;
       }
     });
@@ -133,6 +151,7 @@ export class SearchController {
       if (type === "history") {
         const value = button.dataset.query || "";
         this.input.value = value;
+        this.updateClearButton();
         this.renderResults(value.toLowerCase());
         this.input.focus();
         return;
@@ -168,6 +187,12 @@ export class SearchController {
     });
   }
 
+  updateClearButton() {
+    const hasQuery = Boolean(this.input?.value?.trim());
+    this.clearButton?.toggleAttribute("hidden", !hasQuery);
+    this.input?.closest(".search-row")?.classList.toggle("has-query", hasQuery);
+  }
+
   selectResult(result) {
     if (!result) {
       return;
@@ -185,6 +210,7 @@ export class SearchController {
 
     this.resultList.hidden = true;
     this.activeIndex = -1;
+    this.isOpen = false;
   }
 
   renderResults(query) {
@@ -214,23 +240,10 @@ export class SearchController {
     const filteredRoutes = this.routes.filter((route) => (regionId ? route.region === regionId : true));
 
     if (!query) {
-      const history = this.getRecentSearches().slice(0, 6);
-      if (!history.length) {
-        this.resultList.innerHTML = renderHint("Search stop name, stop code, route number, or interchange.");
-      } else {
-        this.results = history.map((entry) => ({ type: "history", query: entry }));
-        this.resultList.innerHTML = `<ul class="search-results">${history
-          .map(
-            (entry) => `<li>
-              <button type="button" data-result-type="history" data-query="${escapeHtml(entry)}">
-                <span>${escapeHtml(entry)}</span>
-                <small>Recent search</small>
-              </button>
-            </li>`
-          )
-          .join("")}</ul>`;
-      }
-      this.resultList.hidden = false;
+      this.results = [];
+      this.activeIndex = -1;
+      this.resultList.innerHTML = "";
+      this.resultList.hidden = true;
       return;
     }
 
