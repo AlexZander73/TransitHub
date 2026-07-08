@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-08T08:43:27.443Z",
+    "generatedAt": "2026-07-08T10:49:23.567Z",
     "source": "merge-live-feeds.mjs",
     "sourcePath": "./raw/live/departures.json"
   },
