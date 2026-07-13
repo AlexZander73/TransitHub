@@ -1,0 +1,68 @@
+theme,screen,width,height
+"Original Premium","map_default",147,367
+"Original Premium","region_menu",147,367
+"Original Premium","layers_menu",148,367
+"Original Premium","transit_filter",146,367
+"Original Premium","stop_details_expanded",166,367
+"Original Premium","stops",147,346
+"Original Premium","routes",147,346
+"Original Premium","alerts",148,346
+"Original Premium","more",146,346
+"Original Premium","how_it_works",166,346
+"Original Premium","desktop_map_route_selected",362,286
+"Original Premium","desktop_stops_list_detail",282,286
+"Original Premium","desktop_alerts",291,286
+"01_Aurora","Concept_Set_1/map_default",103,280
+"01_Aurora","Concept_Set_1/menu_or_filter",112,280
+"01_Aurora","Concept_Set_1/stop_details",115,280
+"01_Aurora","Concept_Set_1/stops",94,215
+"01_Aurora","Concept_Set_1/routes",94,215
+"01_Aurora","Concept_Set_1/alerts",94,215
+"01_Aurora","Concept_Set_1/more",94,215
+"01_Aurora","Concept_Set_1/how_it_works",94,215
+"01_Aurora","Concept_Set_1/desktop_experience",492,219
+"02_Transit_Motion","Concept_Set_1/map_default",111,280
+"02_Transit_Motion","Concept_Set_1/menu_or_filter",108,280
+"02_Transit_Motion","Concept_Set_1/stop_details",112,280
+"02_Transit_Motion","Concept_Set_1/stops",94,215
+"02_Transit_Motion","Concept_Set_1/routes",94,215
+"02_Transit_Motion","Concept_Set_1/alerts",94,215
+"02_Transit_Motion","Concept_Set_1/more",94,215
+"02_Transit_Motion","Concept_Set_1/how_it_works",94,215
+"02_Transit_Motion","Concept_Set_1/desktop_experience",488,219
+"03_Coastline_Explorer","Concept_Set_1/map_default",111,280
+"03_Coastline_Explorer","Concept_Set_1/menu_or_filter",122,280
+"03_Coastline_Explorer","Concept_Set_1/stop_details",127,280
+"03_Coastline_Explorer","Concept_Set_1/stops",94,215
+"03_Coastline_Explorer","Concept_Set_1/routes",94,215
+"03_Coastline_Explorer","Concept_Set_1/alerts",94,215
+"03_Coastline_Explorer","Concept_Set_1/more",94,215
+"03_Coastline_Explorer","Concept_Set_1/how_it_works",94,215
+"03_Coastline_Explorer","Concept_Set_1/desktop_experience",492,219
+"01_Aurora","Concept_Set_2/map_default",103,279
+"01_Aurora","Concept_Set_2/menu_or_filter",112,279
+"01_Aurora","Concept_Set_2/stop_details",115,279
+"01_Aurora","Concept_Set_2/stops",94,239
+"01_Aurora","Concept_Set_2/routes",94,239
+"01_Aurora","Concept_Set_2/alerts",94,239
+"01_Aurora","Concept_Set_2/more",94,239
+"01_Aurora","Concept_Set_2/how_it_works",94,239
+"01_Aurora","Concept_Set_2/desktop_experience",492,188
+"02_Transit_Motion","Concept_Set_2/map_default",111,279
+"02_Transit_Motion","Concept_Set_2/menu_or_filter",108,279
+"02_Transit_Motion","Concept_Set_2/stop_details",112,279
+"02_Transit_Motion","Concept_Set_2/stops",94,239
+"02_Transit_Motion","Concept_Set_2/routes",94,239
+"02_Transit_Motion","Concept_Set_2/alerts",94,239
+"02_Transit_Motion","Concept_Set_2/more",94,239
+"02_Transit_Motion","Concept_Set_2/how_it_works",94,239
+"02_Transit_Motion","Concept_Set_2/desktop_experience",488,188
+"03_Coastline_Explorer","Concept_Set_2/map_default",111,279
+"03_Coastline_Explorer","Concept_Set_2/menu_or_filter",122,279
+"03_Coastline_Explorer","Concept_Set_2/stop_details",127,279
+"03_Coastline_Explorer","Concept_Set_2/stops",94,239
+"03_Coastline_Explorer","Concept_Set_2/routes",94,239
+"03_Coastline_Explorer","Concept_Set_2/alerts",94,239
+"03_Coastline_Explorer","Concept_Set_2/more",94,239
+"03_Coastline_Explorer","Concept_Set_2/how_it_works",94,239
+"03_Coastline_Explorer","Concept_Set_2/desktop_experience",492,188
