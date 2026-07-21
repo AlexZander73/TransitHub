@@ -23,6 +23,7 @@
     "lines": "data/lines.json",
     "interchanges": "data/interchanges.json",
     "routePatterns": "data/route-patterns.json",
+    "routeShapes": "data/route-shapes.json",
     "departuresSample": "data/departures.sample.json",
     "alertsSample": "data/alerts.sample.json",
     "directTravel": "data/direct-travel.sample.json"
@@ -32,11 +33,17 @@
     "mode": "snapshot-json",
     "departuresPath": "data/departures.live.json",
     "alertsPath": "data/alerts.live.json",
-    "maxAgeMinutes": 20
+    "vehiclesPath": "data/vehicles.live.json",
+    "remoteBaseUrl": "https://alexzander73.github.io/TransitHub/",
+    "remoteTimeoutMs": 2500,
+    "maxAgeMinutes": 20,
+    "vehicleMaxAgeMinutes": 20,
+    "refreshSeconds": 60
   },
   "fallback": {
     "departureLookaheadMinutes": 90,
     "defaultDepartureLimit": 8,
+    "useSampleData": false,
     "noDataMessage": "No live or scheduled departures are currently available for this stop."
   },
   "map": {
@@ -55,6 +62,14 @@
   "privacy": {
     "localStorageOnly": true,
     "note": "Favorites, recents, and quick history are stored only in your browser on this device."
+  },
+  "support": {
+    "tipJarUrl": "",
+    "repositoryUrl": "https://github.com/AlexZander73/TransitHub"
+  },
+  "premium": {
+    "appearancePreviewEnabled": true,
+    "note": "Theme and alternate-icon entitlements are in preview until StoreKit purchase and restore flows are connected."
   },
   "attribution": {
     "placeholder": true,

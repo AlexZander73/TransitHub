@@ -7,10 +7,11 @@
     <title>CoastPulse Transit Atlas | Routes</title>
     <link rel="icon" href="./assets/img/app-icon.png" />
     <link rel="apple-touch-icon" href="./assets/img/app-icon-192.png" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script src="./assets/js/bootstrap.js?v=nav-shell"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260714b" />
+    <link rel="stylesheet" href="./assets/css/themes.css?v=20260714b" />
+    <script src="./assets/js/bootstrap.js?v=appearance-20260714"></script>
   </head>
-  <body>
+  <body class="routes-page">
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
@@ -26,8 +27,7 @@
           <a href="./stops.html">Stops</a>
           <a href="./routes.html" class="active">Routes</a>
           <a href="./alerts.html">Alerts</a>
-          <a href="./data.html">Data</a>
-          <a href="./about.html">About</a>
+          <a href="./about.html">More</a>
         </nav>
 
         <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
@@ -36,12 +36,24 @@
       <main class="routes-layout">
         <section class="routes-list-card" aria-label="Routes list">
           <div class="routes-card-header">
-            <h2>Routes</h2>
+            <h2 class="page-title-row">
+              <span class="page-title-icon" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 17c4-8 12 0 16-8"></path><path d="M4 7c4 8 12 0 16 8"></path></svg>
+              </span>
+              Routes
+            </h2>
             <div class="routes-controls">
               <label for="routes-region-select" class="sr-only">Select region</label>
               <select id="routes-region-select"></select>
-              <label for="route-search" class="sr-only">Search routes</label>
-              <input id="route-search" type="search" placeholder="Search route number or name" />
+              <div class="page-search-control">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+                <label for="route-search" class="sr-only">Search routes</label>
+                <input id="route-search" type="search" placeholder="Search route number or name" />
+              </div>
+              <div class="reference-tabs" role="group" aria-label="Route view">
+                <button type="button" class="active" data-route-view="all" aria-pressed="true">All routes</button>
+                <button type="button" data-route-view="favorites" aria-pressed="false">Favorites</button>
+              </div>
             </div>
           </div>
           <div id="routes-list"></div>
@@ -49,6 +61,7 @@
 
         <section class="routes-detail-card" aria-label="Selected route details">
           <div class="routes-card-header">
+            <button id="routes-detail-back" class="mobile-detail-back" type="button">&lsaquo; Routes</button>
             <h2>Route detail</h2>
             <div class="routes-actions">
               <button id="route-favorite-toggle" type="button">Save route</button>
@@ -62,6 +75,6 @@
       <p class="footer-note">Route timings are representative estimates and can vary in real operation.</p>
     </div>
 
-    <script type="module" src="./assets/js/routesPage.js"></script>
+    <script type="module" src="./assets/js/routesPage.js?v=20260714b"></script>
   </body>
 </html>

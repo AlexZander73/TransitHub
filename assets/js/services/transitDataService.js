@@ -25,6 +25,12 @@ function indexManyByKey(items = [], keyName = "routeId") {
   }, {});
 }
 
+function generatedAtTime(payload) {
+  const value = payload?.meta?.generatedAt || payload?.generatedAt;
+  const parsed = value ? Date.parse(value) : Number.NaN;
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
 function normalizeConfig(config = {}) {
   const regionDefault =
     config?.regions?.defaultRegion || config?.app?.primaryRegion || config?.regions?.enabled?.[0] || "gold-coast";
@@ -73,7 +79,8 @@ export class TransitDataService {
       linesData,
       directTravelData,
       interchangesData,
-      routePatternsData
+      routePatternsData,
+      routeShapesData
     ] = await Promise.all([
       this.loadJson(paths.regions, { optional: true }),
       this.loadJson(paths.stops),
@@ -81,7 +88,8 @@ export class TransitDataService {
       this.loadJson(paths.lines),
       this.loadJson(paths.directTravel),
       this.loadJson(paths.interchanges, { optional: true }),
-      this.loadJson(paths.routePatterns, { optional: true })
+      this.loadJson(paths.routePatterns, { optional: true }),
+      this.loadJson(paths.routeShapes, { optional: true })
     ]);
 
     const stops = stopsData?.stops || [];
@@ -91,6 +99,7 @@ export class TransitDataService {
     const regions = regionsData?.regions || [];
     const interchanges = interchangesData?.interchanges || [];
     const routePatterns = routePatternsData?.patterns || [];
+    const routeShapes = routeShapesData?.routes || {};
 
     const stopById = indexById(stops);
     const routeById = indexById(routes);
@@ -112,6 +121,7 @@ export class TransitDataService {
       directTravelEdges,
       interchanges,
       routePatterns,
+      routeShapes,
       stopById,
       routeById,
       lineById,
@@ -153,7 +163,7 @@ export class TransitDataService {
   }
 
   async loadJson(path, options = {}) {
-    const { optional = false, bypassCache = false } = options;
+    const { optional = false, bypassCache = false, timeoutMs = 0 } = options;
     if (!path) {
       return null;
     }
@@ -162,8 +172,14 @@ export class TransitDataService {
       return this.jsonCache.get(path);
     }
 
+    const controller = timeoutMs > 0 ? new AbortController() : null;
+    const timeoutId = controller ? window.setTimeout(() => controller.abort(), timeoutMs) : null;
+
     try {
-      const response = await fetch(this.resolvePath(path), { cache: "no-store" });
+      const response = await fetch(this.resolvePath(path), {
+        cache: "no-store",
+        signal: controller?.signal
+      });
       if (!response.ok) {
         if (optional) {
           return null;
@@ -178,7 +194,49 @@ export class TransitDataService {
         return null;
       }
       throw error;
+    } finally {
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
     }
+  }
+
+  async loadLiveJson(path, liveConfig = {}) {
+    if (!path) {
+      return null;
+    }
+
+    const localRequest = this.loadJson(path, { optional: true, bypassCache: true });
+    const remoteBaseUrl = liveConfig.remoteBaseUrl;
+
+    if (!remoteBaseUrl) {
+      return localRequest;
+    }
+
+    let remotePath;
+    try {
+      remotePath = new URL(path, remoteBaseUrl).toString();
+    } catch {
+      return localRequest;
+    }
+
+    const [remotePayload, localPayload] = await Promise.all([
+      this.loadJson(remotePath, {
+        optional: true,
+        bypassCache: true,
+        timeoutMs: Number(liveConfig.remoteTimeoutMs || 2500)
+      }),
+      localRequest
+    ]);
+
+    if (!remotePayload) {
+      return localPayload;
+    }
+    if (!localPayload) {
+      return remotePayload;
+    }
+
+    return generatedAtTime(remotePayload) >= generatedAtTime(localPayload) ? remotePayload : localPayload;
   }
 
   resolvePath(path) {

@@ -7,10 +7,11 @@
     <title>CoastPulse Transit Atlas | How It Works</title>
     <link rel="icon" href="./assets/img/app-icon.png" />
     <link rel="apple-touch-icon" href="./assets/img/app-icon-192.png" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script src="./assets/js/bootstrap.js?v=nav-shell"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260714b" />
+    <link rel="stylesheet" href="./assets/css/themes.css?v=20260714b" />
+    <script src="./assets/js/bootstrap.js?v=appearance-20260714"></script>
   </head>
-  <body>
+  <body class="how-page">
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
@@ -26,47 +27,48 @@
           <a href="./stops.html">Stops</a>
           <a href="./routes.html">Routes</a>
           <a href="./alerts.html">Alerts</a>
-          <a href="./data.html">Data</a>
-          <a href="./about.html">About</a>
+          <a href="./about.html" class="active">More</a>
         </nav>
 
         <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
       </header>
 
-      <article class="static-page">
-        <section>
-          <h2>How CoastPulse Transit Atlas Works</h2>
-          <p>
-            The frontend is fully static and deploys directly to GitHub Pages. Core datasets are JSON files committed in the repository,
-            then loaded client-side by modular vanilla JavaScript services.
-          </p>
+      <article class="static-page how-it-works-page">
+        <a class="back-link" href="./about.html" aria-label="Back to More">&lsaquo; <span>How It Works</span></a>
+
+        <section class="how-visual" aria-labelledby="how-title">
+          <div class="how-map-motif" aria-hidden="true">
+            <span class="how-route-line"></span>
+            <span class="how-stop stop-one"></span>
+            <span class="how-stop stop-two"></span>
+            <span class="how-stop stop-three"></span>
+            <div class="how-app-icon"></div>
+          </div>
+          <h2 id="how-title">CoastPulse uses open data to put SEQ transit on the map.</h2>
         </section>
 
-        <section>
-          <h3>Runtime data modes</h3>
-          <ol>
-            <li><strong>Live mode (optional):</strong> if enabled and fresh, <code>departures.live.json</code> and <code>alerts.live.json</code> are used.</li>
-            <li><strong>Sample snapshot mode:</strong> if live data is missing or stale, sample JSON is used.</li>
-            <li><strong>Scheduled fallback:</strong> departures can be generated from route frequency profiles when snapshots are absent.</li>
-          </ol>
-          <p>Source state is surfaced in the UI so fallback conditions are transparent.</p>
+        <section class="how-feature-list" aria-label="Core features">
+          <article>
+            <span class="feature-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 18V8"></path><path d="M10 18V4"></path><path d="M16 18v-7"></path><path d="M22 18V9"></path></svg></span>
+            <div><h3>Real-time departures</h3><p>Powered by available Translink data, with clear fallback status.</p></div>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M5 19c3-6 6-8 14-14"></path><circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="5" r="2"></circle></svg></span>
+            <div><h3>Direct trip planner</h3><p>Find direct same-route journeys and representative travel times.</p></div>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M7 11h10"></path><path d="M9 15h6"></path><path d="M11 19h2"></path></svg></span>
+            <div><h3>Offline-friendly maps</h3><p>Core route and stop information remains useful when connectivity drops.</p></div>
+          </article>
         </section>
 
-        <section>
-          <h3>Direct-estimate boundaries</h3>
-          <p>
-            PlannerLite only supports direct same-route journeys (explicit edge or same route sequence). Transfer-capable locations are labeled,
-            but full transfer journey planning is intentionally out of scope in this static deployment.
-          </p>
-        </section>
-
-        <section>
-          <h3>Expansion architecture</h3>
-          <p>
-            Region-aware datasets (<code>regions/stops/routes/lines/interchanges/patterns</code>) allow Brisbane and broader SEQ areas to be added without rewriting
-            core UI architecture.
-          </p>
-        </section>
+        <details class="technical-note">
+          <summary>Technical and data notes</summary>
+          <div>
+            <p>CoastPulse is a static-first app. It prefers fresh live snapshots, then sample snapshots, and finally scheduled estimates.</p>
+            <p>Direct estimates cover same-route journeys. Full multi-transfer planning remains outside the current dataset.</p>
+          </div>
+        </details>
       </article>
     </div>
   </body>

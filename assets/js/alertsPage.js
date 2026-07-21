@@ -1,5 +1,5 @@
-import { TransitDataService } from "./services/transitDataService.js";
-import { AlertsService } from "./services/alertsService.js";
+import { TransitDataService } from "./services/transitDataService.js?v=20260715-live4";
+import { AlertsService } from "./services/alertsService.js?v=20260715-live4";
 import { readStateFromUrl, writeStateToUrl } from "./utils/urlState.js";
 
 const dataService = new TransitDataService();
@@ -12,7 +12,8 @@ const elements = {
   severityFilter: document.querySelector("#alerts-severity-filter"),
   activeList: document.querySelector("#alerts-active"),
   recentList: document.querySelector("#alerts-recent"),
-  summary: document.querySelector("#alerts-summary")
+  summary: document.querySelector("#alerts-summary"),
+  viewButtons: Array.from(document.querySelectorAll("[data-alert-view]"))
 };
 
 const urlState = readStateFromUrl();
@@ -36,8 +37,26 @@ async function init() {
 
   setupRegionSelector();
   setupSeverityFilter();
+  setupViewFilter();
 
   await render();
+}
+
+function setupViewFilter() {
+  elements.viewButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      severityFilter = button.dataset.alertView || "all";
+      if (elements.severityFilter) {
+        elements.severityFilter.value = severityFilter;
+      }
+      elements.viewButtons.forEach((candidate) => {
+        const active = candidate.dataset.alertView === severityFilter;
+        candidate.classList.toggle("active", active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+      await render();
+    });
+  });
 }
 
 function setupRegionSelector() {

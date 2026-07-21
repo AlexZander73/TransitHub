@@ -7,10 +7,11 @@
     <title>CoastPulse Transit Atlas | Alerts</title>
     <link rel="icon" href="./assets/img/app-icon.png" />
     <link rel="apple-touch-icon" href="./assets/img/app-icon-192.png" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script src="./assets/js/bootstrap.js?v=nav-shell"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260714b" />
+    <link rel="stylesheet" href="./assets/css/themes.css?v=20260714b" />
+    <script src="./assets/js/bootstrap.js?v=appearance-20260714"></script>
   </head>
-  <body>
+  <body class="alerts-page-body">
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
@@ -26,8 +27,7 @@
           <a href="./stops.html">Stops</a>
           <a href="./routes.html">Routes</a>
           <a href="./alerts.html" class="active">Alerts</a>
-          <a href="./data.html">Data</a>
-          <a href="./about.html">About</a>
+          <a href="./about.html">More</a>
         </nav>
 
         <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
@@ -36,8 +36,19 @@
       <article class="static-page alerts-page">
         <section class="alerts-toolbar">
           <div>
-            <h2>Service alerts and notices</h2>
+            <h2 class="page-title-row">
+              <span class="page-title-icon page-title-icon-alert" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"></path><path d="M12 9v5"></path><path d="M12 17h.01"></path></svg>
+              </span>
+              Alerts
+            </h2>
             <p>Visibility layer for current and recent disruptions across supported regions.</p>
+            <div class="reference-tabs alert-reference-tabs" role="group" aria-label="Alert severity">
+              <button type="button" class="active" data-alert-view="all" aria-pressed="true">All</button>
+              <button type="button" data-alert-view="major" aria-pressed="false">Major</button>
+              <button type="button" data-alert-view="minor" aria-pressed="false">Minor</button>
+              <button type="button" data-alert-view="info" aria-pressed="false">Info</button>
+            </div>
           </div>
           <div class="routes-controls">
             <label for="alerts-region-select" class="sr-only">Select region</label>
@@ -66,6 +77,6 @@
       </article>
     </div>
 
-    <script type="module" src="./assets/js/alertsPage.js"></script>
+    <script type="module" src="./assets/js/alertsPage.js?v=20260715-live4"></script>
   </body>
 </html>

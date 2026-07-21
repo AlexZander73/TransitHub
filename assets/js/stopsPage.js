@@ -13,7 +13,9 @@ const elements = {
   searchInput: document.querySelector("#stops-search"),
   list: document.querySelector("#stops-index-list"),
   detail: document.querySelector("#stops-index-detail"),
-  clearSearch: document.querySelector("#stops-clear")
+  clearSearch: document.querySelector("#stops-clear"),
+  viewButtons: Array.from(document.querySelectorAll("[data-stop-view]")),
+  detailBack: document.querySelector("#stops-detail-back")
 };
 
 const urlState = readStateFromUrl();
@@ -23,6 +25,17 @@ let stopsService = null;
 let selectedRegionId = urlState.selectedRegionId || null;
 let selectedStopId = urlState.selectedStopId || null;
 let query = "";
+let stopView = "all";
+let hasExplicitStopSelection = Boolean(urlState.selectedStopId);
+
+function revealDetailOnSmallScreen() {
+  if (!window.matchMedia("(max-width: 979px)").matches) {
+    return;
+  }
+
+  document.body.classList.add("mobile-detail-open");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 async function init() {
   bundle = await dataService.getBundle();
@@ -42,7 +55,26 @@ async function init() {
 
   setupRegionSelector();
   setupSearch();
+  setupViewFilter();
+  elements.detailBack?.addEventListener("click", () => {
+    document.body.classList.remove("mobile-detail-open");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   render();
+}
+
+function setupViewFilter() {
+  elements.viewButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      stopView = button.dataset.stopView || "all";
+      elements.viewButtons.forEach((candidate) => {
+        const active = candidate.dataset.stopView === stopView;
+        candidate.classList.toggle("active", active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+      renderList();
+    });
+  });
 }
 
 function setupRegionSelector() {
@@ -88,7 +120,10 @@ function setupSearch() {
 }
 
 function getVisibleStops() {
-  const regionStops = stopsService.listByRegion(selectedRegionId);
+  const favorites = new Set(storageService.getFavoriteStops());
+  const regionStops = stopsService
+    .listByRegion(selectedRegionId)
+    .filter((stop) => stopView !== "favorites" || favorites.has(stop.id));
 
   if (!query) {
     return regionStops.sort((a, b) => a.name.localeCompare(b.name));
@@ -116,7 +151,9 @@ function renderList() {
   const stops = getVisibleStops();
 
   if (!stops.length) {
-    elements.list.innerHTML = `<p class="empty-state">No stops found for this query.</p>`;
+    elements.list.innerHTML = `<p class="empty-state">${
+      stopView === "favorites" ? "No favorite stops yet." : "No stops found for this query."
+    }</p>`;
     return;
   }
 
@@ -124,15 +161,28 @@ function renderList() {
 
   elements.list.innerHTML = `<ul>${stops
     .map((stop) => {
-      const selected = stop.id === selectedStopId;
+      const selected = stop.id === selectedStopId && (hasExplicitStopSelection || !window.matchMedia("(max-width: 860px)").matches);
       const favorite = favorites.has(stop.id);
+      const routeBadges = (stop.routes || [])
+        .map((routeId) => bundle.routeById[routeId])
+        .filter(Boolean)
+        .slice(0, 4)
+        .map(
+          (route) =>
+            `<span class="stop-route-chip" style="--route-color:${route.color}">${route.shortName}</span>`
+        )
+        .join("");
       return `<li>
         <button type="button" class="routes-page-item ${selected ? "selected" : ""}" data-stop-id="${stop.id}">
-          <span class="route-badge">${stop.code}</span>
+          <span class="stop-list-icon" aria-hidden="true">
+            <svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 0 0-12 0c0 5.8 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg>
+          </span>
           <span class="route-text">
             <strong>${stop.name}${favorite ? " ★" : ""}</strong>
             <small>${stopsService.describeStopType(stop)} · ${stop.suburb || stop.region}</small>
+            <span class="stop-route-chips">${routeBadges}</span>
           </span>
+          <span class="row-chevron" aria-hidden="true">&rsaquo;</span>
         </button>
       </li>`;
     })
@@ -141,8 +191,10 @@ function renderList() {
   elements.list.querySelectorAll("button[data-stop-id]").forEach((button) => {
     button.addEventListener("click", () => {
       selectedStopId = button.dataset.stopId;
+      hasExplicitStopSelection = true;
       storageService.addRecentStop(selectedStopId);
       render();
+      requestAnimationFrame(revealDetailOnSmallScreen);
     });
   });
 }

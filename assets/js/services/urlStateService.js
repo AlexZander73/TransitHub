@@ -75,11 +75,11 @@ export function writeStateToUrl(state = {}, options = {}) {
   });
 
   if (options.replace === false) {
-    history.pushState({}, "", current);
+    history.pushState(options.state || {}, "", current);
     return;
   }
 
-  history.replaceState({}, "", current);
+  history.replaceState(history.state || {}, "", current);
 }
 
 export function buildStopShareUrl(stopId, state = {}) {

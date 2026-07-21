@@ -52,6 +52,37 @@ function isMajorStop(stop) {
   return stop.importance === "major" || stop.type === "interchange" || stop.type === "station";
 }
 
+function currentTheme() {
+  return document.documentElement.dataset.theme || "original-premium";
+}
+
+function themedRouteColor(route) {
+  const theme = currentTheme();
+  const routeId = String(route.id || "");
+
+  if (theme === "aurora") {
+    return {
+      GL: "#20e0d2",
+      700: "#ff5f83",
+      777: "#ffb13b",
+      760: "#9f6bff",
+      750: "#24cfff"
+    }[routeId] || "#8b5cff";
+  }
+
+  if (theme === "transit-motion") {
+    return {
+      GL: "#12a99d",
+      700: "#ef4b45",
+      777: "#176fd0",
+      760: "#6a52d8",
+      750: "#24a363"
+    }[routeId] || route.color || "#23344b";
+  }
+
+  return route.color || "#19639a";
+}
+
 class LeafletMapRuntime {
   constructor({ mapElement, svg, onStopSelect, onRouteSelect, onBackgroundSelect, mapConfig }) {
     this.mapElement = mapElement;
@@ -64,6 +95,9 @@ class LeafletMapRuntime {
     this.lines = [];
     this.routes = [];
     this.stops = [];
+    this.routeShapes = {};
+    this.vehicles = [];
+    this.userLocation = null;
     this.stopById = {};
     this.lineByRouteId = {};
 
@@ -103,10 +137,14 @@ class LeafletMapRuntime {
     this.map.createPane("connections");
     this.map.createPane("routes");
     this.map.createPane("stops");
+    this.map.createPane("vehicles");
+    this.map.createPane("user-location");
 
     this.map.getPane("connections").style.zIndex = "420";
     this.map.getPane("routes").style.zIndex = "430";
     this.map.getPane("stops").style.zIndex = "440";
+    this.map.getPane("vehicles").style.zIndex = "450";
+    this.map.getPane("user-location").style.zIndex = "460";
 
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
@@ -134,6 +172,8 @@ class LeafletMapRuntime {
     this.routeLayer = L.layerGroup().addTo(this.map);
     this.connectionLayer = L.layerGroup().addTo(this.map);
     this.stopLayer = L.layerGroup().addTo(this.map);
+    this.vehicleLayer = L.layerGroup().addTo(this.map);
+    this.userLocationLayer = L.layerGroup().addTo(this.map);
 
     this.map.setView([-27.95, 153.4], 10);
     window.requestAnimationFrame(() => this.map.invalidateSize());
@@ -176,10 +216,11 @@ class LeafletMapRuntime {
     });
   }
 
-  setData({ lines, stops, routes }) {
+  setData({ lines, stops, routes, routeShapes }) {
     this.lines = lines || [];
     this.stops = stops || [];
     this.routes = routes || [];
+    this.routeShapes = routeShapes || {};
     this.stopById = Object.fromEntries(this.stops.map((stop) => [stop.id, stop]));
 
     this.lineByRouteId = {};
@@ -190,6 +231,51 @@ class LeafletMapRuntime {
     });
 
     this.render();
+  }
+
+  setVehicles(vehicles = []) {
+    this.vehicles = vehicles;
+    this.render();
+  }
+
+  setUserLocation(location) {
+    this.userLocation = location || null;
+    this.render();
+  }
+
+  getCameraState() {
+    if (!this.map) {
+      return null;
+    }
+    const center = this.map.getCenter();
+    return { center: [center.lat, center.lng], zoom: this.map.getZoom() };
+  }
+
+  restoreCameraState(camera) {
+    if (!camera?.center || !Number.isFinite(camera.zoom)) {
+      return;
+    }
+    this.lastFittedRegionId = this.selectedRegionId;
+    this.lastSelectedStopId = null;
+    this.map.setView(camera.center, camera.zoom, { animate: false });
+  }
+
+  focusLocation(location, nearestStop) {
+    if (!location || !this.map) {
+      return;
+    }
+    this.lastFittedRegionId = this.selectedRegionId;
+    if (nearestStop) {
+      this.map.fitBounds(
+        window.L.latLngBounds([
+          [location.lat, location.lon],
+          [nearestStop.lat, nearestStop.lon]
+        ]).pad(0.5),
+        { animate: true, maxZoom: 15, padding: [72, 72] }
+      );
+      return;
+    }
+    this.map.setView([location.lat, location.lon], Math.max(this.map.getZoom(), 14), { animate: true });
   }
 
   updateState({ selectedRegionId, selectedStopId, compareStopId, selectedRouteId, filters, mapMode, favoriteStopIds }) {
@@ -266,8 +352,8 @@ class LeafletMapRuntime {
     this.map.fitBounds(bounds.pad(0.12), {
       animate: false,
       maxZoom: smallViewport ? 12.5 : 13.5,
-      paddingTopLeft: smallViewport ? [18, 190] : [96, 132],
-      paddingBottomRight: smallViewport ? [18, 170] : [430, 132]
+      paddingTopLeft: smallViewport ? [16, 66] : [96, 92],
+      paddingBottomRight: smallViewport ? [16, 78] : [430, 92]
     });
   }
 
@@ -286,8 +372,8 @@ class LeafletMapRuntime {
     this.map.panInside(target, {
       animate: true,
       duration: 0.45,
-      paddingTopLeft: smallViewport ? [18, 190] : [96, 132],
-      paddingBottomRight: smallViewport ? [18, 190] : [430, 160]
+      paddingTopLeft: smallViewport ? [16, 66] : [96, 92],
+      paddingBottomRight: smallViewport ? [16, 96] : [430, 130]
     });
 
     this.lastSelectedStopId = this.selectedStopId;
@@ -303,12 +389,16 @@ class LeafletMapRuntime {
         return;
       }
 
-      const latLngs = (route.stopSequence || [])
+      const officialShapes = (this.routeShapes?.[route.id]?.shapes || [])
+        .map((shape) => shape.points || [])
+        .filter((points) => points.length > 1);
+      const fallbackShape = (route.stopSequence || [])
         .map((stopId) => this.stopById[stopId])
         .filter(Boolean)
         .map((stop) => [stop.lat, stop.lon]);
+      const routeSegments = officialShapes.length ? officialShapes : fallbackShape.length > 1 ? [fallbackShape] : [];
 
-      if (latLngs.length < 2) {
+      if (!routeSegments.length) {
         return;
       }
 
@@ -317,27 +407,94 @@ class LeafletMapRuntime {
       const mutedByRoute = this.selectedRouteId ? !selected : false;
       const muted = mutedByRoute || !modeVisible;
 
-      const weight = selected ? 9 : line?.layer === "secondary" ? 5 : 7;
-      const opacity = muted ? 0.18 : selected ? 0.98 : line?.layer === "secondary" ? 0.68 : 0.86;
+      const weight = selected ? 5.2 : line?.layer === "secondary" ? 1.8 : 2.8;
+      const opacity = muted ? 0.1 : selected ? 0.98 : line?.layer === "secondary" ? 0.5 : 0.72;
+      const routeClass = String(route.id || "route").toLowerCase().replace(/[^a-z0-9_-]+/g, "-");
 
-      const polyline = window.L.polyline(latLngs, {
-        pane: "routes",
-        color: route.color || "#19639a",
-        weight,
-        opacity,
-        lineJoin: "round",
-        lineCap: "round",
-        dashArray: line?.layer === "secondary" ? "7 8" : null,
-        smoothFactor: 1.2
+      routeSegments.forEach((latLngs) => {
+        const polyline = window.L.polyline(latLngs, {
+          pane: "routes",
+          className: `transit-route route-${routeClass} mode-${route.mode || "unknown"}${selected ? " selected" : ""}`,
+          color: themedRouteColor(route),
+          weight,
+          opacity,
+          lineJoin: "round",
+          lineCap: "round",
+          dashArray: line?.layer === "secondary" ? "7 8" : null,
+          smoothFactor: 1
+        });
+
+        polyline.on("click", (event) => {
+          window.L.DomEvent.stopPropagation(event);
+          this.onRouteSelect?.(route.id);
+        });
+
+        this.routeLayer.addLayer(polyline);
       });
+    });
+  }
 
-      polyline.on("click", (event) => {
+  renderVehicles() {
+    this.vehicles.forEach((vehicle) => {
+      const route = this.routes.find((item) => item.id === vehicle.routeId);
+      if (!route || route.region !== this.selectedRegionId || !modePassesFilter(route.mode, this.filters)) {
+        return;
+      }
+      const label = String(route.shortName || vehicle.label || route.id).replace(/[^a-z0-9]/gi, "").slice(0, 4);
+      const marker = window.L.marker([vehicle.lat, vehicle.lon], {
+        pane: "vehicles",
+        icon: window.L.divIcon({
+          className: "live-vehicle-icon-shell",
+          html: `<span class="live-vehicle-icon mode-${route.mode}" style="--vehicle-color:${themedRouteColor(route)}">${label}</span>`,
+          iconSize: [34, 34],
+          iconAnchor: [17, 17]
+        }),
+        keyboard: true,
+        title: `Live ${route.mode} ${label}`
+      });
+      const updated = vehicle.updatedAt ? new Date(vehicle.updatedAt).toLocaleTimeString("en-AU", { hour: "numeric", minute: "2-digit" }) : "recently";
+      marker.bindTooltip(`${label} ${vehicle.headsign ? `to ${vehicle.headsign}` : ""} · updated ${updated}`, {
+        direction: "top",
+        offset: [0, -14],
+        className: "map-stop-tooltip vehicle-tooltip"
+      });
+      marker.on("click", (event) => {
         window.L.DomEvent.stopPropagation(event);
         this.onRouteSelect?.(route.id);
       });
-
-      this.routeLayer.addLayer(polyline);
+      this.vehicleLayer.addLayer(marker);
     });
+  }
+
+  renderUserLocation() {
+    if (!this.userLocation) {
+      return;
+    }
+    const { lat, lon, accuracy } = this.userLocation;
+    if (Number.isFinite(accuracy) && accuracy > 0) {
+      this.userLocationLayer.addLayer(
+        window.L.circle([lat, lon], {
+          pane: "user-location",
+          radius: accuracy,
+          color: "#0878d1",
+          weight: 1,
+          opacity: 0.5,
+          fillColor: "#61b7f4",
+          fillOpacity: 0.12,
+          interactive: false
+        })
+      );
+    }
+    const marker = window.L.circleMarker([lat, lon], {
+      pane: "user-location",
+      radius: 7,
+      color: "#ffffff",
+      weight: 3,
+      fillColor: "#0878d1",
+      fillOpacity: 1
+    });
+    marker.bindTooltip("Your location", { direction: "top", offset: [0, -10], className: "map-stop-tooltip" });
+    this.userLocationLayer.addLayer(marker);
   }
 
   renderConnectionLinks() {
@@ -387,7 +544,7 @@ class LeafletMapRuntime {
       const relatedToRoute = this.selectedRouteId ? stop.routes?.includes(this.selectedRouteId) : true;
 
       const muted = !relatedToRoute;
-      const baseRadius = isMajorStop(stop) ? 9 : 7;
+      const baseRadius = isMajorStop(stop) ? 5.4 : 4.1;
       const radius = selected ? baseRadius + 3 : compare ? baseRadius + 2 : baseRadius;
 
       let fillColor = "#184663";
@@ -405,8 +562,14 @@ class LeafletMapRuntime {
         fillColor = "#7f5bf5";
       }
 
+      if (currentTheme() === "aurora" && !selected && !compare) {
+        const primaryRoute = (stop.routes || []).map((routeId) => this.routes.find((route) => route.id === routeId)).find(Boolean);
+        fillColor = primaryRoute ? themedRouteColor(primaryRoute) : "#24cfff";
+      }
+
       const marker = window.L.circleMarker([stop.lat, stop.lon], {
         pane: "stops",
+        className: `transit-stop mode-${stop.modes?.[0] || "unknown"}${selected ? " selected" : ""}`,
         radius,
         color: favorite ? "#f2b31a" : "#ffffff",
         weight: favorite ? 2.8 : 2.2,
@@ -447,10 +610,14 @@ class LeafletMapRuntime {
     this.routeLayer.clearLayers();
     this.connectionLayer.clearLayers();
     this.stopLayer.clearLayers();
+    this.vehicleLayer.clearLayers();
+    this.userLocationLayer.clearLayers();
 
     this.renderRoutes();
     this.renderConnectionLinks();
     this.renderStops();
+    this.renderVehicles();
+    this.renderUserLocation();
 
     this.fitToRegion();
     this.panToSelectedStopIfNeeded();
@@ -814,6 +981,20 @@ class SvgMapRuntime {
     this.applyCamera();
   }
 
+  getCameraState() {
+    return { zoom: this.zoom, panX: this.panX, panY: this.panY };
+  }
+
+  restoreCameraState(camera) {
+    if (!camera) {
+      return;
+    }
+    this.zoom = Number(camera.zoom || this.zoom);
+    this.panX = Number(camera.panX || 0);
+    this.panY = Number(camera.panY || 0);
+    this.applyCamera();
+  }
+
   applyCamera() {
     this.cameraLayer?.setAttribute("transform", `translate(${this.panX}, ${this.panY}) scale(${this.zoom})`);
   }
@@ -834,5 +1015,25 @@ export class MapView {
 
   updateState(state) {
     this.runtime.updateState(state);
+  }
+
+  setVehicles(vehicles) {
+    this.runtime.setVehicles?.(vehicles);
+  }
+
+  setUserLocation(location) {
+    this.runtime.setUserLocation?.(location);
+  }
+
+  focusLocation(location, nearestStop) {
+    this.runtime.focusLocation?.(location, nearestStop);
+  }
+
+  getCameraState() {
+    return this.runtime.getCameraState?.() || null;
+  }
+
+  restoreCameraState(camera) {
+    this.runtime.restoreCameraState?.(camera);
   }
 }

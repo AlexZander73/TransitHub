@@ -7,10 +7,11 @@
     <title>CoastPulse Transit Atlas | Stops</title>
     <link rel="icon" href="./assets/img/app-icon.png" />
     <link rel="apple-touch-icon" href="./assets/img/app-icon-192.png" />
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <script src="./assets/js/bootstrap.js?v=nav-shell"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260714b" />
+    <link rel="stylesheet" href="./assets/css/themes.css?v=20260714b" />
+    <script src="./assets/js/bootstrap.js?v=appearance-20260714"></script>
   </head>
-  <body>
+  <body class="stops-page">
     <div class="app-shell">
       <header class="site-header">
         <div class="brand-lockup">
@@ -26,8 +27,7 @@
           <a href="./stops.html" class="active">Stops</a>
           <a href="./routes.html">Routes</a>
           <a href="./alerts.html">Alerts</a>
-          <a href="./data.html">Data</a>
-          <a href="./about.html">About</a>
+          <a href="./about.html">More</a>
         </nav>
 
         <p class="disclaimer-inline">Unofficial project. Not affiliated with Translink.</p>
@@ -36,13 +36,27 @@
       <main class="routes-layout">
         <section class="routes-list-card" aria-label="Stops list">
           <div class="routes-card-header">
-            <h2>Stops and interchanges</h2>
+            <h2 class="page-title-row">
+              <span class="page-title-icon" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 0 0-12 0c0 5.8 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg>
+              </span>
+              Stops
+            </h2>
             <div class="routes-controls">
               <label for="stops-region-select" class="sr-only">Select region</label>
               <select id="stops-region-select"></select>
-              <label for="stops-search" class="sr-only">Search stops</label>
-              <input id="stops-search" type="search" placeholder="Search stop name or code" />
-              <button id="stops-clear" type="button">Clear</button>
+              <div class="page-search-control">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+                <label for="stops-search" class="sr-only">Search stops</label>
+                <input id="stops-search" type="search" placeholder="Search stop name or code" />
+                <button id="stops-clear" type="button" aria-label="Clear stop search">
+                  <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+              </div>
+              <div class="reference-tabs" role="group" aria-label="Stop view">
+                <button type="button" class="active" data-stop-view="all" aria-pressed="true">Nearby</button>
+                <button type="button" data-stop-view="favorites" aria-pressed="false">Favorites</button>
+              </div>
             </div>
           </div>
           <div id="stops-index-list"></div>
@@ -50,6 +64,7 @@
 
         <section class="routes-detail-card" aria-label="Selected stop details">
           <div class="routes-card-header">
+            <button id="stops-detail-back" class="mobile-detail-back" type="button">&lsaquo; Stops</button>
             <h2>Stop detail</h2>
           </div>
           <div id="stops-index-detail"></div>
@@ -59,6 +74,6 @@
       <p class="footer-note">Stop details are representative and may differ from official platform-level operations.</p>
     </div>
 
-    <script type="module" src="./assets/js/stopsPage.js"></script>
+    <script type="module" src="./assets/js/stopsPage.js?v=20260714b"></script>
   </body>
 </html>

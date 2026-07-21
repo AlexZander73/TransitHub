@@ -1,13 +1,13 @@
 import { createStore } from "./state/store.js";
-import { readStateFromUrl, writeStateToUrl, buildStopShareUrl } from "./utils/urlState.js";
-import { TransitDataService } from "./services/transitDataService.js";
-import { DeparturesService } from "./services/departuresService.js";
-import { AlertsService } from "./services/alertsService.js";
+import { readStateFromUrl, writeStateToUrl, buildStopShareUrl } from "./utils/urlState.js?v=20260715-live4";
+import { TransitDataService } from "./services/transitDataService.js?v=20260715-live4";
+import { DeparturesService } from "./services/departuresService.js?v=20260715-live4";
+import { AlertsService } from "./services/alertsService.js?v=20260715-live4";
 import { PlannerLiteService } from "./services/plannerLiteService.js";
 import { StopsService } from "./services/stopsService.js";
 import { RoutesService } from "./services/routesService.js";
 import { storageService } from "./services/storageService.js";
-import { MapView } from "./ui/mapView.js";
+import { MapView } from "./ui/mapView.js?v=20260715-live4";
 import { SearchController } from "./ui/searchController.js";
 import {
   alertsList,
@@ -39,6 +39,7 @@ let searchController = null;
 let activeStopRequest = 0;
 let activeCompareRequest = 0;
 let activeEstimateRequest = 0;
+let mapCameraBeforeStop = null;
 
 const stateFromUrl = readStateFromUrl();
 
@@ -69,6 +70,12 @@ const store = createStore({
   favoriteRouteIds: storageService.getFavoriteRoutes(),
   networkAlertsActive: [],
   networkAlertsRecent: [],
+  liveVehicleCount: 0,
+  liveVehicleStatus: "Checking live vehicles...",
+  locationStatus: "",
+  nearestStopId: null,
+  nearestStopDistanceMetres: null,
+  isLocating: false,
   searchQuery: stateFromUrl.searchQuery || "",
   panelExpanded: false
 });
@@ -86,6 +93,8 @@ const elements = {
   zoomIn: document.querySelector("#zoom-in"),
   zoomOut: document.querySelector("#zoom-out"),
   zoomReset: document.querySelector("#zoom-reset"),
+  locateButton: document.querySelector("#locate-user"),
+  locationStatus: document.querySelector("#location-status"),
   searchInput: document.querySelector("#stop-search"),
   searchResults: document.querySelector("#search-results"),
   searchClear: document.querySelector("#search-clear"),
@@ -116,10 +125,12 @@ async function init() {
     setupFilters();
     setupMapModes();
     setupMapMenus();
+    setupLocation();
     setupLegendInteractions();
     setupPanelInteractions();
     setupSheetToggle();
     setupShortcuts();
+    setupNavigationHistory();
 
     store.subscribe(() => {
       render();
@@ -127,6 +138,7 @@ async function init() {
     });
 
     await preloadNetworkAlerts();
+    await refreshVehiclePositions();
     render();
 
     const state = store.getState();
@@ -149,6 +161,10 @@ async function init() {
     setInterval(() => {
       preloadNetworkAlerts();
     }, 2 * 60 * 1000);
+
+    setInterval(() => {
+      refreshVehiclePositions();
+    }, Number(bundle.config?.liveData?.refreshSeconds || 60) * 1000);
   } catch (error) {
     renderBootError(error);
   }
@@ -261,7 +277,97 @@ function setupMap(dataBundle) {
   mapView.setData({
     lines: dataBundle.lines,
     stops: dataBundle.stops,
-    routes: dataBundle.routes
+    routes: dataBundle.routes,
+    routeShapes: dataBundle.routeShapes
+  });
+}
+
+function haversineMetres(a, b) {
+  const toRadians = (value) => (value * Math.PI) / 180;
+  const earthRadius = 6371000;
+  const lat1 = toRadians(a.lat);
+  const lat2 = toRadians(b.lat);
+  const deltaLat = lat2 - lat1;
+  const deltaLon = toRadians(b.lon - a.lon);
+  const h =
+    Math.sin(deltaLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) ** 2;
+  return earthRadius * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+}
+
+function findNearestStop(location) {
+  const state = store.getState();
+  const candidates = bundle.stops.filter((stop) => {
+    const modeVisible = (stop.modes || []).some((mode) => state.filters[mode] !== false);
+    return modeVisible && Number.isFinite(stop.lat) && Number.isFinite(stop.lon);
+  });
+  return candidates
+    .map((stop) => ({ stop, distance: haversineMetres(location, stop) }))
+    .sort((a, b) => a.distance - b.distance)[0] || null;
+}
+
+function formatDistance(metres) {
+  if (!Number.isFinite(metres)) {
+    return "";
+  }
+  if (metres < 1000) {
+    return `${Math.max(10, Math.round(metres / 10) * 10)} m`;
+  }
+  return `${(metres / 1000).toFixed(1)} km`;
+}
+
+function setupLocation() {
+  elements.locateButton?.addEventListener("click", () => {
+    elements.locateButton.closest("details")?.removeAttribute("open");
+    if (!navigator.geolocation) {
+      updateState({ locationStatus: "Location is not available on this device.", isLocating: false });
+      return;
+    }
+
+    updateState({ locationStatus: "Finding your location...", isLocating: true });
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const location = {
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          accuracy: position.coords.accuracy
+        };
+        const nearest = findNearestStop(location);
+        mapView?.setUserLocation(location);
+
+        if (!nearest) {
+          mapView?.focusLocation(location, null);
+          updateState({ locationStatus: "Location found. No modeled stops are nearby.", isLocating: false });
+          return;
+        }
+
+        if (nearest.stop.region !== store.getState().selectedRegionId) {
+          updateState({ selectedRegionId: nearest.stop.region });
+        }
+        mapView?.focusLocation(location, nearest.stop);
+        updateState({
+          nearestStopId: nearest.stop.id,
+          nearestStopDistanceMetres: nearest.distance,
+          locationStatus: `${nearest.stop.name} is ${formatDistance(nearest.distance)} away`,
+          isLocating: false
+        });
+      },
+      (error) => {
+        const message =
+          error.code === error.PERMISSION_DENIED
+            ? "Location permission was not granted."
+            : "Your location could not be determined. Try again outdoors.";
+        updateState({ locationStatus: message, isLocating: false, nearestStopId: null });
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 30000 }
+    );
+  });
+
+  elements.locationStatus?.addEventListener("click", async (event) => {
+    const button = event.target.closest("button[data-action='open-nearest-stop']");
+    if (!button) {
+      return;
+    }
+    await selectStop(button.dataset.stopId);
   });
 }
 
@@ -378,6 +484,11 @@ function setupPanelInteractions() {
     const action = target.dataset.action;
     const stopId = target.dataset.stopId;
     const routeId = target.dataset.routeId;
+
+    if (action === "close-stop") {
+      closeStopDetails();
+      return;
+    }
 
     if (routeId) {
       setSelectedRoute(routeId);
@@ -503,6 +614,12 @@ function setupSheetToggle() {
 
 function setupShortcuts() {
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && store.getState().selectedStopId) {
+      event.preventDefault();
+      closeStopDetails();
+      return;
+    }
+
     const cmdOrCtrl = event.metaKey || event.ctrlKey;
     if (cmdOrCtrl && event.key.toLowerCase() === "k") {
       event.preventDefault();
@@ -518,6 +635,57 @@ function setupShortcuts() {
       elements.searchInput?.focus();
     }
   });
+}
+
+function setupNavigationHistory() {
+  window.addEventListener("popstate", async () => {
+    const urlState = readStateFromUrl();
+    const previousStopId = store.getState().selectedStopId;
+    const nextStopId = urlState.selectedStopId && bundle.stopById[urlState.selectedStopId] ? urlState.selectedStopId : null;
+
+    activeStopRequest += 1;
+    updateState({
+      selectedStopId: nextStopId,
+      selectedRouteId: urlState.selectedRouteId,
+      selectedRegionId: urlState.selectedRegionId || store.getState().selectedRegionId,
+      mapMode: urlState.mapMode || store.getState().mapMode,
+      filters: urlState.filters || store.getState().filters,
+      panelExpanded: Boolean(nextStopId),
+      selectedStopDepartures: nextStopId === previousStopId ? store.getState().selectedStopDepartures : null,
+      selectedStopAlerts: nextStopId === previousStopId ? store.getState().selectedStopAlerts : [],
+      selectedStopStatus: nextStopId ? "Loading arrivals..." : "Select a stop to view its next arrivals."
+    });
+
+    if (nextStopId) {
+      await refreshSelectedStopData(nextStopId);
+      return;
+    }
+
+    const camera = mapCameraBeforeStop;
+    mapCameraBeforeStop = null;
+    mapView?.restoreCameraState(camera);
+  });
+}
+
+function closeStopDetails() {
+  if (history.state?.coastpulseStopDetail) {
+    history.back();
+    return;
+  }
+
+  activeStopRequest += 1;
+  updateState({
+    selectedStopId: null,
+    compareStopId: null,
+    selectedStopDepartures: null,
+    selectedStopAlerts: [],
+    selectedStopStatus: "Select a stop to view its next arrivals.",
+    isLoadingStop: false,
+    panelExpanded: false
+  });
+  const camera = mapCameraBeforeStop;
+  mapCameraBeforeStop = null;
+  mapView?.restoreCameraState(camera);
 }
 
 function render() {
@@ -545,14 +713,21 @@ function render() {
   });
 
   renderFallbackBanner(state);
+  renderLocationStatus(state);
   renderStopPanel(state);
 
   if (elements.panelColumn) {
     elements.panelColumn.classList.toggle("expanded", Boolean(state.panelExpanded));
+    elements.panelColumn.classList.toggle("has-stop-detail", Boolean(state.selectedStopId));
   }
 
   if (elements.sheetToggle) {
     elements.sheetToggle.setAttribute("aria-expanded", String(Boolean(state.panelExpanded)));
+  }
+
+  if (elements.locateButton) {
+    elements.locateButton.classList.toggle("loading", Boolean(state.isLocating));
+    elements.locateButton.setAttribute("aria-busy", String(Boolean(state.isLocating)));
   }
 }
 
@@ -635,10 +810,27 @@ function renderNetworkStatus(state) {
     </article>
     <article class="status-card">
       <h3>Alerts</h3>
-      <p>${activeCount ? `${activeCount} active service alert${activeCount === 1 ? "" : "s"}` : "No active service alerts"}</p>
+      <p>${activeCount ? `${activeCount} active alert${activeCount === 1 ? "" : "s"}` : "No active alerts"} · ${state.liveVehicleStatus}</p>
       <a href="./alerts.html?region=${encodeURIComponent(state.selectedRegionId)}">Open alerts page</a>
     </article>
   `;
+}
+
+function renderLocationStatus(state) {
+  if (!elements.locationStatus) {
+    return;
+  }
+  if (!state.locationStatus) {
+    elements.locationStatus.hidden = true;
+    elements.locationStatus.innerHTML = "";
+    return;
+  }
+
+  const nearestStop = state.nearestStopId ? bundle.stopById[state.nearestStopId] : null;
+  elements.locationStatus.hidden = false;
+  elements.locationStatus.innerHTML = nearestStop
+    ? `<span>${state.locationStatus}</span><button type="button" data-action="open-nearest-stop" data-stop-id="${nearestStop.id}">Next arrivals</button>`
+    : `<span>${state.locationStatus}</span>`;
 }
 
 function renderFallbackBanner(state) {
@@ -648,7 +840,9 @@ function renderFallbackBanner(state) {
 
   const status = state.selectedStopStatus || "";
   elements.fallbackBanner.textContent = status;
-  elements.fallbackBanner.classList.toggle("warning", status.toLowerCase().includes("unavailable"));
+  const warning = status.toLowerCase().includes("unavailable") || status.toLowerCase().includes("no departure");
+  elements.fallbackBanner.hidden = !warning;
+  elements.fallbackBanner.classList.toggle("warning", warning);
 }
 
 function renderStopPanel(state) {
@@ -720,118 +914,49 @@ function renderStopPanel(state) {
   const departureResult = state.selectedStopDepartures;
   const departures = departureResult?.departures || [];
   const alerts = state.selectedStopAlerts || [];
-
-  const originStop = state.originStopId ? bundle.stopById[state.originStopId] : null;
-  const destinationStop = state.destinationStopId ? bundle.stopById[state.destinationStopId] : null;
-  const compareStop = state.compareStopId ? bundle.stopById[state.compareStopId] : null;
-
-  const mapLinks = buildExternalMapLinks(selectedStop);
-  const destinationOptions = originStop
-    ? planner
-        .getDirectDestinationIds(originStop.id, state.selectedRouteId || null)
-        .map((id) => bundle.stopById[id])
-        .filter((stop) => stop && stop.region === state.selectedRegionId)
-    : [];
-
-  const compareOptions = stopsService.getNearbyStops(selectedStop.id, 8);
-
-  const nearbyStops = stopsService.getNearbyStops(selectedStop.id, 8);
-  const connectedInterchanges = stopsService.getConnectedInterchanges(selectedStop.id);
   const interchange = stopsService.getInterchangeForStop(selectedStop.id);
-
   const favoriteStop = state.favoriteStopIds.includes(selectedStop.id);
-  const favoriteRoute = state.selectedRouteId ? state.favoriteRouteIds.includes(state.selectedRouteId) : false;
 
   elements.stopPanel.innerHTML = `
-    <section class="panel-section stop-header">
-      <div>
-        <h2>${selectedStop.name}</h2>
-        <p class="stop-subtitle">${selectedStop.code} · ${selectedStop.suburb || selectedStop.region} · ${selectedStop.lat.toFixed(5)}, ${selectedStop.lon.toFixed(5)}</p>
+    <section class="panel-section focused-stop-header">
+      <div class="focused-stop-nav">
+        <button class="stop-icon-button" type="button" data-action="close-stop" aria-label="Back to map" title="Back to map">
+          <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        </button>
+        <div class="focused-stop-title">
+          <h2>${selectedStop.name}</h2>
+          <p>${selectedStop.code}${interchange ? ` · ${interchange.name}` : ""}</p>
+        </div>
+        <div class="focused-stop-actions">
+          <button class="stop-icon-button" type="button" data-action="toggle-favorite-stop" aria-label="${favoriteStop ? "Unpin stop" : "Pin stop"}" title="${favoriteStop ? "Unpin stop" : "Pin stop"}">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3 6.8 20l1-5.8-4.2-4.1 5.8-.8L12 4l2.6 5.3 5.8.8-4.2 4.1 1 5.8Z"></path></svg>
+          </button>
+          <button class="stop-icon-button" type="button" data-action="copy-link" aria-label="Share stop" title="Share stop">
+            <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 10.5 6.8-4"></path><path d="m8.6 13.5 6.8 4"></path></svg>
+          </button>
+        </div>
       </div>
-      <div class="mode-row">${modePills(selectedStop.modes)}</div>
-      <p class="stop-type-badge">${stopsService.describeStopType(selectedStop)}${interchange ? ` · ${interchange.name}` : ""}</p>
-      <div class="stop-actions">
-        <button type="button" data-action="set-origin">Set as origin</button>
-        <button type="button" data-action="set-destination">Set as destination</button>
-        <button type="button" data-action="toggle-favorite-stop">${favoriteStop ? "Unpin stop" : "Pin stop"}</button>
-        <button type="button" data-action="copy-coords">Copy coordinates</button>
-        <button type="button" data-action="copy-link">Share stop link</button>
-      </div>
-      <div class="map-link-row">
-        <a href="${mapLinks.standard}" target="_blank" rel="noreferrer">Open in Google Maps</a>
-        <a href="${mapLinks.satellite}" target="_blank" rel="noreferrer">Satellite view</a>
-        <a href="${mapLinks.osm}" target="_blank" rel="noreferrer">OpenStreetMap</a>
+      <div class="focused-stop-meta">
+        <div class="mode-row">${modePills(selectedStop.modes)}</div>
+        <span>${stopsService.describeStopType(selectedStop)}</span>
       </div>
     </section>
 
-    <section class="panel-section">
+    <section class="panel-section focused-routes">
+      <h3>Services</h3>
+      <div class="route-chip-list">${routeChips(routesAtStop)}</div>
+    </section>
+
+    <section class="panel-section focused-arrivals">
       <div class="section-row">
-        <h3>Routes serving this stop</h3>
-        <button type="button" data-action="toggle-favorite-route">${favoriteRoute ? "Unsave route" : "Save selected route"}</button>
+        <h3>Next arrivals</h3>
+        <span class="arrival-source ${departureResult?.source === "live" ? "is-live" : ""}">${departureResult?.source === "live" ? "Live" : "Timetable"}</span>
       </div>
-      <div class="route-chip-list">${routeChips(routesAtStop, { favoriteRouteIds: state.favoriteRouteIds })}</div>
-    </section>
-
-    <section class="panel-section">
-      <h3>Next departures</h3>
-      <p class="panel-meta">${state.isLoadingStop ? "Loading departures..." : state.selectedStopStatus}</p>
+      <p class="panel-meta">${state.isLoadingStop ? "Loading arrivals..." : state.selectedStopStatus}</p>
       ${departuresList(departures, bundle.routeById, new Date())}
     </section>
 
-    <section class="panel-section">
-      <h3>Alerts and disruptions</h3>
-      ${alertsList(alerts)}
-    </section>
-
-    <section class="panel-section">
-      <h3>Nearby connections</h3>
-      ${nearbyStopsList(nearbyStops)}
-      <h4>Linked interchange notes</h4>
-      ${connectedInterchangesList(connectedInterchanges)}
-    </section>
-
-    <section class="panel-section">
-      <h3>Direct travel estimate</h3>
-      <div class="trip-pill-row">
-        <span class="trip-pill">Origin: ${originStop ? originStop.name : "Not selected"}</span>
-        <span class="trip-pill">Destination: ${destinationStop ? destinationStop.name : "Not selected"}</span>
-      </div>
-      <label for="destination-select" class="label">Choose destination on direct route</label>
-      <select id="destination-select" data-action="destination-select">
-        <option value="">Select destination</option>
-        ${destinationOptions
-          .map(
-            (stop) =>
-              `<option value="${stop.id}" ${state.destinationStopId === stop.id ? "selected" : ""}>${stop.name}</option>`
-          )
-          .join("")}
-      </select>
-      <div class="travel-actions">
-        <button type="button" data-action="estimate">Estimate direct trip</button>
-        <button type="button" data-action="clear-trip">Clear trip</button>
-      </div>
-      ${estimateCard(state.estimateResult)}
-    </section>
-
-    <section class="panel-section">
-      <h3>Compare nearby stop</h3>
-      <label for="compare-select" class="label">Choose nearby stop</label>
-      <select id="compare-select" data-action="compare-select">
-        <option value="">No compare stop</option>
-        ${compareOptions
-          .map((stop) => `<option value="${stop.id}" ${stop.id === state.compareStopId ? "selected" : ""}>${stop.name}</option>`)
-          .join("")}
-      </select>
-      ${
-        compareStop
-          ? `<div class="compare-card">
-              <p><strong>${compareStop.name}</strong></p>
-              <p class="panel-meta">${state.compareStopStatus || "No compare departures yet."}</p>
-              ${departuresList(state.compareStopDepartures?.departures || [], bundle.routeById, new Date())}
-            </div>`
-          : '<p class="empty-state compact">Choose a nearby stop to compare departures.</p>'
-      }
-    </section>
+    ${alerts.length ? `<section class="panel-section focused-alerts"><h3>Service notices</h3>${alertsList(alerts)}</section>` : ""}
   `;
 }
 
@@ -845,13 +970,46 @@ async function preloadNetworkAlerts() {
   });
 }
 
-async function selectStop(stopId) {
+async function refreshVehiclePositions() {
+  const liveConfig = bundle.config?.liveData;
+  if (!liveConfig?.enabled || !liveConfig.vehiclesPath) {
+    mapView?.setVehicles([]);
+    updateState({ liveVehicleCount: 0, liveVehicleStatus: "vehicle tracking unavailable" });
+    return;
+  }
+
+  const payload = await dataService.loadLiveJson(liveConfig.vehiclesPath, liveConfig);
+  const generatedAt = payload?.meta?.generatedAt ? new Date(payload.meta.generatedAt) : null;
+  const maxAgeMs = Number(liveConfig.vehicleMaxAgeMinutes || liveConfig.maxAgeMinutes || 20) * 60 * 1000;
+  const fresh = generatedAt && !Number.isNaN(generatedAt.getTime()) && Date.now() - generatedAt.getTime() <= maxAgeMs;
+  const vehicles = fresh && Array.isArray(payload?.vehicles) ? payload.vehicles : [];
+
+  mapView?.setVehicles(vehicles);
+  updateState({
+    liveVehicleCount: vehicles.length,
+    liveVehicleStatus: vehicles.length
+      ? `${vehicles.length} live vehicle${vehicles.length === 1 ? "" : "s"}`
+      : fresh
+        ? "no tracked vehicles nearby"
+        : "live vehicles updating"
+  });
+}
+
+async function selectStop(stopId, options = {}) {
   const stop = bundle.stopById[stopId];
   if (!stop) {
     return;
   }
 
-  if (stop.region !== store.getState().selectedRegionId) {
+  const currentState = store.getState();
+  if (!currentState.selectedStopId) {
+    mapCameraBeforeStop = mapView?.getCameraState() || null;
+    if (options.pushHistory !== false) {
+      history.pushState({ ...(history.state || {}), coastpulseStopDetail: true }, "", window.location.href);
+    }
+  }
+
+  if (stop.region !== currentState.selectedRegionId) {
     updateState({ selectedRegionId: stop.region });
   }
 

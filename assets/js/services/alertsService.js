@@ -68,13 +68,16 @@ export class AlertsService {
     const interchangeIds = new Set(context.interchangeIds || []);
 
     const filtered = active.filter((alert) => {
+      if (String(alert.impact || "").toUpperCase() === "NO EFFECT") {
+        return false;
+      }
       const matchesRegion = regionId ? !alert.region || alert.region === regionId : true;
-      const matchesStop = stopId ? !alert.stops.length || alert.stops.includes(stopId) : true;
-      const matchesRoute = routeIds.size ? !alert.routes.length || alert.routes.some((id) => routeIds.has(id)) : true;
+      const matchesStop = stopId ? alert.stops.includes(stopId) : false;
+      const matchesRoute = routeIds.size ? alert.routes.some((id) => routeIds.has(id)) : false;
       const matchesInterchange = interchangeIds.size
-        ? !alert.interchanges.length || alert.interchanges.some((id) => interchangeIds.has(id))
-        : true;
-      return matchesRegion && matchesStop && matchesRoute && matchesInterchange;
+        ? alert.interchanges.some((id) => interchangeIds.has(id))
+        : false;
+      return matchesRegion && (matchesStop || matchesRoute || matchesInterchange);
     });
 
     return sortAlerts(filtered);
@@ -102,7 +105,7 @@ export class AlertsService {
     const liveConfig = config?.liveData || {};
 
     if (liveConfig.enabled) {
-      const livePayload = await this.dataService.loadJson(liveConfig.alertsPath, { optional: true, bypassCache: true });
+      const livePayload = await this.dataService.loadLiveJson(liveConfig.alertsPath, liveConfig);
       if (livePayload?.alerts?.length) {
         return normalizeAlerts(livePayload);
       }

@@ -153,7 +153,9 @@ export class DeparturesService {
     const lookAhead = Number(config?.fallback?.departureLookaheadMinutes || 90);
 
     const liveResult = await this.getLiveDepartures(stopId, now, config);
-    const sampleResult = await this.getSampleDepartures(stopId, now, config);
+    const sampleResult = config?.fallback?.useSampleData
+      ? await this.getSampleDepartures(stopId, now, config)
+      : { departures: [] };
     const scheduledResult = regionRoutes.flatMap((route) => buildScheduledForRouteStop(route, stopId, now, lookAhead));
 
     const merged = dedupeDepartures([...liveResult.departures, ...sampleResult.departures, ...scheduledResult]).slice(0, limit);
@@ -185,7 +187,7 @@ export class DeparturesService {
       };
     }
 
-    const payload = await this.dataService.loadJson(liveConfig.departuresPath, { optional: true, bypassCache: true });
+    const payload = await this.dataService.loadLiveJson(liveConfig.departuresPath, liveConfig);
     if (!payload) {
       return {
         liveAvailable: false,
@@ -247,7 +249,7 @@ export class DeparturesService {
       return liveAvailable ? "Live feed empty, using sample + schedule" : "Live times unavailable, using sample + schedule";
     }
     if (source === "scheduled") {
-      return "Live times unavailable, showing scheduled estimates";
+      return "Showing the scheduled timetable";
     }
     return config?.fallback?.noDataMessage || "No departure data currently available";
   }

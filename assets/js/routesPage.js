@@ -14,7 +14,9 @@ const elements = {
   favoriteToggle: document.querySelector("#route-favorite-toggle"),
   copyRouteLink: document.querySelector("#copy-route-link"),
   brand: document.querySelectorAll("[data-brand-name]"),
-  brandTagline: document.querySelectorAll("[data-brand-tagline]")
+  brandTagline: document.querySelectorAll("[data-brand-tagline]"),
+  viewButtons: Array.from(document.querySelectorAll("[data-route-view]")),
+  detailBack: document.querySelector("#routes-detail-back")
 };
 
 const urlState = readStateFromUrl();
@@ -24,6 +26,17 @@ let stopsService = null;
 let selectedRegionId = urlState.selectedRegionId || null;
 let selectedRouteId = urlState.selectedRouteId || null;
 let routeSearchQuery = "";
+let routeView = "all";
+let hasExplicitRouteSelection = Boolean(urlState.selectedRouteId);
+
+function revealDetailOnSmallScreen() {
+  if (!window.matchMedia("(max-width: 979px)").matches) {
+    return;
+  }
+
+  document.body.classList.add("mobile-detail-open");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 async function init() {
   bundle = await dataService.getBundle();
@@ -45,8 +58,27 @@ async function init() {
   setupRegionSelector();
   setupSearch();
   setupActions();
+  setupViewFilter();
+  elements.detailBack?.addEventListener("click", () => {
+    document.body.classList.remove("mobile-detail-open");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
   render();
+}
+
+function setupViewFilter() {
+  elements.viewButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      routeView = button.dataset.routeView || "all";
+      elements.viewButtons.forEach((candidate) => {
+        const active = candidate.dataset.routeView === routeView;
+        candidate.classList.toggle("active", active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+      renderRouteList();
+    });
+  });
 }
 
 function setupRegionSelector() {
@@ -117,6 +149,9 @@ function renderRouteList() {
   const routes = routesService
     .listByRegion(selectedRegionId)
     .filter((route) => {
+      if (routeView === "favorites" && !storageService.isFavoriteRoute(route.id)) {
+        return false;
+      }
       if (!query) {
         return true;
       }
@@ -126,7 +161,9 @@ function renderRouteList() {
     .sort((a, b) => String(a.shortName).localeCompare(String(b.shortName), "en-AU", { numeric: true }));
 
   if (!routes.length) {
-    elements.routeList.innerHTML = `<p class="empty-state">No routes match your search.</p>`;
+    elements.routeList.innerHTML = `<p class="empty-state">${
+      routeView === "favorites" ? "No favorite routes yet." : "No routes match your search."
+    }</p>`;
     return;
   }
 
@@ -134,17 +171,19 @@ function renderRouteList() {
 
   elements.routeList.innerHTML = `<ul>${routes
     .map((route) => {
-      const selected = route.id === selectedRouteId;
+      const selected =
+        route.id === selectedRouteId && (hasExplicitRouteSelection || !window.matchMedia("(max-width: 860px)").matches);
       const isFavorite = favorites.has(route.id);
       return `<li>
         <button type="button" class="routes-page-item ${selected ? "selected" : ""}" data-route-id="${route.id}" style="--route-color:${
           route.color
         }">
-          <span class="route-badge">${route.shortName}</span>
+          <span class="route-badge" style="background:${route.color};color:#fff">${route.shortName}</span>
           <span class="route-text">
             <strong>${route.longName}</strong>
             <small>${route.mode} · ${route.stopSequence.length} stops ${isFavorite ? "· saved" : ""}</small>
           </span>
+          <span class="route-favorite-mark" aria-label="${isFavorite ? "Saved route" : "Route not saved"}">${isFavorite ? "★" : "☆"}</span>
         </button>
       </li>`;
     })
@@ -153,8 +192,10 @@ function renderRouteList() {
   elements.routeList.querySelectorAll("button[data-route-id]").forEach((button) => {
     button.addEventListener("click", () => {
       selectedRouteId = button.dataset.routeId;
+      hasExplicitRouteSelection = true;
       storageService.addRecentRoute(selectedRouteId);
       render();
+      requestAnimationFrame(revealDetailOnSmallScreen);
     });
   });
 }
