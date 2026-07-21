@@ -3,6 +3,8 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
+const OFFICIAL_SEQ_ROOT = "https://gtfsrt.api.translink.com.au/api/realtime/SEQ";
+
 function parseArgs(argv) {
   const args = {};
   for (let i = 0; i < argv.length; i += 1) {
@@ -200,12 +202,38 @@ async function main() {
     process.env.LIVE_HEADER_4
   ]);
 
-  const tripUpdatesSource = args["trip-updates-source"] || process.env.GTFSRT_TRIP_UPDATES_SOURCE || "";
-  const serviceAlertsSource = args["service-alerts-source"] || process.env.GTFSRT_SERVICE_ALERTS_SOURCE || "";
+  const tripUpdatesSource =
+    args["trip-updates-source"] || process.env.GTFSRT_TRIP_UPDATES_SOURCE || `${OFFICIAL_SEQ_ROOT}/TripUpdates`;
+  const vehiclePositionsSource =
+    args["vehicle-positions-source"] ||
+    process.env.GTFSRT_VEHICLE_POSITIONS_SOURCE ||
+    `${OFFICIAL_SEQ_ROOT}/VehiclePositions`;
+  const serviceAlertsSource =
+    args["service-alerts-source"] || process.env.GTFSRT_SERVICE_ALERTS_SOURCE || `${OFFICIAL_SEQ_ROOT}/alerts`;
+  const tramTripUpdatesSource =
+    args["tram-trip-updates-source"] ||
+    process.env.GTFSRT_TRAM_TRIP_UPDATES_SOURCE ||
+    `${OFFICIAL_SEQ_ROOT}/TripUpdates/Tram`;
+  const tramVehiclePositionsSource =
+    args["tram-vehicle-positions-source"] ||
+    process.env.GTFSRT_TRAM_VEHICLE_POSITIONS_SOURCE ||
+    `${OFFICIAL_SEQ_ROOT}/VehiclePositions/Tram`;
 
   const tripUpdatesFormat = inferFormat(args["trip-updates-format"] || process.env.GTFSRT_TRIP_UPDATES_FORMAT, "protobuf");
   const serviceAlertsFormat = inferFormat(
     args["service-alerts-format"] || process.env.GTFSRT_SERVICE_ALERTS_FORMAT,
+    "protobuf"
+  );
+  const vehiclePositionsFormat = inferFormat(
+    args["vehicle-positions-format"] || process.env.GTFSRT_VEHICLE_POSITIONS_FORMAT,
+    "protobuf"
+  );
+  const tramTripUpdatesFormat = inferFormat(
+    args["tram-trip-updates-format"] || process.env.GTFSRT_TRAM_TRIP_UPDATES_FORMAT,
+    "protobuf"
+  );
+  const tramVehiclePositionsFormat = inferFormat(
+    args["tram-vehicle-positions-format"] || process.env.GTFSRT_TRAM_VEHICLE_POSITIONS_FORMAT,
     "protobuf"
   );
 
@@ -214,16 +242,38 @@ async function main() {
   const gtfsTripsSource = args["gtfs-trips-source"] || process.env.GTFS_STATIC_TRIPS_SOURCE || "";
   const mappingSource = args["mapping-source"] || process.env.GTFS_ID_MAP_SOURCE || "";
 
-  if (!tripUpdatesSource && !serviceAlertsSource) {
+  if (!tripUpdatesSource && !vehiclePositionsSource && !serviceAlertsSource) {
     throw new Error(
-      "No GTFS-RT sources configured. Provide --trip-updates-source or --service-alerts-source (or env equivalents)."
+      "No GTFS-RT sources configured. Provide trip updates, vehicle positions, or service alerts."
     );
   }
 
   const tripUpdatesPath = path.join(outRawDir, `trip-updates.${extForFormat(tripUpdatesFormat, "pb")}`);
+  const vehiclePositionsPath = path.join(
+    outRawDir,
+    `vehicle-positions.${extForFormat(vehiclePositionsFormat, "pb")}`
+  );
   const serviceAlertsPath = path.join(outRawDir, `service-alerts.${extForFormat(serviceAlertsFormat, "pb")}`);
+  const tramTripUpdatesPath = path.join(
+    outRawDir,
+    `tram-trip-updates.${extForFormat(tramTripUpdatesFormat, "pb")}`
+  );
+  const tramVehiclePositionsPath = path.join(
+    outRawDir,
+    `tram-vehicle-positions.${extForFormat(tramVehiclePositionsFormat, "pb")}`
+  );
 
-  const [tripSummary, alertSummary, stopsSummary, routesSummary, tripsSummary, mappingSummary] = await Promise.all([
+  const [
+    tripSummary,
+    vehicleSummary,
+    alertSummary,
+    tramTripSummary,
+    tramVehicleSummary,
+    stopsSummary,
+    routesSummary,
+    tripsSummary,
+    mappingSummary
+  ] = await Promise.all([
     collectSource({
       source: tripUpdatesSource,
       format: tripUpdatesFormat,
@@ -232,9 +282,30 @@ async function main() {
       headers
     }),
     collectSource({
+      source: vehiclePositionsSource,
+      format: vehiclePositionsFormat,
+      outputPath: vehiclePositionsPath,
+      timeoutMs,
+      headers
+    }),
+    collectSource({
       source: serviceAlertsSource,
       format: serviceAlertsFormat,
       outputPath: serviceAlertsPath,
+      timeoutMs,
+      headers
+    }),
+    collectSource({
+      source: tramTripUpdatesSource,
+      format: tramTripUpdatesFormat,
+      outputPath: tramTripUpdatesPath,
+      timeoutMs,
+      headers
+    }),
+    collectSource({
+      source: tramVehiclePositionsSource,
+      format: tramVehiclePositionsFormat,
+      outputPath: tramVehiclePositionsPath,
       timeoutMs,
       headers
     }),
@@ -272,7 +343,10 @@ async function main() {
     generatedAt: new Date().toISOString(),
     outRawDir,
     tripUpdates: tripSummary,
+    vehiclePositions: vehicleSummary,
     serviceAlerts: alertSummary,
+    tramTripUpdates: tramTripSummary,
+    tramVehiclePositions: tramVehicleSummary,
     gtfsStatic: {
       stops: stopsSummary,
       routes: routesSummary,
@@ -286,7 +360,10 @@ async function main() {
 
   const failures = [
     tripSummary.error,
+    vehicleSummary.error,
     alertSummary.error,
+    tramTripSummary.error,
+    tramVehicleSummary.error,
     stopsSummary.error,
     routesSummary.error,
     tripsSummary.error,
@@ -298,9 +375,11 @@ async function main() {
   }
 
   console.log(
-    `GTFS-RT fetch complete. tripUpdates=${tripSummary.fetched ? "ok" : "skip"}, serviceAlerts=${
-      alertSummary.fetched ? "ok" : "skip"
-    }`
+    `GTFS-RT fetch complete. trips=${tripSummary.fetched ? "ok" : "skip"}, vehicles=${
+      vehicleSummary.fetched ? "ok" : "skip"
+    }, tramTrips=${tramTripSummary.fetched ? "ok" : "skip"}, tramVehicles=${
+      tramVehicleSummary.fetched ? "ok" : "skip"
+    }, alerts=${alertSummary.fetched ? "ok" : "skip"}`
   );
 }
 

@@ -2,6 +2,7 @@
 
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
 function parseArgs(argv) {
   const args = {};
@@ -288,8 +289,20 @@ function statusFromTripUpdate(scheduleRelationship, delaySeconds) {
     return "no_data";
   }
 
+  if (rel.includes("REPLACEMENT") || rel.includes("DUPLICATED") || rel.includes("UNSCHEDULED")) {
+    return "replaced";
+  }
+
+  if (toNumber(delaySeconds, 0) >= 600) {
+    return "severe_delay";
+  }
+
   if (toNumber(delaySeconds, 0) >= 120) {
     return "minor_delay";
+  }
+
+  if (toNumber(delaySeconds, 0) <= -120) {
+    return "early";
   }
 
   return "on_time";
@@ -396,6 +409,16 @@ function normalizeAlertEntity(entity) {
   return entity?.alert || null;
 }
 
+function normalizeVehicleEntity(entity) {
+  return entity?.vehicle || entity?.vehiclePosition || entity?.vehicle_position || null;
+}
+
+function mergeFeeds(...feeds) {
+  return {
+    entity: feeds.flatMap((feed) => normalizeFeedEntityList(feed))
+  };
+}
+
 function normalizeStopTimeUpdates(tripUpdate) {
   return ensureArray(tripUpdate?.stopTimeUpdate || tripUpdate?.stop_time_update);
 }
@@ -415,6 +438,7 @@ function parseTripUpdates(feed, ctx, options = {}) {
   const upperEpoch = nowEpoch + maxLookAheadMinutes * 60;
 
   const stops = {};
+  const incidents = [];
   let totalRows = 0;
   let mappedRows = 0;
   let unmappedStops = 0;
@@ -431,13 +455,28 @@ function parseTripUpdates(feed, ctx, options = {}) {
 
     if (!routeId && (trip.routeId || trip.route_id)) {
       unmappedRoutes += 1;
+      return;
     }
 
     const tripId = String(trip.tripId || trip.trip_id || entity?.id || `trip-${totalRows + 1}`);
     const headsign = getTripHeadsign(tripId, trip, ctx.staticLookups, ctx.mapping);
     const tripStatus = statusFromTripUpdate(trip.scheduleRelationship || trip.schedule_relationship, 0);
+    const updates = normalizeStopTimeUpdates(tripUpdate);
 
-    normalizeStopTimeUpdates(tripUpdate).forEach((update) => {
+    if (["cancelled", "no_data", "replaced"].includes(tripStatus) && updates.length === 0 && routeId) {
+      incidents.push({
+        id: `trip-${tripId}-${tripStatus}`,
+        tripId,
+        routeId,
+        headsign: headsign || "Service",
+        status: tripStatus,
+        stopIds: ctx.local.routesById[routeId]?.stopSequence || [],
+        expectedTime: null,
+        detail: tripStatus === "cancelled" ? "This trip has been cancelled." : null
+      });
+    }
+
+    updates.forEach((update) => {
       totalRows += 1;
 
       const stopId = mapStopId(update.stopId || update.stop_id, ctx);
@@ -449,10 +488,25 @@ function parseTripUpdates(feed, ctx, options = {}) {
       const departure = update.departure || {};
       const arrival = update.arrival || {};
 
+      const updateRelationship = update.scheduleRelationship || update.schedule_relationship || trip.scheduleRelationship;
+      const updateStatus = statusFromTripUpdate(updateRelationship, 0);
+
       const epochSeconds =
         toNumber(departure.time, null) ?? toNumber(arrival.time, null) ?? toNumber(update.time, null) ?? null;
 
       if (!epochSeconds) {
+        if (["cancelled", "skipped", "no_data", "replaced"].includes(updateStatus) && routeId) {
+          incidents.push({
+            id: `trip-${tripId}-${stopId}-${updateStatus}`,
+            tripId,
+            routeId,
+            headsign: headsign || "Service",
+            status: updateStatus,
+            stopIds: [stopId],
+            expectedTime: null,
+            detail: updateStatus === "skipped" ? "This service will not stop here." : null
+          });
+        }
         return;
       }
 
@@ -464,7 +518,7 @@ function parseTripUpdates(feed, ctx, options = {}) {
         toNumber(departure.delay, null) ?? toNumber(arrival.delay, null) ?? toNumber(update.delay, 0) ?? 0;
 
       const status = statusFromTripUpdate(
-        update.scheduleRelationship || update.schedule_relationship || trip.scheduleRelationship,
+        updateRelationship,
         delaySeconds
       );
 
@@ -477,10 +531,10 @@ function parseTripUpdates(feed, ctx, options = {}) {
         routeId,
         headsign: headsign || "Service",
         expectedTime: isoFromEpoch(epochSeconds),
-        scheduledTime: null,
+        scheduledTime: isoFromEpoch(epochSeconds - toNumber(delaySeconds, 0)),
         epochSeconds,
         inMinutes: Math.max(0, Math.round((epochSeconds - nowEpoch) / 60)),
-        platform: update.stopSequence ? `Stop ${update.stopSequence}` : null,
+        platform: null,
         status: status || tripStatus || "on_time",
         delayMinutes: Math.round(toNumber(delaySeconds, 0) / 60)
       });
@@ -505,12 +559,14 @@ function parseTripUpdates(feed, ctx, options = {}) {
 
   return {
     stops,
+    incidents: Array.from(new Map(incidents.map((incident) => [incident.id, incident])).values()),
     stats: {
       rows: totalRows,
       mappedRows,
       unmappedStops,
       unmappedRoutes,
-      mappedStopCount: Object.keys(stops).length
+      mappedStopCount: Object.keys(stops).length,
+      incidentCount: incidents.length
     }
   };
 }
@@ -585,14 +641,95 @@ function parseAlerts(feed, ctx) {
   };
 }
 
+function parseVehiclePositions(feed, ctx) {
+  const byVehicleId = new Map();
+  let total = 0;
+  let mapped = 0;
+  let unmappedRoutes = 0;
+
+  normalizeFeedEntityList(feed).forEach((entity) => {
+    const vehicle = normalizeVehicleEntity(entity);
+    if (!vehicle) {
+      return;
+    }
+    total += 1;
+
+    const trip = vehicle.trip || {};
+    const providerRouteId = trip.routeId || trip.route_id;
+    const routeId = mapRouteId(providerRouteId, ctx);
+    if (!routeId) {
+      if (providerRouteId) {
+        unmappedRoutes += 1;
+      }
+      return;
+    }
+
+    const position = vehicle.position || {};
+    const lat = toNumber(position.latitude ?? position.lat, null);
+    const lon = toNumber(position.longitude ?? position.lon, null);
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+      return;
+    }
+
+    const descriptor = vehicle.vehicle || {};
+    const tripId = String(trip.tripId || trip.trip_id || "");
+    const vehicleId = String(descriptor.id || descriptor.label || entity?.id || `${routeId}-${tripId}`);
+    const timestamp = toNumber(vehicle.timestamp, null);
+    const localRoute = ctx.local.routesById[routeId];
+    const row = {
+      id: vehicleId,
+      label: String(descriptor.label || localRoute?.shortName || routeId),
+      routeId,
+      mode: localRoute?.mode || "bus",
+      tripId,
+      headsign: getTripHeadsign(tripId, trip, ctx.staticLookups, ctx.mapping),
+      stopId: mapStopId(vehicle.stopId || vehicle.stop_id, ctx),
+      lat,
+      lon,
+      bearing: toNumber(position.bearing, null),
+      speed: toNumber(position.speed, null),
+      status: String(vehicle.currentStatus || vehicle.current_status || "IN_TRANSIT_TO").toLowerCase(),
+      currentStopSequence: toNumber(vehicle.currentStopSequence || vehicle.current_stop_sequence, null),
+      timestamp,
+      updatedAt: isoFromEpoch(timestamp)
+    };
+
+    const current = byVehicleId.get(vehicleId);
+    if (!current || (row.timestamp || 0) >= (current.timestamp || 0)) {
+      byVehicleId.set(vehicleId, row);
+    }
+    mapped += 1;
+  });
+
+  return {
+    vehicles: [...byVehicleId.values()],
+    stats: {
+      rows: total,
+      mappedRows: mapped,
+      unmappedRoutes,
+      vehicleCount: byVehicleId.size
+    }
+  };
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
   const outDir = args.out || "./data";
   const tripUpdatesPath = args["trip-updates"] || "./raw/live/trip-updates.pb";
+  const tramTripUpdatesPath = args["tram-trip-updates"] || "./raw/live/tram-trip-updates.pb";
+  const vehiclePositionsPath = args["vehicle-positions"] || "./raw/live/vehicle-positions.pb";
+  const tramVehiclePositionsPath =
+    args["tram-vehicle-positions"] || "./raw/live/tram-vehicle-positions.pb";
   const alertsPath = args["service-alerts"] || "./raw/live/service-alerts.pb";
 
   const tripUpdatesFormat = inferFormat(tripUpdatesPath, args["trip-updates-format"]);
+  const tramTripUpdatesFormat = inferFormat(tramTripUpdatesPath, args["tram-trip-updates-format"]);
+  const vehiclePositionsFormat = inferFormat(vehiclePositionsPath, args["vehicle-positions-format"]);
+  const tramVehiclePositionsFormat = inferFormat(
+    tramVehiclePositionsPath,
+    args["tram-vehicle-positions-format"]
+  );
   const alertsFormat = inferFormat(alertsPath, args["service-alerts-format"]);
 
   const stopsPath = args.stops || "./data/stops.json";
@@ -605,7 +742,19 @@ async function main() {
 
   const maxLookAheadMinutes = Number(args["max-lookahead-minutes"] || 240);
 
-  const [stopsJson, routesJson, mapping, gtfsStops, gtfsRoutes, gtfsTrips, tripFeed, alertFeed] = await Promise.all([
+  const [
+    stopsJson,
+    routesJson,
+    mapping,
+    gtfsStops,
+    gtfsRoutes,
+    gtfsTrips,
+    tripFeed,
+    tramTripFeed,
+    vehicleFeed,
+    tramVehicleFeed,
+    alertFeed
+  ] = await Promise.all([
     readJson(stopsPath),
     readJson(routesPath),
     readJson(mappingPath, { optional: true }),
@@ -613,6 +762,9 @@ async function main() {
     readCsvOptional(gtfsRoutesPath),
     readCsvOptional(gtfsTripsPath),
     decodeFeed(tripUpdatesPath, tripUpdatesFormat, "trip updates"),
+    decodeFeed(tramTripUpdatesPath, tramTripUpdatesFormat, "tram trip updates"),
+    decodeFeed(vehiclePositionsPath, vehiclePositionsFormat, "vehicle positions"),
+    decodeFeed(tramVehiclePositionsPath, tramVehiclePositionsFormat, "tram vehicle positions"),
     decodeFeed(alertsPath, alertsFormat, "service alerts")
   ]);
 
@@ -625,7 +777,8 @@ async function main() {
     mapping: mapping || { stops: {}, routes: {}, tripHeadsigns: {} }
   };
 
-  const departuresOut = parseTripUpdates(tripFeed, context, { maxLookAheadMinutes });
+  const departuresOut = parseTripUpdates(mergeFeeds(tripFeed, tramTripFeed), context, { maxLookAheadMinutes });
+  const vehiclesOut = parseVehiclePositions(mergeFeeds(vehicleFeed, tramVehicleFeed), context);
   const alertsOut = parseAlerts(alertFeed, context);
 
   await ensureDir(outDir);
@@ -641,7 +794,8 @@ async function main() {
       maxLookAheadMinutes,
       stats: departuresOut.stats
     },
-    stops: departuresOut.stops
+    stops: departuresOut.stops,
+    incidents: departuresOut.incidents
   };
 
   const alertsPayload = {
@@ -655,9 +809,41 @@ async function main() {
     alerts: alertsOut.alerts.slice(0, 120)
   };
 
+  const vehiclesPayload = {
+    meta: {
+      generatedAt,
+      source: "build-live-from-gtfsrt.mjs",
+      feedFormat: vehiclePositionsFormat,
+      sourcePaths: [vehiclePositionsPath, tramVehiclePositionsPath],
+      stats: vehiclesOut.stats
+    },
+    vehicles: vehiclesOut.vehicles
+  };
+
+  const liveStatusPayload = {
+    generatedAt,
+    source: "Translink GTFS-RT",
+    refreshIntervalMinutes: 15,
+    departures: {
+      state: tripFeed || tramTripFeed ? "available" : "unavailable",
+      stopCount: Object.keys(departuresOut.stops).length,
+      incidentCount: departuresOut.incidents.length
+    },
+    vehicles: {
+      state: vehicleFeed || tramVehicleFeed ? "available" : "unavailable",
+      count: vehiclesOut.vehicles.length
+    },
+    alerts: {
+      state: alertFeed ? "available" : "unavailable",
+      count: alertsOut.alerts.length
+    }
+  };
+
   await Promise.all([
     fs.writeFile(path.join(outDir, "departures.live.json"), JSON.stringify(departuresPayload, null, 2)),
-    fs.writeFile(path.join(outDir, "alerts.live.json"), JSON.stringify(alertsPayload, null, 2))
+    fs.writeFile(path.join(outDir, "alerts.live.json"), JSON.stringify(alertsPayload, null, 2)),
+    fs.writeFile(path.join(outDir, "vehicles.live.json"), JSON.stringify(vehiclesPayload, null, 2)),
+    fs.writeFile(path.join(outDir, "live-status.json"), JSON.stringify(liveStatusPayload, null, 2))
   ]);
 
   const mappingNotes = [
@@ -668,11 +854,15 @@ async function main() {
   ];
 
   console.log(
-    `Built live payloads from GTFS-RT: stops=${Object.keys(departuresOut.stops).length}, alerts=${alertsPayload.alerts.length} (${mappingNotes.join(", ")})`
+    `Built live payloads from GTFS-RT: stops=${Object.keys(departuresOut.stops).length}, vehicles=${vehiclesPayload.vehicles.length}, alerts=${alertsPayload.alerts.length} (${mappingNotes.join(", ")})`
   );
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}
+
+export { parseTripUpdates, statusFromTripUpdate };

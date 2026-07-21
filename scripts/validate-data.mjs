@@ -10,12 +10,14 @@ const REQUIRED_FILES = [
   "data/lines.json",
   "data/interchanges.json",
   "data/route-patterns.json",
+  "data/route-shapes.json",
+  "data/gtfs-id-map.json",
   "data/departures.sample.json",
   "data/alerts.sample.json",
   "data/direct-travel.sample.json"
 ];
 
-const OPTIONAL_LIVE_FILES = ["data/departures.live.json", "data/alerts.live.json"];
+const OPTIONAL_LIVE_FILES = ["data/departures.live.json", "data/vehicles.live.json", "data/alerts.live.json", "data/live-status.json"];
 
 async function readJson(filePath) {
   const raw = await fs.readFile(filePath, "utf8");
@@ -43,7 +45,7 @@ async function main() {
     throw new Error(`Missing required data files:\n${missing.join("\n")}`);
   }
 
-  const [config, regionsJson, stopsJson, routesJson, linesJson, interchangesJson, patternsJson, directJson] = await Promise.all([
+  const [config, regionsJson, stopsJson, routesJson, linesJson, interchangesJson, patternsJson, shapesJson, directJson] = await Promise.all([
     readJson("data/config.json"),
     readJson("data/regions.json"),
     readJson("data/stops.json"),
@@ -51,6 +53,7 @@ async function main() {
     readJson("data/lines.json"),
     readJson("data/interchanges.json"),
     readJson("data/route-patterns.json"),
+    readJson("data/route-shapes.json"),
     readJson("data/direct-travel.sample.json")
   ]);
 
@@ -61,6 +64,7 @@ async function main() {
   const interchanges = interchangesJson.interchanges || [];
   const patterns = patternsJson.patterns || [];
   const edges = directJson.edges || [];
+  const routeShapes = shapesJson.routes || {};
 
   const regionIds = new Set(regions.map((region) => region.id));
   const stopIds = new Set(stops.map((stop) => stop.id));
@@ -70,7 +74,7 @@ async function main() {
   const issues = [];
 
   const configuredPaths = config?.dataPaths || {};
-  ["regions", "stops", "routes", "lines", "interchanges", "routePatterns", "directTravel"].forEach((key) => {
+  ["regions", "stops", "routes", "lines", "interchanges", "routePatterns", "routeShapes", "directTravel"].forEach((key) => {
     if (!configuredPaths[key]) {
       issues.push(`config.dataPaths.${key} missing`);
     }
@@ -164,6 +168,23 @@ async function main() {
     }
   });
 
+  Object.entries(routeShapes).forEach(([routeId, shapeGroup]) => {
+    if (!routeIds.has(routeId)) {
+      issues.push(`Route shapes references missing route ${routeId}`);
+    }
+    (shapeGroup.shapes || []).forEach((shape, shapeIndex) => {
+      if (!Array.isArray(shape.points) || shape.points.length < 2) {
+        issues.push(`Route shapes ${routeId}[${shapeIndex}] has invalid points`);
+        return;
+      }
+      shape.points.forEach((point, pointIndex) => {
+        if (!Array.isArray(point) || point.length !== 2 || !point.every(Number.isFinite)) {
+          issues.push(`Route shapes ${routeId}[${shapeIndex}].points[${pointIndex}] is invalid`);
+        }
+      });
+    });
+  });
+
   const optionalLiveState = {};
   for (const file of OPTIONAL_LIVE_FILES) {
     optionalLiveState[file] = await fileExists(file);
@@ -187,6 +208,16 @@ async function main() {
         }
       });
     });
+    (liveDepartures?.incidents || []).forEach((incident, index) => {
+      if (!routeIds.has(incident.routeId)) {
+        issues.push(`Live incidents[${index}] references missing route ${incident.routeId}`);
+      }
+      (incident.stopIds || []).forEach((stopId) => {
+        if (!stopIds.has(stopId)) {
+          issues.push(`Live incidents[${index}] references missing stop ${stopId}`);
+        }
+      });
+    });
   }
 
   if (optionalLiveState["data/alerts.live.json"]) {
@@ -206,6 +237,23 @@ async function main() {
             issues.push(`Live alerts[${index}] references missing stop ${stopId}`);
           }
         });
+      });
+    }
+  }
+
+  if (optionalLiveState["data/vehicles.live.json"]) {
+    const liveVehicles = await readJson("data/vehicles.live.json");
+    const vehicles = liveVehicles?.vehicles || [];
+    if (!Array.isArray(vehicles)) {
+      issues.push("Live vehicles payload `vehicles` field is not an array");
+    } else {
+      vehicles.forEach((vehicle, index) => {
+        if (!routeIds.has(vehicle.routeId)) {
+          issues.push(`Live vehicles[${index}] references missing route ${vehicle.routeId}`);
+        }
+        if (!Number.isFinite(vehicle.lat) || !Number.isFinite(vehicle.lon)) {
+          issues.push(`Live vehicles[${index}] has invalid coordinates`);
+        }
       });
     }
   }

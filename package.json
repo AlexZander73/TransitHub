@@ -6,8 +6,12 @@
   "type": "module",
   "scripts": {
     "serve": "python3 -m http.server 4173",
+    "icons:generate": "node ./scripts/generate-app-icons.mjs",
     "validate:data": "node ./scripts/validate-data.mjs",
+    "validate:live:freshness": "node ./scripts/check-live-freshness.mjs 20",
+    "test:live": "node --test ./scripts/build-live-from-gtfsrt.test.mjs",
     "build:gtfs": "node ./scripts/transform-gtfs.mjs --input ./raw/gtfs --output ./data",
+    "build:translink-map": "node ./scripts/build-translink-map-data.mjs --gtfs ./raw/gtfs --data ./data",
     "build:cap:web": "node ./scripts/build-capacitor-web.mjs",
     "cap:copy": "npm run build:cap:web && npx cap copy",
     "cap:sync": "npm run build:cap:web && npx cap sync",
@@ -19,7 +23,7 @@
     "merge:live": "node ./scripts/merge-live-feeds.mjs --departures ./raw/live/departures.json --alerts ./raw/live/alerts.json --out ./data",
     "refresh:live": "npm run fetch:live && npm run merge:live && npm run validate:data",
     "fetch:gtfsrt": "node ./scripts/fetch-gtfsrt-sources.mjs --out-raw-dir ./raw/live",
-    "build:live:gtfsrt": "node ./scripts/build-live-from-gtfsrt.mjs --trip-updates ./raw/live/trip-updates.pb --service-alerts ./raw/live/service-alerts.pb --out ./data",
+    "build:live:gtfsrt": "node ./scripts/build-live-from-gtfsrt.mjs --trip-updates ./raw/live/trip-updates.pb --tram-trip-updates ./raw/live/tram-trip-updates.pb --vehicle-positions ./raw/live/vehicle-positions.pb --tram-vehicle-positions ./raw/live/tram-vehicle-positions.pb --service-alerts ./raw/live/service-alerts.pb --mapping ./data/gtfs-id-map.json --out ./data",
     "refresh:live:gtfsrt": "npm run fetch:gtfsrt && npm run build:live:gtfsrt && npm run validate:data"
   },
   "dependencies": {
