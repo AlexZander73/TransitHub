@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-21T15:24:16.165Z",
+    "generatedAt": "2026-07-21T16:53:01.680Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,97 +8,46 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 10,
-      "mappedRows": 6,
-      "unmappedRoutes": 4,
-      "vehicleCount": 6
+      "rows": 3,
+      "mappedRows": 3,
+      "unmappedRoutes": 0,
+      "vehicleCount": 3
     }
   },
   "vehicles": [
     {
-      "id": "73DD7B678B530932DF783319BBF95E95_267",
-      "label": "267",
-      "routeId": "750",
-      "mode": "bus",
-      "tripId": "37584501-SBL 26_27-42893",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.07088851928711,
-      "lon": 153.3773651123047,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1784646064,
-      "updatedAt": "2026-07-21T15:01:04.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_925",
-      "label": "925",
+      "id": "73DD7B678B530932DF783319BBF95E95_932",
+      "label": "932",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37584655-SBL 26_27-42893",
+      "tripId": "37584671-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.173721313476562,
-      "lon": 153.5433807373047,
+      "lat": -28.17130470275879,
+      "lon": 153.54324340820312,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
       "currentStopSequence": 1,
-      "timestamp": 1784647418,
-      "updatedAt": "2026-07-21T15:23:38.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_928",
-      "label": "928",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37584620-SBL 26_27-42893",
-      "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -27.982332229614258,
-      "lon": 153.42422485351562,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 8,
-      "timestamp": 1784647411,
-      "updatedAt": "2026-07-21T15:23:31.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_957",
-      "label": "957",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37586577-SBL 26_27-42893",
-      "headsign": "GCUH",
-      "stopId": null,
-      "lat": -28.172943115234375,
-      "lon": 153.54310607910156,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1784647420,
-      "updatedAt": "2026-07-21T15:23:40.000Z"
+      "timestamp": 1784652741,
+      "updatedAt": "2026-07-21T16:52:21.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_969",
       "label": "969",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37583182-SBL 26_27-42893",
+      "tripId": "37584636-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.073415756225586,
-      "lon": 153.44427490234375,
+      "lat": -28.15080451965332,
+      "lon": 153.50161743164062,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 38,
-      "timestamp": 1784647432,
-      "updatedAt": "2026-07-21T15:23:52.000Z"
+      "currentStopSequence": 15,
+      "timestamp": 1784652748,
+      "updatedAt": "2026-07-21T16:52:28.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_970",
@@ -108,14 +57,14 @@
       "tripId": "37583159-SBL 26_27-42893",
       "headsign": "Tweed Heads",
       "stopId": null,
-      "lat": -27.961444854736328,
-      "lon": 153.3801727294922,
+      "lat": -28.12074851989746,
+      "lon": 153.47254943847656,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1784647425,
-      "updatedAt": "2026-07-21T15:23:45.000Z"
+      "currentStopSequence": 35,
+      "timestamp": 1784652742,
+      "updatedAt": "2026-07-21T16:52:22.000Z"
     }
   ]
 }
