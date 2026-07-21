@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		031883AE526DF5C0CFA792C3 /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE4B166B80EDB5C699C344E /* BackgroundRefresh.swift */; };
+		0D0A194B0E73BFA3B30CB7B4 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2049AD6ABD7F8F097798BF /* Components.swift */; };
+		0D8AE77A3FAC6F971DAE91FC /* CoastPulse.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 8583A8EBD6A5C5C13C00105B /* CoastPulse.storekit */; };
+		10E33C21302B5B54C987A338 /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44224B3322ECA700BA6C380B /* SharedState.swift */; };
+		1FE35C430E3FCBDD387F9205 /* AlertsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD76FCF75A0B3A6A540767 /* AlertsScreen.swift */; };
+		2577A57D0AD75C18B69CCFB4 /* FavouriteStopWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC639E74DC027BF2C9BA0CE0 /* FavouriteStopWidget.swift */; };
+		26403D20A60EBF5D351EDD53 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 16162A15B514412B8764FCA1 /* PrivacyInfo.xcprivacy */; };
+		299A630BBAD31C8AA972996E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7A3DDA905469B8B31799E /* PrivacyInfo.xcprivacy */; };
+		2BA9E663A63AAF8B16C1E5C7 /* StoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0206CCCCA57340D192686F /* StoreKitService.swift */; };
+		2CCB289F4B5EBD09F59ED326 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EEA5451C29705C0345F23E /* SettingsScreen.swift */; };
+		2E690684CFA6B35908406006 /* CommuteNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B4C7C5E8AFDA20AAC14E75 /* CommuteNotificationService.swift */; };
+		35F48CCE96B7B56655A596C8 /* TransitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC71B97F88ACDA272924E9 /* TransitModels.swift */; };
+		3A04E76AD80F06434D3331FE /* TransitTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DAB15EDC23970A10BFB93 /* TransitTheme.swift */; };
+		3B0C7D87B7E15F17CD327FE4 /* StopSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211FB734CE33707CA46149CA /* StopSheet.swift */; };
+		4B172CF6617C8645AA34B11D /* TransitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A433F161F9A14E536A8FC0 /* TransitRepository.swift */; };
+		4EE3F1CD925A6F195271925E /* SharedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44224B3322ECA700BA6C380B /* SharedState.swift */; };
+		559D0F5612D6EFE8E5E6EB19 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8282F477EA0327501D5CC53C /* Utilities.swift */; };
+		55E172E5716BA6B6CEF30BC0 /* CoastPulseWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A9E44A7909E81ED81E7F47 /* CoastPulseWidgetsBundle.swift */; };
+		571681AFBF846DF690DBF238 /* CoastPulseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF79E52963CA71DD902EBE9 /* CoastPulseApp.swift */; };
+		57F47893797F8933EBC48E0F /* CommuteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE950D648ED31E6F9C5FD2 /* CommuteScreen.swift */; };
+		595F300675598AF1525442FD /* ServiceStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3731FCCFD8C1CBAA22A74BFA /* ServiceStatusWidget.swift */; };
+		5BF49309E667A0F6F35AE568 /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883BA02CAA4000C81A6344F /* MapScreen.swift */; };
+		5EAFF62F99E55781C1982FCB /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6419CF391E91A90314402E3 /* LiveActivityManager.swift */; };
+		5F81BE8071FB19CF64E08A48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762C630C11375C1200304DD6 /* Assets.xcassets */; };
+		69D8C2E3F366D9BC6DFCC815 /* StopsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0AA524D3335CB66719B56 /* StopsScreen.swift */; };
+		6EFEA497676945AA412D95AC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D3BED66A7E8F68FDCAFA7 /* LocationService.swift */; };
+		89355A112E400B0ED1132DE0 /* CoastPulseWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 02766A17B7376E5546EBF95C /* CoastPulseWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8E0CA94C295C404F889291E0 /* TransitCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0039BE2BF888193E2F6AD /* TransitCoreTests.swift */; };
+		8EB803A265D24DAFD316F60A /* CommuteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F91C6C3C43529D09D9DF33 /* CommuteModels.swift */; };
+		98E6B7A085D3C3C6D1D73327 /* AppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6318D212F0D8E8DA0729D /* AppIntents.swift */; };
+		99BEEC4444ADF62C7A90A5FC /* TransitLiveActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78349BDCEE15D2C3D67508AA /* TransitLiveActivityWidget.swift */; };
+		A8689824463764D43C441BBA /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080646897DE02C52CEFBBDF1 /* UserSettings.swift */; };
+		B2C75CD66AC8D52A6D07B0BE /* CommuteAlertEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA510730E9BC0D73E063837 /* CommuteAlertEngine.swift */; };
+		D0EC5E8D534466FC22792B06 /* CommuteAlertEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA510730E9BC0D73E063837 /* CommuteAlertEngine.swift */; };
+		D1E2B4182516C66B63D2806E /* CommuteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F91C6C3C43529D09D9DF33 /* CommuteModels.swift */; };
+		D24106E3CB3D18E3A69317FB /* TransitActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050877E51BA73C5EEB82570F /* TransitActivityAttributes.swift */; };
+		E37F75E2F80730F6CDDA8B78 /* TransitTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DAB15EDC23970A10BFB93 /* TransitTheme.swift */; };
+		E4FFB687BBA2D901D2913CAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB07EDD32189C6BD6FA206D /* ContentView.swift */; };
+		E9D9AD24C259F862C22EBCE5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = A49812994017B28D74A20251 /* data */; };
+		EAB7C91E1DFE638C6B7A6290 /* TransitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC71B97F88ACDA272924E9 /* TransitModels.swift */; };
+		EE86A7EE43BC8C665C6B5B2D /* TransitActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050877E51BA73C5EEB82570F /* TransitActivityAttributes.swift */; };
+		FA0437E1E6675F290325CFF0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8282F477EA0327501D5CC53C /* Utilities.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D206461987FDEDD090141F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11AD4963502459556A079055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CADFB615858E7C26EE553D2;
+			remoteInfo = CoastPulseWidgets;
+		};
+		50D57CC57CB16BBC2A5C0508 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11AD4963502459556A079055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94BCEAEA4B8B65747FB1F38F;
+			remoteInfo = CoastPulse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F016F98E85CA5E40715B47EB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				89355A112E400B0ED1132DE0 /* CoastPulseWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		02766A17B7376E5546EBF95C /* CoastPulseWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CoastPulseWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		048D3BED66A7E8F68FDCAFA7 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		050877E51BA73C5EEB82570F /* TransitActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitActivityAttributes.swift; sourceTree = "<group>"; };
+		080646897DE02C52CEFBBDF1 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		08D52881970DDB05EF796ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16162A15B514412B8764FCA1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1FB0039BE2BF888193E2F6AD /* TransitCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitCoreTests.swift; sourceTree = "<group>"; };
+		211FB734CE33707CA46149CA /* StopSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopSheet.swift; sourceTree = "<group>"; };
+		3731FCCFD8C1CBAA22A74BFA /* ServiceStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusWidget.swift; sourceTree = "<group>"; };
+		39B4C7C5E8AFDA20AAC14E75 /* CommuteNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteNotificationService.swift; sourceTree = "<group>"; };
+		3DB7A3DDA905469B8B31799E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		417DAB15EDC23970A10BFB93 /* TransitTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitTheme.swift; sourceTree = "<group>"; };
+		44224B3322ECA700BA6C380B /* SharedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedState.swift; sourceTree = "<group>"; };
+		51B1066ACFC03AB4C64F0B19 /* CoastPulseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CoastPulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C31887B76E9143E069CC7F /* CoastPulseWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoastPulseWidgets.entitlements; sourceTree = "<group>"; };
+		56F91C6C3C43529D09D9DF33 /* CommuteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteModels.swift; sourceTree = "<group>"; };
+		5AA510730E9BC0D73E063837 /* CommuteAlertEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteAlertEngine.swift; sourceTree = "<group>"; };
+		5BFE950D648ED31E6F9C5FD2 /* CommuteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteScreen.swift; sourceTree = "<group>"; };
+		5FEC71B97F88ACDA272924E9 /* TransitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitModels.swift; sourceTree = "<group>"; };
+		6DCD76FCF75A0B3A6A540767 /* AlertsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsScreen.swift; sourceTree = "<group>"; };
+		762C630C11375C1200304DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78349BDCEE15D2C3D67508AA /* TransitLiveActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitLiveActivityWidget.swift; sourceTree = "<group>"; };
+		8282F477EA0327501D5CC53C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8583A8EBD6A5C5C13C00105B /* CoastPulse.storekit */ = {isa = PBXFileReference; path = CoastPulse.storekit; sourceTree = "<group>"; };
+		8F0206CCCCA57340D192686F /* StoreKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitService.swift; sourceTree = "<group>"; };
+		9A6236FA7152BFF5BD54EF36 /* CoastPulse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoastPulse.entitlements; sourceTree = "<group>"; };
+		A49812994017B28D74A20251 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../data; sourceTree = SOURCE_ROOT; };
+		A8E6318D212F0D8E8DA0729D /* AppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntents.swift; sourceTree = "<group>"; };
+		ACE0AA524D3335CB66719B56 /* StopsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsScreen.swift; sourceTree = "<group>"; };
+		BBF79E52963CA71DD902EBE9 /* CoastPulseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoastPulseApp.swift; sourceTree = "<group>"; };
+		C5A9E44A7909E81ED81E7F47 /* CoastPulseWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoastPulseWidgetsBundle.swift; sourceTree = "<group>"; };
+		CBF0F7E49F879D6AA2C5B563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DC639E74DC027BF2C9BA0CE0 /* FavouriteStopWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteStopWidget.swift; sourceTree = "<group>"; };
+		DEE4B166B80EDB5C699C344E /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
+		E2A433F161F9A14E536A8FC0 /* TransitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitRepository.swift; sourceTree = "<group>"; };
+		E4EEA5451C29705C0345F23E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		E883BA02CAA4000C81A6344F /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		EA2049AD6ABD7F8F097798BF /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		EB84BA88607609B3E59E6D7A /* CoastPulse.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CoastPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB07EDD32189C6BD6FA206D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F6419CF391E91A90314402E3 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2683B740D433AC7B36200F41 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5AA510730E9BC0D73E063837 /* CommuteAlertEngine.swift */,
+				56F91C6C3C43529D09D9DF33 /* CommuteModels.swift */,
+				44224B3322ECA700BA6C380B /* SharedState.swift */,
+				050877E51BA73C5EEB82570F /* TransitActivityAttributes.swift */,
+				5FEC71B97F88ACDA272924E9 /* TransitModels.swift */,
+				417DAB15EDC23970A10BFB93 /* TransitTheme.swift */,
+				8282F477EA0327501D5CC53C /* Utilities.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4D4C38380F79A83EB395AF8A /* CoastPulse */ = {
+			isa = PBXGroup;
+			children = (
+				DD68ECACE81D73C16FD00F86 /* Services */,
+				D2CDDDCBC3C4319C6B325AFC /* Views */,
+				A8E6318D212F0D8E8DA0729D /* AppIntents.swift */,
+				762C630C11375C1200304DD6 /* Assets.xcassets */,
+				9A6236FA7152BFF5BD54EF36 /* CoastPulse.entitlements */,
+				8583A8EBD6A5C5C13C00105B /* CoastPulse.storekit */,
+				BBF79E52963CA71DD902EBE9 /* CoastPulseApp.swift */,
+				EBB07EDD32189C6BD6FA206D /* ContentView.swift */,
+				CBF0F7E49F879D6AA2C5B563 /* Info.plist */,
+				3DB7A3DDA905469B8B31799E /* PrivacyInfo.xcprivacy */,
+			);
+			path = CoastPulse;
+			sourceTree = "<group>";
+		};
+		6672197DF7A606D41F58C6F6 = {
+			isa = PBXGroup;
+			children = (
+				4D4C38380F79A83EB395AF8A /* CoastPulse */,
+				7E7DA97575073FC5ED66F006 /* CoastPulseTests */,
+				E70A68953FEA4F0480751BD0 /* CoastPulseWidgets */,
+				2683B740D433AC7B36200F41 /* Shared */,
+				A49812994017B28D74A20251 /* data */,
+				E7E44DAA5D65DFB8943E4E08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E7DA97575073FC5ED66F006 /* CoastPulseTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FB0039BE2BF888193E2F6AD /* TransitCoreTests.swift */,
+			);
+			path = CoastPulseTests;
+			sourceTree = "<group>";
+		};
+		D2CDDDCBC3C4319C6B325AFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DCD76FCF75A0B3A6A540767 /* AlertsScreen.swift */,
+				5BFE950D648ED31E6F9C5FD2 /* CommuteScreen.swift */,
+				EA2049AD6ABD7F8F097798BF /* Components.swift */,
+				E883BA02CAA4000C81A6344F /* MapScreen.swift */,
+				E4EEA5451C29705C0345F23E /* SettingsScreen.swift */,
+				211FB734CE33707CA46149CA /* StopSheet.swift */,
+				ACE0AA524D3335CB66719B56 /* StopsScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD68ECACE81D73C16FD00F86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DEE4B166B80EDB5C699C344E /* BackgroundRefresh.swift */,
+				39B4C7C5E8AFDA20AAC14E75 /* CommuteNotificationService.swift */,
+				F6419CF391E91A90314402E3 /* LiveActivityManager.swift */,
+				048D3BED66A7E8F68FDCAFA7 /* LocationService.swift */,
+				8F0206CCCCA57340D192686F /* StoreKitService.swift */,
+				E2A433F161F9A14E536A8FC0 /* TransitRepository.swift */,
+				080646897DE02C52CEFBBDF1 /* UserSettings.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E70A68953FEA4F0480751BD0 /* CoastPulseWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				54C31887B76E9143E069CC7F /* CoastPulseWidgets.entitlements */,
+				C5A9E44A7909E81ED81E7F47 /* CoastPulseWidgetsBundle.swift */,
+				DC639E74DC027BF2C9BA0CE0 /* FavouriteStopWidget.swift */,
+				08D52881970DDB05EF796ED6 /* Info.plist */,
+				16162A15B514412B8764FCA1 /* PrivacyInfo.xcprivacy */,
+				3731FCCFD8C1CBAA22A74BFA /* ServiceStatusWidget.swift */,
+				78349BDCEE15D2C3D67508AA /* TransitLiveActivityWidget.swift */,
+			);
+			path = CoastPulseWidgets;
+			sourceTree = "<group>";
+		};
+		E7E44DAA5D65DFB8943E4E08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB84BA88607609B3E59E6D7A /* CoastPulse.app */,
+				51B1066ACFC03AB4C64F0B19 /* CoastPulseTests.xctest */,
+				02766A17B7376E5546EBF95C /* CoastPulseWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A34EFF9F2017BF67862F987 /* CoastPulseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 094B42CD0F6C77485FD06568 /* Build configuration list for PBXNativeTarget "CoastPulseTests" */;
+			buildPhases = (
+				BA8283A2A9F0602696D2D376 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85A6565B36BE87DB13A1AB9A /* PBXTargetDependency */,
+			);
+			name = CoastPulseTests;
+			packageProductDependencies = (
+			);
+			productName = CoastPulseTests;
+			productReference = 51B1066ACFC03AB4C64F0B19 /* CoastPulseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6CADFB615858E7C26EE553D2 /* CoastPulseWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1632CFCB9EBC7341DA11E9AA /* Build configuration list for PBXNativeTarget "CoastPulseWidgets" */;
+			buildPhases = (
+				8022862FBDC40E94D2D2948A /* Sources */,
+				3866E64FEA3913694D95A6B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoastPulseWidgets;
+			packageProductDependencies = (
+			);
+			productName = CoastPulseWidgets;
+			productReference = 02766A17B7376E5546EBF95C /* CoastPulseWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		94BCEAEA4B8B65747FB1F38F /* CoastPulse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5422AD7139101F3FC5180806 /* Build configuration list for PBXNativeTarget "CoastPulse" */;
+			buildPhases = (
+				9F1E8C73AD7CB1F99D95F43A /* Sources */,
+				04C2E85812D2B7D129850D70 /* Resources */,
+				F016F98E85CA5E40715B47EB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB483E5474DB5D66494D1C8A /* PBXTargetDependency */,
+			);
+			name = CoastPulse;
+			packageProductDependencies = (
+			);
+			productName = CoastPulse;
+			productReference = EB84BA88607609B3E59E6D7A /* CoastPulse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11AD4963502459556A079055 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6A34EFF9F2017BF67862F987 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					6CADFB615858E7C26EE553D2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					94BCEAEA4B8B65747FB1F38F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EDEE8FD0DC3A6FCF32C49674 /* Build configuration list for PBXProject "CoastPulse" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6672197DF7A606D41F58C6F6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E7E44DAA5D65DFB8943E4E08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94BCEAEA4B8B65747FB1F38F /* CoastPulse */,
+				6A34EFF9F2017BF67862F987 /* CoastPulseTests */,
+				6CADFB615858E7C26EE553D2 /* CoastPulseWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04C2E85812D2B7D129850D70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F81BE8071FB19CF64E08A48 /* Assets.xcassets in Resources */,
+				0D8AE77A3FAC6F971DAE91FC /* CoastPulse.storekit in Resources */,
+				299A630BBAD31C8AA972996E /* PrivacyInfo.xcprivacy in Resources */,
+				E9D9AD24C259F862C22EBCE5 /* data in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3866E64FEA3913694D95A6B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26403D20A60EBF5D351EDD53 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8022862FBDC40E94D2D2948A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E172E5716BA6B6CEF30BC0 /* CoastPulseWidgetsBundle.swift in Sources */,
+				D0EC5E8D534466FC22792B06 /* CommuteAlertEngine.swift in Sources */,
+				8EB803A265D24DAFD316F60A /* CommuteModels.swift in Sources */,
+				2577A57D0AD75C18B69CCFB4 /* FavouriteStopWidget.swift in Sources */,
+				595F300675598AF1525442FD /* ServiceStatusWidget.swift in Sources */,
+				4EE3F1CD925A6F195271925E /* SharedState.swift in Sources */,
+				D24106E3CB3D18E3A69317FB /* TransitActivityAttributes.swift in Sources */,
+				99BEEC4444ADF62C7A90A5FC /* TransitLiveActivityWidget.swift in Sources */,
+				EAB7C91E1DFE638C6B7A6290 /* TransitModels.swift in Sources */,
+				E37F75E2F80730F6CDDA8B78 /* TransitTheme.swift in Sources */,
+				559D0F5612D6EFE8E5E6EB19 /* Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1E8C73AD7CB1F99D95F43A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE35C430E3FCBDD387F9205 /* AlertsScreen.swift in Sources */,
+				98E6B7A085D3C3C6D1D73327 /* AppIntents.swift in Sources */,
+				031883AE526DF5C0CFA792C3 /* BackgroundRefresh.swift in Sources */,
+				571681AFBF846DF690DBF238 /* CoastPulseApp.swift in Sources */,
+				B2C75CD66AC8D52A6D07B0BE /* CommuteAlertEngine.swift in Sources */,
+				D1E2B4182516C66B63D2806E /* CommuteModels.swift in Sources */,
+				2E690684CFA6B35908406006 /* CommuteNotificationService.swift in Sources */,
+				57F47893797F8933EBC48E0F /* CommuteScreen.swift in Sources */,
+				0D0A194B0E73BFA3B30CB7B4 /* Components.swift in Sources */,
+				E4FFB687BBA2D901D2913CAD /* ContentView.swift in Sources */,
+				5EAFF62F99E55781C1982FCB /* LiveActivityManager.swift in Sources */,
+				6EFEA497676945AA412D95AC /* LocationService.swift in Sources */,
+				5BF49309E667A0F6F35AE568 /* MapScreen.swift in Sources */,
+				2CCB289F4B5EBD09F59ED326 /* SettingsScreen.swift in Sources */,
+				10E33C21302B5B54C987A338 /* SharedState.swift in Sources */,
+				3B0C7D87B7E15F17CD327FE4 /* StopSheet.swift in Sources */,
+				69D8C2E3F366D9BC6DFCC815 /* StopsScreen.swift in Sources */,
+				2BA9E663A63AAF8B16C1E5C7 /* StoreKitService.swift in Sources */,
+				EE86A7EE43BC8C665C6B5B2D /* TransitActivityAttributes.swift in Sources */,
+				35F48CCE96B7B56655A596C8 /* TransitModels.swift in Sources */,
+				4B172CF6617C8645AA34B11D /* TransitRepository.swift in Sources */,
+				3A04E76AD80F06434D3331FE /* TransitTheme.swift in Sources */,
+				A8689824463764D43C441BBA /* UserSettings.swift in Sources */,
+				FA0437E1E6675F290325CFF0 /* Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA8283A2A9F0602696D2D376 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0CA94C295C404F889291E0 /* TransitCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85A6565B36BE87DB13A1AB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94BCEAEA4B8B65747FB1F38F /* CoastPulse */;
+			targetProxy = 50D57CC57CB16BBC2A5C0508 /* PBXContainerItemProxy */;
+		};
+		DB483E5474DB5D66494D1C8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CADFB615858E7C26EE553D2 /* CoastPulseWidgets */;
+			targetProxy = 0D206461987FDEDD090141F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F1F736F6E7292AB063F616F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoastPulse.app/CoastPulse";
+			};
+			name = Release;
+		};
+		62D78920F08C84A8688E71B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6B7B4173AC0622719888E86D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoastPulse.app/CoastPulse";
+			};
+			name = Debug;
+		};
+		9280B173111BEE4766942B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9A42B9F25C858CBB30536338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CoastPulseWidgets/CoastPulseWidgets.entitlements;
+				INFOPLIST_FILE = CoastPulseWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub.widgets;
+				PRODUCT_NAME = CoastPulseWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A85B01492DD71E20FC12FE0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconAurora AppIconTransitMotion AppIconCoastlineExplorer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = CoastPulse/CoastPulse.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoastPulse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub;
+				PRODUCT_NAME = CoastPulse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0CC0E5B0706A66867F64A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconAurora AppIconTransitMotion AppIconCoastlineExplorer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = CoastPulse/CoastPulse.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoastPulse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub;
+				PRODUCT_NAME = CoastPulse;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B99D1E9AC369BB5A5079725D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CoastPulseWidgets/CoastPulseWidgets.entitlements;
+				INFOPLIST_FILE = CoastPulseWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.coastpulse.transithub.widgets;
+				PRODUCT_NAME = CoastPulseWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		094B42CD0F6C77485FD06568 /* Build configuration list for PBXNativeTarget "CoastPulseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B7B4173AC0622719888E86D /* Debug */,
+				0F1F736F6E7292AB063F616F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1632CFCB9EBC7341DA11E9AA /* Build configuration list for PBXNativeTarget "CoastPulseWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A42B9F25C858CBB30536338 /* Debug */,
+				B99D1E9AC369BB5A5079725D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5422AD7139101F3FC5180806 /* Build configuration list for PBXNativeTarget "CoastPulse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A85B01492DD71E20FC12FE0D /* Debug */,
+				B0CC0E5B0706A66867F64A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EDEE8FD0DC3A6FCF32C49674 /* Build configuration list for PBXProject "CoastPulse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62D78920F08C84A8688E71B8 /* Debug */,
+				9280B173111BEE4766942B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11AD4963502459556A079055 /* Project object */;
+}

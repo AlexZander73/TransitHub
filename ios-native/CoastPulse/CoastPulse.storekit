@@ -1,0 +1,86 @@
+{
+  "identifier" : "77D8BB0C-46C7-4710-9302-C0A57A1E0001",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "05A930A0-602A-45B4-B134-000000000001",
+      "localizations" : [
+        {
+          "description" : "Unlock every premium theme and alternate app icon.",
+          "displayName" : "Premium Appearance Pack",
+          "locale" : "en_AU"
+        }
+      ],
+      "productID" : "au.com.coastpulse.transithub.premium.theme-pack",
+      "referenceName" : "Premium Appearance Pack",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "05A930A0-602A-45B4-B134-000000000002",
+      "localizations" : [
+        {
+          "description" : "A small contribution to CoastPulse development.",
+          "displayName" : "Small Tip",
+          "locale" : "en_AU"
+        }
+      ],
+      "productID" : "au.com.coastpulse.transithub.tip.small",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "05A930A0-602A-45B4-B134-000000000003",
+      "localizations" : [
+        {
+          "description" : "A medium contribution to CoastPulse development.",
+          "displayName" : "Medium Tip",
+          "locale" : "en_AU"
+        }
+      ],
+      "productID" : "au.com.coastpulse.transithub.tip.medium",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "05A930A0-602A-45B4-B134-000000000004",
+      "localizations" : [
+        {
+          "description" : "A generous contribution to CoastPulse development.",
+          "displayName" : "Large Tip",
+          "locale" : "en_AU"
+        }
+      ],
+      "productID" : "au.com.coastpulse.transithub.tip.large",
+      "referenceName" : "Large Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "coastpulse-transit",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_AU",
+    "_storefront" : "AUS",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,131 @@
+name: CoastPulse
+options:
+  minimumXcodeGenVersion: 2.45.0
+  deploymentTarget:
+    iOS: "17.0"
+  groupSortPosition: top
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    SWIFT_STRICT_CONCURRENCY: minimal
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+targets:
+  CoastPulse:
+    type: application
+    platform: iOS
+    sources:
+      - path: CoastPulse
+      - path: Shared
+      - path: ../data
+        name: data
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: au.com.coastpulse.transithub
+        PRODUCT_NAME: CoastPulse
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
+        ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "AppIconAurora AppIconTransitMotion AppIconCoastlineExplorer"
+        ENABLE_PREVIEWS: YES
+    info:
+      path: CoastPulse/Info.plist
+      properties:
+        CFBundleDisplayName: CoastPulse
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: YES
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        NSLocationWhenInUseUsageDescription: CoastPulse uses your location to show nearby stops and centre the transit map around you.
+        NSSupportsLiveActivities: YES
+        NSSupportsLiveActivitiesFrequentUpdates: YES
+        PushRegistrationURL: ""
+        BGTaskSchedulerPermittedIdentifiers:
+          - au.com.coastpulse.transithub.refresh
+        UIBackgroundModes:
+          - fetch
+          - remote-notification
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: au.com.coastpulse.transithub
+            CFBundleURLSchemes:
+              - coastpulse
+    entitlements:
+      path: CoastPulse/CoastPulse.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.au.com.coastpulse.transithub
+        aps-environment: development
+    dependencies:
+      - target: CoastPulseWidgets
+        embed: true
+  CoastPulseWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: CoastPulseWidgets
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: au.com.coastpulse.transithub.widgets
+        PRODUCT_NAME: CoastPulseWidgets
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+    info:
+      path: CoastPulseWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: CoastPulse Widgets
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: CoastPulseWidgets/CoastPulseWidgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.au.com.coastpulse.transithub
+  CoastPulseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CoastPulseTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: au.com.coastpulse.transithub.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: CoastPulse
+schemes:
+  CoastPulse:
+    build:
+      targets:
+        CoastPulse: all
+        CoastPulseWidgets: all
+        CoastPulseTests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: CoastPulse/CoastPulse.storekit
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - CoastPulseTests
+    archive:
+      config: Release
