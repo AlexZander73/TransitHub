@@ -7,3 +7,5 @@ raw/
 .env.live
 mobile/www/*
 !mobile/www/.gitkeep
+**/xcuserdata/
+*.xcuserstate
