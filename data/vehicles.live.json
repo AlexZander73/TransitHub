@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-24T16:32:15.035Z",
+    "generatedAt": "2026-07-24T17:59:04.756Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,46 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 43,
-      "mappedRows": 0,
-      "unmappedRoutes": 43,
-      "vehicleCount": 0
+      "rows": 37,
+      "mappedRows": 2,
+      "unmappedRoutes": 35,
+      "vehicleCount": 2
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_105",
+      "label": "105",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37580517-SBL 26_27-42892",
+      "headsign": "Gold Coast Airport",
+      "stopId": "BBS",
+      "lat": -28.03502655029297,
+      "lon": 153.43080139160156,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1784915923,
+      "updatedAt": "2026-07-24T17:58:43.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_962",
+      "label": "962",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37578993-SBL 26_27-42892",
+      "headsign": "Broadbeach South station",
+      "stopId": null,
+      "lat": -28.08074951171875,
+      "lon": 153.37135314941406,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1784915898,
+      "updatedAt": "2026-07-24T17:58:18.000Z"
+    }
+  ]
 }

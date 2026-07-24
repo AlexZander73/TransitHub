@@ -1,19 +1,84 @@
 {
   "meta": {
-    "generatedAt": "2026-07-24T16:32:15.035Z",
+    "generatedAt": "2026-07-24T17:59:04.756Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 1,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 73,
-      "mappedStopCount": 0,
+      "rows": 57,
+      "mappedRows": 5,
+      "unmappedStops": 51,
+      "unmappedRoutes": 83,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37580517-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-07-24T18:05:00.000Z",
+        "scheduledTime": "2026-07-24T18:05:00.000Z",
+        "epochSeconds": 1784916300,
+        "inMinutes": 6,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37578993-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-07-24T19:01:24.000Z",
+        "scheduledTime": "2026-07-24T19:05:00.000Z",
+        "epochSeconds": 1784919684,
+        "inMinutes": 62,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -4
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37580517-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-07-24T18:15:57.000Z",
+        "scheduledTime": "2026-07-24T18:15:00.000Z",
+        "epochSeconds": 1784916957,
+        "inMinutes": 17,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37578993-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-07-24T18:49:49.000Z",
+        "scheduledTime": "2026-07-24T18:53:00.000Z",
+        "epochSeconds": 1784918989,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37578993-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-07-24T18:50:43.000Z",
+        "scheduledTime": "2026-07-24T18:53:00.000Z",
+        "epochSeconds": 1784919043,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      }
+    ]
+  },
   "incidents": []
 }
