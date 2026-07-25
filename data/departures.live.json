@@ -1,34 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-07-25T14:19:13.817Z",
+    "generatedAt": "2026-07-25T15:37:24.790Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 26,
-      "mappedRows": 1,
-      "unmappedStops": 24,
-      "unmappedRoutes": 69,
-      "mappedStopCount": 1,
+      "rows": 1,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 74,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "BBS": [
-      {
-        "tripId": "37579302-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-07-25T14:22:30.000Z",
-        "scheduledTime": "2026-07-25T14:16:00.000Z",
-        "epochSeconds": 1784989350,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 7
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
