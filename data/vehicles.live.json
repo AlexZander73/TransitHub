@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-26T14:17:45.507Z",
+    "generatedAt": "2026-07-26T15:37:14.375Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,46 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 3,
-      "mappedRows": 2,
-      "unmappedRoutes": 1,
-      "vehicleCount": 2
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedRoutes": 0,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_932",
-      "label": "932",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574160-SBL 26_27-42891",
-      "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -28.14385986328125,
-      "lon": 153.495361328125,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 28,
-      "timestamp": 1785075435,
-      "updatedAt": "2026-07-26T14:17:15.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_972",
-      "label": "972",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574666-SBL 26_27-42891",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.115943908691406,
-      "lon": 153.4695281982422,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 27,
-      "timestamp": 1785075439,
-      "updatedAt": "2026-07-26T14:17:19.000Z"
-    }
-  ]
+  "vehicles": []
 }
