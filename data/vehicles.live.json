@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-26T17:42:38.243Z",
+    "generatedAt": "2026-07-26T18:43:12.028Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,97 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 2,
-      "mappedRows": 0,
-      "unmappedRoutes": 2,
-      "vehicleCount": 0
+      "rows": 52,
+      "mappedRows": 5,
+      "unmappedRoutes": 47,
+      "vehicleCount": 5
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_101",
+      "label": "101",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37587042-SBL 26_27-42893",
+      "headsign": "Gold Coast Airport",
+      "stopId": null,
+      "lat": -28.07094383239746,
+      "lon": 153.44329833984375,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 7,
+      "timestamp": 1785091375,
+      "updatedAt": "2026-07-26T18:42:55.000Z"
+    },
+    {
+      "id": "A7393ED51E387246BB3D6249943091E8_2131",
+      "label": "2131",
+      "routeId": "333",
+      "mode": "bus",
+      "tripId": "37822264-BT 26_27-43278",
+      "headsign": "Woolloongabba station",
+      "stopId": "CHMS",
+      "lat": -27.42510986328125,
+      "lon": 153.08714294433594,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1785091375,
+      "updatedAt": "2026-07-26T18:42:55.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_340",
+      "label": "340",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37580662-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": "BBS",
+      "lat": -28.036333084106445,
+      "lon": 153.43106079101562,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1785090728,
+      "updatedAt": "2026-07-26T18:32:08.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_471",
+      "label": "471",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37583451-SBL 26_27-42893",
+      "headsign": "Broadbeach South station",
+      "stopId": null,
+      "lat": -28.129138946533203,
+      "lon": 153.47789001464844,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 21,
+      "timestamp": 1785091385,
+      "updatedAt": "2026-07-26T18:43:05.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_920",
+      "label": "920",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37583467-SBL 26_27-42893",
+      "headsign": "Broadbeach South station",
+      "stopId": null,
+      "lat": -28.16874885559082,
+      "lon": 153.5403594970703,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 3,
+      "timestamp": 1785091386,
+      "updatedAt": "2026-07-26T18:43:06.000Z"
+    }
+  ]
 }
