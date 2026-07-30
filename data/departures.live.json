@@ -1,19 +1,34 @@
 {
   "meta": {
-    "generatedAt": "2026-07-30T16:48:04.473Z",
+    "generatedAt": "2026-07-30T18:12:43.180Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 1,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 0,
-      "mappedStopCount": 0,
+      "rows": 7,
+      "mappedRows": 1,
+      "unmappedStops": 5,
+      "unmappedRoutes": 49,
+      "mappedStopCount": 1,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37580662-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-30T19:05:00.000Z",
+        "scheduledTime": "2026-07-30T19:05:00.000Z",
+        "epochSeconds": 1785438300,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
