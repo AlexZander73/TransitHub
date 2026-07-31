@@ -1,19 +1,108 @@
 {
   "meta": {
-    "generatedAt": "2026-07-31T16:45:56.658Z",
+    "generatedAt": "2026-07-31T18:16:27.785Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 1,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 65,
-      "mappedStopCount": 0,
+      "rows": 76,
+      "mappedRows": 8,
+      "unmappedStops": 67,
+      "unmappedRoutes": 67,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37576963-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-31T18:58:00.000Z",
+        "scheduledTime": "2026-07-31T18:58:00.000Z",
+        "epochSeconds": 1785524280,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580525-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-07-31T19:05:00.000Z",
+        "scheduledTime": "2026-07-31T19:05:00.000Z",
+        "epochSeconds": 1785524700,
+        "inMinutes": 49,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576984-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-31T19:13:00.000Z",
+        "scheduledTime": "2026-07-31T19:13:00.000Z",
+        "epochSeconds": 1785525180,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37576963-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-31T19:09:37.000Z",
+        "scheduledTime": "2026-07-31T19:10:00.000Z",
+        "epochSeconds": 1785524977,
+        "inMinutes": 53,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576963-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-31T19:10:09.000Z",
+        "scheduledTime": "2026-07-31T19:10:00.000Z",
+        "epochSeconds": 1785525009,
+        "inMinutes": 54,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580525-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-07-31T19:16:11.000Z",
+        "scheduledTime": "2026-07-31T19:15:00.000Z",
+        "epochSeconds": 1785525371,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37576984-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-07-31T19:26:01.000Z",
+        "scheduledTime": "2026-07-31T19:25:00.000Z",
+        "epochSeconds": 1785525961,
+        "inMinutes": 70,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ]
+  },
   "incidents": []
 }
