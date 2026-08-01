@@ -1,19 +1,72 @@
 {
   "meta": {
-    "generatedAt": "2026-08-01T17:08:34.612Z",
+    "generatedAt": "2026-08-01T18:10:03.713Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 1,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 66,
-      "mappedStopCount": 0,
+      "rows": 25,
+      "mappedRows": 5,
+      "unmappedStops": 19,
+      "unmappedRoutes": 64,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-01T18:58:00.000Z",
+        "scheduledTime": "2026-08-01T18:58:00.000Z",
+        "epochSeconds": 1785610680,
+        "inMinutes": 48,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576138-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-01T19:05:00.000Z",
+        "scheduledTime": "2026-08-01T19:05:00.000Z",
+        "epochSeconds": 1785611100,
+        "inMinutes": 55,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37576139-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-01T18:14:52.000Z",
+        "scheduledTime": "2026-08-01T18:14:00.000Z",
+        "epochSeconds": 1785608092,
+        "inMinutes": 5,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-01T19:11:01.000Z",
+        "scheduledTime": "2026-08-01T19:10:00.000Z",
+        "epochSeconds": 1785611461,
+        "inMinutes": 61,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ]
+  },
   "incidents": []
 }

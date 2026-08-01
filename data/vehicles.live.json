@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-01T17:08:34.612Z",
+    "generatedAt": "2026-08-01T18:10:03.713Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -9,10 +9,28 @@
     ],
     "stats": {
       "rows": 33,
-      "mappedRows": 0,
-      "unmappedRoutes": 33,
-      "vehicleCount": 0
+      "mappedRows": 1,
+      "unmappedRoutes": 32,
+      "vehicleCount": 1
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_101",
+      "label": "101",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37576139-SBL 26_27-42891",
+      "headsign": "Gold Coast Airport",
+      "stopId": null,
+      "lat": -28.060638427734375,
+      "lon": 153.43739318847656,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 5,
+      "timestamp": 1785607769,
+      "updatedAt": "2026-08-01T18:09:29.000Z"
+    }
+  ]
 }
