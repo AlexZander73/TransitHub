@@ -1,60 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-08-02T13:59:22.564Z",
+    "generatedAt": "2026-08-02T15:08:08.844Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 40,
-      "mappedRows": 3,
-      "unmappedStops": 36,
-      "unmappedRoutes": 52,
-      "mappedStopCount": 2,
+      "rows": 1,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 0,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "BURLEIGH": [
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-02T14:00:20.000Z",
-        "scheduledTime": "2026-08-02T14:01:00.000Z",
-        "epochSeconds": 1785679220,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-02T14:01:06.000Z",
-        "scheduledTime": "2026-08-02T14:02:00.000Z",
-        "epochSeconds": 1785679266,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ],
-    "BBS": [
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-02T14:12:14.000Z",
-        "scheduledTime": "2026-08-02T14:13:00.000Z",
-        "epochSeconds": 1785679934,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }

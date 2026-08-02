@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-02T13:59:22.564Z",
+    "generatedAt": "2026-08-02T15:08:08.844Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,63 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 43,
-      "mappedRows": 3,
-      "unmappedRoutes": 40,
-      "vehicleCount": 3
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedRoutes": 0,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2331",
-      "label": "2331",
-      "routeId": "330",
-      "mode": "bus",
-      "tripId": "38047906-BT 26_27-43441",
-      "headsign": "Bracken Ridge, Quinlan St",
-      "stopId": null,
-      "lat": -27.327804565429688,
-      "lon": 153.03717041015625,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 21,
-      "timestamp": 1785679145,
-      "updatedAt": "2026-08-02T13:59:05.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_5775",
-      "label": "5775",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574821-SBL 26_27-42891",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.099332809448242,
-      "lon": 153.45828247070312,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 32,
-      "timestamp": 1785679140,
-      "updatedAt": "2026-08-02T13:59:00.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_957",
-      "label": "957",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574000-SBL 26_27-42891",
-      "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -28.137666702270508,
-      "lon": 153.49075317382812,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 25,
-      "timestamp": 1785679151,
-      "updatedAt": "2026-08-02T13:59:11.000Z"
-    }
-  ]
+  "vehicles": []
 }
