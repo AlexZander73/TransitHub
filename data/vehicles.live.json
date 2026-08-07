@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-07T15:52:03.664Z",
+    "generatedAt": "2026-08-07T16:50:07.518Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
