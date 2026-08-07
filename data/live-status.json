@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-07T08:54:18.320Z",
+  "generatedAt": "2026-08-07T09:57:26.548Z",
   "source": "Translink GTFS-RT",
   "refreshIntervalMinutes": 15,
   "departures": {
     "state": "available",
-    "stopCount": 21,
+    "stopCount": 19,
     "incidentCount": 0
   },
   "vehicles": {
     "state": "available",
-    "count": 77
+    "count": 61
   },
   "alerts": {
     "state": "available",
-    "count": 96
+    "count": 80
   }
 }
