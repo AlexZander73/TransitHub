@@ -1,19 +1,84 @@
 {
   "meta": {
-    "generatedAt": "2026-08-08T17:45:16.976Z",
+    "generatedAt": "2026-08-08T18:13:46.907Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 70,
-      "mappedStopCount": 0,
+      "rows": 28,
+      "mappedRows": 5,
+      "unmappedStops": 23,
+      "unmappedRoutes": 78,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-08T18:58:00.000Z",
+        "scheduledTime": "2026-08-08T18:58:00.000Z",
+        "epochSeconds": 1786215480,
+        "inMinutes": 44,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576138-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-08T19:05:00.000Z",
+        "scheduledTime": "2026-08-08T19:05:00.000Z",
+        "epochSeconds": 1786215900,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37576139-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-08T18:16:49.000Z",
+        "scheduledTime": "2026-08-08T18:14:00.000Z",
+        "epochSeconds": 1786213009,
+        "inMinutes": 3,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-08T19:11:03.000Z",
+        "scheduledTime": "2026-08-08T19:10:00.000Z",
+        "epochSeconds": 1786216263,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-08T19:11:45.000Z",
+        "scheduledTime": "2026-08-08T19:10:00.000Z",
+        "epochSeconds": 1786216305,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      }
+    ]
+  },
   "incidents": []
 }
