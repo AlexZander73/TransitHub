@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-08T16:35:22.926Z",
+    "generatedAt": "2026-08-08T17:07:26.685Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
