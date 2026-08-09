@@ -1,72 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-08-09T14:00:20.707Z",
+    "generatedAt": "2026-08-09T14:51:12.529Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 50,
-      "mappedRows": 4,
-      "unmappedStops": 46,
-      "unmappedRoutes": 35,
-      "mappedStopCount": 2,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 4,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "BURLEIGH": [
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-09T14:00:40.000Z",
-        "scheduledTime": "2026-08-09T14:01:00.000Z",
-        "epochSeconds": 1786284040,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37574160-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-09T14:00:40.000Z",
-        "scheduledTime": "2026-08-09T14:00:00.000Z",
-        "epochSeconds": 1786284040,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-09T14:01:10.000Z",
-        "scheduledTime": "2026-08-09T14:02:00.000Z",
-        "epochSeconds": 1786284070,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ],
-    "BBS": [
-      {
-        "tripId": "37574821-SBL 26_27-42891",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-09T14:11:53.000Z",
-        "scheduledTime": "2026-08-09T14:13:00.000Z",
-        "epochSeconds": 1786284713,
-        "inMinutes": 12,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }

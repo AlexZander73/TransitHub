@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-09T14:00:20.707Z",
+    "generatedAt": "2026-08-09T14:51:12.529Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,63 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 19,
-      "mappedRows": 3,
-      "unmappedRoutes": 16,
-      "vehicleCount": 3
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedRoutes": 0,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2316",
-      "label": "2316",
-      "routeId": "330",
-      "mode": "bus",
-      "tripId": "37882398-BT 26_27-43286",
-      "headsign": "Bracken Ridge, Quinlan St",
-      "stopId": null,
-      "lat": -27.323915481567383,
-      "lon": 153.02777099609375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 23,
-      "timestamp": 1786283969,
-      "updatedAt": "2026-08-09T13:59:29.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_928",
-      "label": "928",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574160-SBL 26_27-42891",
-      "headsign": "Tweed Heads",
-      "stopId": "BURLEIGH",
-      "lat": -28.092220306396484,
-      "lon": 153.45416259765625,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 10,
-      "timestamp": 1786283988,
-      "updatedAt": "2026-08-09T13:59:48.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_970",
-      "label": "970",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37574821-SBL 26_27-42891",
-      "headsign": "Broadbeach South station",
-      "stopId": "BURLEIGH",
-      "lat": -28.093666076660156,
-      "lon": 153.45327758789062,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 34,
-      "timestamp": 1786283991,
-      "updatedAt": "2026-08-09T13:59:51.000Z"
-    }
-  ]
+  "vehicles": []
 }
