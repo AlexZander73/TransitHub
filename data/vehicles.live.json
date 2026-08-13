@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-13T17:28:39.341Z",
+    "generatedAt": "2026-08-13T18:27:57.568Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,29 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedRoutes": 0,
-      "vehicleCount": 0
+      "rows": 27,
+      "mappedRows": 1,
+      "unmappedRoutes": 26,
+      "vehicleCount": 1
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_104",
+      "label": "104",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37587041-SBL 26_27-42893",
+      "headsign": "Gold Coast Airport",
+      "stopId": "BBS",
+      "lat": -28.16697120666504,
+      "lon": 153.513671875,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1786645632,
+      "updatedAt": "2026-08-13T18:27:12.000Z"
+    }
+  ]
 }

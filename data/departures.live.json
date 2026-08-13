@@ -1,19 +1,84 @@
 {
   "meta": {
-    "generatedAt": "2026-08-13T17:28:39.341Z",
+    "generatedAt": "2026-08-13T18:27:57.568Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 15,
-      "mappedStopCount": 0,
+      "rows": 55,
+      "mappedRows": 5,
+      "unmappedStops": 50,
+      "unmappedRoutes": 68,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BURLEIGH": [
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-13T18:50:32.000Z",
+        "scheduledTime": "2026-08-13T18:51:00.000Z",
+        "epochSeconds": 1786647032,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-13T18:51:22.000Z",
+        "scheduledTime": "2026-08-13T18:52:00.000Z",
+        "epochSeconds": 1786647082,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37587041-SBL 26_27-42893",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-13T19:31:24.000Z",
+        "scheduledTime": "2026-08-13T19:31:00.000Z",
+        "epochSeconds": 1786649484,
+        "inMinutes": 63,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BBS": [
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-13T19:03:06.000Z",
+        "scheduledTime": "2026-08-13T19:03:00.000Z",
+        "epochSeconds": 1786647786,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37587041-SBL 26_27-42893",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-13T19:20:00.000Z",
+        "scheduledTime": "2026-08-13T19:20:00.000Z",
+        "epochSeconds": 1786648800,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
