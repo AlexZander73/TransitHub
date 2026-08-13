@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-13T14:24:31.358Z",
+    "generatedAt": "2026-08-13T15:30:08.573Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,30 +8,13 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 23,
-      "mappedRows": 3,
-      "unmappedRoutes": 20,
-      "vehicleCount": 3
+      "rows": 3,
+      "mappedRows": 1,
+      "unmappedRoutes": 2,
+      "vehicleCount": 1
     }
   },
   "vehicles": [
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_239",
-      "label": "239",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37584321-SBL 26_27-42893",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.073415756225586,
-      "lon": 153.4443359375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 38,
-      "timestamp": 1786631044,
-      "updatedAt": "2026-08-13T14:24:04.000Z"
-    },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_268",
       "label": "268",
@@ -40,31 +23,14 @@
       "tripId": "37584497-SBL 26_27-42893",
       "headsign": "Broadbeach South station",
       "stopId": null,
-      "lat": -28.036083221435547,
-      "lon": 153.4310302734375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1786631036,
-      "updatedAt": "2026-08-13T14:23:56.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_5772",
-      "label": "5772",
-      "routeId": "750",
-      "mode": "bus",
-      "tripId": "37586860-SBL 26_27-42893",
-      "headsign": "Robina station",
-      "stopId": null,
-      "lat": -28.070831298828125,
-      "lon": 153.378662109375,
+      "lat": -28.07088851928711,
+      "lon": 153.37844848632812,
       "bearing": null,
       "speed": null,
       "status": "stopped_at",
       "currentStopSequence": 1,
-      "timestamp": 1786631045,
-      "updatedAt": "2026-08-13T14:24:05.000Z"
+      "timestamp": 1786634964,
+      "updatedAt": "2026-08-13T15:29:24.000Z"
     }
   ]
 }
