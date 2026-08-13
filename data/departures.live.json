@@ -1,34 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-08-13T15:30:08.573Z",
+    "generatedAt": "2026-08-13T16:27:44.816Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 23,
-      "mappedRows": 1,
-      "unmappedStops": 22,
-      "unmappedRoutes": 3,
-      "mappedStopCount": 1,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 2,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "ROBINA": [
-      {
-        "tripId": "37584497-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-13T15:29:41.000Z",
-        "scheduledTime": "2026-08-13T14:00:00.000Z",
-        "epochSeconds": 1786634981,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 90
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
