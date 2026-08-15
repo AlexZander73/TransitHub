@@ -1,167 +1,67 @@
 {
   "meta": {
-    "generatedAt": "2026-08-15T13:50:44.477Z",
+    "generatedAt": "2026-08-15T14:17:43.843Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 176,
-      "mappedRows": 12,
-      "unmappedStops": 164,
-      "unmappedRoutes": 181,
-      "mappedStopCount": 4,
+      "rows": 28,
+      "mappedRows": 4,
+      "unmappedStops": 24,
+      "unmappedRoutes": 93,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
   "stops": {
-    "BBS": [
+    "BURLEIGH": [
       {
-        "tripId": "37580388-SBL 26_27-42892",
-        "routeId": "777",
+        "tripId": "37580079-SBL 26_27-42892",
+        "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:02:08.000Z",
-        "scheduledTime": "2026-08-15T14:04:00.000Z",
-        "epochSeconds": 1786802528,
-        "inMinutes": 11,
+        "expectedTime": "2026-08-15T14:20:30.000Z",
+        "scheduledTime": "2026-08-15T14:20:00.000Z",
+        "epochSeconds": 1786803630,
+        "inMinutes": 3,
         "platform": null,
         "status": "on_time",
-        "delayMinutes": -2
-      },
-      {
-        "tripId": "37578908-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:03:22.000Z",
-        "scheduledTime": "2026-08-15T13:53:00.000Z",
-        "epochSeconds": 1786802602,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 10
-      },
-      {
-        "tripId": "37579302-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:25:37.000Z",
-        "scheduledTime": "2026-08-15T14:16:00.000Z",
-        "epochSeconds": 1786803937,
-        "inMinutes": 35,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 10
+        "delayMinutes": 1
       },
       {
         "tripId": "37580079-SBL 26_27-42892",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:32:22.000Z",
-        "scheduledTime": "2026-08-15T14:31:00.000Z",
-        "epochSeconds": 1786804342,
-        "inMinutes": 42,
+        "expectedTime": "2026-08-15T14:21:30.000Z",
+        "scheduledTime": "2026-08-15T14:21:00.000Z",
+        "epochSeconds": 1786803690,
+        "inMinutes": 4,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
       }
     ],
-    "ROBINA": [
-      {
-        "tripId": "37578718-SBL 26_27-42892",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-15T14:00:11.000Z",
-        "scheduledTime": "2026-08-15T13:57:00.000Z",
-        "epochSeconds": 1786802411,
-        "inMinutes": 9,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37578718-SBL 26_27-42892",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-15T14:02:03.000Z",
-        "scheduledTime": "2026-08-15T13:58:00.000Z",
-        "epochSeconds": 1786802523,
-        "inMinutes": 11,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 4
-      }
-    ],
-    "BURLEIGH": [
-      {
-        "tripId": "37578908-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T13:51:10.000Z",
-        "scheduledTime": "2026-08-15T13:41:00.000Z",
-        "epochSeconds": 1786801870,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 10
-      },
+    "BBS": [
       {
         "tripId": "37579302-SBL 26_27-42892",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:12:37.000Z",
-        "scheduledTime": "2026-08-15T14:03:00.000Z",
-        "epochSeconds": 1786803157,
-        "inMinutes": 22,
+        "expectedTime": "2026-08-15T14:22:49.000Z",
+        "scheduledTime": "2026-08-15T14:16:00.000Z",
+        "epochSeconds": 1786803769,
+        "inMinutes": 5,
         "platform": null,
         "status": "minor_delay",
-        "delayMinutes": 10
-      },
-      {
-        "tripId": "37579302-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:13:37.000Z",
-        "scheduledTime": "2026-08-15T14:04:00.000Z",
-        "epochSeconds": 1786803217,
-        "inMinutes": 23,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 10
+        "delayMinutes": 7
       },
       {
         "tripId": "37580079-SBL 26_27-42892",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:20:19.000Z",
-        "scheduledTime": "2026-08-15T14:20:00.000Z",
-        "epochSeconds": 1786803619,
-        "inMinutes": 30,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37580079-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-15T14:21:20.000Z",
-        "scheduledTime": "2026-08-15T14:21:00.000Z",
-        "epochSeconds": 1786803680,
-        "inMinutes": 31,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "CARI": [
-      {
-        "tripId": "37873187-BT 26_27-43284",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-15T13:51:53.000Z",
-        "scheduledTime": "2026-08-15T13:51:00.000Z",
-        "epochSeconds": 1786801913,
-        "inMinutes": 1,
+        "expectedTime": "2026-08-15T14:31:30.000Z",
+        "scheduledTime": "2026-08-15T14:31:00.000Z",
+        "epochSeconds": 1786804290,
+        "inMinutes": 14,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
