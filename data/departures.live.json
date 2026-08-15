@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generatedAt": "2026-08-15T17:58:32.709Z",
+    "generatedAt": "2026-08-15T18:35:42.919Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 42,
-      "mappedRows": 3,
-      "unmappedStops": 39,
-      "unmappedRoutes": 72,
+      "rows": 101,
+      "mappedRows": 9,
+      "unmappedStops": 92,
+      "unmappedRoutes": 78,
       "mappedStopCount": 2,
       "incidentCount": 0
     }
@@ -23,7 +23,43 @@
         "expectedTime": "2026-08-15T18:58:00.000Z",
         "scheduledTime": "2026-08-15T18:58:00.000Z",
         "epochSeconds": 1786820280,
-        "inMinutes": 59,
+        "inMinutes": 22,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576138-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-15T19:05:00.000Z",
+        "scheduledTime": "2026-08-15T19:05:00.000Z",
+        "epochSeconds": 1786820700,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37572007-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-15T19:16:44.000Z",
+        "scheduledTime": "2026-08-15T19:19:00.000Z",
+        "epochSeconds": 1786821404,
+        "inMinutes": 41,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37572009-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-15T19:32:00.000Z",
+        "scheduledTime": "2026-08-15T19:32:00.000Z",
+        "epochSeconds": 1786822320,
+        "inMinutes": 56,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
@@ -31,16 +67,64 @@
     ],
     "BURLEIGH": [
       {
+        "tripId": "37572007-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-15T19:04:41.000Z",
+        "scheduledTime": "2026-08-15T19:07:00.000Z",
+        "epochSeconds": 1786820681,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37572007-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-15T19:05:42.000Z",
+        "scheduledTime": "2026-08-15T19:08:00.000Z",
+        "epochSeconds": 1786820742,
+        "inMinutes": 30,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
         "tripId": "37571954-SBL 26_27-42891",
         "routeId": "700",
         "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-15T19:10:00.000Z",
+        "expectedTime": "2026-08-15T19:10:09.000Z",
         "scheduledTime": "2026-08-15T19:10:00.000Z",
-        "epochSeconds": 1786821000,
-        "inMinutes": 71,
+        "epochSeconds": 1786821009,
+        "inMinutes": 34,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
+      },
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-15T19:10:46.000Z",
+        "scheduledTime": "2026-08-15T19:10:00.000Z",
+        "epochSeconds": 1786821046,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37576138-SBL 26_27-42891",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-15T19:17:21.000Z",
+        "scheduledTime": "2026-08-15T19:14:00.000Z",
+        "epochSeconds": 1786821441,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
       }
     ]
   },
