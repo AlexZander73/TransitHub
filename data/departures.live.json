@@ -1,19 +1,48 @@
 {
   "meta": {
-    "generatedAt": "2026-08-15T17:44:12.169Z",
+    "generatedAt": "2026-08-15T17:58:32.709Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 77,
-      "mappedStopCount": 0,
+      "rows": 42,
+      "mappedRows": 3,
+      "unmappedStops": 39,
+      "unmappedRoutes": 72,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-15T18:58:00.000Z",
+        "scheduledTime": "2026-08-15T18:58:00.000Z",
+        "epochSeconds": 1786820280,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37571954-SBL 26_27-42891",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-15T19:10:00.000Z",
+        "scheduledTime": "2026-08-15T19:10:00.000Z",
+        "epochSeconds": 1786821000,
+        "inMinutes": 71,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
