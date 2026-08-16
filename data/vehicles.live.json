@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-16T17:56:44.667Z",
+    "generatedAt": "2026-08-16T18:27:58.297Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,63 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 3,
-      "mappedRows": 0,
-      "unmappedRoutes": 3,
-      "vehicleCount": 0
+      "rows": 38,
+      "mappedRows": 3,
+      "unmappedRoutes": 35,
+      "vehicleCount": 3
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_103",
+      "label": "103",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37587047-SBL 26_27-42893",
+      "headsign": "Gold Coast Airport",
+      "stopId": null,
+      "lat": -28.164222717285156,
+      "lon": 153.51622009277344,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 13,
+      "timestamp": 1786904837,
+      "updatedAt": "2026-08-16T18:27:17.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_925",
+      "label": "925",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37583451-SBL 26_27-42893",
+      "headsign": "Broadbeach South station",
+      "stopId": null,
+      "lat": -28.1710262298584,
+      "lon": 153.54306030273438,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1786904848,
+      "updatedAt": "2026-08-16T18:27:28.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_962",
+      "label": "962",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37580670-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": "BBS",
+      "lat": -27.96263885498047,
+      "lon": 153.42666625976562,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1786904844,
+      "updatedAt": "2026-08-16T18:27:24.000Z"
+    }
+  ]
 }

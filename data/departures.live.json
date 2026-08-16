@@ -1,19 +1,132 @@
 {
   "meta": {
-    "generatedAt": "2026-08-16T17:56:44.667Z",
+    "generatedAt": "2026-08-16T18:27:58.297Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 31,
-      "mappedStopCount": 0,
+      "rows": 119,
+      "mappedRows": 10,
+      "unmappedStops": 109,
+      "unmappedRoutes": 70,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BURLEIGH": [
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-16T18:50:21.000Z",
+        "scheduledTime": "2026-08-16T18:51:00.000Z",
+        "epochSeconds": 1786906221,
+        "inMinutes": 22,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-16T18:51:21.000Z",
+        "scheduledTime": "2026-08-16T18:52:00.000Z",
+        "epochSeconds": 1786906281,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37580662-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-16T19:16:38.000Z",
+        "scheduledTime": "2026-08-16T19:17:00.000Z",
+        "epochSeconds": 1786907798,
+        "inMinutes": 49,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580662-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-16T19:17:06.000Z",
+        "scheduledTime": "2026-08-16T19:17:00.000Z",
+        "epochSeconds": 1786907826,
+        "inMinutes": 49,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580670-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-16T19:28:52.000Z",
+        "scheduledTime": "2026-08-16T19:29:00.000Z",
+        "epochSeconds": 1786908532,
+        "inMinutes": 61,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BBS": [
+      {
+        "tripId": "37583451-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-16T19:01:38.000Z",
+        "scheduledTime": "2026-08-16T19:03:00.000Z",
+        "epochSeconds": 1786906898,
+        "inMinutes": 34,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37580662-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-16T19:05:00.000Z",
+        "scheduledTime": "2026-08-16T19:05:00.000Z",
+        "epochSeconds": 1786907100,
+        "inMinutes": 37,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580670-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-16T19:17:00.000Z",
+        "scheduledTime": "2026-08-16T19:17:00.000Z",
+        "epochSeconds": 1786907820,
+        "inMinutes": 49,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37587041-SBL 26_27-42893",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-16T19:20:00.000Z",
+        "scheduledTime": "2026-08-16T19:20:00.000Z",
+        "epochSeconds": 1786908000,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
