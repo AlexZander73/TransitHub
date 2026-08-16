@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-16T14:47:14.982Z",
+    "generatedAt": "2026-08-16T15:17:07.547Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
@@ -9,7 +9,7 @@
       "rows": 0,
       "mappedRows": 0,
       "unmappedStops": 0,
-      "unmappedRoutes": 6,
+      "unmappedRoutes": 1,
       "mappedStopCount": 0,
       "incidentCount": 0
     }
