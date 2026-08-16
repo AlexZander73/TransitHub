@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-16T17:43:13.526Z",
+    "generatedAt": "2026-08-16T17:56:44.667Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,9 +8,9 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 1,
+      "rows": 3,
       "mappedRows": 0,
-      "unmappedRoutes": 1,
+      "unmappedRoutes": 3,
       "vehicleCount": 0
     }
   },
