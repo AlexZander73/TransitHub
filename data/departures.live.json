@@ -1,152 +1,68 @@
 {
   "meta": {
-    "generatedAt": "2026-08-17T13:25:28.748Z",
+    "generatedAt": "2026-08-17T14:00:23.470Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 532,
-      "mappedRows": 64,
-      "unmappedStops": 468,
-      "unmappedRoutes": 174,
-      "mappedStopCount": 14,
+      "rows": 142,
+      "mappedRows": 10,
+      "unmappedStops": 132,
+      "unmappedRoutes": 61,
+      "mappedStopCount": 4,
       "incidentCount": 0
     }
   },
   "stops": {
     "BURLEIGH": [
       {
-        "tripId": "37584650-SBL 26_27-42893",
+        "tripId": "37583669-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-17T13:28:39.000Z",
-        "scheduledTime": "2026-08-17T13:29:00.000Z",
-        "epochSeconds": 1786973319,
+        "expectedTime": "2026-08-17T14:00:49.000Z",
+        "scheduledTime": "2026-08-17T13:59:00.000Z",
+        "epochSeconds": 1786975249,
+        "inMinutes": 0,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37583669-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-17T14:01:18.000Z",
+        "scheduledTime": "2026-08-17T13:59:00.000Z",
+        "epochSeconds": 1786975278,
+        "inMinutes": 1,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37582498-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-17T14:02:58.000Z",
+        "scheduledTime": "2026-08-17T14:05:00.000Z",
+        "epochSeconds": 1786975378,
         "inMinutes": 3,
         "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
+        "status": "early",
+        "delayMinutes": -2
       },
       {
-        "tripId": "37584650-SBL 26_27-42893",
+        "tripId": "37582498-SBL 26_27-42893",
         "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-17T13:29:11.000Z",
-        "scheduledTime": "2026-08-17T13:29:00.000Z",
-        "epochSeconds": 1786973351,
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-17T14:03:58.000Z",
+        "scheduledTime": "2026-08-17T14:06:00.000Z",
+        "epochSeconds": 1786975438,
         "inMinutes": 4,
         "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37586905-SBL 26_27-42893",
-        "routeId": "777",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:34:36.000Z",
-        "scheduledTime": "2026-08-17T13:36:00.000Z",
-        "epochSeconds": 1786973676,
-        "inMinutes": 9,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37584346-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:36:50.000Z",
-        "scheduledTime": "2026-08-17T13:35:00.000Z",
-        "epochSeconds": 1786973810,
-        "inMinutes": 11,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37584346-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:37:59.000Z",
-        "scheduledTime": "2026-08-17T13:36:00.000Z",
-        "epochSeconds": 1786973879,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37584183-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:52:56.000Z",
-        "scheduledTime": "2026-08-17T13:50:00.000Z",
-        "epochSeconds": 1786974776,
-        "inMinutes": 27,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37584183-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:54:06.000Z",
-        "scheduledTime": "2026-08-17T13:51:00.000Z",
-        "epochSeconds": 1786974846,
-        "inMinutes": 29,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37583669-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-17T14:00:23.000Z",
-        "scheduledTime": "2026-08-17T13:59:00.000Z",
-        "epochSeconds": 1786975223,
-        "inMinutes": 35,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37583669-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-17T14:00:50.000Z",
-        "scheduledTime": "2026-08-17T13:59:00.000Z",
-        "epochSeconds": 1786975250,
-        "inMinutes": 35,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37582498-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:07:22.000Z",
-        "scheduledTime": "2026-08-17T14:05:00.000Z",
-        "epochSeconds": 1786975642,
-        "inMinutes": 42,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37582498-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:08:22.000Z",
-        "scheduledTime": "2026-08-17T14:06:00.000Z",
-        "epochSeconds": 1786975702,
-        "inMinutes": 43,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
+        "status": "early",
+        "delayMinutes": -2
       },
       {
         "tripId": "37584321-SBL 26_27-42893",
@@ -155,7 +71,7 @@
         "expectedTime": "2026-08-17T14:21:28.000Z",
         "scheduledTime": "2026-08-17T14:20:00.000Z",
         "epochSeconds": 1786976488,
-        "inMinutes": 56,
+        "inMinutes": 21,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
@@ -167,7 +83,7 @@
         "expectedTime": "2026-08-17T14:22:28.000Z",
         "scheduledTime": "2026-08-17T14:21:00.000Z",
         "epochSeconds": 1786976548,
-        "inMinutes": 57,
+        "inMinutes": 22,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
@@ -175,640 +91,56 @@
     ],
     "BBS": [
       {
-        "tripId": "37584616-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:28:05.000Z",
-        "scheduledTime": "2026-08-17T13:31:00.000Z",
-        "epochSeconds": 1786973285,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -3
-      },
-      {
-        "tripId": "37586910-SBL 26_27-42893",
-        "routeId": "777",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:28:51.000Z",
-        "scheduledTime": "2026-08-17T13:30:00.000Z",
-        "epochSeconds": 1786973331,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37586905-SBL 26_27-42893",
-        "routeId": "777",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:45:42.000Z",
-        "scheduledTime": "2026-08-17T13:45:00.000Z",
-        "epochSeconds": 1786974342,
-        "inMinutes": 20,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37583669-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-17T13:48:00.000Z",
-        "scheduledTime": "2026-08-17T13:48:00.000Z",
-        "epochSeconds": 1786974480,
-        "inMinutes": 23,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37584346-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:49:35.000Z",
-        "scheduledTime": "2026-08-17T13:46:00.000Z",
-        "epochSeconds": 1786974575,
-        "inMinutes": 24,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 4
-      },
-      {
-        "tripId": "37584183-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:04:55.000Z",
-        "scheduledTime": "2026-08-17T14:01:00.000Z",
-        "epochSeconds": 1786975495,
-        "inMinutes": 39,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 4
-      },
-      {
         "tripId": "37582498-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:18:40.000Z",
+        "expectedTime": "2026-08-17T14:14:16.000Z",
         "scheduledTime": "2026-08-17T14:16:00.000Z",
-        "epochSeconds": 1786976320,
-        "inMinutes": 53,
+        "epochSeconds": 1786976056,
+        "inMinutes": 14,
         "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
+        "status": "on_time",
+        "delayMinutes": -2
       },
       {
         "tripId": "37584321-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:33:04.000Z",
+        "expectedTime": "2026-08-17T14:32:46.000Z",
         "scheduledTime": "2026-08-17T14:31:00.000Z",
-        "epochSeconds": 1786977184,
-        "inMinutes": 68,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      }
-    ],
-    "ROBINA": [
-      {
-        "tripId": "37583178-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T13:31:11.000Z",
-        "scheduledTime": "2026-08-17T13:30:00.000Z",
-        "epochSeconds": 1786973471,
-        "inMinutes": 6,
+        "epochSeconds": 1786977166,
+        "inMinutes": 32,
         "platform": null,
         "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37586860-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-17T13:58:47.000Z",
-        "scheduledTime": "2026-08-17T13:57:00.000Z",
-        "epochSeconds": 1786975127,
-        "inMinutes": 33,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37586860-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-17T14:00:26.000Z",
-        "scheduledTime": "2026-08-17T13:58:00.000Z",
-        "epochSeconds": 1786975226,
-        "inMinutes": 35,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37584497-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-17T14:00:59.000Z",
-        "scheduledTime": "2026-08-17T14:00:00.000Z",
-        "epochSeconds": 1786975259,
-        "inMinutes": 36,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "CULT": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-08-17T13:25:54.000Z",
-        "scheduledTime": "2026-08-17T13:22:00.000Z",
-        "epochSeconds": 1786973154,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 4
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:29:16.000Z",
-        "scheduledTime": "2026-08-17T13:29:00.000Z",
-        "epochSeconds": 1786973356,
-        "inMinutes": 4,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:30:10.000Z",
-        "scheduledTime": "2026-08-17T13:29:00.000Z",
-        "epochSeconds": 1786973410,
-        "inMinutes": 5,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:43:26.000Z",
-        "scheduledTime": "2026-08-17T13:44:00.000Z",
-        "epochSeconds": 1786974206,
-        "inMinutes": 18,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ],
-    "BURA": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-08-17T13:33:01.000Z",
-        "scheduledTime": "2026-08-17T13:30:00.000Z",
-        "epochSeconds": 1786973581,
-        "inMinutes": 8,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:36:27.000Z",
-        "scheduledTime": "2026-08-17T13:38:00.000Z",
-        "epochSeconds": 1786973787,
-        "inMinutes": 11,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -2
-      }
-    ],
-    "GARD": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-08-17T13:43:12.000Z",
-        "scheduledTime": "2026-08-17T13:40:00.000Z",
-        "epochSeconds": 1786974192,
-        "inMinutes": 18,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      }
-    ],
-    "EMPS": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-08-17T13:45:55.000Z",
-        "scheduledTime": "2026-08-17T13:43:00.000Z",
-        "epochSeconds": 1786974355,
-        "inMinutes": 20,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      }
-    ],
-    "SPRW": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-08-17T13:52:49.000Z",
-        "scheduledTime": "2026-08-17T13:51:00.000Z",
-        "epochSeconds": 1786974769,
-        "inMinutes": 27,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ],
-    "QSTN": [
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:27:35.000Z",
-        "scheduledTime": "2026-08-17T13:27:00.000Z",
-        "epochSeconds": 1786973255,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:28:00.000Z",
-        "scheduledTime": "2026-08-17T13:28:00.000Z",
-        "epochSeconds": 1786973280,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:32:27.000Z",
-        "scheduledTime": "2026-08-17T13:30:00.000Z",
-        "epochSeconds": 1786973547,
-        "inMinutes": 7,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:46:37.000Z",
-        "scheduledTime": "2026-08-17T13:45:00.000Z",
-        "epochSeconds": 1786974397,
-        "inMinutes": 21,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ],
-    "ROMA": [
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:26:00.000Z",
-        "scheduledTime": "2026-08-17T13:26:00.000Z",
-        "epochSeconds": 1786973160,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:32:33.000Z",
-        "scheduledTime": "2026-08-17T13:31:00.000Z",
-        "epochSeconds": 1786973553,
-        "inMinutes": 7,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:33:44.000Z",
-        "scheduledTime": "2026-08-17T13:31:00.000Z",
-        "epochSeconds": 1786973624,
-        "inMinutes": 8,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:47:54.000Z",
-        "scheduledTime": "2026-08-17T13:46:00.000Z",
-        "epochSeconds": 1786974474,
-        "inMinutes": 22,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ],
-    "RBWH": [
-      {
-        "tripId": "37822438-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:26:02.000Z",
-        "scheduledTime": "2026-08-17T13:21:00.000Z",
-        "epochSeconds": 1786973162,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 5
-      },
-      {
-        "tripId": "37822438-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:27:32.000Z",
-        "scheduledTime": "2026-08-17T13:22:00.000Z",
-        "epochSeconds": 1786973252,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 6
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:36:59.000Z",
-        "scheduledTime": "2026-08-17T13:36:00.000Z",
-        "epochSeconds": 1786973819,
-        "inMinutes": 12,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:38:16.000Z",
-        "scheduledTime": "2026-08-17T13:36:00.000Z",
-        "epochSeconds": 1786973896,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:38:39.000Z",
-        "scheduledTime": "2026-08-17T13:37:00.000Z",
-        "epochSeconds": 1786973919,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:39:53.000Z",
-        "scheduledTime": "2026-08-17T13:37:00.000Z",
-        "epochSeconds": 1786973993,
-        "inMinutes": 14,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:52:26.000Z",
-        "scheduledTime": "2026-08-17T13:51:00.000Z",
-        "epochSeconds": 1786974746,
-        "inMinutes": 27,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:54:03.000Z",
-        "scheduledTime": "2026-08-17T13:52:00.000Z",
-        "epochSeconds": 1786974843,
-        "inMinutes": 29,
-        "platform": null,
-        "status": "minor_delay",
         "delayMinutes": 2
       }
     ],
     "CHMS": [
       {
-        "tripId": "37822259-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:26:05.000Z",
-        "scheduledTime": "2026-08-17T13:19:00.000Z",
-        "epochSeconds": 1786973165,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 7
-      },
-      {
-        "tripId": "37822259-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:27:43.000Z",
-        "scheduledTime": "2026-08-17T13:20:00.000Z",
-        "epochSeconds": 1786973263,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 8
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:35:20.000Z",
-        "scheduledTime": "2026-08-17T13:34:00.000Z",
-        "epochSeconds": 1786973720,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:37:00.000Z",
-        "scheduledTime": "2026-08-17T13:35:00.000Z",
-        "epochSeconds": 1786973820,
-        "inMinutes": 12,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 2
-      },
-      {
-        "tripId": "37822438-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:42:22.000Z",
-        "scheduledTime": "2026-08-17T13:39:00.000Z",
-        "epochSeconds": 1786974142,
-        "inMinutes": 17,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:49:18.000Z",
-        "scheduledTime": "2026-08-17T13:49:00.000Z",
-        "epochSeconds": 1786974558,
-        "inMinutes": 24,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-08-17T13:51:04.000Z",
-        "scheduledTime": "2026-08-17T13:50:00.000Z",
-        "epochSeconds": 1786974664,
-        "inMinutes": 26,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T13:54:43.000Z",
-        "scheduledTime": "2026-08-17T13:54:00.000Z",
-        "epochSeconds": 1786974883,
-        "inMinutes": 29,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
         "tripId": "37822440-BT 26_27-43278",
         "routeId": "333",
         "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-17T14:10:19.000Z",
+        "expectedTime": "2026-08-17T14:14:19.000Z",
         "scheduledTime": "2026-08-17T14:09:00.000Z",
-        "epochSeconds": 1786975819,
-        "inMinutes": 45,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "INDR": [
-      {
-        "tripId": "37819720-BT 26_27-43278",
-        "routeId": "444",
-        "headsign": "Moggill, Moggill Rd",
-        "expectedTime": "2026-08-17T13:30:11.000Z",
-        "scheduledTime": "2026-08-17T13:25:00.000Z",
-        "epochSeconds": 1786973411,
-        "inMinutes": 5,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 5
-      },
-      {
-        "tripId": "37819720-BT 26_27-43278",
-        "routeId": "444",
-        "headsign": "Moggill, Moggill Rd",
-        "expectedTime": "2026-08-17T13:32:22.000Z",
-        "scheduledTime": "2026-08-17T13:27:00.000Z",
-        "epochSeconds": 1786973542,
-        "inMinutes": 7,
+        "epochSeconds": 1786976059,
+        "inMinutes": 14,
         "platform": null,
         "status": "minor_delay",
         "delayMinutes": 5
       }
     ],
-    "CARI": [
+    "ROBINA": [
       {
-        "tripId": "37819698-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:26:05.000Z",
-        "scheduledTime": "2026-08-17T13:28:00.000Z",
-        "epochSeconds": 1786973165,
+        "tripId": "37584497-SBL 26_27-42893",
+        "routeId": "750",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-17T14:01:49.000Z",
+        "scheduledTime": "2026-08-17T14:00:00.000Z",
+        "epochSeconds": 1786975309,
         "inMinutes": 1,
         "platform": null,
         "status": "on_time",
-        "delayMinutes": -2
-      },
-      {
-        "tripId": "37819722-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:38:36.000Z",
-        "scheduledTime": "2026-08-17T13:43:00.000Z",
-        "epochSeconds": 1786973916,
-        "inMinutes": 13,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -4
-      },
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-17T13:53:32.000Z",
-        "scheduledTime": "2026-08-17T13:58:00.000Z",
-        "epochSeconds": 1786974812,
-        "inMinutes": 28,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -4
+        "delayMinutes": 2
       }
     ]
   },
