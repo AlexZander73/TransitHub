@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-17T15:37:31.590Z",
+    "generatedAt": "2026-08-17T15:58:15.546Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,10 +8,10 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 8,
-      "mappedRows": 5,
+      "rows": 9,
+      "mappedRows": 6,
       "unmappedRoutes": 3,
-      "vehicleCount": 5
+      "vehicleCount": 6
     }
   },
   "vehicles": [
@@ -23,14 +23,14 @@
       "tripId": "37586577-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.13313865661621,
-      "lon": 153.48341369628906,
+      "lat": -28.026220321655273,
+      "lon": 153.42910766601562,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 20,
-      "timestamp": 1786981042,
-      "updatedAt": "2026-08-17T15:37:22.000Z"
+      "status": "in_transit_to",
+      "currentStopSequence": 45,
+      "timestamp": 1786982270,
+      "updatedAt": "2026-08-17T15:57:50.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_231",
@@ -39,15 +39,15 @@
       "mode": "bus",
       "tripId": "37583182-SBL 26_27-42893",
       "headsign": "GCUH",
-      "stopId": "CAVILL",
-      "lat": -28.006776809692383,
-      "lon": 153.4280242919922,
+      "stopId": null,
+      "lat": -27.96263885498047,
+      "lon": 153.38388061523438,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 48,
-      "timestamp": 1786981014,
-      "updatedAt": "2026-08-17T15:36:54.000Z"
+      "currentStopSequence": 58,
+      "timestamp": 1786982260,
+      "updatedAt": "2026-08-17T15:57:40.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_239",
@@ -57,14 +57,14 @@
       "tripId": "37584501-SBL 26_27-42893",
       "headsign": "Broadbeach South station",
       "stopId": null,
-      "lat": -28.070720672607422,
-      "lon": 153.37852478027344,
+      "lat": -28.07069206237793,
+      "lon": 153.37879943847656,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
+      "status": "in_transit_to",
       "currentStopSequence": 1,
-      "timestamp": 1786979080,
-      "updatedAt": "2026-08-17T15:04:40.000Z"
+      "timestamp": 1786982274,
+      "updatedAt": "2026-08-17T15:57:54.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_268",
@@ -74,14 +74,31 @@
       "tripId": "37584620-SBL 26_27-42893",
       "headsign": "Tweed Heads",
       "stopId": null,
-      "lat": -28.05961036682129,
-      "lon": 153.43788146972656,
+      "lat": -28.139249801635742,
+      "lon": 153.49119567871094,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 19,
-      "timestamp": 1786981031,
-      "updatedAt": "2026-08-17T15:37:11.000Z"
+      "status": "in_transit_to",
+      "currentStopSequence": 40,
+      "timestamp": 1786982283,
+      "updatedAt": "2026-08-17T15:58:03.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_924",
+      "label": "924",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37584636-SBL 26_27-42893",
+      "headsign": "GCUH",
+      "stopId": null,
+      "lat": -28.172943115234375,
+      "lon": 153.54307556152344,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1786982254,
+      "updatedAt": "2026-08-17T15:57:34.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_927",
@@ -91,14 +108,14 @@
       "tripId": "37584655-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.1707763671875,
-      "lon": 153.54161071777344,
+      "lat": -28.167081832885742,
+      "lon": 153.52133178710938,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1786981035,
-      "updatedAt": "2026-08-17T15:37:15.000Z"
+      "currentStopSequence": 9,
+      "timestamp": 1786982280,
+      "updatedAt": "2026-08-17T15:58:00.000Z"
     }
   ]
 }
