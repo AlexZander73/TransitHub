@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-18T17:22:05.928Z",
+    "generatedAt": "2026-08-18T17:52:35.570Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,63 +8,80 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 4,
-      "mappedRows": 4,
-      "unmappedRoutes": 0,
-      "vehicleCount": 4
+      "rows": 8,
+      "mappedRows": 5,
+      "unmappedRoutes": 3,
+      "vehicleCount": 5
     }
   },
   "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_105",
+      "label": "105",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37587042-SBL 26_27-42893",
+      "headsign": "Gold Coast Airport",
+      "stopId": "BBS",
+      "lat": -28.116472244262695,
+      "lon": 153.4289093017578,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1787075510,
+      "updatedAt": "2026-08-18T17:51:50.000Z"
+    },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_269",
       "label": "269",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37584636-SBL 26_27-42893",
-      "headsign": "GCUH",
-      "stopId": null,
-      "lat": -27.970277786254883,
-      "lon": 153.39456176757812,
+      "tripId": "37584637-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": "CAVILL",
+      "lat": -27.99974822998047,
+      "lon": 153.42703247070312,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 56,
-      "timestamp": 1787073694,
-      "updatedAt": "2026-08-18T17:21:34.000Z"
+      "status": "in_transit_to",
+      "currentStopSequence": 11,
+      "timestamp": 1787075526,
+      "updatedAt": "2026-08-18T17:52:06.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_931",
       "label": "931",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37584671-SBL 26_27-42893",
-      "headsign": "GCUH",
+      "tripId": "37584672-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
       "stopId": null,
-      "lat": -28.060138702392578,
-      "lon": 153.43727111816406,
+      "lat": -27.961387634277344,
+      "lon": 153.38021850585938,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 40,
-      "timestamp": 1787073704,
-      "updatedAt": "2026-08-18T17:21:44.000Z"
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1787075515,
+      "updatedAt": "2026-08-18T17:51:55.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_936",
       "label": "936",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37586578-SBL 26_27-42893",
-      "headsign": "Tweed Heads",
+      "tripId": "37586580-SBL 26_27-42893",
+      "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.12416648864746,
-      "lon": 153.4747772216797,
+      "lat": -28.172943115234375,
+      "lon": 153.54310607910156,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 35,
-      "timestamp": 1787073707,
-      "updatedAt": "2026-08-18T17:21:47.000Z"
+      "currentStopSequence": 1,
+      "timestamp": 1787075528,
+      "updatedAt": "2026-08-18T17:52:08.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_961",
@@ -74,14 +91,14 @@
       "tripId": "37583161-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.172943115234375,
-      "lon": 153.54310607910156,
+      "lat": -28.057777404785156,
+      "lon": 153.43800354003906,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1787073690,
-      "updatedAt": "2026-08-18T17:21:30.000Z"
+      "currentStopSequence": 41,
+      "timestamp": 1787075537,
+      "updatedAt": "2026-08-18T17:52:17.000Z"
     }
   ]
 }
