@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-19T14:30:48.843Z",
+    "generatedAt": "2026-08-19T15:05:56.249Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,63 +8,97 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 25,
-      "mappedRows": 4,
-      "unmappedRoutes": 21,
-      "vehicleCount": 4
+      "rows": 12,
+      "mappedRows": 6,
+      "unmappedRoutes": 6,
+      "vehicleCount": 6
     }
   },
   "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_239",
+      "label": "239",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37584655-SBL 26_27-42893",
+      "headsign": "GCUH",
+      "stopId": null,
+      "lat": -28.115943908691406,
+      "lon": 153.46966552734375,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1787151944,
+      "updatedAt": "2026-08-19T15:05:44.000Z"
+    },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_244",
       "label": "244",
       "routeId": "750",
       "mode": "bus",
-      "tripId": "37584499-SBL 26_27-42893",
-      "headsign": "Robina station",
+      "tripId": "37584501-SBL 26_27-42893",
+      "headsign": "Broadbeach South station",
       "stopId": null,
-      "lat": -28.036832809448242,
-      "lon": 153.4311065673828,
+      "lat": -28.070777893066406,
+      "lon": 153.37818908691406,
       "bearing": null,
       "speed": null,
-      "status": "in_transit_to",
+      "status": "stopped_at",
       "currentStopSequence": 1,
-      "timestamp": 1787149793,
-      "updatedAt": "2026-08-19T14:29:53.000Z"
+      "timestamp": 1787151942,
+      "updatedAt": "2026-08-19T15:05:42.000Z"
     },
     {
-      "id": "73DD7B678B530932DF783319BBF95E95_447",
-      "label": "447",
-      "routeId": "750",
+      "id": "73DD7B678B530932DF783319BBF95E95_268",
+      "label": "268",
+      "routeId": "700",
       "mode": "bus",
-      "tripId": "37586862-SBL 26_27-42893",
-      "headsign": "Broadbeach South station",
-      "stopId": "ROBINA",
-      "lat": -28.0727481842041,
-      "lon": 153.3772430419922,
+      "tripId": "37584620-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": null,
+      "lat": -27.9637508392334,
+      "lon": 153.38796997070312,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 2,
-      "timestamp": 1787149793,
-      "updatedAt": "2026-08-19T14:29:53.000Z"
+      "currentStopSequence": 3,
+      "timestamp": 1787151941,
+      "updatedAt": "2026-08-19T15:05:41.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_925",
+      "label": "925",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37584370-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": null,
+      "lat": -28.12069320678711,
+      "lon": 153.47254943847656,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 21,
+      "timestamp": 1787151925,
+      "updatedAt": "2026-08-19T15:05:25.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_929",
       "label": "929",
-      "routeId": "700",
+      "routeId": "750",
       "mode": "bus",
-      "tripId": "37584321-SBL 26_27-42893",
+      "tripId": "37584323-SBL 26_27-42893",
       "headsign": "Broadbeach South station",
-      "stopId": "BBS",
-      "lat": -28.0411376953125,
-      "lon": 153.4338836669922,
+      "stopId": null,
+      "lat": -28.080360412597656,
+      "lon": 153.41038513183594,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 43,
-      "timestamp": 1787149806,
-      "updatedAt": "2026-08-19T14:30:06.000Z"
+      "currentStopSequence": 8,
+      "timestamp": 1787151941,
+      "updatedAt": "2026-08-19T15:05:41.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_969",
@@ -74,14 +108,14 @@
       "tripId": "37583131-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.167221069335938,
-      "lon": 153.5216064453125,
+      "lat": -28.018749237060547,
+      "lon": 153.42921447753906,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 9,
-      "timestamp": 1787149791,
-      "updatedAt": "2026-08-19T14:29:51.000Z"
+      "currentStopSequence": 45,
+      "timestamp": 1787151944,
+      "updatedAt": "2026-08-19T15:05:44.000Z"
     }
   ]
 }
