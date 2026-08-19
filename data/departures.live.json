@@ -1,146 +1,306 @@
 {
   "meta": {
-    "generatedAt": "2026-08-19T13:56:07.901Z",
+    "generatedAt": "2026-08-19T14:30:48.843Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 153,
-      "mappedRows": 10,
-      "unmappedStops": 143,
-      "unmappedRoutes": 184,
-      "mappedStopCount": 4,
+      "rows": 251,
+      "mappedRows": 23,
+      "unmappedStops": 228,
+      "unmappedRoutes": 42,
+      "mappedStopCount": 6,
       "incidentCount": 0
     }
   },
   "stops": {
-    "CHMS": [
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-08-19T14:10:24.000Z",
-        "scheduledTime": "2026-08-19T14:09:00.000Z",
-        "epochSeconds": 1787148624,
-        "inMinutes": 14,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
     "ROBINA": [
       {
-        "tripId": "37586860-SBL 26_27-42893",
+        "tripId": "37586862-SBL 26_27-42893",
         "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-19T13:58:55.000Z",
-        "scheduledTime": "2026-08-19T13:57:00.000Z",
-        "epochSeconds": 1787147935,
-        "inMinutes": 3,
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-19T14:31:45.000Z",
+        "scheduledTime": "2026-08-19T14:30:00.000Z",
+        "epochSeconds": 1787149905,
+        "inMinutes": 1,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 2
-      },
-      {
-        "tripId": "37586860-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-19T14:00:33.000Z",
-        "scheduledTime": "2026-08-19T13:58:00.000Z",
-        "epochSeconds": 1787148033,
-        "inMinutes": 4,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37584497-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-19T14:00:59.000Z",
-        "scheduledTime": "2026-08-19T14:00:00.000Z",
-        "epochSeconds": 1787148059,
-        "inMinutes": 5,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
       }
     ],
     "BBS": [
       {
-        "tripId": "37584183-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-19T13:56:51.000Z",
-        "scheduledTime": "2026-08-19T14:01:00.000Z",
-        "epochSeconds": 1787147811,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -4
-      },
-      {
         "tripId": "37584321-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-19T14:32:46.000Z",
+        "expectedTime": "2026-08-19T14:31:19.000Z",
         "scheduledTime": "2026-08-19T14:31:00.000Z",
-        "epochSeconds": 1787149966,
-        "inMinutes": 37,
+        "epochSeconds": 1787149879,
+        "inMinutes": 1,
         "platform": null,
         "status": "on_time",
-        "delayMinutes": 2
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37584652-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-19T14:46:56.000Z",
+        "scheduledTime": "2026-08-19T14:46:00.000Z",
+        "epochSeconds": 1787150816,
+        "inMinutes": 16,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T14:56:04.000Z",
+        "scheduledTime": "2026-08-19T14:58:00.000Z",
+        "epochSeconds": 1787151364,
+        "inMinutes": 25,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:28:41.000Z",
+        "scheduledTime": "2026-08-19T15:32:00.000Z",
+        "epochSeconds": 1787153321,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
       }
     ],
     "BURLEIGH": [
       {
-        "tripId": "37583669-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-19T13:58:34.000Z",
-        "scheduledTime": "2026-08-19T13:59:00.000Z",
-        "epochSeconds": 1787147914,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37583669-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-19T13:59:05.000Z",
-        "scheduledTime": "2026-08-19T13:59:00.000Z",
-        "epochSeconds": 1787147945,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37584321-SBL 26_27-42893",
+        "tripId": "37584652-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-19T14:21:28.000Z",
-        "scheduledTime": "2026-08-19T14:20:00.000Z",
-        "epochSeconds": 1787149288,
-        "inMinutes": 25,
+        "expectedTime": "2026-08-19T14:35:38.000Z",
+        "scheduledTime": "2026-08-19T14:35:00.000Z",
+        "epochSeconds": 1787150138,
+        "inMinutes": 5,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
       },
       {
-        "tripId": "37584321-SBL 26_27-42893",
+        "tripId": "37584652-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-19T14:22:28.000Z",
-        "scheduledTime": "2026-08-19T14:21:00.000Z",
-        "epochSeconds": 1787149348,
-        "inMinutes": 26,
+        "expectedTime": "2026-08-19T14:36:38.000Z",
+        "scheduledTime": "2026-08-19T14:36:00.000Z",
+        "epochSeconds": 1787150198,
+        "inMinutes": 6,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T14:44:36.000Z",
+        "scheduledTime": "2026-08-19T14:43:00.000Z",
+        "epochSeconds": 1787150676,
+        "inMinutes": 14,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T14:45:43.000Z",
+        "scheduledTime": "2026-08-19T14:44:00.000Z",
+        "epochSeconds": 1787150743,
+        "inMinutes": 15,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37584634-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:10:54.000Z",
+        "scheduledTime": "2026-08-19T15:16:00.000Z",
+        "epochSeconds": 1787152254,
+        "inMinutes": 40,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      },
+      {
+        "tripId": "37584634-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:11:27.000Z",
+        "scheduledTime": "2026-08-19T15:16:00.000Z",
+        "epochSeconds": 1787152287,
+        "inMinutes": 41,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      }
+    ],
+    "BBN": [
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T14:57:43.000Z",
+        "scheduledTime": "2026-08-19T15:00:00.000Z",
+        "epochSeconds": 1787151463,
+        "inMinutes": 27,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:25:50.000Z",
+        "scheduledTime": "2026-08-19T15:30:00.000Z",
+        "epochSeconds": 1787153150,
+        "inMinutes": 55,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -4
+      }
+    ],
+    "CAVILL": [
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T15:01:18.000Z",
+        "scheduledTime": "2026-08-19T15:04:00.000Z",
+        "epochSeconds": 1787151678,
+        "inMinutes": 31,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T15:03:15.000Z",
+        "scheduledTime": "2026-08-19T15:06:00.000Z",
+        "epochSeconds": 1787151795,
+        "inMinutes": 32,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:21:14.000Z",
+        "scheduledTime": "2026-08-19T15:22:00.000Z",
+        "epochSeconds": 1787152874,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:22:16.000Z",
+        "scheduledTime": "2026-08-19T15:24:00.000Z",
+        "epochSeconds": 1787152936,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      }
+    ],
+    "SOUTH": [
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T15:09:12.000Z",
+        "scheduledTime": "2026-08-19T15:12:00.000Z",
+        "epochSeconds": 1787152152,
+        "inMinutes": 38,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T15:10:16.000Z",
+        "scheduledTime": "2026-08-19T15:13:00.000Z",
+        "epochSeconds": 1787152216,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:10:19.000Z",
+        "scheduledTime": "2026-08-19T15:09:00.000Z",
+        "epochSeconds": 1787152219,
+        "inMinutes": 40,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37583131-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "GCUH",
+        "expectedTime": "2026-08-19T15:12:47.000Z",
+        "scheduledTime": "2026-08-19T15:15:00.000Z",
+        "epochSeconds": 1787152367,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:12:57.000Z",
+        "scheduledTime": "2026-08-19T15:11:00.000Z",
+        "epochSeconds": 1787152377,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37584620-SBL 26_27-42893",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-19T15:14:20.000Z",
+        "scheduledTime": "2026-08-19T15:12:00.000Z",
+        "epochSeconds": 1787152460,
+        "inMinutes": 44,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
       }
     ]
   },
