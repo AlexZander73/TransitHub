@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20T15:47:42.761Z",
+    "generatedAt": "2026-08-20T16:29:31.120Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -9,10 +9,28 @@
     ],
     "stats": {
       "rows": 2,
-      "mappedRows": 0,
-      "unmappedRoutes": 2,
-      "vehicleCount": 0
+      "mappedRows": 1,
+      "unmappedRoutes": 1,
+      "vehicleCount": 1
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_947",
+      "label": "947",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37583129-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
+      "stopId": "BBN",
+      "lat": -28.022443771362305,
+      "lon": 153.42869567871094,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 15,
+      "timestamp": 1787243351,
+      "updatedAt": "2026-08-20T16:29:11.000Z"
+    }
+  ]
 }
