@@ -1,96 +1,32 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20T14:19:56.856Z",
+    "generatedAt": "2026-08-20T15:03:38.085Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 119,
-      "mappedRows": 7,
-      "unmappedStops": 111,
-      "unmappedRoutes": 45,
-      "mappedStopCount": 3,
+      "rows": 53,
+      "mappedRows": 1,
+      "unmappedStops": 52,
+      "unmappedRoutes": 10,
+      "mappedStopCount": 1,
       "incidentCount": 0
     }
   },
   "stops": {
     "BURLEIGH": [
       {
-        "tripId": "37584321-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-20T14:20:20.000Z",
-        "scheduledTime": "2026-08-20T14:20:00.000Z",
-        "epochSeconds": 1787235620,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37583129-SBL 26_27-42893",
+        "tripId": "37584370-SBL 26_27-42893",
         "routeId": "700",
         "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-20T14:20:50.000Z",
-        "scheduledTime": "2026-08-20T13:44:00.000Z",
-        "epochSeconds": 1787235650,
-        "inMinutes": 1,
+        "expectedTime": "2026-08-20T15:04:00.000Z",
+        "scheduledTime": "2026-08-20T14:59:00.000Z",
+        "epochSeconds": 1787238240,
+        "inMinutes": 0,
         "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 37
-      },
-      {
-        "tripId": "37584321-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-20T14:21:00.000Z",
-        "scheduledTime": "2026-08-20T14:21:00.000Z",
-        "epochSeconds": 1787235660,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "BBS": [
-      {
-        "tripId": "37584321-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-20T14:31:18.000Z",
-        "scheduledTime": "2026-08-20T14:31:00.000Z",
-        "epochSeconds": 1787236278,
-        "inMinutes": 11,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "ROBINA": [
-      {
-        "tripId": "37584348-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-20T14:26:01.000Z",
-        "scheduledTime": "2026-08-20T14:27:00.000Z",
-        "epochSeconds": 1787235961,
-        "inMinutes": 6,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37584348-SBL 26_27-42893",
-        "routeId": "750",
-        "headsign": "Robina station",
-        "expectedTime": "2026-08-20T14:27:41.000Z",
-        "scheduledTime": "2026-08-20T14:28:00.000Z",
-        "epochSeconds": 1787236061,
-        "inMinutes": 8,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
+        "status": "minor_delay",
+        "delayMinutes": 5
       }
     ]
   },
