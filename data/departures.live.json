@@ -1,34 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-08-20T15:03:38.085Z",
+    "generatedAt": "2026-08-20T15:47:42.761Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 53,
-      "mappedRows": 1,
-      "unmappedStops": 52,
-      "unmappedRoutes": 10,
-      "mappedStopCount": 1,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 3,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "BURLEIGH": [
-      {
-        "tripId": "37584370-SBL 26_27-42893",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-20T15:04:00.000Z",
-        "scheduledTime": "2026-08-20T14:59:00.000Z",
-        "epochSeconds": 1787238240,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 5
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
