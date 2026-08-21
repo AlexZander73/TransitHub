@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generatedAt": "2026-08-21T17:01:36.036Z",
+    "generatedAt": "2026-08-21T17:43:20.469Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
+      "rows": 20,
       "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 81,
+      "unmappedStops": 20,
+      "unmappedRoutes": 78,
       "mappedStopCount": 0,
       "incidentCount": 0
     }
