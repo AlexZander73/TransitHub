@@ -1,19 +1,48 @@
 {
   "meta": {
-    "generatedAt": "2026-08-21T17:43:20.469Z",
+    "generatedAt": "2026-08-21T18:03:51.798Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 20,
-      "mappedRows": 0,
-      "unmappedStops": 20,
-      "unmappedRoutes": 78,
-      "mappedStopCount": 0,
+      "rows": 13,
+      "mappedRows": 2,
+      "unmappedStops": 11,
+      "unmappedRoutes": 79,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "37580517-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-21T18:05:00.000Z",
+        "scheduledTime": "2026-08-21T18:05:00.000Z",
+        "epochSeconds": 1787335500,
+        "inMinutes": 1,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "37580517-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-21T18:16:27.000Z",
+        "scheduledTime": "2026-08-21T18:15:00.000Z",
+        "epochSeconds": 1787336187,
+        "inMinutes": 13,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ]
+  },
   "incidents": []
 }
