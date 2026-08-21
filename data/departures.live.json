@@ -1,81 +1,153 @@
 {
   "meta": {
-    "generatedAt": "2026-08-21T18:54:36.216Z",
+    "generatedAt": "2026-08-21T19:22:20.540Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 144,
-      "mappedRows": 17,
-      "unmappedStops": 127,
-      "unmappedRoutes": 113,
-      "mappedStopCount": 2,
+      "rows": 224,
+      "mappedRows": 25,
+      "unmappedStops": 199,
+      "unmappedRoutes": 138,
+      "mappedStopCount": 8,
       "incidentCount": 0
     }
   },
   "stops": {
+    "INDR": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:12:08.000Z",
+        "scheduledTime": "2026-08-21T20:12:00.000Z",
+        "epochSeconds": 1787343128,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:14:15.000Z",
+        "scheduledTime": "2026-08-21T20:14:00.000Z",
+        "epochSeconds": 1787343255,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "TOOW": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:19:42.000Z",
+        "scheduledTime": "2026-08-21T20:18:00.000Z",
+        "epochSeconds": 1787343582,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:21:07.000Z",
+        "scheduledTime": "2026-08-21T20:19:00.000Z",
+        "epochSeconds": 1787343667,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "ROMA": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:32:07.000Z",
+        "scheduledTime": "2026-08-21T20:30:00.000Z",
+        "epochSeconds": 1787344327,
+        "inMinutes": 70,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "KING": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:33:07.000Z",
+        "scheduledTime": "2026-08-21T20:31:00.000Z",
+        "epochSeconds": 1787344387,
+        "inMinutes": 71,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "CULT": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:36:07.000Z",
+        "scheduledTime": "2026-08-21T20:34:00.000Z",
+        "epochSeconds": 1787344567,
+        "inMinutes": 74,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-08-21T20:46:07.000Z",
+        "scheduledTime": "2026-08-21T20:44:00.000Z",
+        "epochSeconds": 1787345167,
+        "inMinutes": 84,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "ROBINA": [
+      {
+        "tripId": "37577047-SBL 26_27-42892",
+        "routeId": "750",
+        "headsign": "Robina station",
+        "expectedTime": "2026-08-21T19:56:57.000Z",
+        "scheduledTime": "2026-08-21T19:57:00.000Z",
+        "epochSeconds": 1787342217,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37577047-SBL 26_27-42892",
+        "routeId": "750",
+        "headsign": "Robina station",
+        "expectedTime": "2026-08-21T19:58:35.000Z",
+        "scheduledTime": "2026-08-21T19:58:00.000Z",
+        "epochSeconds": 1787342315,
+        "inMinutes": 36,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ],
     "BBS": [
-      {
-        "tripId": "37578993-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:04:15.000Z",
-        "scheduledTime": "2026-08-21T19:05:00.000Z",
-        "epochSeconds": 1787339055,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37580525-SBL 26_27-42892",
-        "routeId": "777",
-        "headsign": "Gold Coast Airport",
-        "expectedTime": "2026-08-21T19:05:00.000Z",
-        "scheduledTime": "2026-08-21T19:05:00.000Z",
-        "epochSeconds": 1787339100,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37576984-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-21T19:13:00.000Z",
-        "scheduledTime": "2026-08-21T19:13:00.000Z",
-        "epochSeconds": 1787339580,
-        "inMinutes": 18,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37579010-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:15:52.000Z",
-        "scheduledTime": "2026-08-21T19:20:00.000Z",
-        "epochSeconds": 1787339752,
-        "inMinutes": 21,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -4
-      },
-      {
-        "tripId": "37580502-SBL 26_27-42892",
-        "routeId": "777",
-        "headsign": "Gold Coast Airport",
-        "expectedTime": "2026-08-21T19:20:00.000Z",
-        "scheduledTime": "2026-08-21T19:20:00.000Z",
-        "epochSeconds": 1787340000,
-        "inMinutes": 25,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
       {
         "tripId": "37579012-SBL 26_27-42892",
         "routeId": "700",
@@ -83,19 +155,31 @@
         "expectedTime": "2026-08-21T19:32:00.000Z",
         "scheduledTime": "2026-08-21T19:32:00.000Z",
         "epochSeconds": 1787340720,
-        "inMinutes": 37,
+        "inMinutes": 10,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
       },
       {
+        "tripId": "37579025-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-21T19:32:20.000Z",
+        "scheduledTime": "2026-08-21T19:35:00.000Z",
+        "epochSeconds": 1787340740,
+        "inMinutes": 10,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
         "tripId": "37580509-SBL 26_27-42892",
         "routeId": "777",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:40:39.000Z",
+        "expectedTime": "2026-08-21T19:40:37.000Z",
         "scheduledTime": "2026-08-21T19:44:00.000Z",
-        "epochSeconds": 1787341239,
-        "inMinutes": 46,
+        "epochSeconds": 1787341237,
+        "inMinutes": 18,
         "platform": null,
         "status": "early",
         "delayMinutes": -3
@@ -107,7 +191,19 @@
         "expectedTime": "2026-08-21T19:51:00.000Z",
         "scheduledTime": "2026-08-21T19:51:00.000Z",
         "epochSeconds": 1787341860,
-        "inMinutes": 56,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580532-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-21T20:06:00.000Z",
+        "scheduledTime": "2026-08-21T20:06:00.000Z",
+        "epochSeconds": 1787342760,
+        "inMinutes": 44,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
@@ -115,73 +211,49 @@
     ],
     "BURLEIGH": [
       {
-        "tripId": "37579010-SBL 26_27-42892",
+        "tripId": "37579025-SBL 26_27-42892",
         "routeId": "700",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:04:41.000Z",
-        "scheduledTime": "2026-08-21T19:08:00.000Z",
-        "epochSeconds": 1787339081,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -3
-      },
-      {
-        "tripId": "37579010-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:05:47.000Z",
-        "scheduledTime": "2026-08-21T19:08:00.000Z",
-        "epochSeconds": 1787339147,
-        "inMinutes": 11,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -2
-      },
-      {
-        "tripId": "37580525-SBL 26_27-42892",
-        "routeId": "777",
-        "headsign": "Gold Coast Airport",
-        "expectedTime": "2026-08-21T19:16:27.000Z",
-        "scheduledTime": "2026-08-21T19:15:00.000Z",
-        "epochSeconds": 1787339787,
-        "inMinutes": 22,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37576984-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-21T19:24:08.000Z",
-        "scheduledTime": "2026-08-21T19:25:00.000Z",
-        "epochSeconds": 1787340248,
-        "inMinutes": 30,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37576984-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Tweed Heads",
-        "expectedTime": "2026-08-21T19:24:42.000Z",
-        "scheduledTime": "2026-08-21T19:25:00.000Z",
-        "epochSeconds": 1787340282,
-        "inMinutes": 30,
+        "expectedTime": "2026-08-21T19:22:40.000Z",
+        "scheduledTime": "2026-08-21T19:23:00.000Z",
+        "epochSeconds": 1787340160,
+        "inMinutes": 0,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
       },
       {
+        "tripId": "37576984-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-21T19:25:07.000Z",
+        "scheduledTime": "2026-08-21T19:25:00.000Z",
+        "epochSeconds": 1787340307,
+        "inMinutes": 3,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37576984-SBL 26_27-42892",
+        "routeId": "700",
+        "headsign": "Tweed Heads",
+        "expectedTime": "2026-08-21T19:25:42.000Z",
+        "scheduledTime": "2026-08-21T19:25:00.000Z",
+        "epochSeconds": 1787340342,
+        "inMinutes": 3,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
         "tripId": "37580509-SBL 26_27-42892",
         "routeId": "777",
         "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-21T19:30:57.000Z",
+        "expectedTime": "2026-08-21T19:30:55.000Z",
         "scheduledTime": "2026-08-21T19:34:00.000Z",
-        "epochSeconds": 1787340657,
-        "inMinutes": 36,
+        "epochSeconds": 1787340655,
+        "inMinutes": 9,
         "platform": null,
         "status": "early",
         "delayMinutes": -3
@@ -193,7 +265,7 @@
         "expectedTime": "2026-08-21T19:31:27.000Z",
         "scheduledTime": "2026-08-21T19:30:00.000Z",
         "epochSeconds": 1787340687,
-        "inMinutes": 37,
+        "inMinutes": 9,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 1
@@ -205,7 +277,7 @@
         "expectedTime": "2026-08-21T19:43:08.000Z",
         "scheduledTime": "2026-08-21T19:44:00.000Z",
         "epochSeconds": 1787341388,
-        "inMinutes": 49,
+        "inMinutes": 21,
         "platform": null,
         "status": "on_time",
         "delayMinutes": -1
@@ -217,10 +289,46 @@
         "expectedTime": "2026-08-21T19:43:42.000Z",
         "scheduledTime": "2026-08-21T19:44:00.000Z",
         "epochSeconds": 1787341422,
-        "inMinutes": 49,
+        "inMinutes": 21,
         "platform": null,
         "status": "on_time",
         "delayMinutes": 0
+      },
+      {
+        "tripId": "37580524-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-21T20:02:46.000Z",
+        "scheduledTime": "2026-08-21T20:01:00.000Z",
+        "epochSeconds": 1787342566,
+        "inMinutes": 40,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37580505-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Broadbeach South station",
+        "expectedTime": "2026-08-21T20:19:00.000Z",
+        "scheduledTime": "2026-08-21T20:19:00.000Z",
+        "epochSeconds": 1787343540,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37580532-SBL 26_27-42892",
+        "routeId": "777",
+        "headsign": "Gold Coast Airport",
+        "expectedTime": "2026-08-21T20:20:33.000Z",
+        "scheduledTime": "2026-08-21T20:17:00.000Z",
+        "epochSeconds": 1787343633,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
       }
     ]
   },
