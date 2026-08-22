@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-22T14:17:02.829Z",
+    "generatedAt": "2026-08-22T14:46:06.682Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,80 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 55,
-      "mappedRows": 4,
-      "unmappedRoutes": 51,
-      "vehicleCount": 4
+      "rows": 40,
+      "mappedRows": 0,
+      "unmappedRoutes": 40,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_1004",
-      "label": "1004",
-      "routeId": "750",
-      "mode": "bus",
-      "tripId": "37578660-SBL 26_27-42892",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.039888381958008,
-      "lon": 153.41464233398438,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 21,
-      "timestamp": 1787408188,
-      "updatedAt": "2026-08-22T14:16:28.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_5775",
-      "label": "5775",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37580079-SBL 26_27-42892",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.13605499267578,
-      "lon": 153.4866943359375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 20,
-      "timestamp": 1787408190,
-      "updatedAt": "2026-08-22T14:16:30.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_929",
-      "label": "929",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37579302-SBL 26_27-42892",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.05061149597168,
-      "lon": 153.43624877929688,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 42,
-      "timestamp": 1787408199,
-      "updatedAt": "2026-08-22T14:16:39.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_931",
-      "label": "931",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37579877-SBL 26_27-42892",
-      "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -28.118999481201172,
-      "lon": 153.47149658203125,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 20,
-      "timestamp": 1787408197,
-      "updatedAt": "2026-08-22T14:16:37.000Z"
-    }
-  ]
+  "vehicles": []
 }

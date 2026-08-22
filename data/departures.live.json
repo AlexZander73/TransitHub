@@ -1,86 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-08-22T14:17:02.829Z",
+    "generatedAt": "2026-08-22T14:46:06.682Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 53,
-      "mappedRows": 5,
-      "unmappedStops": 48,
-      "unmappedRoutes": 86,
-      "mappedStopCount": 3,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 62,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "CARI": [
-      {
-        "tripId": "37873187-BT 26_27-43284",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-08-22T14:17:17.000Z",
-        "scheduledTime": "2026-08-22T13:51:00.000Z",
-        "epochSeconds": 1787408237,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 26
-      }
-    ],
-    "BBS": [
-      {
-        "tripId": "37579302-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-22T14:19:00.000Z",
-        "scheduledTime": "2026-08-22T14:16:00.000Z",
-        "epochSeconds": 1787408340,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "minor_delay",
-        "delayMinutes": 3
-      },
-      {
-        "tripId": "37580079-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-22T14:31:24.000Z",
-        "scheduledTime": "2026-08-22T14:31:00.000Z",
-        "epochSeconds": 1787409084,
-        "inMinutes": 14,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "BURLEIGH": [
-      {
-        "tripId": "37580079-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-22T14:20:03.000Z",
-        "scheduledTime": "2026-08-22T14:20:00.000Z",
-        "epochSeconds": 1787408403,
-        "inMinutes": 3,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37580079-SBL 26_27-42892",
-        "routeId": "700",
-        "headsign": "Broadbeach South station",
-        "expectedTime": "2026-08-22T14:21:02.000Z",
-        "scheduledTime": "2026-08-22T14:21:00.000Z",
-        "epochSeconds": 1787408462,
-        "inMinutes": 4,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
