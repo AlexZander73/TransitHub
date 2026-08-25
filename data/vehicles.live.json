@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-25T17:54:18.178Z",
+    "generatedAt": "2026-08-25T18:33:46.929Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,9 +8,9 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 10,
+      "rows": 39,
       "mappedRows": 5,
-      "unmappedRoutes": 5,
+      "unmappedRoutes": 34,
       "vehicleCount": 5
     }
   },
@@ -23,14 +23,48 @@
       "tripId": "UNPLANNED-96549637",
       "headsign": "Service",
       "stopId": null,
-      "lat": -28.168249130249023,
-      "lon": 153.5431671142578,
+      "lat": -28.018220901489258,
+      "lon": 153.42921447753906,
       "bearing": null,
       "speed": null,
       "status": "stopped_at",
-      "currentStopSequence": 2,
-      "timestamp": 1787680410,
-      "updatedAt": "2026-08-25T17:53:30.000Z"
+      "currentStopSequence": 45,
+      "timestamp": 1787682805,
+      "updatedAt": "2026-08-25T18:33:25.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_105",
+      "label": "105",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "37587042-SBL 26_27-42893",
+      "headsign": "Gold Coast Airport",
+      "stopId": "BBS",
+      "lat": -28.035194396972656,
+      "lon": 153.43089294433594,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1787682790,
+      "updatedAt": "2026-08-25T18:33:10.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_387",
+      "label": "387",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37583467-SBL 26_27-42893",
+      "headsign": "Broadbeach South station",
+      "stopId": null,
+      "lat": -28.174415588378906,
+      "lon": 153.5421905517578,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1787682808,
+      "updatedAt": "2026-08-25T18:33:28.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_923",
@@ -40,31 +74,14 @@
       "tripId": "UNPLANNED-96549408",
       "headsign": "Service",
       "stopId": null,
-      "lat": -28.0098876953125,
-      "lon": 153.42835998535156,
+      "lat": -28.16469383239746,
+      "lon": 153.5177764892578,
       "bearing": null,
       "speed": null,
       "status": "stopped_at",
-      "currentStopSequence": 13,
-      "timestamp": 1787680423,
-      "updatedAt": "2026-08-25T17:53:43.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_929",
-      "label": "929",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "UNPLANNED-96549412",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -28.14383316040039,
-      "lon": 153.49533081054688,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 42,
-      "timestamp": 1787680431,
-      "updatedAt": "2026-08-25T17:53:51.000Z"
+      "currentStopSequence": 48,
+      "timestamp": 1787682812,
+      "updatedAt": "2026-08-25T18:33:32.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_931",
@@ -74,31 +91,14 @@
       "tripId": "UNPLANNED-96549410",
       "headsign": "Service",
       "stopId": null,
-      "lat": -27.961360931396484,
-      "lon": 153.3802490234375,
+      "lat": -28.03733253479004,
+      "lon": 153.43199157714844,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1787680408,
-      "updatedAt": "2026-08-25T17:53:28.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_962",
-      "label": "962",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "UNPLANNED-96549633",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -28.054805755615234,
-      "lon": 153.437255859375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 41,
-      "timestamp": 1787680425,
-      "updatedAt": "2026-08-25T17:53:45.000Z"
+      "currentStopSequence": 17,
+      "timestamp": 1787682809,
+      "updatedAt": "2026-08-25T18:33:29.000Z"
     }
   ]
 }
