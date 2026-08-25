@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-25T16:41:20.799Z",
+    "generatedAt": "2026-08-25T17:15:30.941Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -22,15 +22,15 @@
       "mode": "bus",
       "tripId": "37586578-SBL 26_27-42893",
       "headsign": "Tweed Heads",
-      "stopId": "SOUTH",
-      "lat": -27.969776153564453,
-      "lon": 153.40988159179688,
+      "stopId": "BURLEIGH",
+      "lat": -28.090137481689453,
+      "lon": 153.45310974121094,
       "bearing": null,
       "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 5,
-      "timestamp": 1787676059,
-      "updatedAt": "2026-08-25T16:40:59.000Z"
+      "status": "stopped_at",
+      "currentStopSequence": 23,
+      "timestamp": 1787678097,
+      "updatedAt": "2026-08-25T17:14:57.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_923",
@@ -40,31 +40,31 @@
       "tripId": "37584636-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.111055374145508,
-      "lon": 153.46682739257812,
+      "lat": -27.971582412719727,
+      "lon": 153.40692138671875,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 28,
-      "timestamp": 1787676061,
-      "updatedAt": "2026-08-25T16:41:01.000Z"
+      "currentStopSequence": 56,
+      "timestamp": 1787678099,
+      "updatedAt": "2026-08-25T17:14:59.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_929",
       "label": "929",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37584655-SBL 26_27-42893",
-      "headsign": "GCUH",
+      "tripId": "37584656-SBL 26_27-42893",
+      "headsign": "Tweed Heads",
       "stopId": "SOUTH",
-      "lat": -27.970081329345703,
-      "lon": 153.41482543945312,
+      "lat": -27.969831466674805,
+      "lon": 153.4097442626953,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 54,
-      "timestamp": 1787676063,
-      "updatedAt": "2026-08-25T16:41:03.000Z"
+      "currentStopSequence": 5,
+      "timestamp": 1787678093,
+      "updatedAt": "2026-08-25T17:14:53.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_931",
@@ -73,32 +73,32 @@
       "mode": "bus",
       "tripId": "37584671-SBL 26_27-42893",
       "headsign": "GCUH",
-      "stopId": null,
-      "lat": -28.172943115234375,
-      "lon": 153.54310607910156,
+      "stopId": "BURLEIGH",
+      "lat": -28.090415954589844,
+      "lon": 153.45291137695312,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1787676055,
-      "updatedAt": "2026-08-25T16:40:55.000Z"
+      "currentStopSequence": 35,
+      "timestamp": 1787678101,
+      "updatedAt": "2026-08-25T17:15:01.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_962",
       "label": "962",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37583159-SBL 26_27-42893",
-      "headsign": "Tweed Heads",
-      "stopId": "BURLEIGH",
-      "lat": -28.079692840576172,
-      "lon": 153.44680786132812,
+      "tripId": "37583161-SBL 26_27-42893",
+      "headsign": "GCUH",
+      "stopId": null,
+      "lat": -28.17130470275879,
+      "lon": 153.54432678222656,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 23,
-      "timestamp": 1787676062,
-      "updatedAt": "2026-08-25T16:41:02.000Z"
+      "currentStopSequence": 1,
+      "timestamp": 1787678086,
+      "updatedAt": "2026-08-25T17:14:46.000Z"
     }
   ]
 }
