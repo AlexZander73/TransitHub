@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-08-25T15:58:33.606Z",
+    "generatedAt": "2026-08-25T16:41:20.799Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,10 +8,10 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 9,
-      "mappedRows": 7,
-      "unmappedRoutes": 2,
-      "vehicleCount": 7
+      "rows": 6,
+      "mappedRows": 5,
+      "unmappedRoutes": 1,
+      "vehicleCount": 5
     }
   },
   "vehicles": [
@@ -20,51 +20,17 @@
       "label": "1011",
       "routeId": "700",
       "mode": "bus",
-      "tripId": "37586577-SBL 26_27-42893",
-      "headsign": "GCUH",
-      "stopId": null,
-      "lat": -28.02235984802246,
-      "lon": 153.42843627929688,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 45,
-      "timestamp": 1787673491,
-      "updatedAt": "2026-08-25T15:58:11.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_244",
-      "label": "244",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37584620-SBL 26_27-42893",
+      "tripId": "37586578-SBL 26_27-42893",
       "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -28.14385986328125,
-      "lon": 153.495361328125,
+      "stopId": "SOUTH",
+      "lat": -27.969776153564453,
+      "lon": 153.40988159179688,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 42,
-      "timestamp": 1787673496,
-      "updatedAt": "2026-08-25T15:58:16.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_259",
-      "label": "259",
-      "routeId": "700",
-      "mode": "bus",
-      "tripId": "37583182-SBL 26_27-42893",
-      "headsign": "GCUH",
-      "stopId": null,
-      "lat": -27.96269416809082,
-      "lon": 153.38394165039062,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 58,
-      "timestamp": 1787673489,
-      "updatedAt": "2026-08-25T15:58:09.000Z"
+      "currentStopSequence": 5,
+      "timestamp": 1787676059,
+      "updatedAt": "2026-08-25T16:40:59.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_923",
@@ -74,31 +40,14 @@
       "tripId": "37584636-SBL 26_27-42893",
       "headsign": "GCUH",
       "stopId": null,
-      "lat": -28.172527313232422,
-      "lon": 153.54322814941406,
+      "lat": -28.111055374145508,
+      "lon": 153.46682739257812,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1787672565,
-      "updatedAt": "2026-08-25T15:42:45.000Z"
-    },
-    {
-      "id": "73DD7B678B530932DF783319BBF95E95_926",
-      "label": "926",
-      "routeId": "750",
-      "mode": "bus",
-      "tripId": "37584501-SBL 26_27-42893",
-      "headsign": "Broadbeach South station",
-      "stopId": null,
-      "lat": -28.070831298828125,
-      "lon": 153.37863159179688,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 1,
-      "timestamp": 1787673502,
-      "updatedAt": "2026-08-25T15:58:22.000Z"
+      "currentStopSequence": 28,
+      "timestamp": 1787676061,
+      "updatedAt": "2026-08-25T16:41:01.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_929",
@@ -107,15 +56,32 @@
       "mode": "bus",
       "tripId": "37584655-SBL 26_27-42893",
       "headsign": "GCUH",
-      "stopId": null,
-      "lat": -28.16680335998535,
-      "lon": 153.5247802734375,
+      "stopId": "SOUTH",
+      "lat": -27.970081329345703,
+      "lon": 153.41482543945312,
       "bearing": null,
       "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 8,
-      "timestamp": 1787673502,
-      "updatedAt": "2026-08-25T15:58:22.000Z"
+      "status": "in_transit_to",
+      "currentStopSequence": 54,
+      "timestamp": 1787676063,
+      "updatedAt": "2026-08-25T16:41:03.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_931",
+      "label": "931",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "37584671-SBL 26_27-42893",
+      "headsign": "GCUH",
+      "stopId": null,
+      "lat": -28.172943115234375,
+      "lon": 153.54310607910156,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1787676055,
+      "updatedAt": "2026-08-25T16:40:55.000Z"
     },
     {
       "id": "73DD7B678B530932DF783319BBF95E95_962",
@@ -124,15 +90,15 @@
       "mode": "bus",
       "tripId": "37583159-SBL 26_27-42893",
       "headsign": "Tweed Heads",
-      "stopId": null,
-      "lat": -27.970081329345703,
-      "lon": 153.37635803222656,
+      "stopId": "BURLEIGH",
+      "lat": -28.079692840576172,
+      "lon": 153.44680786132812,
       "bearing": null,
       "speed": null,
       "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1787673479,
-      "updatedAt": "2026-08-25T15:57:59.000Z"
+      "currentStopSequence": 23,
+      "timestamp": 1787676062,
+      "updatedAt": "2026-08-25T16:41:02.000Z"
     }
   ]
 }
