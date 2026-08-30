@@ -1,19 +1,216 @@
 {
   "meta": {
-    "generatedAt": "2026-08-30T15:19:42.201Z",
+    "generatedAt": "2026-08-30T18:41:44.695Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 1,
-      "mappedStopCount": 0,
+      "rows": 178,
+      "mappedRows": 16,
+      "unmappedStops": 162,
+      "unmappedRoutes": 97,
+      "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "BBS": [
+      {
+        "tripId": "38578967-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:01:32.000Z",
+        "scheduledTime": "2026-08-30T19:03:00.000Z",
+        "epochSeconds": 1788116492,
+        "inMinutes": 20,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576179-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:05:00.000Z",
+        "scheduledTime": "2026-08-30T19:05:00.000Z",
+        "epochSeconds": 1788116700,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "38578983-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:16:32.000Z",
+        "scheduledTime": "2026-08-30T19:18:00.000Z",
+        "epochSeconds": 1788117392,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:17:00.000Z",
+        "scheduledTime": "2026-08-30T19:17:00.000Z",
+        "epochSeconds": 1788117420,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "38582555-SBL 26_27-43933",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:20:00.000Z",
+        "scheduledTime": "2026-08-30T19:20:00.000Z",
+        "epochSeconds": 1788117600,
+        "inMinutes": 38,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "38582554-SBL 26_27-43933",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:36:00.000Z",
+        "scheduledTime": "2026-08-30T19:36:00.000Z",
+        "epochSeconds": 1788118560,
+        "inMinutes": 54,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "38582556-SBL 26_27-43933",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T18:46:23.000Z",
+        "scheduledTime": "2026-08-30T18:46:00.000Z",
+        "epochSeconds": 1788115583,
+        "inMinutes": 5,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "38578967-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T18:50:25.000Z",
+        "scheduledTime": "2026-08-30T18:51:00.000Z",
+        "epochSeconds": 1788115825,
+        "inMinutes": 9,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38578967-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T18:51:26.000Z",
+        "scheduledTime": "2026-08-30T18:52:00.000Z",
+        "epochSeconds": 1788115886,
+        "inMinutes": 10,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38578983-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:05:25.000Z",
+        "scheduledTime": "2026-08-30T19:06:00.000Z",
+        "epochSeconds": 1788116725,
+        "inMinutes": 24,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38578983-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:06:26.000Z",
+        "scheduledTime": "2026-08-30T19:07:00.000Z",
+        "epochSeconds": 1788116786,
+        "inMinutes": 25,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576179-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:15:59.000Z",
+        "scheduledTime": "2026-08-30T19:17:00.000Z",
+        "epochSeconds": 1788117359,
+        "inMinutes": 34,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576179-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:16:28.000Z",
+        "scheduledTime": "2026-08-30T19:17:00.000Z",
+        "epochSeconds": 1788117388,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:27:59.000Z",
+        "scheduledTime": "2026-08-30T19:29:00.000Z",
+        "epochSeconds": 1788118079,
+        "inMinutes": 46,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:28:28.000Z",
+        "scheduledTime": "2026-08-30T19:29:00.000Z",
+        "epochSeconds": 1788118108,
+        "inMinutes": 47,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38582555-SBL 26_27-43933",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-08-30T19:31:23.000Z",
+        "scheduledTime": "2026-08-30T19:31:00.000Z",
+        "epochSeconds": 1788118283,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
