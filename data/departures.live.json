@@ -1,44 +1,198 @@
 {
   "meta": {
-    "generatedAt": "2026-09-03T15:00:18.188Z",
+    "generatedAt": "2026-09-03T18:30:27.986Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 56,
-      "mappedRows": 2,
-      "unmappedStops": 54,
-      "unmappedRoutes": 11,
-      "mappedStopCount": 1,
+      "rows": 96,
+      "mappedRows": 14,
+      "unmappedStops": 82,
+      "unmappedRoutes": 76,
+      "mappedStopCount": 6,
       "incidentCount": 0
     }
   },
   "stops": {
-    "BURLEIGH": [
+    "BBS": [
       {
-        "tripId": "38579885-SBL 26_27-43933",
-        "routeId": "700",
+        "tripId": "38582556-SBL 26_27-43933",
+        "routeId": "777",
         "headsign": "Service",
-        "expectedTime": "2026-09-03T15:00:30.000Z",
-        "scheduledTime": "2026-09-03T14:59:00.000Z",
-        "epochSeconds": 1788447630,
-        "inMinutes": 0,
+        "expectedTime": "2026-09-03T18:35:00.000Z",
+        "scheduledTime": "2026-09-03T18:35:00.000Z",
+        "epochSeconds": 1788460500,
+        "inMinutes": 5,
         "platform": null,
         "status": "on_time",
-        "delayMinutes": 2
+        "delayMinutes": 0
       },
       {
-        "tripId": "38579885-SBL 26_27-43933",
+        "tripId": "38578967-SBL 26_27-43933",
         "routeId": "700",
         "headsign": "Service",
-        "expectedTime": "2026-09-03T15:01:00.000Z",
-        "scheduledTime": "2026-09-03T14:59:00.000Z",
-        "epochSeconds": 1788447660,
-        "inMinutes": 1,
+        "expectedTime": "2026-09-03T19:04:12.000Z",
+        "scheduledTime": "2026-09-03T19:03:00.000Z",
+        "epochSeconds": 1788462252,
+        "inMinutes": 34,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T19:17:00.000Z",
+        "scheduledTime": "2026-09-03T19:17:00.000Z",
+        "epochSeconds": 1788463020,
+        "inMinutes": 47,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "BURLEIGH": [
+      {
+        "tripId": "38582556-SBL 26_27-43933",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T18:46:23.000Z",
+        "scheduledTime": "2026-09-03T18:46:00.000Z",
+        "epochSeconds": 1788461183,
+        "inMinutes": 16,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "38578967-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T18:53:05.000Z",
+        "scheduledTime": "2026-09-03T18:51:00.000Z",
+        "epochSeconds": 1788461585,
+        "inMinutes": 23,
         "platform": null,
         "status": "minor_delay",
         "delayMinutes": 2
+      },
+      {
+        "tripId": "38578967-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T18:54:06.000Z",
+        "scheduledTime": "2026-09-03T18:52:00.000Z",
+        "epochSeconds": 1788461646,
+        "inMinutes": 24,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T19:27:59.000Z",
+        "scheduledTime": "2026-09-03T19:29:00.000Z",
+        "epochSeconds": 1788463679,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "38576187-SBL 26_27-43933",
+        "routeId": "700",
+        "headsign": "Service",
+        "expectedTime": "2026-09-03T19:28:28.000Z",
+        "scheduledTime": "2026-09-03T19:29:00.000Z",
+        "epochSeconds": 1788463708,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "CHMS": [
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T19:38:45.000Z",
+        "scheduledTime": "2026-09-03T19:35:00.000Z",
+        "epochSeconds": 1788464325,
+        "inMinutes": 68,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T19:39:45.000Z",
+        "scheduledTime": "2026-09-03T19:36:00.000Z",
+        "epochSeconds": 1788464385,
+        "inMinutes": 69,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      }
+    ],
+    "RBWH": [
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T19:50:45.000Z",
+        "scheduledTime": "2026-09-03T19:47:00.000Z",
+        "epochSeconds": 1788465045,
+        "inMinutes": 80,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T19:52:45.000Z",
+        "scheduledTime": "2026-09-03T19:49:00.000Z",
+        "epochSeconds": 1788465165,
+        "inMinutes": 82,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      }
+    ],
+    "ROMA": [
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T19:57:45.000Z",
+        "scheduledTime": "2026-09-03T19:54:00.000Z",
+        "epochSeconds": 1788465465,
+        "inMinutes": 87,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      }
+    ],
+    "QSTN": [
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-03T20:02:45.000Z",
+        "scheduledTime": "2026-09-03T19:59:00.000Z",
+        "epochSeconds": 1788465765,
+        "inMinutes": 92,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
       }
     ]
   },
