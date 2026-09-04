@@ -1,46 +1,46 @@
 {
   "meta": {
-    "generatedAt": "2026-09-04T14:30:00.637Z",
+    "generatedAt": "2026-09-04T17:44:15.783Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 23,
-      "mappedRows": 3,
-      "unmappedStops": 20,
-      "unmappedRoutes": 71,
+      "rows": 13,
+      "mappedRows": 2,
+      "unmappedStops": 11,
+      "unmappedRoutes": 85,
       "mappedStopCount": 2,
       "incidentCount": 0
     }
   },
   "stops": {
-    "ROBINA": [
+    "BBS": [
       {
-        "tripId": "38582374-SBL 26_27-43933",
-        "routeId": "750",
+        "tripId": "38571719-SBL 26_27-43930",
+        "routeId": "777",
         "headsign": "Service",
-        "expectedTime": "2026-09-04T14:30:50.000Z",
-        "scheduledTime": "2026-09-04T13:57:00.000Z",
-        "epochSeconds": 1788532250,
-        "inMinutes": 1,
+        "expectedTime": "2026-09-04T18:05:00.000Z",
+        "scheduledTime": "2026-09-04T18:05:00.000Z",
+        "epochSeconds": 1788545100,
+        "inMinutes": 21,
         "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 34
+        "status": "on_time",
+        "delayMinutes": 0
       }
     ],
-    "CARI": [
+    "BURLEIGH": [
       {
-        "tripId": "37819722-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-09-04T14:32:03.000Z",
-        "scheduledTime": "2026-09-04T13:43:00.000Z",
-        "epochSeconds": 1788532323,
-        "inMinutes": 2,
+        "tripId": "38571719-SBL 26_27-43930",
+        "routeId": "777",
+        "headsign": "Service",
+        "expectedTime": "2026-09-04T18:15:45.000Z",
+        "scheduledTime": "2026-09-04T18:15:00.000Z",
+        "epochSeconds": 1788545745,
+        "inMinutes": 32,
         "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 49
+        "status": "on_time",
+        "delayMinutes": 1
       }
     ]
   },
