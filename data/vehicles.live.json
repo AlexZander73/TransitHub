@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-05T17:05:46.037Z",
+    "generatedAt": "2026-09-05T19:01:32.302Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,97 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 35,
-      "mappedRows": 0,
-      "unmappedRoutes": 35,
-      "vehicleCount": 0
+      "rows": 57,
+      "mappedRows": 5,
+      "unmappedRoutes": 52,
+      "vehicleCount": 5
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_109",
+      "label": "109",
+      "routeId": "777",
+      "mode": "bus",
+      "tripId": "38576048-SBL 26_27-43931",
+      "headsign": "Service",
+      "stopId": "BBS",
+      "lat": -28.034944534301758,
+      "lon": 153.4308319091797,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1788634854,
+      "updatedAt": "2026-09-05T19:00:54.000Z"
+    },
+    {
+      "id": "A7393ED51E387246BB3D6249943091E8_2046",
+      "label": "2046",
+      "routeId": "222",
+      "mode": "bus",
+      "tripId": "37878773-BT 26_27-43286",
+      "headsign": "Roma Street station",
+      "stopId": "CARI",
+      "lat": -27.49019432067871,
+      "lon": 153.10232543945312,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1788633548,
+      "updatedAt": "2026-09-05T18:39:08.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_255",
+      "label": "255",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "38571864-SBL 26_27-43931",
+      "headsign": "Service",
+      "stopId": null,
+      "lat": -28.042333602905273,
+      "lon": 153.43438720703125,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 3,
+      "timestamp": 1788634855,
+      "updatedAt": "2026-09-05T19:00:55.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_269",
+      "label": "269",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "38571979-SBL 26_27-43931",
+      "headsign": "Service",
+      "stopId": null,
+      "lat": -28.16705322265625,
+      "lon": 153.5354461669922,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 5,
+      "timestamp": 1788634870,
+      "updatedAt": "2026-09-05T19:01:10.000Z"
+    },
+    {
+      "id": "73DD7B678B530932DF783319BBF95E95_924",
+      "label": "924",
+      "routeId": "700",
+      "mode": "bus",
+      "tripId": "38572002-SBL 26_27-43931",
+      "headsign": "Service",
+      "stopId": "BBS",
+      "lat": -28.175138473510742,
+      "lon": 153.54183959960938,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1788634853,
+      "updatedAt": "2026-09-05T19:00:53.000Z"
+    }
+  ]
 }
