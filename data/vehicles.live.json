@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-08T13:46:47.429Z",
+    "generatedAt": "2026-09-08T17:43:03.572Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,114 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 112,
-      "mappedRows": 6,
-      "unmappedRoutes": 106,
-      "vehicleCount": 6
+      "rows": 3,
+      "mappedRows": 0,
+      "unmappedRoutes": 3,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_18",
-      "label": "18",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "37981543-LCBS 26_27-43389",
-      "headsign": "Springwood bus station",
-      "stopId": "SPRW",
-      "lat": -27.610305786132812,
-      "lon": 153.12191772460938,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 14,
-      "timestamp": 1788875181,
-      "updatedAt": "2026-09-08T13:46:21.000Z"
-    },
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2098",
-      "label": "2098",
-      "routeId": "333",
-      "mode": "bus",
-      "tripId": "37822439-BT 26_27-43278",
-      "headsign": "Chermside Interchange",
-      "stopId": null,
-      "lat": -27.403610229492188,
-      "lon": 153.03158569335938,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 16,
-      "timestamp": 1788875174,
-      "updatedAt": "2026-09-08T13:46:14.000Z"
-    },
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2216",
-      "label": "2216",
-      "routeId": "330",
-      "mode": "bus",
-      "tripId": "37822260-BT 26_27-43278",
-      "headsign": "Bracken Ridge, Quinlan St",
-      "stopId": null,
-      "lat": -27.341054916381836,
-      "lon": 153.0415802001953,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 18,
-      "timestamp": 1788875190,
-      "updatedAt": "2026-09-08T13:46:30.000Z"
-    },
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2254",
-      "label": "2254",
-      "routeId": "330",
-      "mode": "bus",
-      "tripId": "37822261-BT 26_27-43278",
-      "headsign": "Bracken Ridge, Quinlan St",
-      "stopId": "CHMS",
-      "lat": -27.386083602905273,
-      "lon": 153.03091430664062,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 7,
-      "timestamp": 1788875179,
-      "updatedAt": "2026-09-08T13:46:19.000Z"
-    },
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_2830",
-      "label": "2830",
-      "routeId": "444",
-      "mode": "bus",
-      "tripId": "37819720-BT 26_27-43278",
-      "headsign": "Moggill, Moggill Rd",
-      "stopId": null,
-      "lat": -27.56452751159668,
-      "lon": 152.8686981201172,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 30,
-      "timestamp": 1788875181,
-      "updatedAt": "2026-09-08T13:46:21.000Z"
-    },
-    {
-      "id": "A7393ED51E387246BB3D6249943091E8_5028",
-      "label": "5028",
-      "routeId": "222",
-      "mode": "bus",
-      "tripId": "37819742-BT 26_27-43278",
-      "headsign": "Carindale interchange",
-      "stopId": null,
-      "lat": -27.492748260498047,
-      "lon": 153.0753631591797,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 12,
-      "timestamp": 1788875165,
-      "updatedAt": "2026-09-08T13:46:05.000Z"
-    }
-  ]
+  "vehicles": []
 }

@@ -1,138 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-09-08T13:46:47.429Z",
+    "generatedAt": "2026-09-08T17:43:03.572Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 59,
-      "mappedRows": 9,
-      "unmappedStops": 50,
-      "unmappedRoutes": 200,
-      "mappedStopCount": 5,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 25,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "CHMS": [
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-08T13:47:54.000Z",
-        "scheduledTime": "2026-09-08T13:49:00.000Z",
-        "epochSeconds": 1788875274,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37822261-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-08T13:48:52.000Z",
-        "scheduledTime": "2026-09-08T13:50:00.000Z",
-        "epochSeconds": 1788875332,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      },
-      {
-        "tripId": "37822439-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-09-08T13:51:12.000Z",
-        "scheduledTime": "2026-09-08T13:54:00.000Z",
-        "epochSeconds": 1788875472,
-        "inMinutes": 4,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -3
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-09-08T14:09:44.000Z",
-        "scheduledTime": "2026-09-08T14:09:00.000Z",
-        "epochSeconds": 1788876584,
-        "inMinutes": 23,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "CARI": [
-      {
-        "tripId": "37819742-BT 26_27-43278",
-        "routeId": "222",
-        "headsign": "Carindale interchange",
-        "expectedTime": "2026-09-08T13:54:23.000Z",
-        "scheduledTime": "2026-09-08T13:58:00.000Z",
-        "epochSeconds": 1788875663,
-        "inMinutes": 8,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -4
-      }
-    ],
-    "SPRW": [
-      {
-        "tripId": "37981543-LCBS 26_27-43389",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-09-08T13:48:31.000Z",
-        "scheduledTime": "2026-09-08T13:51:00.000Z",
-        "epochSeconds": 1788875311,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -2
-      }
-    ],
-    "ROMA": [
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-09-08T13:47:50.000Z",
-        "scheduledTime": "2026-09-08T13:46:00.000Z",
-        "epochSeconds": 1788875270,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ],
-    "RBWH": [
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-09-08T13:52:22.000Z",
-        "scheduledTime": "2026-09-08T13:51:00.000Z",
-        "epochSeconds": 1788875542,
-        "inMinutes": 6,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37822440-BT 26_27-43278",
-        "routeId": "333",
-        "headsign": "Chermside Interchange",
-        "expectedTime": "2026-09-08T13:53:51.000Z",
-        "scheduledTime": "2026-09-08T13:52:00.000Z",
-        "epochSeconds": 1788875631,
-        "inMinutes": 7,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
