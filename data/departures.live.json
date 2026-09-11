@@ -1,136 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-09-11T14:15:53.612Z",
+    "generatedAt": "2026-09-11T17:48:35.662Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 35,
-      "mappedRows": 9,
-      "unmappedStops": 26,
-      "unmappedRoutes": 96,
-      "mappedStopCount": 4,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 76,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "RBWH": [
-      {
-        "tripId": "37822183-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Queen Street station",
-        "expectedTime": "2026-09-11T14:22:03.000Z",
-        "scheduledTime": "2026-09-11T12:56:00.000Z",
-        "epochSeconds": 1789136523,
-        "inMinutes": 6,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 86
-      },
-      {
-        "tripId": "37822183-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Queen Street station",
-        "expectedTime": "2026-09-11T14:23:50.000Z",
-        "scheduledTime": "2026-09-11T12:58:00.000Z",
-        "epochSeconds": 1789136630,
-        "inMinutes": 8,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 86
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:39:33.000Z",
-        "scheduledTime": "2026-09-11T13:21:00.000Z",
-        "epochSeconds": 1789137573,
-        "inMinutes": 24,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 79
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:40:40.000Z",
-        "scheduledTime": "2026-09-11T13:22:00.000Z",
-        "epochSeconds": 1789137640,
-        "inMinutes": 25,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 79
-      }
-    ],
-    "ROMA": [
-      {
-        "tripId": "37822183-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Queen Street station",
-        "expectedTime": "2026-09-11T14:27:54.000Z",
-        "scheduledTime": "2026-09-11T13:03:00.000Z",
-        "epochSeconds": 1789136874,
-        "inMinutes": 12,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 85
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:35:12.000Z",
-        "scheduledTime": "2026-09-11T13:16:00.000Z",
-        "epochSeconds": 1789137312,
-        "inMinutes": 19,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 79
-      }
-    ],
-    "QSTN": [
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:32:06.000Z",
-        "scheduledTime": "2026-09-11T13:13:00.000Z",
-        "epochSeconds": 1789137126,
-        "inMinutes": 16,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 79
-      }
-    ],
-    "CHMS": [
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:52:02.000Z",
-        "scheduledTime": "2026-09-11T13:34:00.000Z",
-        "epochSeconds": 1789138322,
-        "inMinutes": 36,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 78
-      },
-      {
-        "tripId": "37822260-BT 26_27-43278",
-        "routeId": "330",
-        "headsign": "Bracken Ridge, Quinlan St",
-        "expectedTime": "2026-09-11T14:53:27.000Z",
-        "scheduledTime": "2026-09-11T13:35:00.000Z",
-        "epochSeconds": 1789138407,
-        "inMinutes": 38,
-        "platform": null,
-        "status": "severe_delay",
-        "delayMinutes": 78
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
