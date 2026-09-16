@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-16T15:28:30.036Z",
+    "generatedAt": "2026-09-16T19:00:43.994Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,63 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 8,
-      "mappedRows": 0,
-      "unmappedRoutes": 8,
-      "vehicleCount": 0
+      "rows": 94,
+      "mappedRows": 3,
+      "unmappedRoutes": 91,
+      "vehicleCount": 3
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "A7393ED51E387246BB3D6249943091E8_2126",
+      "label": "2126",
+      "routeId": "330",
+      "mode": "bus",
+      "tripId": "37822109-BT 26_27-43278",
+      "headsign": "Queen Street station",
+      "stopId": null,
+      "lat": -27.320110321044922,
+      "lon": 153.0467529296875,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 1,
+      "timestamp": 1789585202,
+      "updatedAt": "2026-09-16T19:00:02.000Z"
+    },
+    {
+      "id": "A7393ED51E387246BB3D6249943091E8_2276",
+      "label": "2276",
+      "routeId": "333",
+      "mode": "bus",
+      "tripId": "37822263-BT 26_27-43278",
+      "headsign": "Woolloongabba station",
+      "stopId": "CHMS",
+      "lat": -27.385805130004883,
+      "lon": 153.03179931640625,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1789585091,
+      "updatedAt": "2026-09-16T18:58:11.000Z"
+    },
+    {
+      "id": "A7393ED51E387246BB3D6249943091E8_5073",
+      "label": "5073",
+      "routeId": "222",
+      "mode": "bus",
+      "tripId": "37812524-BT 26_27-43278",
+      "headsign": "Roma Street station",
+      "stopId": "CARI",
+      "lat": -27.503110885620117,
+      "lon": 153.10316467285156,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1789585216,
+      "updatedAt": "2026-09-16T19:00:16.000Z"
+    }
+  ]
 }

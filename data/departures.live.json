@@ -1,19 +1,390 @@
 {
   "meta": {
-    "generatedAt": "2026-09-16T15:28:30.036Z",
+    "generatedAt": "2026-09-16T19:00:43.994Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 18,
-      "mappedStopCount": 0,
+      "rows": 97,
+      "mappedRows": 29,
+      "unmappedStops": 68,
+      "unmappedRoutes": 190,
+      "mappedStopCount": 11,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "CHMS": [
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:02:31.000Z",
+        "scheduledTime": "2026-09-16T19:01:00.000Z",
+        "epochSeconds": 1789585351,
+        "inMinutes": 2,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T19:38:09.000Z",
+        "scheduledTime": "2026-09-16T19:35:00.000Z",
+        "epochSeconds": 1789587489,
+        "inMinutes": 37,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T19:39:40.000Z",
+        "scheduledTime": "2026-09-16T19:36:00.000Z",
+        "epochSeconds": 1789587580,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      }
+    ],
+    "RBWH": [
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:17:44.000Z",
+        "scheduledTime": "2026-09-16T19:15:00.000Z",
+        "epochSeconds": 1789586264,
+        "inMinutes": 17,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:19:40.000Z",
+        "scheduledTime": "2026-09-16T19:17:00.000Z",
+        "epochSeconds": 1789586380,
+        "inMinutes": 19,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T19:50:49.000Z",
+        "scheduledTime": "2026-09-16T19:47:00.000Z",
+        "epochSeconds": 1789588249,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T19:52:55.000Z",
+        "scheduledTime": "2026-09-16T19:49:00.000Z",
+        "epochSeconds": 1789588375,
+        "inMinutes": 52,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 4
+      }
+    ],
+    "ROMA": [
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:24:14.000Z",
+        "scheduledTime": "2026-09-16T19:23:00.000Z",
+        "epochSeconds": 1789586654,
+        "inMinutes": 24,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37812524-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Roma Street station",
+        "expectedTime": "2026-09-16T19:24:55.000Z",
+        "scheduledTime": "2026-09-16T19:30:00.000Z",
+        "epochSeconds": 1789586695,
+        "inMinutes": 24,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      },
+      {
+        "tripId": "37812579-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Carindale interchange",
+        "expectedTime": "2026-09-16T19:41:00.000Z",
+        "scheduledTime": "2026-09-16T19:41:00.000Z",
+        "epochSeconds": 1789587660,
+        "inMinutes": 40,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T19:57:21.000Z",
+        "scheduledTime": "2026-09-16T19:54:00.000Z",
+        "epochSeconds": 1789588641,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "KING": [
+      {
+        "tripId": "37812524-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Roma Street station",
+        "expectedTime": "2026-09-16T19:24:03.000Z",
+        "scheduledTime": "2026-09-16T19:29:00.000Z",
+        "epochSeconds": 1789586643,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      },
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:25:46.000Z",
+        "scheduledTime": "2026-09-16T19:24:00.000Z",
+        "epochSeconds": 1789586746,
+        "inMinutes": 25,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      }
+    ],
+    "CULT": [
+      {
+        "tripId": "37812524-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Roma Street station",
+        "expectedTime": "2026-09-16T19:22:15.000Z",
+        "scheduledTime": "2026-09-16T19:27:00.000Z",
+        "epochSeconds": 1789586535,
+        "inMinutes": 22,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      },
+      {
+        "tripId": "37822263-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-16T19:28:45.000Z",
+        "scheduledTime": "2026-09-16T19:29:00.000Z",
+        "epochSeconds": 1789586925,
+        "inMinutes": 28,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37981901-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-16T19:39:57.000Z",
+        "scheduledTime": "2026-09-16T19:40:00.000Z",
+        "epochSeconds": 1789587597,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37812579-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Carindale interchange",
+        "expectedTime": "2026-09-16T19:44:53.000Z",
+        "scheduledTime": "2026-09-16T19:44:00.000Z",
+        "epochSeconds": 1789587893,
+        "inMinutes": 44,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37981902-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-16T19:57:16.000Z",
+        "scheduledTime": "2026-09-16T19:55:00.000Z",
+        "epochSeconds": 1789588636,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37822352-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Chermside Interchange",
+        "expectedTime": "2026-09-16T19:58:29.000Z",
+        "scheduledTime": "2026-09-16T19:59:00.000Z",
+        "epochSeconds": 1789588709,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "QSTN": [
+      {
+        "tripId": "37812579-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Carindale interchange",
+        "expectedTime": "2026-09-16T19:42:29.000Z",
+        "scheduledTime": "2026-09-16T19:42:00.000Z",
+        "epochSeconds": 1789587749,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37822352-BT 26_27-43278",
+        "routeId": "333",
+        "headsign": "Chermside Interchange",
+        "expectedTime": "2026-09-16T19:59:29.000Z",
+        "scheduledTime": "2026-09-16T20:00:00.000Z",
+        "epochSeconds": 1789588769,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37822109-BT 26_27-43278",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-16T20:00:07.000Z",
+        "scheduledTime": "2026-09-16T19:59:00.000Z",
+        "epochSeconds": 1789588807,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ],
+    "BURA": [
+      {
+        "tripId": "37812524-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Roma Street station",
+        "expectedTime": "2026-09-16T19:15:41.000Z",
+        "scheduledTime": "2026-09-16T19:18:00.000Z",
+        "epochSeconds": 1789586141,
+        "inMinutes": 15,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37981901-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-16T19:33:24.000Z",
+        "scheduledTime": "2026-09-16T19:33:00.000Z",
+        "epochSeconds": 1789587204,
+        "inMinutes": 33,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37812579-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Carindale interchange",
+        "expectedTime": "2026-09-16T19:51:00.000Z",
+        "scheduledTime": "2026-09-16T19:52:00.000Z",
+        "epochSeconds": 1789588260,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "CARI": [
+      {
+        "tripId": "37812524-BT 26_27-43278",
+        "routeId": "222",
+        "headsign": "Roma Street station",
+        "expectedTime": "2026-09-16T19:01:10.000Z",
+        "scheduledTime": "2026-09-16T19:00:00.000Z",
+        "epochSeconds": 1789585270,
+        "inMinutes": 0,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "37981901-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-16T19:13:57.000Z",
+        "scheduledTime": "2026-09-16T19:15:00.000Z",
+        "epochSeconds": 1789586037,
+        "inMinutes": 13,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "37981901-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-16T19:20:41.000Z",
+        "scheduledTime": "2026-09-16T19:22:00.000Z",
+        "epochSeconds": 1789586441,
+        "inMinutes": 20,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "GARD": [
+      {
+        "tripId": "37981901-LCBS 26_27-43389",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-16T19:23:44.000Z",
+        "scheduledTime": "2026-09-16T19:24:00.000Z",
+        "epochSeconds": 1789586624,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
