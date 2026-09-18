@@ -1,19 +1,454 @@
 {
   "meta": {
-    "generatedAt": "2026-09-18T17:26:32.494Z",
+    "generatedAt": "2026-09-18T19:51:31.192Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 85,
-      "mappedStopCount": 0,
+      "rows": 126,
+      "mappedRows": 34,
+      "unmappedStops": 92,
+      "unmappedRoutes": 209,
+      "mappedStopCount": 13,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "CHMS": [
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:01:00.000Z",
+        "scheduledTime": "2026-09-18T20:01:00.000Z",
+        "epochSeconds": 1789761660,
+        "inMinutes": 9,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:03:00.000Z",
+        "scheduledTime": "2026-09-18T20:02:00.000Z",
+        "epochSeconds": 1789761780,
+        "inMinutes": 11,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37869012-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:46:00.000Z",
+        "scheduledTime": "2026-09-18T20:46:00.000Z",
+        "epochSeconds": 1789764360,
+        "inMinutes": 54,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37869012-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:48:00.000Z",
+        "scheduledTime": "2026-09-18T20:47:00.000Z",
+        "epochSeconds": 1789764480,
+        "inMinutes": 56,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37874029-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-18T20:52:19.000Z",
+        "scheduledTime": "2026-09-18T20:49:00.000Z",
+        "epochSeconds": 1789764739,
+        "inMinutes": 61,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37874029-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Queen Street station",
+        "expectedTime": "2026-09-18T20:53:19.000Z",
+        "scheduledTime": "2026-09-18T20:50:00.000Z",
+        "epochSeconds": 1789764799,
+        "inMinutes": 62,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T21:04:05.000Z",
+        "scheduledTime": "2026-09-18T21:05:00.000Z",
+        "epochSeconds": 1789765445,
+        "inMinutes": 73,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T21:05:05.000Z",
+        "scheduledTime": "2026-09-18T21:06:00.000Z",
+        "epochSeconds": 1789765505,
+        "inMinutes": 74,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "QSTN": [
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T20:43:00.000Z",
+        "scheduledTime": "2026-09-18T20:43:00.000Z",
+        "epochSeconds": 1789764180,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "ROMA": [
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:21:57.000Z",
+        "scheduledTime": "2026-09-18T20:21:00.000Z",
+        "epochSeconds": 1789762917,
+        "inMinutes": 30,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:29:24.000Z",
+        "scheduledTime": "2026-09-18T20:30:00.000Z",
+        "epochSeconds": 1789763364,
+        "inMinutes": 38,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T20:45:52.000Z",
+        "scheduledTime": "2026-09-18T20:46:00.000Z",
+        "epochSeconds": 1789764352,
+        "inMinutes": 54,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "RBWH": [
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:16:02.000Z",
+        "scheduledTime": "2026-09-18T20:14:00.000Z",
+        "epochSeconds": 1789762562,
+        "inMinutes": 25,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:17:53.000Z",
+        "scheduledTime": "2026-09-18T20:16:00.000Z",
+        "epochSeconds": 1789762673,
+        "inMinutes": 26,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T20:50:05.000Z",
+        "scheduledTime": "2026-09-18T20:51:00.000Z",
+        "epochSeconds": 1789764605,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37868983-BT 26_27-43284",
+        "routeId": "330",
+        "headsign": "Bracken Ridge, Quinlan St",
+        "expectedTime": "2026-09-18T20:52:05.000Z",
+        "scheduledTime": "2026-09-18T20:53:00.000Z",
+        "epochSeconds": 1789764725,
+        "inMinutes": 61,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "LGHM": [
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:15:00.000Z",
+        "scheduledTime": "2026-09-18T20:15:00.000Z",
+        "epochSeconds": 1789762500,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:23:38.000Z",
+        "scheduledTime": "2026-09-18T20:26:00.000Z",
+        "epochSeconds": 1789763018,
+        "inMinutes": 32,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:30:07.000Z",
+        "scheduledTime": "2026-09-18T20:33:00.000Z",
+        "epochSeconds": 1789763407,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      }
+    ],
+    "GARD": [
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:33:16.000Z",
+        "scheduledTime": "2026-09-18T20:36:00.000Z",
+        "epochSeconds": 1789763596,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      }
+    ],
+    "BURA": [
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:42:41.000Z",
+        "scheduledTime": "2026-09-18T20:45:00.000Z",
+        "epochSeconds": 1789764161,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      }
+    ],
+    "CULT": [
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:26:32.000Z",
+        "scheduledTime": "2026-09-18T20:29:00.000Z",
+        "epochSeconds": 1789763192,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:34:51.000Z",
+        "scheduledTime": "2026-09-18T20:34:00.000Z",
+        "epochSeconds": 1789763691,
+        "inMinutes": 43,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:39:27.000Z",
+        "scheduledTime": "2026-09-18T20:44:00.000Z",
+        "epochSeconds": 1789763967,
+        "inMinutes": 48,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -5
+      },
+      {
+        "tripId": "37868997-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Moggill, Moggill Rd",
+        "expectedTime": "2026-09-18T20:48:00.000Z",
+        "scheduledTime": "2026-09-18T20:48:00.000Z",
+        "epochSeconds": 1789764480,
+        "inMinutes": 56,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37986534-LCBS 26_27-43388",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-18T20:49:14.000Z",
+        "scheduledTime": "2026-09-18T20:52:00.000Z",
+        "epochSeconds": 1789764554,
+        "inMinutes": 58,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37868997-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Moggill, Moggill Rd",
+        "expectedTime": "2026-09-18T20:51:04.000Z",
+        "scheduledTime": "2026-09-18T20:50:00.000Z",
+        "epochSeconds": 1789764664,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37868992-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Chermside Interchange",
+        "expectedTime": "2026-09-18T20:51:25.000Z",
+        "scheduledTime": "2026-09-18T20:53:00.000Z",
+        "epochSeconds": 1789764685,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      }
+    ],
+    "INDR": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:13:31.000Z",
+        "scheduledTime": "2026-09-18T20:12:00.000Z",
+        "epochSeconds": 1789762411,
+        "inMinutes": 22,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:15:39.000Z",
+        "scheduledTime": "2026-09-18T20:14:00.000Z",
+        "epochSeconds": 1789762539,
+        "inMinutes": 24,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      }
+    ],
+    "TOOW": [
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:20:57.000Z",
+        "scheduledTime": "2026-09-18T20:18:00.000Z",
+        "epochSeconds": 1789762857,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:22:18.000Z",
+        "scheduledTime": "2026-09-18T20:19:00.000Z",
+        "epochSeconds": 1789762938,
+        "inMinutes": 31,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "KING": [
+      {
+        "tripId": "37868919-BT 26_27-43284",
+        "routeId": "333",
+        "headsign": "Woolloongabba station",
+        "expectedTime": "2026-09-18T20:23:09.000Z",
+        "scheduledTime": "2026-09-18T20:24:00.000Z",
+        "epochSeconds": 1789762989,
+        "inMinutes": 32,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37868893-BT 26_27-43284",
+        "routeId": "444",
+        "headsign": "Queensland Theatre",
+        "expectedTime": "2026-09-18T20:30:45.000Z",
+        "scheduledTime": "2026-09-18T20:31:00.000Z",
+        "epochSeconds": 1789763445,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ]
+  },
   "incidents": []
 }
