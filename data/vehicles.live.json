@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-21T10:56:38.617Z",
+    "generatedAt": "2026-09-21T16:47:54.837Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,80 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 441,
-      "mappedRows": 4,
-      "unmappedRoutes": 437,
-      "vehicleCount": 4
+      "rows": 7,
+      "mappedRows": 0,
+      "unmappedRoutes": 7,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_142",
-      "label": "142",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024151-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "EMPS",
-      "lat": -27.56802749633789,
-      "lon": 153.0873565673828,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 12,
-      "timestamp": 1789988156,
-      "updatedAt": "2026-09-21T10:55:56.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_18",
-      "label": "18",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024307-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "BURA",
-      "lat": -27.500722885131836,
-      "lon": 153.04025268554688,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 8,
-      "timestamp": 1789988156,
-      "updatedAt": "2026-09-21T10:55:56.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_58",
-      "label": "58",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024134-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.466026306152344,
-      "lon": 153.02980041503906,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 1,
-      "timestamp": 1789988180,
-      "updatedAt": "2026-09-21T10:56:20.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_71",
-      "label": "71",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024293-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.47602653503418,
-      "lon": 153.0189208984375,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 5,
-      "timestamp": 1789988173,
-      "updatedAt": "2026-09-21T10:56:13.000Z"
-    }
-  ]
+  "vehicles": []
 }
