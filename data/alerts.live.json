@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-22T17:45:26.524Z",
+    "generatedAt": "2026-09-22T20:49:24.455Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
@@ -365,6 +365,21 @@
       "impact": "STOP MOVED"
     },
     {
+      "id": "1165751",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "5:46am route 282 to Loganholme delayed up to 20 minutes ",
+      "description": "The 5:46am route 282 to Loganholme is delayed up to 20 minutes due to mechanical issues. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-22T19:46:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
       "id": "935226",
       "region": null,
       "level": "info",
@@ -650,36 +665,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1154831",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Main Beach Parade and Ocean Avenue, Surfers Paradise - temporary stop closures",
-      "description": "From first service to 6am on Wednesday 23 September, the following stops will be closed due to the Gold Coast 500.During this time, if you travel on route 705, please use the alternative stops shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-22T14:01:00.000Z",
-      "effectiveTo": "2026-09-22T20:00:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
-      "id": "1154846",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Main Beach Parade, Main Beach - temporary stop closures",
-      "description": "From first service to 6am on Wednesday 23 September, the following stops on Main Beach Parade will be closed due to the Gold Coast 500.During this time, if you travel on route 705, please use the alternative stops shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-22T14:01:00.000Z",
-      "effectiveTo": "2026-09-22T20:00:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1156996",
       "region": null,
       "level": "info",
@@ -933,6 +918,21 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1165746",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Burpengary station, platform 2",
+      "description": "The lift on platform 2 at Burpengary station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-22T19:48:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
     }
   ]
 }
