@@ -1,62 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-09-22T13:39:53.756Z",
+    "generatedAt": "2026-09-22T17:45:26.524Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 4,
-      "mappedRows": 3,
-      "unmappedStops": 1,
-      "unmappedRoutes": 230,
-      "mappedStopCount": 3,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 30,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "GARD": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-22T13:40:21.000Z",
-        "scheduledTime": "2026-09-22T13:40:00.000Z",
-        "epochSeconds": 1790084421,
-        "inMinutes": 0,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "EMPS": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-22T13:42:14.000Z",
-        "scheduledTime": "2026-09-22T13:43:00.000Z",
-        "epochSeconds": 1790084534,
-        "inMinutes": 2,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ],
-    "SPRW": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-22T13:49:02.000Z",
-        "scheduledTime": "2026-09-22T13:51:00.000Z",
-        "epochSeconds": 1790084942,
-        "inMinutes": 9,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -2
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
