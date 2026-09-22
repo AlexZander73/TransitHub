@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-22T20:49:24.455Z",
+    "generatedAt": "2026-09-22T23:27:04.777Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
@@ -365,19 +365,19 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1165751",
+      "id": "1165791",
       "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "5:46am route 282 to Loganholme delayed up to 20 minutes ",
-      "description": "The 5:46am route 282 to Loganholme is delayed up to 20 minutes due to mechanical issues. ",
+      "level": "minor",
+      "severity": 2,
+      "title": "8:45am route 300 to South Brisbane cancelled ",
+      "description": "The 8:45am route 300 to South Brisbane is cancelled due to congestion. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-22T19:46:00.000Z",
+      "effectiveFrom": "2026-09-22T22:45:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
+      "impact": "REDUCED SERVICE"
     },
     {
       "id": "935226",
@@ -610,12 +610,12 @@
       "level": "info",
       "severity": 1,
       "title": "Augusta Parkway, Brookwater - temporary stop closure",
-      "description": "From 7pm to last service on Wednesday 30 September, the stop on Augusta Parkway at Saint Augstines College will be closed due to roadworks.During this time, if you travel on routes 501, 522 or 523, please use the temporary stop shown below.",
+      "description": "From 7pm to last service on Wednesday 7 October, the stop on Augusta Parkway at Saint Augstines College will be closed due to roadworks.During this time, if you travel on routes 501, 522 or 523, please use the temporary stop shown below.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-30T09:00:00.000Z",
-      "effectiveTo": "2026-09-30T13:59:00.000Z",
+      "effectiveFrom": "2026-10-07T08:00:00.000Z",
+      "effectiveTo": "2026-10-07T12:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
     },
@@ -920,16 +920,16 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1165746",
+      "id": "1165776",
       "region": null,
       "level": "info",
       "severity": 1,
-      "title": "Lift outage - Burpengary station, platform 2",
-      "description": "The lift on platform 2 at Burpengary station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "title": "Lift outage - Boggo Road station, platforms 2 and 3 to footbridge",
+      "description": "The lift on platforms 2 and 3 to the footbridge at Boggo Road station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-22T19:48:00.000Z",
+      "effectiveFrom": "2026-09-22T21:26:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "ACCESSIBILITY ISSUE"
