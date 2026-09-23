@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-23T12:11:35.027Z",
+    "generatedAt": "2026-09-23T16:58:13.752Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 61,
-      "mappedRows": 61
+      "rows": 56,
+      "mappedRows": 56
     }
   },
   "alerts": [
@@ -365,66 +365,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166236",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "9:20pm route R888 loop service to Eight Mile Plains cancelled ",
-      "description": "The 9:20pm route R888 loop service to Eight Mile Plains is cancelled due to staff availability.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T11:20:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1166276",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "8:37pm Ipswich to Central train delayed up to 25 minutes and running express Corinda to Milton, stopping at Indooroopilly",
-      "description": "The 8:37pm Ipswich to Central train is delayed up to 25 minutes and running express from Corinda to Milton, stopping only at Indooroopilly, due to an earlier incident requiring emergency services. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T10:37:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1166281",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "9:07pm Ipswich to Central train delayed up to 15 minutes",
-      "description": "The 9:07pm Ipswich to Central train is delayed up to 15 minutes due to an earlier incident requiring emergency services. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T11:07:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1166286",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "9:37pm Central to Caboolture train delayed up to 20 minutes",
-      "description": "The 9:37pm Central to Caboolture train is delayed up to 20 minutes due to an earlier incident requiring emergency services. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T10:37:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
       "id": "935226",
       "region": null,
       "level": "info",
@@ -761,21 +701,6 @@
       "severity": 1,
       "title": "Sandgate Road, Toombul - temporary stop closure",
       "description": "Between 8pm and last service each night from Sunday 20 to Thursday 24 September, stop 32 on Sandgate Road will be closed due to road works.During this time, if you travel on route 310, please use the alternative stop on platform B at Toombul Shopping Centre shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T10:00:00.000Z",
-      "effectiveTo": "2026-09-20T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
-      "id": "1159636",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Brunswick Street, Fortitude Valley - temporary stop closures",
-      "description": "Between 8pm and last service each night from Sunday 20 to Wednesday 23 September, some stops on Brunswick Street will be closed due to construction works.During this time, if you travel on routes 338, 347, 353 or 364, please use stop 5 on Brunswick Street at St Pauls Terrace",
       "routes": [],
       "stops": [],
       "interchanges": [],
