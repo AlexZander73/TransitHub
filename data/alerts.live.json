@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-22T23:27:04.777Z",
+    "generatedAt": "2026-09-23T01:39:41.193Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 61,
-      "mappedRows": 61
+      "rows": 62,
+      "mappedRows": 62
     }
   },
   "alerts": [
@@ -365,19 +365,64 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1165791",
+      "id": "1165821",
       "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "8:45am route 300 to South Brisbane cancelled ",
-      "description": "The 8:45am route 300 to South Brisbane is cancelled due to congestion. ",
+      "level": "major",
+      "severity": 3,
+      "title": "9:58am route 598 to Chermside delayed up to 19 minutes ",
+      "description": "The 9:58am route 598 to Chermside is delayed up to 19 minutes due to late running of a previous service. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-22T22:45:00.000Z",
+      "effectiveFrom": "2026-09-22T23:58:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "REDUCED SERVICE"
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1165846",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "10:37am Central to Caboolture train delayed up to 10 minutes ",
+      "description": "The 10:37am Central to Caboolture train is delayed up to 10 minutes due to boarding delays. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-22T23:37:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1165851",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "11:03am route 738 to Southport delayed up to 16 minutes ",
+      "description": "The 11:03am route 738 to Southport is delayed up to 16 minutes due to bus availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-23T01:03:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1165856",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "10:45am route 454 to Brisbane City delayed up to 17 minutes ",
+      "description": "The 10:45am route 454 to Brisbane City is delayed up to 17 minutes due to late running of a previous service. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-23T00:45:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "935226",
@@ -903,36 +948,6 @@
       "effectiveTo": "2026-10-04T12:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
-    },
-    {
-      "id": "1165636",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Stop missed - Minimbah State School, Morayfield",
-      "description": "Route 656 loop services travelling towards Morayfield Station will be temporarily missing the below stop due to roadworks.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-22T07:43:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1165776",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Lift outage - Boggo Road station, platforms 2 and 3 to footbridge",
-      "description": "The lift on platforms 2 and 3 to the footbridge at Boggo Road station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-22T21:26:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "ACCESSIBILITY ISSUE"
     }
   ]
 }
