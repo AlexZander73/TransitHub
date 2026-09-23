@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-23T16:58:13.752Z",
+    "generatedAt": "2026-09-23T20:02:13.457Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 56,
-      "mappedRows": 56
+      "rows": 58,
+      "mappedRows": 58
     }
   },
   "alerts": [
@@ -363,6 +363,21 @@
       "effectiveTo": "2026-09-25T09:50:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
+    },
+    {
+      "id": "1166316",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "5:44am route 753 to Broadbeach South cancelled",
+      "description": "The 7:09am route 700 to Burleigh Heads is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-23T19:44:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
     },
     {
       "id": "935226",
@@ -845,16 +860,31 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166266",
+      "id": "1166301",
       "region": null,
       "level": "info",
       "severity": 1,
-      "title": "Lift outage - Redbank station, platform 2 to footbridge",
-      "description": "The lift on platform 2 to the footbridge at Redbank station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "title": "Lift outage-Sunnybank station, Stones Rd carpark to footbridge",
+      "description": "The lift at Sunnybank station, Stones Rd carpark to footbridge is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-23T10:38:00.000Z",
+      "effectiveFrom": "2026-09-23T18:57:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
+      "id": "1166321",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Springfield Central station, platforms 2 and 3",
+      "description": "The lift on platforms 2 and 3 at Springfield Central station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-23T19:28:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "ACCESSIBILITY ISSUE"
