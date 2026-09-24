@@ -1,19 +1,526 @@
 {
   "meta": {
-    "generatedAt": "2026-09-24T15:55:38.446Z",
+    "generatedAt": "2026-09-24T19:46:32.417Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 5,
-      "mappedStopCount": 0,
+      "rows": 210,
+      "mappedRows": 41,
+      "unmappedStops": 169,
+      "unmappedRoutes": 644,
+      "mappedStopCount": 7,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "MEAD": [
+      {
+        "tripId": "39023534-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:13:51.000Z",
+        "scheduledTime": "2026-09-24T20:11:00.000Z",
+        "epochSeconds": 1790280831,
+        "inMinutes": 27,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39023534-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:15:13.000Z",
+        "scheduledTime": "2026-09-24T20:12:00.000Z",
+        "epochSeconds": 1790280913,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39023534-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:15:58.000Z",
+        "scheduledTime": "2026-09-24T20:13:00.000Z",
+        "epochSeconds": 1790280958,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024523-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:43:51.000Z",
+        "scheduledTime": "2026-09-24T20:41:00.000Z",
+        "epochSeconds": 1790282631,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024523-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:45:13.000Z",
+        "scheduledTime": "2026-09-24T20:42:00.000Z",
+        "epochSeconds": 1790282713,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024523-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:46:13.000Z",
+        "scheduledTime": "2026-09-24T20:43:00.000Z",
+        "epochSeconds": 1790282773,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "LGHM": [
+      {
+        "tripId": "39023570-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:15:00.000Z",
+        "scheduledTime": "2026-09-24T20:15:00.000Z",
+        "epochSeconds": 1790280900,
+        "inMinutes": 28,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:33:00.000Z",
+        "scheduledTime": "2026-09-24T20:32:00.000Z",
+        "epochSeconds": 1790281980,
+        "inMinutes": 46,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "39023534-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:46:27.000Z",
+        "scheduledTime": "2026-09-24T20:44:00.000Z",
+        "epochSeconds": 1790282787,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39023534-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:47:27.000Z",
+        "scheduledTime": "2026-09-24T20:45:00.000Z",
+        "epochSeconds": 1790282847,
+        "inMinutes": 61,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39024523-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T21:17:13.000Z",
+        "scheduledTime": "2026-09-24T21:14:00.000Z",
+        "epochSeconds": 1790284633,
+        "inMinutes": 91,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024523-LCBS 26_27-44163",
+        "routeId": "560",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T21:18:13.000Z",
+        "scheduledTime": "2026-09-24T21:15:00.000Z",
+        "epochSeconds": 1790284693,
+        "inMinutes": 92,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "39024435-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:56:47.000Z",
+        "scheduledTime": "2026-09-24T20:00:00.000Z",
+        "epochSeconds": 1790279807,
+        "inMinutes": 10,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:22:00.000Z",
+        "scheduledTime": "2026-09-24T20:21:00.000Z",
+        "epochSeconds": 1790281320,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "39023570-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:27:05.000Z",
+        "scheduledTime": "2026-09-24T20:33:00.000Z",
+        "epochSeconds": 1790281625,
+        "inMinutes": 41,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -6
+      },
+      {
+        "tripId": "39024382-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:37:00.000Z",
+        "scheduledTime": "2026-09-24T20:36:00.000Z",
+        "epochSeconds": 1790282220,
+        "inMinutes": 50,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "39023522-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:50:16.000Z",
+        "scheduledTime": "2026-09-24T19:52:00.000Z",
+        "epochSeconds": 1790279416,
+        "inMinutes": 4,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "39024435-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:04:04.000Z",
+        "scheduledTime": "2026-09-24T20:07:00.000Z",
+        "epochSeconds": 1790280244,
+        "inMinutes": 18,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:15:44.000Z",
+        "scheduledTime": "2026-09-24T20:14:00.000Z",
+        "epochSeconds": 1790280944,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39024382-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:30:44.000Z",
+        "scheduledTime": "2026-09-24T20:29:00.000Z",
+        "epochSeconds": 1790281844,
+        "inMinutes": 44,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39023570-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:34:04.000Z",
+        "scheduledTime": "2026-09-24T20:40:00.000Z",
+        "epochSeconds": 1790282044,
+        "inMinutes": 48,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -6
+      },
+      {
+        "tripId": "39023523-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:46:09.000Z",
+        "scheduledTime": "2026-09-24T20:44:00.000Z",
+        "epochSeconds": 1790282769,
+        "inMinutes": 60,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "GARD": [
+      {
+        "tripId": "39023522-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:53:20.000Z",
+        "scheduledTime": "2026-09-24T19:54:00.000Z",
+        "epochSeconds": 1790279600,
+        "inMinutes": 7,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "39024435-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:07:08.000Z",
+        "scheduledTime": "2026-09-24T20:09:00.000Z",
+        "epochSeconds": 1790280428,
+        "inMinutes": 21,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:13:09.000Z",
+        "scheduledTime": "2026-09-24T20:11:00.000Z",
+        "epochSeconds": 1790280789,
+        "inMinutes": 27,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39024382-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:28:09.000Z",
+        "scheduledTime": "2026-09-24T20:26:00.000Z",
+        "epochSeconds": 1790281689,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39023570-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:37:08.000Z",
+        "scheduledTime": "2026-09-24T20:44:00.000Z",
+        "epochSeconds": 1790282228,
+        "inMinutes": 51,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -7
+      },
+      {
+        "tripId": "39023523-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:43:09.000Z",
+        "scheduledTime": "2026-09-24T20:41:00.000Z",
+        "epochSeconds": 1790282589,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "CULT": [
+      {
+        "tripId": "39024381-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:56:01.000Z",
+        "scheduledTime": "2026-09-24T19:55:00.000Z",
+        "epochSeconds": 1790279761,
+        "inMinutes": 9,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:58:06.000Z",
+        "scheduledTime": "2026-09-24T19:55:00.000Z",
+        "epochSeconds": 1790279886,
+        "inMinutes": 12,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39023522-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:09:19.000Z",
+        "scheduledTime": "2026-09-24T20:10:00.000Z",
+        "epochSeconds": 1790280559,
+        "inMinutes": 23,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "39024382-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:13:06.000Z",
+        "scheduledTime": "2026-09-24T20:10:00.000Z",
+        "epochSeconds": 1790280786,
+        "inMinutes": 27,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024435-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:23:07.000Z",
+        "scheduledTime": "2026-09-24T20:25:00.000Z",
+        "epochSeconds": 1790281387,
+        "inMinutes": 37,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "39023523-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:28:06.000Z",
+        "scheduledTime": "2026-09-24T20:25:00.000Z",
+        "epochSeconds": 1790281686,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 3
+      },
+      {
+        "tripId": "39024436-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:43:06.000Z",
+        "scheduledTime": "2026-09-24T20:41:00.000Z",
+        "epochSeconds": 1790282586,
+        "inMinutes": 57,
+        "platform": null,
+        "status": "minor_delay",
+        "delayMinutes": 2
+      }
+    ],
+    "BURA": [
+      {
+        "tripId": "39024381-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T19:49:49.000Z",
+        "scheduledTime": "2026-09-24T19:48:00.000Z",
+        "epochSeconds": 1790279389,
+        "inMinutes": 3,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39023522-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:03:07.000Z",
+        "scheduledTime": "2026-09-24T20:03:00.000Z",
+        "epochSeconds": 1790280187,
+        "inMinutes": 17,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "39024367-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:03:52.000Z",
+        "scheduledTime": "2026-09-24T20:02:00.000Z",
+        "epochSeconds": 1790280232,
+        "inMinutes": 17,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39024435-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:16:55.000Z",
+        "scheduledTime": "2026-09-24T20:18:00.000Z",
+        "epochSeconds": 1790281015,
+        "inMinutes": 30,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "39024382-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:18:52.000Z",
+        "scheduledTime": "2026-09-24T20:17:00.000Z",
+        "epochSeconds": 1790281132,
+        "inMinutes": 32,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      },
+      {
+        "tripId": "39023523-LCBS 26_27-44163",
+        "routeId": "555",
+        "headsign": "Service",
+        "expectedTime": "2026-09-24T20:33:52.000Z",
+        "scheduledTime": "2026-09-24T20:32:00.000Z",
+        "epochSeconds": 1790282032,
+        "inMinutes": 47,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 2
+      }
+    ]
+  },
   "incidents": []
 }
