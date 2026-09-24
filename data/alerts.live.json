@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-24T01:06:24.071Z",
+    "generatedAt": "2026-09-24T06:09:47.474Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 60,
-      "mappedRows": 60
+      "rows": 68,
+      "mappedRows": 68
     }
   },
   "alerts": [
@@ -281,6 +281,21 @@
       "impact": "STOP MOVED"
     },
     {
+      "id": "1156216",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "Shorncliffe line weekend shuttle services",
+      "description": "Until late 2026, Shorncliffe line weekend services will run as a shuttle service between Shorncliffe and Northgate stations.Travel informationIf you're travelling into Brisbane City, you'll need to change trains at Northgate station.If you're travelling from Brisbane City towards Shorncliffe, catch",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-11T18:00:00.000Z",
+      "effectiveTo": "2026-12-31T12:59:00.000Z",
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
       "id": "1158696",
       "region": "brisbane",
       "level": "info",
@@ -380,16 +395,91 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166461",
+      "id": "1166626",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "10:50am route 610 to Maroochydore cancelled",
-      "description": "The 10:50am route 610 to Maroochydore is cancelled due to mechanical issues. ",
+      "title": "3:13pm route 701 to The Pines cancelled",
+      "description": "The 3:13pm route 701 to The Pines is cancelled due to staff availability.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-24T00:50:00.000Z",
+      "effectiveFrom": "2026-09-24T05:13:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1166636",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "3pm route 602 to Caloundra cancelled",
+      "description": "The 3pm route 602 to Caloundra is cancelled due to mechanical issues.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-24T05:00:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1166691",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "2:51pm route 545 to Griffith University delayed up to 25 minutes ",
+      "description": "The 2:51pm route 545 to Griffith University is delayed up to 25 minutes due to mechanical issues. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-24T04:51:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1166696",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "3:04pm route 535 to Browns Plains delayed up to 15 minutes",
+      "description": "The 3:04pm route 535 to Browns Plains is delayed up to 15 minutes due to congestion. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-24T05:04:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1166711",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "3:10pm route 180 to Brisbane City cancelled ",
+      "description": "The 3:10pm route 180 to Brisbane City is cancelled due to congestion.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-24T05:10:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1166716",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "3:21pm route 120 to Brisbane City cancelled Garden City to Buranda",
+      "description": "The 3:21pm route 120 to Brisbane City is cancelled from Garden City to Buranda due to mechanical issues. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-24T05:21:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
@@ -740,6 +830,21 @@
       "impact": "STOP MOVED"
     },
     {
+      "id": "1160121",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "First Avenue, Maroochydore - temporary stop closure",
+      "description": "On Friday 2 October, the stop on First Avenue at Future Way will be closed due to construction work.During this time, if you travel on route 614, please use the alternative stop on Maud Street near Gloria Street shown below.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-01T18:00:00.000Z",
+      "effectiveTo": "2026-10-02T13:59:00.000Z",
+      "status": "active",
+      "impact": "STOP MOVED"
+    },
+    {
       "id": "1161466",
       "region": null,
       "level": "info",
@@ -760,7 +865,7 @@
       "level": "info",
       "severity": 1,
       "title": "Mary Street, Brisbane City - evening stop closures",
-      "description": "From 8pm to last service each night from Sunday 20 to Thursday 24 September, the stop on Mary Street will be closed due to construction works.During this time, if you travel on route 125, 175, 185 or 204, please use stop 99 on Alice Street at Botanical Gardens shown below.",
+      "description": "The stop on Mary Street will be closed due to construction works from:8pm to last service Thursday 24 September 7pm to last service Friday 25 September.During this time, if you travel on route 125, 175, 185 or 204, please use stop 99 on Alice Street at Botanical Gardens shown",
       "routes": [],
       "stops": [],
       "interchanges": [],
@@ -830,21 +935,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1165226",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Copperfield Street, Geebung - temporary stop closure",
-      "description": "From 7:30am to 3pm on Thursday 24 September, the stop on Copperfield Street near Ossian Street will be closed due to electrical works.During this time, if you catch route 337, please use the alternative stop shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T21:30:00.000Z",
-      "effectiveTo": "2026-09-24T05:00:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1165361",
       "region": null,
       "level": "info",
@@ -875,34 +965,19 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166301",
+      "id": "1166046",
       "region": null,
       "level": "info",
       "severity": 1,
-      "title": "Lift outage - Sunnybank station, Stones Rd carpark to footbridge",
-      "description": "The lift at Sunnybank station, Stones Rd carpark to footbridge is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "title": "Arundel Drive, Arundel - temporary stop closure",
+      "description": "From 7am to 5pm on Tuesday 29 September, the stop on Arundel Drive near Paterson Drive will be closed due to road works.During this time, if you catch route 710, please use the alternative stop shown below.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-23T18:57:00.000Z",
-      "effectiveTo": null,
+      "effectiveFrom": "2026-09-28T21:00:00.000Z",
+      "effectiveTo": "2026-09-29T07:00:00.000Z",
       "status": "active",
-      "impact": "ACCESSIBILITY ISSUE"
-    },
-    {
-      "id": "1166321",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Lift outage - Springfield Central station, platforms 2 and 3",
-      "description": "The lift on platforms 2 and 3 at Springfield Central station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T19:28:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "ACCESSIBILITY ISSUE"
+      "impact": "STOP MOVED"
     },
     {
       "id": "1166361",
@@ -918,6 +993,51 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "DETOUR"
+    },
+    {
+      "id": "1166496",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Jephson Street, Toowong - temporary stop closure",
+      "description": "The stop on Jephson Street near Ventnor Street will be closed due to footpath works from 6am to 6pm each day on:Tuesday 29 SeptemberWednesday 30 SeptemberDuring this time, if you catch route 416, please use the alternative stop shown below.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-28T20:00:00.000Z",
+      "effectiveTo": "2026-09-29T08:00:00.000Z",
+      "status": "active",
+      "impact": "STOP MOVED"
+    },
+    {
+      "id": "1166571",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Main Beach Parade, Main Beach - temporary stop closure ",
+      "description": "From 4am to 6pm on Monday 28 September, the stop on Main Beach Parade at Main Beach Tourist Park will be closed due to construction works.During this time, if you travel on route 705, please use the alternative stop on Main Beach Parade at Woodroffe Avenue shown below.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T18:00:00.000Z",
+      "effectiveTo": "2026-09-28T08:00:00.000Z",
+      "status": "active",
+      "impact": "STOP MOVED"
+    },
+    {
+      "id": "1166586",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Scottsdale Drive, Robina - temporary stop closure",
+      "description": "From Tuesday 6 to Friday 9 October, the stop on Scottsdale Drive at Firebird Street will be closed due to a bus stop upgrade.During this time, if you travel on route 701 or school services, please use the alternative stop on Scottsdale Drive at Laurel Oak Drive shown below.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-05T17:00:00.000Z",
+      "effectiveTo": "2026-10-09T12:59:00.000Z",
+      "status": "active",
+      "impact": "STOP MOVED"
     }
   ]
 }
