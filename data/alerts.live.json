@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-24T11:43:23.201Z",
+    "generatedAt": "2026-09-24T15:55:38.446Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 62,
-      "mappedRows": 62
+      "rows": 57,
+      "mappedRows": 57
     }
   },
   "alerts": [
@@ -395,36 +395,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166846",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "9:32pm route 701 to Robina cancelled",
-      "description": "The 9:32pm route 701 to Robina is cancelled due to staff availability.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T11:32:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1166896",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "9:23pm route 333 to Chermside cancelled",
-      "description": "The 9:23pm route 333 to Chermside is cancelled due to mechanical issues.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T11:23:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
       "id": "935226",
       "region": null,
       "level": "info",
@@ -695,21 +665,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1156996",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "The Esplanade, Maroochydore - temporary stop closure",
-      "description": "From 7pm to last service each night from Sunday 20 to Thursday 24 September, the stop on The Esplanade at First Avenue will be closed due to road works.During this time, if you travel on route 600, please use the temporary stop shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T09:00:00.000Z",
-      "effectiveTo": "2026-09-20T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1157226",
       "region": null,
       "level": "info",
@@ -755,21 +710,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1159606",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Sandgate Road, Toombul - temporary stop closure",
-      "description": "Between 8pm and last service each night from Sunday 20 to Thursday 24 September, stop 32 on Sandgate Road will be closed due to road works.During this time, if you travel on route 310, please use the alternative stop on platform B at Toombul Shopping Centre shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T10:00:00.000Z",
-      "effectiveTo": "2026-09-20T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1160121",
       "region": null,
       "level": "info",
@@ -811,21 +751,6 @@
       "interchanges": [],
       "effectiveFrom": "2026-09-20T10:00:00.000Z",
       "effectiveTo": "2026-09-20T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
-      "id": "1162851",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Graham Road, Carseldine - temporary stop closures",
-      "description": "Some stops on Graham Road will be closed due to road works from 8pm to last service each night:Wednesday 23 SeptemberThursday 24 SeptemberDuring this time, if you catch route 340, please use the alternative stop shown below. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T10:00:00.000Z",
-      "effectiveTo": "2026-09-23T13:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
     },
