@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-24T06:09:47.474Z",
+    "generatedAt": "2026-09-24T11:43:23.201Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 68,
-      "mappedRows": 68
+      "rows": 62,
+      "mappedRows": 62
     }
   },
   "alerts": [
@@ -395,91 +395,31 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1166626",
+      "id": "1166846",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "3:13pm route 701 to The Pines cancelled",
-      "description": "The 3:13pm route 701 to The Pines is cancelled due to staff availability.",
+      "title": "9:32pm route 701 to Robina cancelled",
+      "description": "The 9:32pm route 701 to Robina is cancelled due to staff availability.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-24T05:13:00.000Z",
+      "effectiveFrom": "2026-09-24T11:32:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1166636",
+      "id": "1166896",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "3pm route 602 to Caloundra cancelled",
-      "description": "The 3pm route 602 to Caloundra is cancelled due to mechanical issues.",
+      "title": "9:23pm route 333 to Chermside cancelled",
+      "description": "The 9:23pm route 333 to Chermside is cancelled due to mechanical issues.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-24T05:00:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1166691",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "2:51pm route 545 to Griffith University delayed up to 25 minutes ",
-      "description": "The 2:51pm route 545 to Griffith University is delayed up to 25 minutes due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T04:51:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1166696",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "3:04pm route 535 to Browns Plains delayed up to 15 minutes",
-      "description": "The 3:04pm route 535 to Browns Plains is delayed up to 15 minutes due to congestion. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T05:04:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1166711",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "3:10pm route 180 to Brisbane City cancelled ",
-      "description": "The 3:10pm route 180 to Brisbane City is cancelled due to congestion.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T05:10:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1166716",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "3:21pm route 120 to Brisbane City cancelled Garden City to Buranda",
-      "description": "The 3:21pm route 120 to Brisbane City is cancelled from Garden City to Buranda due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T05:21:00.000Z",
+      "effectiveFrom": "2026-09-24T11:23:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
@@ -920,21 +860,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1165211",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Oxley Station Road, Oxley - temporary stop closure",
-      "description": "From 9am to 4pm on Thursday 24 September, some stops on Oxley Station Road will be closed due to utilities works.During this time, if you catch routes 101 or 102, please use the alternative stops shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T23:00:00.000Z",
-      "effectiveTo": "2026-09-24T06:00:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1165361",
       "region": null,
       "level": "info",
@@ -978,21 +903,6 @@
       "effectiveTo": "2026-09-29T07:00:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
-    },
-    {
-      "id": "1166361",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Stop missed - Robertson Dr at Heritage Way, Burnside",
-      "description": "Route 637 Nambour loop will be temporarily missing the below stop due to emergency works. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-23T21:47:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "DETOUR"
     },
     {
       "id": "1166496",
