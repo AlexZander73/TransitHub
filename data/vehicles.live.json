@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T12:03:17.109Z",
+    "generatedAt": "2026-09-25T17:09:04.369Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,46 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 317,
-      "mappedRows": 2,
-      "unmappedRoutes": 315,
-      "vehicleCount": 2
+      "rows": 47,
+      "mappedRows": 0,
+      "unmappedRoutes": 47,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_136",
-      "label": "136",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024018-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "CULT",
-      "lat": -27.474109649658203,
-      "lon": 153.0180206298828,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 11,
-      "timestamp": 1790337775,
-      "updatedAt": "2026-09-25T12:02:55.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_143",
-      "label": "143",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024119-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "BURA",
-      "lat": -27.49216651916504,
-      "lon": 153.03477478027344,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 7,
-      "timestamp": 1790337737,
-      "updatedAt": "2026-09-25T12:02:17.000Z"
-    }
-  ]
+  "vehicles": []
 }

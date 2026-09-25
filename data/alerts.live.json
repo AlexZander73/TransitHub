@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T12:03:17.109Z",
+    "generatedAt": "2026-09-25T17:09:04.369Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 66,
-      "mappedRows": 66
+      "rows": 61,
+      "mappedRows": 61
     }
   },
   "alerts": [
@@ -412,21 +412,6 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1165431",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Suncorp Stadium diversions - Dolphins v Roosters",
-      "description": "From 5:50pm to 7:50pm and then 8:50pm to 10:50pm on Friday 25 September, bus route diversions and stop changes will be in place around Suncorp Stadium due to the NRL Prelim Final.Diversions and stop changes will affect the following routes:61 - Maroon CityGlider350375377BUS:3",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-25T07:50:00.000Z",
-      "effectiveTo": "2026-09-25T09:50:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1166401",
       "region": null,
       "level": "info",
@@ -455,36 +440,6 @@
       "effectiveTo": "2026-09-27T13:59:00.000Z",
       "status": "active",
       "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1168076",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "9:28pm Central to Ipswich train delayed up to 10 minutes",
-      "description": "The 9:28pm Central to Ipswich train is delayed up to 10 minutes due to a road vehicle striking a level crossing boom gate at Landsborough. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-25T09:37:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1168081",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "9pm route 142 to Edmonton delayed up to 25 minutes",
-      "description": "The 9pm route 142 to Edmonton is delayed up to 25 minutes due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-25T11:00:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "935226",
@@ -652,21 +607,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1153151",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Coolangatta Road, Bilinga - temporary stop closures ",
-      "description": "From 6am to 5pm each day between Monday 21 and Friday 25 September, the following stops on Coolangatta Road will be closed due to road works between During this time, if you travel on route 768 or school services, please use the temporary stops on Coolangatta Road towards Loongana Avenue",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T20:00:00.000Z",
-      "effectiveTo": "2026-09-21T07:00:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1153756",
       "region": null,
       "level": "info",
@@ -808,21 +748,6 @@
       "severity": 1,
       "title": "Holdsworth Street, Cavendish Road and Landlands Park station, Coorparoo - evening stop closures",
       "description": "The stops on Holdsworth Street, Cavendish Road and Langlands Park station will be closed due to roadworks from 8pm to last service each night:Sunday 20 to Thursday 24 SeptemberSunday 27 and Monday 28 SeptemberDuring this time, if you travel on route 61 or 185, please use the alternative",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T10:00:00.000Z",
-      "effectiveTo": "2026-09-20T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
-      "id": "1161656",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Mary Street, Brisbane City - evening stop closures",
-      "description": "The stop on Mary Street will be closed due to construction works from:8pm to last service Thursday 24 September 7pm to last service Friday 25 September.During this time, if you travel on route 125, 175, 185 or 204, please use stop 99 on Alice Street at Botanical Gardens shown",
       "routes": [],
       "stops": [],
       "interchanges": [],
