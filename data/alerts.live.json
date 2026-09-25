@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T17:09:04.369Z",
+    "generatedAt": "2026-09-25T20:28:41.772Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 61,
-      "mappedRows": 61
+      "rows": 62,
+      "mappedRows": 62
     }
   },
   "alerts": [
@@ -440,6 +440,21 @@
       "effectiveTo": "2026-09-27T13:59:00.000Z",
       "status": "active",
       "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168116",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "5:38am route N100 to Richlands delayed up to 30 minutes",
+      "description": "The 5:38am route N100 to Richlands is delayed up to 30 minutes. We are awaiting further details. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-25T19:38:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "935226",
