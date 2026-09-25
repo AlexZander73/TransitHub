@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-25T20:28:41.772Z",
+    "generatedAt": "2026-09-25T23:26:50.369Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 62,
-      "mappedRows": 62
+      "rows": 64,
+      "mappedRows": 64
     }
   },
   "alerts": [
@@ -442,16 +442,31 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1168116",
+      "id": "1168146",
       "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "5:38am route N100 to Richlands delayed up to 30 minutes",
-      "description": "The 5:38am route N100 to Richlands is delayed up to 30 minutes. We are awaiting further details. ",
+      "level": "minor",
+      "severity": 2,
+      "title": "8:55am route 765 to Robina cancelled ",
+      "description": "The 8:55am route 765 to Robina is cancelled due to mechanical issues. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-25T19:38:00.000Z",
+      "effectiveFrom": "2026-09-25T22:55:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168151",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "8:45am route 500 to RiverLink Shopping Centre delayed up to 20 minutes ",
+      "description": "The 8:45am route 500 to RiverLink Shopping Centre is delayed up to 20 minutes due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-25T22:45:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "SIGNIFICANT DELAYS"
@@ -947,6 +962,21 @@
       "stops": [],
       "interchanges": [],
       "effectiveFrom": "2026-09-25T06:26:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "DETOUR"
+    },
+    {
+      "id": "1168126",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "Stop missed - Baildon St at Story Bridge Hotel, Kangaroo Point",
+      "description": "Route 234 Woolloongabba station loop will be temporarily missing the below stop due to a road closure. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-25T21:19:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "DETOUR"
