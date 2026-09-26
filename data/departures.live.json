@@ -1,19 +1,418 @@
 {
   "meta": {
-    "generatedAt": "2026-09-26T19:17:44.997Z",
+    "generatedAt": "2026-09-26T22:03:35.015Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 0,
-      "mappedRows": 0,
-      "unmappedStops": 0,
-      "unmappedRoutes": 154,
-      "mappedStopCount": 0,
+      "rows": 112,
+      "mappedRows": 32,
+      "unmappedStops": 80,
+      "unmappedRoutes": 844,
+      "mappedStopCount": 7,
       "incidentCount": 0
     }
   },
-  "stops": {},
+  "stops": {
+    "CULT": [
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:13:03.000Z",
+        "scheduledTime": "2026-09-26T22:12:00.000Z",
+        "epochSeconds": 1790460783,
+        "inMinutes": 9,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37988719-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:22:47.000Z",
+        "scheduledTime": "2026-09-26T22:22:00.000Z",
+        "epochSeconds": 1790461367,
+        "inMinutes": 19,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37989100-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:36:15.000Z",
+        "scheduledTime": "2026-09-26T22:37:00.000Z",
+        "epochSeconds": 1790462175,
+        "inMinutes": 33,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37988720-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:43:03.000Z",
+        "scheduledTime": "2026-09-26T22:42:00.000Z",
+        "epochSeconds": 1790462583,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37989101-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:58:03.000Z",
+        "scheduledTime": "2026-09-26T22:57:00.000Z",
+        "epochSeconds": 1790463483,
+        "inMinutes": 54,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      }
+    ],
+    "BURA": [
+      {
+        "tripId": "37988719-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:16:21.000Z",
+        "scheduledTime": "2026-09-26T22:16:00.000Z",
+        "epochSeconds": 1790460981,
+        "inMinutes": 13,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:19:47.000Z",
+        "scheduledTime": "2026-09-26T22:20:00.000Z",
+        "epochSeconds": 1790461187,
+        "inMinutes": 16,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37989100-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:29:49.000Z",
+        "scheduledTime": "2026-09-26T22:31:00.000Z",
+        "epochSeconds": 1790461789,
+        "inMinutes": 26,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37988720-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:49:47.000Z",
+        "scheduledTime": "2026-09-26T22:50:00.000Z",
+        "epochSeconds": 1790462987,
+        "inMinutes": 46,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37988677-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:58:16.000Z",
+        "scheduledTime": "2026-09-26T23:01:00.000Z",
+        "epochSeconds": 1790463496,
+        "inMinutes": 55,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      }
+    ],
+    "GARD": [
+      {
+        "tripId": "37988719-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:06:26.000Z",
+        "scheduledTime": "2026-09-26T22:06:00.000Z",
+        "epochSeconds": 1790460386,
+        "inMinutes": 3,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37989100-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:19:53.000Z",
+        "scheduledTime": "2026-09-26T22:21:00.000Z",
+        "epochSeconds": 1790461193,
+        "inMinutes": 16,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:30:00.000Z",
+        "scheduledTime": "2026-09-26T22:30:00.000Z",
+        "epochSeconds": 1790461800,
+        "inMinutes": 26,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37988677-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:48:20.000Z",
+        "scheduledTime": "2026-09-26T22:51:00.000Z",
+        "epochSeconds": 1790462900,
+        "inMinutes": 45,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988720-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T23:00:00.000Z",
+        "scheduledTime": "2026-09-26T23:00:00.000Z",
+        "epochSeconds": 1790463600,
+        "inMinutes": 56,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "EMPS": [
+      {
+        "tripId": "37988719-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:04:01.000Z",
+        "scheduledTime": "2026-09-26T22:03:00.000Z",
+        "epochSeconds": 1790460241,
+        "inMinutes": 0,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 1
+      },
+      {
+        "tripId": "37989100-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:16:44.000Z",
+        "scheduledTime": "2026-09-26T22:18:00.000Z",
+        "epochSeconds": 1790461004,
+        "inMinutes": 13,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:32:36.000Z",
+        "scheduledTime": "2026-09-26T22:33:00.000Z",
+        "epochSeconds": 1790461956,
+        "inMinutes": 29,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37988677-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:45:11.000Z",
+        "scheduledTime": "2026-09-26T22:48:00.000Z",
+        "epochSeconds": 1790462711,
+        "inMinutes": 42,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988720-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T23:02:35.000Z",
+        "scheduledTime": "2026-09-26T23:03:00.000Z",
+        "epochSeconds": 1790463755,
+        "inMinutes": 59,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "SPRW": [
+      {
+        "tripId": "37988676-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:07:33.000Z",
+        "scheduledTime": "2026-09-26T22:10:00.000Z",
+        "epochSeconds": 1790460453,
+        "inMinutes": 4,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37989100-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:10:00.000Z",
+        "scheduledTime": "2026-09-26T22:11:00.000Z",
+        "epochSeconds": 1790460600,
+        "inMinutes": 6,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      },
+      {
+        "tripId": "37988677-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:38:40.000Z",
+        "scheduledTime": "2026-09-26T22:41:00.000Z",
+        "epochSeconds": 1790462320,
+        "inMinutes": 35,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:39:41.000Z",
+        "scheduledTime": "2026-09-26T22:40:00.000Z",
+        "epochSeconds": 1790462381,
+        "inMinutes": 36,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      }
+    ],
+    "LGHM": [
+      {
+        "tripId": "37988676-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:16:46.000Z",
+        "scheduledTime": "2026-09-26T22:20:00.000Z",
+        "epochSeconds": 1790461006,
+        "inMinutes": 13,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988677-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Brisbane City",
+        "expectedTime": "2026-09-26T22:30:00.000Z",
+        "scheduledTime": "2026-09-26T22:30:00.000Z",
+        "epochSeconds": 1790461800,
+        "inMinutes": 26,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": 0
+      },
+      {
+        "tripId": "37988705-LCBS 26_27-43393",
+        "routeId": "560",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:40:47.000Z",
+        "scheduledTime": "2026-09-26T22:44:00.000Z",
+        "epochSeconds": 1790462447,
+        "inMinutes": 37,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988705-LCBS 26_27-43393",
+        "routeId": "560",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:42:33.000Z",
+        "scheduledTime": "2026-09-26T22:45:00.000Z",
+        "epochSeconds": 1790462553,
+        "inMinutes": 39,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -2
+      },
+      {
+        "tripId": "37989196-LCBS 26_27-43393",
+        "routeId": "555",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:48:54.000Z",
+        "scheduledTime": "2026-09-26T22:50:00.000Z",
+        "epochSeconds": 1790462934,
+        "inMinutes": 45,
+        "platform": null,
+        "status": "on_time",
+        "delayMinutes": -1
+      }
+    ],
+    "MEAD": [
+      {
+        "tripId": "37988705-LCBS 26_27-43393",
+        "routeId": "560",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:08:49.000Z",
+        "scheduledTime": "2026-09-26T22:12:00.000Z",
+        "epochSeconds": 1790460529,
+        "inMinutes": 5,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988705-LCBS 26_27-43393",
+        "routeId": "560",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:10:02.000Z",
+        "scheduledTime": "2026-09-26T22:13:00.000Z",
+        "epochSeconds": 1790460602,
+        "inMinutes": 6,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      },
+      {
+        "tripId": "37988705-LCBS 26_27-43393",
+        "routeId": "560",
+        "headsign": "Loganholme station",
+        "expectedTime": "2026-09-26T22:11:14.000Z",
+        "scheduledTime": "2026-09-26T22:14:00.000Z",
+        "epochSeconds": 1790460674,
+        "inMinutes": 8,
+        "platform": null,
+        "status": "early",
+        "delayMinutes": -3
+      }
+    ]
+  },
   "incidents": []
 }

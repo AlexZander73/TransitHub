@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-26T19:17:44.997Z",
+    "generatedAt": "2026-09-26T22:03:35.015Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,97 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 69,
-      "mappedRows": 0,
-      "unmappedRoutes": 69,
-      "vehicleCount": 0
+      "rows": 436,
+      "mappedRows": 5,
+      "unmappedRoutes": 431,
+      "vehicleCount": 5
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_141",
+      "label": "141",
+      "routeId": "560",
+      "mode": "bus",
+      "tripId": "37988705-LCBS 26_27-43393",
+      "headsign": "Loganholme station",
+      "stopId": null,
+      "lat": -27.690027236938477,
+      "lon": 153.08311462402344,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 21,
+      "timestamp": 1790460195,
+      "updatedAt": "2026-09-26T22:03:15.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_30",
+      "label": "30",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37989100-LCBS 26_27-43393",
+      "headsign": "Brisbane City",
+      "stopId": "SPRW",
+      "lat": -27.664499282836914,
+      "lon": 153.17230224609375,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 2,
+      "timestamp": 1790460176,
+      "updatedAt": "2026-09-26T22:02:56.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_55",
+      "label": "55",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37988676-LCBS 26_27-43393",
+      "headsign": "Loganholme station",
+      "stopId": null,
+      "lat": -27.592748641967773,
+      "lon": 153.11111450195312,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 13,
+      "timestamp": 1790460193,
+      "updatedAt": "2026-09-26T22:03:13.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_69",
+      "label": "69",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37989196-LCBS 26_27-43393",
+      "headsign": "Loganholme station",
+      "stopId": null,
+      "lat": -27.466083526611328,
+      "lon": 153.0294952392578,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1790460182,
+      "updatedAt": "2026-09-26T22:03:02.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_79",
+      "label": "79",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37988719-LCBS 26_27-43393",
+      "headsign": "Brisbane City",
+      "stopId": "EMPS",
+      "lat": -27.578638076782227,
+      "lon": 153.10186767578125,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 4,
+      "timestamp": 1790460174,
+      "updatedAt": "2026-09-26T22:02:54.000Z"
+    }
+  ]
 }
