@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-26T07:00:46.699Z",
+    "generatedAt": "2026-09-26T12:13:30.337Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 65,
-      "mappedRows": 65
+      "rows": 66,
+      "mappedRows": 66
     }
   },
   "alerts": [
@@ -442,49 +442,64 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1168186",
+      "id": "1168491",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "Stops missed - Noosa Heads",
-      "description": "Route 620 in both directions will be temporarily missing the below stops due to congestion.Services will terminate and commence at Noosa Junction station.Check the journey planner for other travel options.",
+      "title": "9:33pm route 444 to Queensland Theatre cancelled",
+      "description": "The 9:33pm route 444 to Queensland Theatre is cancelled due to mechanical issues. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-26T00:55:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "DETOUR"
-    },
-    {
-      "id": "1168371",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "4:25pm route 616 to Palmview cancelled",
-      "description": "The 4:25pm route 616 to Palmview is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-26T06:25:00.000Z",
+      "effectiveFrom": "2026-09-26T11:33:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1168376",
+      "id": "1168501",
       "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "4:02pm route 617 to Maroochydore delayed up to 17 minutes",
-      "description": "The 4:02pm route 617 to Maroochydore is delayed up to 17 minutes due to late running of a previous service. ",
+      "level": "minor",
+      "severity": 2,
+      "title": "9:10pm route 125 to Upper Mount Gravatt cancelled",
+      "description": "The 9:10pm route 125 to Upper Mount Gravatt is cancelled due to staff availability.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-26T06:02:00.000Z",
+      "effectiveFrom": "2026-09-26T11:10:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168521",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "10:03pm route 120 to Brisbane City cancelled",
+      "description": "The 10:03pm route 120 to Brisbane City is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-26T12:03:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168526",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "10:50pm route 100 to Forest Lake cancelled",
+      "description": "The 10:50pm route 100 to Forest Lake is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-26T12:50:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
     },
     {
       "id": "935226",
