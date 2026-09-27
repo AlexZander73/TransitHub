@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T19:18:27.404Z",
+    "generatedAt": "2026-09-27T22:25:53.968Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 58,
-      "mappedRows": 58
+      "rows": 65,
+      "mappedRows": 65
     }
   },
   "alerts": [
@@ -395,6 +395,81 @@
       "effectiveTo": "2026-09-29T13:00:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
+    },
+    {
+      "id": "1168751",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "7:15am route 573 to Brisbane City delayed up to 25 minutes ",
+      "description": "The 7:15am route 573 to Brisbane City is delayed up to 20 minutes due to late running of a previous service. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T21:15:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1168761",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "7:25am route 301 to Brisbane City cancelled",
+      "description": "The 7:25am route 301 to Brisbane City is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T21:25:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168771",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "6:46am route 306 to Brisbane City cancelled",
+      "description": "The 6:46am route 306 to Brisbane City is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T20:46:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168776",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "8:21am route 306 to Nudgee cancelled",
+      "description": "The 8:21am route 306 to Nudgee is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T22:21:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1168781",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "8:05am route 301 to Brisbane City cancelled",
+      "description": "The 8:05am route 301 to Brisbane City is cancelled due to staff availability. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T22:05:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
     },
     {
       "id": "935226",
@@ -877,19 +952,49 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1167736",
+      "id": "1168706",
       "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Stop missed - Coronation Dr at Regatta, Toowong",
-      "description": "Route 411, 415, 417, 433 and 445 will be temporarily missing the below stop due to construction. ",
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Banyo station, platform 1",
+      "description": "The lift on platform 1 at Banyo station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-25T06:26:00.000Z",
+      "effectiveFrom": "2026-09-27T19:39:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "DETOUR"
+      "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
+      "id": "1168736",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Carseldine station, platforms 1 and 2",
+      "description": "The lift on platforms 1 and 2 at Carseldine station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T20:45:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
+      "id": "1168766",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Graceville station, Honour Avenue to subway ",
+      "description": "The lift at Graceville station, Honour Avenue to subway is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T21:48:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
     }
   ]
 }
