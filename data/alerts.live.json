@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T11:18:25.289Z",
+    "generatedAt": "2026-09-27T15:44:06.608Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 60,
-      "mappedRows": 60
+      "rows": 58,
+      "mappedRows": 58
     }
   },
   "alerts": [
@@ -189,21 +189,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "ADDITIONAL SERVICE"
-    },
-    {
-      "id": "1124976",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Weekend track closure - Redcliffe Peninsula line",
-      "description": "Track closure in briefStart: Saturday 26 SeptemberEnd: Sunday 27 SeptemberAffected lines: Redcliffe Peninsula lineNext normal service: First train on Monday 28 SeptemberView map of closure.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-25T18:00:00.000Z",
-      "effectiveTo": "2026-09-27T13:59:00.000Z",
-      "status": "active",
-      "impact": "REDUCED SERVICE"
     },
     {
       "id": "1139956",
@@ -410,21 +395,6 @@
       "effectiveTo": "2026-09-29T13:00:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
-    },
-    {
-      "id": "1167416",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Doomben line weekend service change",
-      "description": "On Saturday 26 and Sunday 27 September, Doomben line services will run as a shuttle service between Doomben and Eagle Junction stations. Doomben trains will not be travelling between Roma Street and Eagle Junction stations. Travel informationIf you're travelling into Brisbane City, you'll",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-25T18:00:00.000Z",
-      "effectiveTo": "2026-09-27T13:59:00.000Z",
-      "status": "active",
-      "impact": "REDUCED SERVICE"
     },
     {
       "id": "935226",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T11:18:25.289Z",
+    "generatedAt": "2026-09-27T15:44:06.608Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,46 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 281,
-      "mappedRows": 2,
-      "unmappedRoutes": 279,
-      "vehicleCount": 2
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedRoutes": 0,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_50",
-      "label": "50",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "37989177-LCBS 26_27-43393",
-      "headsign": "Springwood bus station",
-      "stopId": "EMPS",
-      "lat": -27.571027755737305,
-      "lon": 153.09283447265625,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 12,
-      "timestamp": 1790507878,
-      "updatedAt": "2026-09-27T11:17:58.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_58",
-      "label": "58",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "37989044-LCBS 26_27-43393",
-      "headsign": "Loganholme station",
-      "stopId": null,
-      "lat": -27.465944290161133,
-      "lon": 153.0296173095703,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 1,
-      "timestamp": 1790507876,
-      "updatedAt": "2026-09-27T11:17:56.000Z"
-    }
-  ]
+  "vehicles": []
 }

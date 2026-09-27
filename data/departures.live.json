@@ -1,128 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T11:18:25.289Z",
+    "generatedAt": "2026-09-27T15:44:06.608Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 18,
-      "mappedRows": 8,
-      "unmappedStops": 10,
-      "unmappedRoutes": 503,
-      "mappedStopCount": 6,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 1,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "CULT": [
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T11:27:56.000Z",
-        "scheduledTime": "2026-09-27T11:27:00.000Z",
-        "epochSeconds": 1790508476,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "BURA": [
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T11:34:47.000Z",
-        "scheduledTime": "2026-09-27T11:35:00.000Z",
-        "epochSeconds": 1790508887,
-        "inMinutes": 16,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ],
-    "GARD": [
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T11:44:32.000Z",
-        "scheduledTime": "2026-09-27T11:46:00.000Z",
-        "epochSeconds": 1790509472,
-        "inMinutes": 26,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -1
-      }
-    ],
-    "EMPS": [
-      {
-        "tripId": "37989177-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-09-27T11:19:25.000Z",
-        "scheduledTime": "2026-09-27T11:19:00.000Z",
-        "epochSeconds": 1790507965,
-        "inMinutes": 1,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      },
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T11:47:24.000Z",
-        "scheduledTime": "2026-09-27T11:49:00.000Z",
-        "epochSeconds": 1790509644,
-        "inMinutes": 29,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -2
-      }
-    ],
-    "SPRW": [
-      {
-        "tripId": "37989177-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Springwood bus station",
-        "expectedTime": "2026-09-27T11:26:58.000Z",
-        "scheduledTime": "2026-09-27T11:26:00.000Z",
-        "epochSeconds": 1790508418,
-        "inMinutes": 9,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      },
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T11:54:27.000Z",
-        "scheduledTime": "2026-09-27T11:56:00.000Z",
-        "epochSeconds": 1790510067,
-        "inMinutes": 36,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": -2
-      }
-    ],
-    "LGHM": [
-      {
-        "tripId": "37989044-LCBS 26_27-43393",
-        "routeId": "555",
-        "headsign": "Loganholme station",
-        "expectedTime": "2026-09-27T12:03:19.000Z",
-        "scheduledTime": "2026-09-27T12:06:00.000Z",
-        "epochSeconds": 1790510599,
-        "inMinutes": 45,
-        "platform": null,
-        "status": "early",
-        "delayMinutes": -3
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }
