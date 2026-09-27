@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-26T22:03:35.015Z",
+    "generatedAt": "2026-09-27T00:34:46.869Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 62,
-      "mappedRows": 62
+      "rows": 65,
+      "mappedRows": 65
     }
   },
   "alerts": [
@@ -442,19 +442,64 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1168551",
+      "id": "1168586",
       "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "7:23am route 626 to Sunrise Beach cancelled",
-      "description": "The 7:23am route 626 to Sunrise Beach is cancelled due to mechanical issues. ",
+      "level": "major",
+      "severity": 3,
+      "title": "10:00am route 155 to Griffith University delayed up to 20 minutes",
+      "description": "The 10:00am route 155 to Griffith University is delayed up to 20 minutes due to late running of a previous service. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-09-26T21:23:00.000Z",
+      "effectiveFrom": "2026-09-27T00:00:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "REDUCED SERVICE"
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1168591",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": " 9:33am route 626 to Tewantin delayed up to 15 minutes",
+      "description": "The 9:33am route 626 to Tewantin is delayed up to 15 minutes due to mechanical issues. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-26T23:33:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1168596",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "9:40am route 600 to Caloundra delayed up to 20 minutes",
+      "description": "The 9:40am route 600 to Caloundra is delayed up to 20 minutes due to congestion. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-26T23:40:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1168601",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "10:05am route 694 to Kippa-Ring delayed up to 15 minutes",
+      "description": "The 10:05am route 694 to Kippa-Ring is delayed up to 15 minutes due to late running of a previous service. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-27T00:05:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "935226",
