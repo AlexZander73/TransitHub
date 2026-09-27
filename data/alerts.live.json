@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T15:44:06.608Z",
+    "generatedAt": "2026-09-27T19:18:27.404Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
@@ -487,6 +487,21 @@
       "impact": "STOP MOVED"
     },
     {
+      "id": "1101951",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Route 700, 760 and 768 - temporary stop closure",
+      "description": "From 3am to 10am on Sunday 11 October, the following stops in Coolangatta and Bilinga will be closed due to the GC50 Run Festival. During this time, if you travel on routes 700, 760 and 768, please use the alternative stops shown below.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-10T16:00:00.000Z",
+      "effectiveTo": "2026-10-10T23:00:00.000Z",
+      "status": "active",
+      "impact": "STOP MOVED"
+    },
+    {
       "id": "1104011",
       "region": null,
       "level": "info",
@@ -620,21 +635,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "MODIFIED SERVICE"
-    },
-    {
-      "id": "1154651",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Nicklin Way, Warana - temporary stop closures",
-      "description": "The stop on Nicklin Way at Palkana Drive will be closed due to electrical works at the following times:9:30am to 5:30pm on Friday 25 September7pm to 5am on Sunday 27 SeptemberDuring this time, if you travel on routes 600, 602 or 611, please use the alternative stop on Nicklin Way a",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-24T23:30:00.000Z",
-      "effectiveTo": "2026-09-25T07:30:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
     },
     {
       "id": "1157226",
