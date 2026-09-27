@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-27T05:46:38.242Z",
+    "generatedAt": "2026-09-27T11:18:25.289Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 65,
-      "mappedRows": 65
+      "rows": 60,
+      "mappedRows": 60
     }
   },
   "alerts": [
@@ -425,81 +425,6 @@
       "effectiveTo": "2026-09-27T13:59:00.000Z",
       "status": "active",
       "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1168611",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Stops missed - Noosa Heads",
-      "description": "Route 620 in both directions will be temporarily missing the below stops due to congestion.Services will terminate and commence at Noosa Junction station.Check the journey planner for other travel options.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T00:42:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "DETOUR"
-    },
-    {
-      "id": "1168651",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "1:38pm Nambour to Central train delayed up to 10 minutes",
-      "description": "The 1:38pm Nambour to Central train is delayed up to 10 minutes due to delays to a long-distance service. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T03:38:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1168666",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "2:50pm route 700 to Burleigh Heads cancelled",
-      "description": "The 2:50pm route 700 to Burleigh Heads is cancelled due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T04:50:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1168676",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "3:47pm route 700 to Tweed Heads cancelled",
-      "description": "The 3:47pm route 700 to Tweed Heads is cancelled due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T05:47:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1168686",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "3:05pm route 450 to Riverhills delayed up to 16 minutes",
-      "description": "The 3:05pm route 450 to Riverhills is delayed up to 16 minutes due to bus availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T05:05:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "935226",
