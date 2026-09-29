@@ -1,90 +1,19 @@
 {
   "meta": {
-    "generatedAt": "2026-09-29T13:20:06.652Z",
+    "generatedAt": "2026-09-29T18:46:35.879Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/trip-updates.pb",
     "maxLookAheadMinutes": 240,
     "stats": {
-      "rows": 13,
-      "mappedRows": 5,
-      "unmappedStops": 8,
-      "unmappedRoutes": 350,
-      "mappedStopCount": 5,
+      "rows": 0,
+      "mappedRows": 0,
+      "unmappedStops": 0,
+      "unmappedRoutes": 152,
+      "mappedStopCount": 0,
       "incidentCount": 0
     }
   },
-  "stops": {
-    "CULT": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-29T13:23:46.000Z",
-        "scheduledTime": "2026-09-29T13:22:00.000Z",
-        "epochSeconds": 1790688226,
-        "inMinutes": 4,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 2
-      }
-    ],
-    "BURA": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-29T13:30:31.000Z",
-        "scheduledTime": "2026-09-29T13:30:00.000Z",
-        "epochSeconds": 1790688631,
-        "inMinutes": 10,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "GARD": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-29T13:40:46.000Z",
-        "scheduledTime": "2026-09-29T13:40:00.000Z",
-        "epochSeconds": 1790689246,
-        "inMinutes": 21,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "EMPS": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-29T13:43:35.000Z",
-        "scheduledTime": "2026-09-29T13:43:00.000Z",
-        "epochSeconds": 1790689415,
-        "inMinutes": 23,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 1
-      }
-    ],
-    "SPRW": [
-      {
-        "tripId": "39024312-LCBS 26_27-44163",
-        "routeId": "555",
-        "headsign": "Service",
-        "expectedTime": "2026-09-29T13:50:37.000Z",
-        "scheduledTime": "2026-09-29T13:51:00.000Z",
-        "epochSeconds": 1790689837,
-        "inMinutes": 31,
-        "platform": null,
-        "status": "on_time",
-        "delayMinutes": 0
-      }
-    ]
-  },
+  "stops": {},
   "incidents": []
 }

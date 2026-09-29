@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-29T13:20:06.652Z",
+    "generatedAt": "2026-09-29T18:46:35.879Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,29 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 214,
-      "mappedRows": 1,
-      "unmappedRoutes": 213,
-      "vehicleCount": 1
+      "rows": 62,
+      "mappedRows": 0,
+      "unmappedRoutes": 62,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_57",
-      "label": "57",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024312-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.46763801574707,
-      "lon": 153.0261688232422,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 2,
-      "timestamp": 1790687957,
-      "updatedAt": "2026-09-29T13:19:17.000Z"
-    }
-  ]
+  "vehicles": []
 }
