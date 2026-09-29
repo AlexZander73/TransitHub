@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-29T18:46:35.879Z",
+    "generatedAt": "2026-09-29T22:48:44.615Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 63,
-      "mappedRows": 63
+      "rows": 70,
+      "mappedRows": 70
     }
   },
   "alerts": [
@@ -365,6 +365,81 @@
       "effectiveTo": "2026-09-28T00:00:00.000Z",
       "status": "active",
       "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1170311",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "8am route 125 to Upper Mount Gravatt cancelled",
+      "description": "The 8am route 125 to Upper Mount Gravatt is cancelled due to staff availability ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T22:00:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1170316",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "7:10am route 622 to Noosa Junction delayed up to 15 minutes",
+      "description": "The 7:10am route 622 to Noosa Junction is delayed up to 15 minutes due to staff availability.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T21:10:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
+    },
+    {
+      "id": "1170326",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "8:02am route 61 to Coorparoo cancelled",
+      "description": "The 8:02am route 61 to Coorparoo is cancelled due to mechanical issues.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T22:02:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1170336",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "7:32am route 140 to Brisbane City cancelled",
+      "description": "The 7:32am route 140 to Brisbane City is cancelled due to congestion. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T21:32:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1170366",
+      "region": null,
+      "level": "major",
+      "severity": 3,
+      "title": "7:57am route 253 to Capalaba delayed up to 18 minutes",
+      "description": "The 7:57am route 253 to Capalaba is delayed up to 18 minutes due to rerouting. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T21:57:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "924776",
@@ -962,6 +1037,36 @@
       "stops": [],
       "interchanges": [],
       "effectiveFrom": "2026-09-29T09:57:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "DETOUR"
+    },
+    {
+      "id": "1170221",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Landsborough station, platform 2 to footbridge",
+      "description": "The lift on platform 2 to the footbridge at Landsborough station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T19:46:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
+      "id": "1170241",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "Stops missed - Boundary Rd, Darra",
+      "description": "Route 101 travelling towards Oxley will be temporarily missing the below stops due to an unplanned road closure. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-29T20:48:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "DETOUR"
