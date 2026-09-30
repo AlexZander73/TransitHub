@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-30T14:32:57.470Z",
+    "generatedAt": "2026-09-30T19:37:54.351Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,63 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 27,
-      "mappedRows": 0,
-      "unmappedRoutes": 27,
-      "vehicleCount": 0
+      "rows": 230,
+      "mappedRows": 3,
+      "unmappedRoutes": 227,
+      "vehicleCount": 3
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_68",
+      "label": "68",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "39024366-LCBS 26_27-44163",
+      "headsign": "Service",
+      "stopId": null,
+      "lat": -27.484970092773438,
+      "lon": 153.031494140625,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 10,
+      "timestamp": 1790797039,
+      "updatedAt": "2026-09-30T19:37:19.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_7131",
+      "label": "7131",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "39024381-LCBS 26_27-44163",
+      "headsign": "Service",
+      "stopId": "EMPS",
+      "lat": -27.578638076782227,
+      "lon": 153.10191345214844,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 4,
+      "timestamp": 1790797041,
+      "updatedAt": "2026-09-30T19:37:21.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_72",
+      "label": "72",
+      "routeId": "560",
+      "mode": "bus",
+      "tripId": "39023534-LCBS 26_27-44163",
+      "headsign": "Service",
+      "stopId": null,
+      "lat": -27.66155433654785,
+      "lon": 153.04183959960938,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 1,
+      "timestamp": 1790797061,
+      "updatedAt": "2026-09-30T19:37:41.000Z"
+    }
+  ]
 }
