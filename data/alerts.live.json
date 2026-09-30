@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-09-30T19:37:54.351Z",
+    "generatedAt": "2026-09-30T23:12:19.837Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 60,
-      "mappedRows": 60
+      "rows": 62,
+      "mappedRows": 62
     }
   },
   "alerts": [
@@ -37,6 +37,21 @@
       "interchanges": [],
       "effectiveFrom": "2026-08-05T11:00:00.000Z",
       "effectiveTo": null,
+      "status": "active",
+      "impact": "ADDITIONAL SERVICE"
+    },
+    {
+      "id": "924776",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "New trial weekend service for Maroochydore and Alexandra Headland",
+      "description": "It's now even easier to travel between Maroochydore and Alexandra Headland with your new trial route 613.Route 613 runs every 30 minutes, from 6am to 6pm on weekends.There are also new bus stops at:Sunrise Drive near Sunshine Cove Park (Stop ID 322405)Sunshine Cove Way near Sunrise Drive",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2025-12-12T18:00:00.000Z",
+      "effectiveTo": "2026-12-14T12:59:00.000Z",
       "status": "active",
       "impact": "ADDITIONAL SERVICE"
     },
@@ -367,19 +382,19 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "924776",
+      "id": "1170966",
       "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "New trial weekend service for Maroochydore and Alexandra Headland",
-      "description": "It's now even easier to travel between Maroochydore and Alexandra Headland with your new trial route 613.Route 613 runs every 30 minutes, from 6am to 6pm on weekends.There are also new bus stops at:Sunrise Drive near Sunshine Cove Park (Stop ID 322405)Sunshine Cove Way near Sunrise Drive",
+      "level": "minor",
+      "severity": 2,
+      "title": "8:10am route 320 to Brisbane City cancelled ",
+      "description": "The 8:10am route 320 to Brisbane City is cancelled due to mechanical issues.",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2025-12-12T18:00:00.000Z",
-      "effectiveTo": "2026-12-14T12:59:00.000Z",
+      "effectiveFrom": "2026-09-30T22:10:00.000Z",
+      "effectiveTo": null,
       "status": "active",
-      "impact": "ADDITIONAL SERVICE"
+      "impact": "REDUCED SERVICE"
     },
     {
       "id": "1028991",
@@ -920,6 +935,21 @@
       "effectiveTo": "2026-11-01T12:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
+    },
+    {
+      "id": "1170971",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "Stops missed - Pinehill Dr and Universal St, Oxenford",
+      "description": "Route 717 travelling in both directions will be temporarily missing the below stops due to an unplanned road closure. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-09-30T21:56:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "DETOUR"
     }
   ]
 }
