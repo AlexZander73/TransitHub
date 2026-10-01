@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-10-01T02:09:36.803Z",
+    "generatedAt": "2026-10-01T08:54:25.307Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 76,
-      "mappedRows": 76
+      "rows": 72,
+      "mappedRows": 72
     }
   },
   "alerts": [
@@ -382,21 +382,6 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1171046",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "10:38am route 631 to Noosa Junction cancelled",
-      "description": "The 10:38am route 631 to Noosa Junction is cancelled due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:38:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
       "id": "1171056",
       "region": null,
       "level": "minor",
@@ -412,72 +397,12 @@
       "impact": "DETOUR"
     },
     {
-      "id": "1171071",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "10:49am route 282 to Victoria Point delayed up to 20 minutes",
-      "description": "The 10:49am route 282 to Victoria Point is delayed up to 20 minutes due to roadworks. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:49:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1171081",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "11:20am route 627 to Sunshine Beach cancelled",
-      "description": "The 11:20am route 627 to Sunshine Beach is cancelled due to bus availability.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:20:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1171086",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "10:42am route 250 to Redland Bay Marina delayed up to 18 minutes",
-      "description": "The 10:42am route 250 to Redland Bay Marina is delayed up to 18 minutes due to late running of a previous service.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:42:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1171091",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "10:45am route 454 to Riverhills delayed up to 17 minutes",
-      "description": "The 10:45am route 454 to Riverhills is delayed up to 17 minutes due to late running of a previous service.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:45:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
       "id": "1171096",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "October evening tram closures - Helensvale to GCUH",
-      "description": "From 7:30pm until last service on the following nights buses will replace trams between Helensvale and Gold Coast University Hospital stations due to Coomera Connector (Stage 1) construction works:Sunday 11 OctoberMonday 12 OctoberTuesday 13 OctoberWednesday 14 OctoberThursday 15 OctoberSunday 18 Oc",
+      "title": "October evening tram closures - Helensvale to Gold Coast University Hospital",
+      "description": "Buses will replace trams between Helensvale and Gold Coast University Hospital stations each night from 7:30pm to last service:Sunday 11 to Thursday 15 OctoberSunday 18 to Thursday 22 October.This is due to Coomera Connector (Stage 1) construction works, Normal services will resume from the fir",
       "routes": [],
       "stops": [],
       "interchanges": [],
@@ -485,51 +410,6 @@
       "effectiveTo": "2026-10-11T12:59:00.000Z",
       "status": "active",
       "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1171106",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "11am route 240 to Wynnum delayed up to 20 minutes",
-      "description": "The 11am route 240 to Wynnum is delayed up to 20 minutes due to staff availability.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:00:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1171111",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "11:30am route 240 to Capalaba delayed 20 minutes",
-      "description": "The 11:30am route 240 to Wynnum delayed 20 minutes due to late running of a previous service.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:30:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1171116",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "10:20am route 335 to Sandgate delayed up to 17 minutes",
-      "description": "The 10:20am route 335 to Sandgate is delayed up to 17 minutes due to congestion.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:20:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "1171121",
@@ -547,46 +427,46 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1171136",
+      "id": "1171261",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "11:52am route 627 to Tewantin cancelled ",
-      "description": "The 11:52am route 627 to Tewantin is cancelled due to mechanical issues. ",
+      "title": "6:23pm route 626 to Sunrise Beach cancelled ",
+      "description": "The 6:23pm route 626 to Sunrise Beach is cancelled due to staff availability. Check the journey planner for other travel options. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:52:00.000Z",
+      "effectiveFrom": "2026-10-01T08:23:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1171146",
+      "id": "1171456",
       "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "11:40am route 600 to Caloundra cancelled ",
-      "description": "The 11:40am route 600 to Caloundra is cancelled due to staff availability.",
+      "level": "major",
+      "severity": 3,
+      "title": "5:18pm route 281 to Redland Bay delayed 15 minutes",
+      "description": "The 5:18pm route 281 to Redland Bay is delayed 15 minutes due to mechanical issues. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:40:00.000Z",
+      "effectiveFrom": "2026-10-01T07:18:00.000Z",
       "effectiveTo": null,
       "status": "active",
-      "impact": "REDUCED SERVICE"
+      "impact": "SIGNIFICANT DELAYS"
     },
     {
-      "id": "1171151",
+      "id": "1171496",
       "region": null,
       "level": "minor",
       "severity": 2,
-      "title": "11:41am route TX7 to Coomera cancelled ",
-      "description": "The 11:41am route TX7 to Coomera is cancelled due to congestion. ",
+      "title": "6:05pm route 156 to Runcorn cancelled ",
+      "description": "The 6:05pm route 156 to Runcorn is cancelled due to mechanical issues. ",
       "routes": [],
       "stops": [],
       "interchanges": [],
-      "effectiveFrom": "2026-10-01T01:41:00.000Z",
+      "effectiveFrom": "2026-10-01T08:05:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
@@ -725,6 +605,21 @@
       "effectiveTo": "2026-11-27T12:59:00.000Z",
       "status": "active",
       "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
+      "id": "1135956",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Mains Road park 'n' ride, Nathan - temporary car park closure",
+      "description": "On Wednesday 4 November the Mains Road park 'n' ride will be closed due to an event at Nissan Arena. Parking will return to normal from the morning of Thursday 5 November.How will this affect me?If you normally park your car and catch a bus from the Mains Road park 'n' ride, you'll need to",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-11-03T13:00:00.000Z",
+      "effectiveTo": "2026-11-04T12:59:59.000Z",
+      "status": "active",
+      "impact": "OTHER EFFECT"
     },
     {
       "id": "1148381",
@@ -1147,6 +1042,21 @@
       "impact": "DETOUR"
     },
     {
+      "id": "1171006",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Yeronga station, Fairfield Road",
+      "description": "From 9am to 2pm on Thursday 8 October, the Yeronga station lift on Fairfield Road will be out of service for maintenance.During this time the pedestrian overpass and Lake Street lift will remain open. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-07T22:00:00.000Z",
+      "effectiveTo": "2026-10-08T03:00:00.000Z",
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
+    },
+    {
       "id": "1171031",
       "region": null,
       "level": "info",
@@ -1160,6 +1070,40 @@
       "effectiveTo": "2026-10-03T13:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
+    },
+    {
+      "id": "1171396",
+      "region": "gold-coast",
+      "level": "minor",
+      "severity": 2,
+      "title": "Stops missed - Gold Cast Hwy, Burleigh Heads",
+      "description": "Route 700, 701, 754 and 777 travelling away from Burleigh Heads will be temporarily missing the below stops due to a traffic accident. Check the journey planner for other travel options. ",
+      "routes": [],
+      "stops": [
+        "BURLEIGH"
+      ],
+      "interchanges": [
+        "gc-burleigh"
+      ],
+      "effectiveFrom": "2026-10-01T05:37:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "DETOUR"
+    },
+    {
+      "id": "1171431",
+      "region": null,
+      "level": "info",
+      "severity": 1,
+      "title": "Lift outage - Banyo station, platform 1",
+      "description": "The lift on platform 1 at Banyo station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-01T06:29:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "ACCESSIBILITY ISSUE"
     }
   ]
 }
