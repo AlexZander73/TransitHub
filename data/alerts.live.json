@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-10-01T08:54:25.307Z",
+    "generatedAt": "2026-10-01T15:58:03.590Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 72,
-      "mappedRows": 72
+      "rows": 64,
+      "mappedRows": 64
     }
   },
   "alerts": [
@@ -251,21 +251,6 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1154081",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Weekend track closure - Ipswich/Rosewood and Springfield lines",
-      "description": "Track closure in briefStart: 11:30pm on Friday 30 OctoberEnd: Last service on Sunday 1 NovemberAffected lines: Ipswich/Rosewood and SpringfieldNext normal service: First train on Monday 2 NovemberView map of closure.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-30T13:00:00.000Z",
-      "effectiveTo": "2026-11-01T12:59:00.000Z",
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
       "id": "1156216",
       "region": null,
       "level": "minor",
@@ -382,21 +367,6 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1171056",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Stops missed - Noosa Heads",
-      "description": "Route 620 in both directions will be temporarily missing the below stops due to congestion.Services will terminate and commence at Noosa Junction station.Check the journey planner for other travel options.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T00:32:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "DETOUR"
-    },
-    {
       "id": "1171096",
       "region": null,
       "level": "minor",
@@ -423,51 +393,6 @@
       "interchanges": [],
       "effectiveFrom": "2026-11-04T08:30:00.000Z",
       "effectiveTo": "2026-11-04T12:59:00.000Z",
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1171261",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "6:23pm route 626 to Sunrise Beach cancelled ",
-      "description": "The 6:23pm route 626 to Sunrise Beach is cancelled due to staff availability. Check the journey planner for other travel options. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T08:23:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1171456",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "5:18pm route 281 to Redland Bay delayed 15 minutes",
-      "description": "The 5:18pm route 281 to Redland Bay is delayed 15 minutes due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T07:18:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1171496",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "6:05pm route 156 to Runcorn cancelled ",
-      "description": "The 6:05pm route 156 to Runcorn is cancelled due to mechanical issues. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T08:05:00.000Z",
-      "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
     },
@@ -725,21 +650,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "MODIFIED SERVICE"
-    },
-    {
-      "id": "1157226",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Tewantin Central, Tewantin - evening stop closures",
-      "description": "From 7pm until last service on Thursday 1 October, the following stops will be closed due to road works. During this time, if you travel on route 620, 631 or 632 please use the alternative stops below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T09:00:00.000Z",
-      "effectiveTo": "2026-10-01T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
     },
     {
       "id": "1158821",
@@ -1070,40 +980,6 @@
       "effectiveTo": "2026-10-03T13:59:00.000Z",
       "status": "active",
       "impact": "STOP MOVED"
-    },
-    {
-      "id": "1171396",
-      "region": "gold-coast",
-      "level": "minor",
-      "severity": 2,
-      "title": "Stops missed - Gold Cast Hwy, Burleigh Heads",
-      "description": "Route 700, 701, 754 and 777 travelling away from Burleigh Heads will be temporarily missing the below stops due to a traffic accident. Check the journey planner for other travel options. ",
-      "routes": [],
-      "stops": [
-        "BURLEIGH"
-      ],
-      "interchanges": [
-        "gc-burleigh"
-      ],
-      "effectiveFrom": "2026-10-01T05:37:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "DETOUR"
-    },
-    {
-      "id": "1171431",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Lift outage - Banyo station, platform 1",
-      "description": "The lift on platform 1 at Banyo station is currently out of service. Please call 13 16 17 or SMS 0428 774 636 if you require assistance.Technicians have been notified. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-01T06:29:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "ACCESSIBILITY ISSUE"
     }
   ]
 }

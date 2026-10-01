@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-01T08:54:25.307Z",
+    "generatedAt": "2026-10-01T15:58:03.590Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,131 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 895,
-      "mappedRows": 7,
-      "unmappedRoutes": 888,
-      "vehicleCount": 7
+      "rows": 1,
+      "mappedRows": 0,
+      "unmappedRoutes": 1,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_11",
-      "label": "11",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39023493-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.527387619018555,
-      "lon": 153.05702209472656,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 7,
-      "timestamp": 1790844845,
-      "updatedAt": "2026-10-01T08:54:05.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_14",
-      "label": "14",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024258-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "BURA",
-      "lat": -27.510000228881836,
-      "lon": 153.0397186279297,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 9,
-      "timestamp": 1790844836,
-      "updatedAt": "2026-10-01T08:53:56.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_19",
-      "label": "19",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39023674-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "EMPS",
-      "lat": -27.571693420410156,
-      "lon": 153.09405517578125,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 12,
-      "timestamp": 1790844847,
-      "updatedAt": "2026-10-01T08:54:07.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_51",
-      "label": "51",
-      "routeId": "560",
-      "mode": "bus",
-      "tripId": "39024160-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "MEAD",
-      "lat": -27.68235969543457,
-      "lon": 153.11260986328125,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 29,
-      "timestamp": 1790844837,
-      "updatedAt": "2026-10-01T08:53:57.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_52",
-      "label": "52",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39024289-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.46649932861328,
-      "lon": 153.02833557128906,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 2,
-      "timestamp": 1790844837,
-      "updatedAt": "2026-10-01T08:53:57.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_62",
-      "label": "62",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "39023802-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": null,
-      "lat": -27.469526290893555,
-      "lon": 153.02352905273438,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 3,
-      "timestamp": 1790844847,
-      "updatedAt": "2026-10-01T08:54:07.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_79",
-      "label": "79",
-      "routeId": "560",
-      "mode": "bus",
-      "tripId": "39024168-LCBS 26_27-44163",
-      "headsign": "Service",
-      "stopId": "LGHM",
-      "lat": -27.614999771118164,
-      "lon": 153.12452697753906,
-      "bearing": null,
-      "speed": null,
-      "status": "in_transit_to",
-      "currentStopSequence": 1,
-      "timestamp": 1790844830,
-      "updatedAt": "2026-10-01T08:53:50.000Z"
-    }
-  ]
+  "vehicles": []
 }
