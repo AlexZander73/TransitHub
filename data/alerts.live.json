@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-10-02T12:31:47.092Z",
+    "generatedAt": "2026-10-02T18:02:19.833Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 65,
-      "mappedRows": 65
+      "rows": 61,
+      "mappedRows": 61
     }
   },
   "alerts": [
@@ -131,21 +131,6 @@
       "impact": "REDUCED SERVICE"
     },
     {
-      "id": "1075996",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Weekday track closure - Beenleigh and Gold Coast lines",
-      "description": "OverviewAffected lines: Beenleigh and Gold CoastDates:Monday 21 to Friday 25 SeptemberMonday 28 September to Friday 2 October",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-20T18:00:00.000Z",
-      "effectiveTo": "2026-09-25T13:59:00.000Z",
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
       "id": "1092351",
       "region": null,
       "level": "minor",
@@ -174,21 +159,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "ADDITIONAL SERVICE"
-    },
-    {
-      "id": "1139956",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Route 756 - temporary stop and route changes",
-      "description": "From Wednesday 2 September until December 2027, some stops on Cassowary Drive, Christine Avenue and Honeyeater Drive will be impacted by bridge construction works. During this time, if you usually catch route 756 or some school services please use the alternative stops shown below or arra",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-01T18:00:00.000Z",
-      "effectiveTo": "2027-12-31T12:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
     },
     {
       "id": "1154026",
@@ -378,21 +348,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1172236",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "2:50pm route 563 to Holmview delayed up to 30 minutes ",
-      "description": "The 2:50pm route 563 to Holmview is delayed up to 30 minutes due to late running of a previous service. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-02T04:50:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
     },
     {
       "id": "1172491",
@@ -648,21 +603,6 @@
       "effectiveTo": null,
       "status": "active",
       "impact": "STOP MOVED"
-    },
-    {
-      "id": "1154546",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "Bulcock Street and Moreton Parade, Caloundra - temporary stop changes",
-      "description": "From Monday 28 September until further notice, school routes will not service the stops on Bulcock Street and Moreton Parade due to construction works.During this time, if you travel on school routes 5504, 5512, 5551, 5632 or 5702, please use the alternative stops shown",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-09-27T18:00:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "MODIFIED SERVICE"
     },
     {
       "id": "1158821",
