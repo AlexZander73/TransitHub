@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-10-02T18:02:19.833Z",
+    "generatedAt": "2026-10-02T22:12:22.684Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 61,
-      "mappedRows": 61
+      "rows": 63,
+      "mappedRows": 63
     }
   },
   "alerts": [
@@ -360,6 +360,36 @@
       "stops": [],
       "interchanges": [],
       "effectiveFrom": "2026-10-02T09:24:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1172591",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "7:10am route 713 to Paradise Point cancelled",
+      "description": "The 7:10am route 713 to Paradise Point is cancelled due to staff availability.",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-02T21:10:00.000Z",
+      "effectiveTo": null,
+      "status": "active",
+      "impact": "REDUCED SERVICE"
+    },
+    {
+      "id": "1172606",
+      "region": null,
+      "level": "minor",
+      "severity": 2,
+      "title": "7:25am route 120 to Garden City Shopping Centre cancelled",
+      "description": "The 7:25am route 120 to Garden City Shopping Centre is cancelled due to mechanical issues. ",
+      "routes": [],
+      "stops": [],
+      "interchanges": [],
+      "effectiveFrom": "2026-10-02T21:25:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"

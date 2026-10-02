@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-02T18:02:19.833Z",
+    "generatedAt": "2026-10-02T22:12:22.684Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,11 +8,131 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 44,
-      "mappedRows": 0,
-      "unmappedRoutes": 44,
-      "vehicleCount": 0
+      "rows": 598,
+      "mappedRows": 7,
+      "unmappedRoutes": 591,
+      "vehicleCount": 7
     }
   },
-  "vehicles": []
+  "vehicles": [
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_135",
+      "label": "135",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986508-LCBS 26_27-43388",
+      "headsign": "Brisbane City",
+      "stopId": null,
+      "lat": -27.51102638244629,
+      "lon": 153.04022216796875,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 8,
+      "timestamp": 1790979121,
+      "updatedAt": "2026-10-02T22:12:01.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_142",
+      "label": "142",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986631-LCBS 26_27-43388",
+      "headsign": "Brisbane City",
+      "stopId": null,
+      "lat": -27.46758270263672,
+      "lon": 153.02593994140625,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 14,
+      "timestamp": 1790979110,
+      "updatedAt": "2026-10-02T22:11:50.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_17",
+      "label": "17",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986557-LCBS 26_27-43388",
+      "headsign": "Brisbane City",
+      "stopId": null,
+      "lat": -27.61572265625,
+      "lon": 153.12449645996094,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 3,
+      "timestamp": 1790979121,
+      "updatedAt": "2026-10-02T22:12:01.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_62",
+      "label": "62",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986586-LCBS 26_27-43388",
+      "headsign": "Loganholme station",
+      "stopId": null,
+      "lat": -27.532943725585938,
+      "lon": 153.05810546875,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 10,
+      "timestamp": 1790979104,
+      "updatedAt": "2026-10-02T22:11:44.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_7131",
+      "label": "7131",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986618-LCBS 26_27-43388",
+      "headsign": "Loganholme station",
+      "stopId": "CULT",
+      "lat": -27.472442626953125,
+      "lon": 153.020751953125,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 4,
+      "timestamp": 1790979123,
+      "updatedAt": "2026-10-02T22:12:03.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_75",
+      "label": "75",
+      "routeId": "560",
+      "mode": "bus",
+      "tripId": "37987047-LCBS 26_27-43388",
+      "headsign": "Loganholme station",
+      "stopId": "MEAD",
+      "lat": -27.684415817260742,
+      "lon": 153.1092987060547,
+      "bearing": null,
+      "speed": null,
+      "status": "stopped_at",
+      "currentStopSequence": 31,
+      "timestamp": 1790979127,
+      "updatedAt": "2026-10-02T22:12:07.000Z"
+    },
+    {
+      "id": "06EAC06E55F06AEC6418AEEBA19D5764_77",
+      "label": "77",
+      "routeId": "555",
+      "mode": "bus",
+      "tripId": "37986570-LCBS 26_27-43388",
+      "headsign": "Loganholme station",
+      "stopId": "SPRW",
+      "lat": -27.615999221801758,
+      "lon": 153.1248016357422,
+      "bearing": null,
+      "speed": null,
+      "status": "in_transit_to",
+      "currentStopSequence": 14,
+      "timestamp": 1790979120,
+      "updatedAt": "2026-10-02T22:12:00.000Z"
+    }
+  ]
 }
