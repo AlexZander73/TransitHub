@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-10-03T12:02:10.632Z",
+    "generatedAt": "2026-10-03T16:16:07.196Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePaths": [
@@ -8,46 +8,11 @@
       "./raw/live/tram-vehicle-positions.pb"
     ],
     "stats": {
-      "rows": 323,
-      "mappedRows": 2,
-      "unmappedRoutes": 321,
-      "vehicleCount": 2
+      "rows": 40,
+      "mappedRows": 0,
+      "unmappedRoutes": 40,
+      "vehicleCount": 0
     }
   },
-  "vehicles": [
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_12",
-      "label": "12",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "37986880-LCBS 26_27-43388",
-      "headsign": "Loganholme station",
-      "stopId": null,
-      "lat": -27.484359741210938,
-      "lon": 153.02838134765625,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 6,
-      "timestamp": 1791028883,
-      "updatedAt": "2026-10-03T12:01:23.000Z"
-    },
-    {
-      "id": "06EAC06E55F06AEC6418AEEBA19D5764_51",
-      "label": "51",
-      "routeId": "555",
-      "mode": "bus",
-      "tripId": "37986967-LCBS 26_27-43388",
-      "headsign": "Brisbane City",
-      "stopId": "BURA",
-      "lat": -27.49738883972168,
-      "lon": 153.03958129882812,
-      "bearing": null,
-      "speed": null,
-      "status": "stopped_at",
-      "currentStopSequence": 9,
-      "timestamp": 1791028902,
-      "updatedAt": "2026-10-03T12:01:42.000Z"
-    }
-  ]
+  "vehicles": []
 }

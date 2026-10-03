@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-10-03T12:02:10.632Z",
+    "generatedAt": "2026-10-03T16:16:07.196Z",
     "source": "build-live-from-gtfsrt.mjs",
     "feedFormat": "protobuf",
     "sourcePath": "./raw/live/service-alerts.pb",
     "stats": {
-      "rows": 67,
-      "mappedRows": 67
+      "rows": 59,
+      "mappedRows": 59
     }
   },
   "alerts": [
@@ -375,96 +375,6 @@
       "stops": [],
       "interchanges": [],
       "effectiveFrom": "2026-10-03T02:16:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1172906",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "9:45pm route 777 to Burleigh Heads cancelled",
-      "description": "The 9:45pm route 777 to Burleigh Heads is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T11:45:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1172911",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "11pm route 777 to Burleigh Heads cancelled",
-      "description": "The 11pm route 777 to Burleigh Heads is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T13:00:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1172931",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "10:18pm route 777 to Gold Coast Airport cancelled",
-      "description": "The 10:18pm route 777 to Gold Coast Airport is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T12:18:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "REDUCED SERVICE"
-    },
-    {
-      "id": "1173026",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "7:09pm Cleveland to Central train delayed up to 10 minutes",
-      "description": "The 7:09pm Cleveland to Central train is delayed up to 10 minutes due to an earlier road vehicle striking a rail bridge. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T09:09:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1173061",
-      "region": null,
-      "level": "major",
-      "severity": 3,
-      "title": "9:45pm route 150 to Brisbane City cancelled",
-      "description": "The 9:45pm route 150 to Brisbane City is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T11:45:00.000Z",
-      "effectiveTo": null,
-      "status": "active",
-      "impact": "SIGNIFICANT DELAYS"
-    },
-    {
-      "id": "1173076",
-      "region": null,
-      "level": "minor",
-      "severity": 2,
-      "title": "10:40pm route 130 to Stretton cancelled",
-      "description": "The 10:40pm route 130 to Stretton is cancelled due to staff availability. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-03T12:40:00.000Z",
       "effectiveTo": null,
       "status": "active",
       "impact": "REDUCED SERVICE"
@@ -950,21 +860,6 @@
       "impact": "STOP MOVED"
     },
     {
-      "id": "1170466",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Fortitude Valley - temporary stop closures ",
-      "description": "From 3am to last service on Saturday 3 October, some stops on Warner, Wickham and Brunswick Streets will be closed due to Valley Fiesta.During this time, if you travel on routes 175, 185, 196 or 204, please use the alternative stops shown below.",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-02T17:00:00.000Z",
-      "effectiveTo": "2026-10-03T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
-    },
-    {
       "id": "1170626",
       "region": null,
       "level": "info",
@@ -993,21 +888,6 @@
       "effectiveTo": "2026-10-08T03:00:00.000Z",
       "status": "active",
       "impact": "ACCESSIBILITY ISSUE"
-    },
-    {
-      "id": "1171031",
-      "region": null,
-      "level": "info",
-      "severity": 1,
-      "title": "Brisbane City and Fortitude Valley - temporary stop closures",
-      "description": "From 3am until last service on Saturday 3 October, there will be stop closures in Brisbane City and Fortitude Valley due to Valley Fiesta.During this time, if you travel on routes 175, 185, 196 or 204, please use the alternative stops shown below. ",
-      "routes": [],
-      "stops": [],
-      "interchanges": [],
-      "effectiveFrom": "2026-10-02T17:00:00.000Z",
-      "effectiveTo": "2026-10-03T13:59:00.000Z",
-      "status": "active",
-      "impact": "STOP MOVED"
     },
     {
       "id": "1171986",
